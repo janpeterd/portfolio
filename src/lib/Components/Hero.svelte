@@ -20,10 +20,6 @@
 <div class="bottom-gradient absolute top-0 h-full w-screen">Gradient</div>
 
 <style>
-	.clipped {
-		clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-	}
-
 	.bottom-gradient {
 		z-index: -10;
 		mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
