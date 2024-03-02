@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme(colors.slate.200/50) transparent;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: theme(colors.slate.700);
+  border-radius: 24px;
+}
+
+body {
+  background-color: black;
+  color: theme(colors.white);
+  background-color: theme(colors.black);
+  min-height: 100vh;
+  /* mask-image: linear-gradient(to top, transparent 0%, black 20%); */
+}
+
+
+/* .gradient { */
+/*   z-index: -10; */
+/*   mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent); */
+/*   background: url('/img/grain.webp'), */
+/*     radial-gradient(105vw 450px at 50% 50%, theme(colors.blue.600 / 80%), transparent); */
+/* } */
