@@ -27,7 +27,7 @@
   >
     <NavLink href="/#about">Over mij</NavLink>
     <NavLink href="/projects">Projecten</NavLink>
-    <NavLink href="cv">CV</NavLink>
+    <NavLink href="/cv">CV</NavLink>
     <div class="flex flex-row items-center justify-center gap-x-2 px-2">
       <NavLink
         logo={true}
@@ -73,7 +73,8 @@
       <a href="/projects" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
         >Projecten</a
       >
-      <a href="cv" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>CV</a>
+      <a href="/cv" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>CV</a
+      >
     </div>
   {/if}
 </div>
