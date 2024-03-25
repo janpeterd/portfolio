@@ -18,8 +18,8 @@
         class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
       >
         Ik ben een student met veel interesse en nieuwsgierigheid voor informatica en alles wat met
-        computers te maken heeft. Ik leer graag bij. Hierdoor heb zelfstandig ervaring opgedaan en
-        verschillende technologieën ontdekt.
+        computers te maken heeft. Ik leer graag bij. Hierdoor heb ik zelfstandig ervaring opgedaan
+        en verschillende technologieën ontdekt.
       </p>
       <p
         class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"

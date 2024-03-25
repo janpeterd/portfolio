@@ -7,7 +7,7 @@ date: 2024-03-18
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tCBAd3iY1O8?si=9nB02cXizRYY426I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-In mijn eerste jaar toegepaste informatica heb ik voor het vak _IoTEssentials_ een muizenval gemaakt die door volledig automatisch werkt.
+In mijn eerste jaar toegepaste informatica heb ik voor het vak _IoTEssentials_ een muizenval gemaakt die volledig automatisch werkt.
 
 De muizenval maakt gebruik van een ultrasone geluidssensor om de afstand tot een potentiële muis te berekenen.
 Hiermee kan dan via code beslist worden of the muizenval wel of niet moet sluiten.
@@ -39,10 +39,10 @@ Op dit platform is de status van de muizenval dan zichtbaar, samen met het totaa
 ### Behuizing
 
 Deze componenten heb ik in een houten doos voor wijnflessen gestopt.
-Deze doos heb ik in twee compartimenten gesplitst, de voorste voor de muis die binnenkomt en de achterste voor het de componenten.
-Bovenop de doos staat de stappenmotor die met een elastiek de doos opent, wanneer de val afgaat, zal de motor beginnen draaien en verslapt de elastiek, waardoor de deur sluit.
+Deze doos heb ik in twee compartimenten gesplitst, de voorste voor de muis die binnenkomt en de achterste voor de componenten.
+Bovenop de doos staat de stappenmotor die met behulp van een elastiek de doos opent, wanneer de val afgaat begint de motor te draaien en verslapt de elastiek, waardoor de deur sluit.
 
 ### Besluit
 
 Op het einde van de rit was ik blij met het resultaat.
-Ondanks al deze moeite is mij toch niet gelukt een muis 🐭 te vangen...
+Ondanks al deze moeite is het mij toch niet gelukt een muis te vangen...
