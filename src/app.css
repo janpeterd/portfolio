@@ -2,11 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-elec;
+  }
+}
+
 /* Scrollbars */
 * {
   scrollbar-width: thin;
   scrollbar-color: theme(colors.slate.200/50) transparent;
   box-sizing: border-box;
+  scroll-margin-top: 100px;
 }
 
 *::-webkit-scrollbar {
@@ -20,6 +33,10 @@
 *::-webkit-scrollbar-thumb {
   background-color: theme(colors.slate.700);
   border-radius: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

@@ -9,7 +9,10 @@ export default {
         ...fontFamily,
         elec: ['Electrolize', ...fontFamily['sans']],
       },
-
+      colors: {
+        primary: '#101233',
+        secondary: '#FF7400'
+      }
     },
   },
   plugins: [
