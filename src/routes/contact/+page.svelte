@@ -24,7 +24,7 @@
 >
   <div class="flex w-full md:w-4/6 lg:hidden">
     <div
-      class="relative mx-auto flex h-auto w-[30rem] flex-col items-center justify-center rounded-xl border border-black/[0.1] bg-white/5 py-8 dark:border-white/[0.2] dark:hover:shadow-2xl dark:hover:shadow-secondary/[0.2]"
+      class="relative mx-auto flex h-auto w-[30rem] flex-col items-center justify-center rounded-xl border border-white/[0.5] bg-white/5 py-8 hover:shadow-2xl hover:shadow-secondary/[0.2]"
     >
       <div class="block w-full p-12 text-center font-elec text-5xl font-bold text-secondary">
         Contact
@@ -72,7 +72,7 @@
     className="inter-var flex-1"
   >
     <CardBody
-      className="py-8 h-auto w-[30rem] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-secondary/[0.2] bg-white/5 dark:border-white/[0.2] border-black/[0.1] rounded-xl border flex flex-col justify-center items-center"
+      className="py-8 h-auto w-[30rem] relative group/card  hover:shadow-2xl hover:shadow-secondary/[0.2] bg-white/5 border-white/[0.5] rounded-xl border flex flex-col justify-center items-center"
     >
       <CardItem
         {isMouseEntered}
