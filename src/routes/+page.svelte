@@ -3,8 +3,7 @@
   import Footer from '$lib/Components/Footer.svelte'
   import Hero from '$lib/Components/Hero.svelte'
   import About from '$lib/Components/About.svelte'
-
-  let scroll
+  import HugTextBg from '$lib/Components/HugTextBg.svelte'
 </script>
 
 <svelte:head>
@@ -20,19 +19,11 @@
   <meta property="og:title" content="Portfolio - JP" />
 </svelte:head>
 
-<svelte:window bind:scrollY={scroll} />
-
 <div class="bottom-gradient absolute bottom-0 h-screen w-screen"></div>
 
 <Navbar />
 
-<p
-  id="hugetext"
-  class="z-0 select-none overflow-x-hidden text-center font-sans text-7xl font-bold uppercase opacity-10 md:text-9xl"
-  style="transform: translateY({scroll * 0.085 + 7}rem);"
->
-  Jan&#8209Peter Dhallé
-</p>
+<HugTextBg />
 
 <Hero />
 

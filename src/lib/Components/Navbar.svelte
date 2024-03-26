@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="fixed top-5 z-50 flex w-screen justify-between bg-transparent font-elec print:hidden">
+<div class="fixed top-0 pt-2 z-50 flex w-screen justify-between bg-transparent font-elec print:hidden">
   <div
     class="justify-content m-2 flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150"
   >
@@ -39,7 +39,7 @@
   </button>
   {#if isExpanded}
     <div
-      class="absolute z-0 flex h-svh w-svw flex-col items-center justify-center rounded-lg p-4 backdrop-blur-lg backdrop-saturate-150"
+      class="absolute top-0 z-0 flex h-screen w-screen flex-col items-center justify-center rounded-lg p-4 backdrop-blur-lg backdrop-saturate-150"
     >
       <button
         on:click={toggleExpanded}

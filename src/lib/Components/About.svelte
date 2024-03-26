@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="container z-10 mx-auto my-24 rounded-2xl bg-white/10 p-8 backdrop-blur-lg backdrop-saturate-150"
+  class="md:container z-10 mx-auto my-24 rounded-2xl bg-white/10 md:p-8 backdrop-blur-lg backdrop-saturate-150"
 >
   <div class="z-10 gap-3 p-8 md:grid md:grid-flow-row md:grid-cols-3">
     <div class="z-10 flex items-center justify-center">
