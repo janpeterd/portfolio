@@ -18,7 +18,7 @@
 <article
   class="mt-navbar lg:mt-25 mx-auto flex max-w-4xl flex-col gap-6 px-6 pt-20 md:gap-8 md:px-8 lg:gap-14"
 >
-  <div class="flex items-center">
+  <div class="flex items-center border-b border-white/40 py-8">
     <a href="/projects/" class="mr-8 rounded-full text-center"
       ><Icon icon="mdi:arrow-left" width="2rem" /></a
     >

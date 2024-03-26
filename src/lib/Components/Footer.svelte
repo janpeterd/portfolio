@@ -6,7 +6,7 @@
 </script>
 
 <footer
-  class="max-w-screen relative mt-8 flex flex-col items-center border-t bg-black/60 p-3 print:hidden"
+  class="max-w-screen relative mt-8 flex flex-col items-center border-t bg-black/60 p-3 backdrop-blur backdrop-saturate-150 print:hidden"
 >
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <div class="mb-3 max-h-[200px] min-h-[60px] w-64 flex-1 md:px-5">
@@ -46,6 +46,7 @@
     <span class="flex-auto">
       &copy; {now.getFullYear()} Jan-Peter Dhallé
     </span>
+    <!-- svelte-ignore a11y-invalid-attribute -->
     <a href="#" class="flex flex-auto items-center justify-center">
       <span class="text-right">Scroll&nbsp;naar&nbsp;boven</span>
       <Icon class="h-full text-4xl" icon="mdi:arrow-up-bold" />

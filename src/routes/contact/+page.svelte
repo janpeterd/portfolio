@@ -11,7 +11,9 @@
 
 <Navbar />
 
-<div class="container mx-auto mt-32 flex flex-col items-center justify-center md:mt-20 md:flex-row">
+<div
+  class="container mx-auto mt-32 flex min-h-[60vh] flex-col items-center justify-center md:mt-20 md:flex-row"
+>
   <div class="m-4 mb-10 w-full p-8 md:w-1/2 md:border-r">
     <h2 class="p-6 text-center text-5xl text-secondary md:p-8">Contact</h2>
     <div class="mx-auto flex max-w-64 flex-row items-center justify-center px-2">

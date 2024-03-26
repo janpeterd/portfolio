@@ -51,7 +51,7 @@
         class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
       >
         Interesse? Aarzel niet om <a href="/contact" class="text-secondary">contact</a> op te nemen
-        en bekijk
+        of bekijk
         <a href="/cv" class="text-secondary">mijn cv.</a>
       </p>
     </article>

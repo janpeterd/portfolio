@@ -2,7 +2,6 @@
   import NavLink from '$lib/Components/NavLink.svelte'
   import Icon from '@iconify/svelte'
   import LogoImg from '$lib/Components/LogoImg.svelte'
-  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
 
   let isExpanded = false
 
@@ -11,7 +10,7 @@
   }
 </script>
 
-<div class="fixed top-0 z-50 flex w-screen justify-between bg-transparent font-elec print:hidden">
+<div class="fixed top-5 z-50 flex w-screen justify-between bg-transparent font-elec print:hidden">
   <div
     class="justify-content m-2 flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150"
   >
@@ -23,37 +22,13 @@
   <div
     class="justify-content m-2 hidden flex-shrink-0 items-center gap-x-2 rounded-full bg-white/10 px-2 text-white backdrop-blur-lg backdrop-saturate-150 md:flex"
   >
+    <NavLink href="/">Home</NavLink>
     <NavLink href="/#about">Over&nbsp;mij</NavLink>
     <NavLink href="/projects">Projecten</NavLink>
     <NavLink href="/cv">Cv</NavLink>
     <NavLink href="/contact">Contact</NavLink>
-    <div class="flex flex-row items-center justify-center gap-x-2 px-2">
-      <NavLink
-        logo={true}
-        href={$mailLink}
-        class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="line-md:email" width="2rem" /></NavLink
-      >
-      <NavLink
-        logo={true}
-        href={$githubLink}
-        class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="line-md:github" width="2rem" /></NavLink
-      >
-      <NavLink
-        logo={true}
-        href={$linkedInLink}
-        class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="line-md:linkedin" width="2rem" /></NavLink
-      >
-      <NavLink
-        logo={true}
-        href={$xLink}
-        class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="line-md:twitter-x" width="2rem" /></NavLink
-      >
-    </div>
   </div>
+
   <button
     class="justify-content float-right m-2 flex items-center p-3 text-white md:hidden"
     on:click={toggleExpanded}
@@ -72,6 +47,8 @@
       >
         <Icon icon="mdi:close" width="1.8rem" class="z-10" />
       </button>
+      <a href="/" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>Home</a
+      >
       <a href="/#about" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
         >Over&nbsp;mij</a
       >
