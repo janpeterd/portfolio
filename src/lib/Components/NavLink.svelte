@@ -2,9 +2,7 @@
   import { page } from '$app/stores'
   let classes = ''
   export { classes as class }
-  export let active = false
   export let logo = false
-  export let title
   export let href
 </script>
 
@@ -29,6 +27,6 @@
 
 <style lang="postcss">
   .active {
-    @apply bg-gradient-to-r from-green-500 to-green-500 bg-[length:100%_3px] bg-left-bottom bg-no-repeat text-secondary;
+    @apply text-secondary;
   }
 </style>

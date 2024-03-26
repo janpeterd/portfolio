@@ -18,6 +18,7 @@
         <div class="ml-4"><a href="/#about">Over mij</a></div>
         <div class="ml-4"><a href="/projects">Projecten</a></div>
         <div class="ml-4"><a href="/cv">CV</a></div>
+        <div class="ml-4"><a href="/contact">Contact</a></div>
       </div>
     </div>
     <div class="mb-3 flex-1 font-elec text-2xl">

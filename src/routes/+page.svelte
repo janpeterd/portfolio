@@ -28,7 +28,7 @@
 
 <p
   id="hugetext"
-  class="z-0 select-none text-center font-sans text-7xl font-bold uppercase opacity-10 md:text-9xl"
+  class="z-0 select-none overflow-x-hidden text-center font-sans text-7xl font-bold uppercase opacity-10 md:text-9xl"
   style="transform: translateY({scroll * 0.085 + 7}rem);"
 >
   Jan&#8209Peter Dhallé
@@ -37,8 +37,6 @@
 <Hero />
 
 <About />
-
-<!-- TODO: contact section -->
 
 <Footer />
 

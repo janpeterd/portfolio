@@ -58,4 +58,8 @@
   </div>
 </div>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+  .about_text {
+    @apply prose z-10 max-w-none border-l-2 border-green-500 text-lg text-white md:prose-xl;
+  }
+</style>

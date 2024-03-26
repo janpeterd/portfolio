@@ -35,5 +35,10 @@
 		"unplugin-icons": "^0.18.5",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"clsx": "^2.1.0",
+		"svelte-motion": "^0.12.2",
+		"tailwind-merge": "^2.2.2"
+	}
 }
