@@ -2,9 +2,7 @@
   import NavLink from '$lib/Components/NavLink.svelte'
   import Icon from '@iconify/svelte'
   import LogoImg from '$lib/Components/LogoImg.svelte'
-  import { githubLink } from '../../stores'
-  import { linkedInLink } from '../../stores'
-  import { mailLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
 
   let isExpanded = false
 
@@ -19,7 +17,7 @@
   >
     <NavLink logo={true} href="/" class="relative flex items-center justify-center px-6">
       <LogoImg class="absolute -left-4 -top-8 w-28" />
-      <div class="pl-10 font-bold min-w-[220px]">Portfolio Jan&#8209Peter Dhallé</div>
+      <div class="min-w-[220px] pl-10 font-bold">Portfolio Jan&#8209Peter Dhallé</div>
     </NavLink>
   </div>
   <div
@@ -34,19 +32,25 @@
         logo={true}
         href={$mailLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:envelope" width="2rem" /></NavLink
+        ><Icon icon="line-md:email" width="2rem" /></NavLink
       >
       <NavLink
         logo={true}
         href={$githubLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:github" width="2rem" /></NavLink
+        ><Icon icon="line-md:github" width="2rem" /></NavLink
       >
       <NavLink
         logo={true}
         href={$linkedInLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:linkedin" width="2rem" /></NavLink
+        ><Icon icon="line-md:linkedin" width="2rem" /></NavLink
+      >
+      <NavLink
+        logo={true}
+        href={$xLink}
+        class="flex items-center justify-center transition hover:text-green-500"
+        ><Icon icon="line-md:twitter-x" width="2rem" /></NavLink
       >
     </div>
   </div>

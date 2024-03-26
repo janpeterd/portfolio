@@ -19,19 +19,19 @@
         logo={true}
         href={$mailLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:envelope" width="2rem" /></NavLink
+        ><Icon icon="line-md:email" width="2rem" /></NavLink
       >
       <NavLink
         logo={true}
         href={$linkedInLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:linkedin" width="2rem" /></NavLink
+        ><Icon icon="line-md:linkedin" width="2rem" /></NavLink
       >
       <NavLink
         logo={true}
         href={$githubLink}
         class="flex items-center justify-center transition hover:text-green-500"
-        ><Icon icon="mdi:github" width="2rem" /></NavLink
+        ><Icon icon="line-md:github" width="2rem" /></NavLink
       >
     </div>
   </div>

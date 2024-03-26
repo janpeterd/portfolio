@@ -1,9 +1,7 @@
 <script>
   import Icon from '@iconify/svelte'
   import LogoImg from './LogoImg.svelte'
-  import { githubLink } from '../../stores'
-  import { linkedInLink } from '../../stores'
-  import { mailLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
   let now = new Date()
 </script>
 
@@ -28,13 +26,16 @@
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2"
       >
         <a href={$mailLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="mdi:envelope" width="3rem" /></a
+          ><Icon icon="line-md:email" width="3rem" /></a
         >
         <a href={$githubLink} class="mx-2 flex items-center justify-center"
-        ><Icon icon="mdi:github" width="3rem" /></a
+          ><Icon icon="line-md:github" width="3rem" /></a
         >
         <a href={$linkedInLink} class="mx-2 flex items-center justify-center"
-        ><Icon icon="mdi:linkedin" width="3rem" /></a
+          ><Icon icon="line-md:linkedin" width="3rem" /></a
+        >
+        <a href={$xLink} class="mx-2 flex items-center justify-center"
+          ><Icon icon="line-md:twitter-x" width="3rem" /></a
         >
       </div>
     </div>

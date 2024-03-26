@@ -4,9 +4,7 @@
   import Icon from '@iconify/svelte'
   import HeroImg from '$lib/assets/hero.jpg'
 
-  import { githubLink } from '../../stores'
-  import { linkedInLink } from '../../stores'
-  import { mailLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
 </script>
 
 <Navbar />
@@ -156,37 +154,53 @@
       <h2 class="cv_heading">Contact</h2>
       <ul class="hidden lg:block">
         <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">Adres</li>
-          <li>Kastelein 73, 2300 Turnhout</li>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$mailLink}>
+              <Icon icon="line-md:email" width="2rem" inline={true} />
+              E-mail
+            </a>
+          </li>
         </div>
         <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">Mail</li>
-          <li><a href="mailto:janpeter.dhalle@gmail.com">janpeter.dhalle@gmail.com</a></li>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$linkedInLink}>
+              <Icon icon="line-md:linkedin" width="2rem" inline={true} />
+              LinkedIn
+            </a>
+          </li>
         </div>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">LinkedIn</li>
-        <li>
-          <a href="https://www.linkedin.com/in/jan-peter-dhallé/"
-            >https://www.linkedin.com/in/jan-peter-dhallé/</a
-          >
-        </li>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">Github</li>
-        <li><a href="https://github.com/janpeterd">https://github.com/janpeterd</a></li>
+        <div>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$githubLink}>
+              <Icon icon="line-md:github" width="2rem" inline={true} />
+              GitHub
+            </a>
+          </li>
+        </div>
+        <div>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$xLink}>
+              <Icon icon="line-md:twitter-x" width="2rem" inline={true} />
+              Twitter (X)
+            </a>
+          </li>
+        </div>
       </ul>
       <div class="flex flex-col items-start justify-center py-6 lg:hidden">
         <a
           href={$githubLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="mdi:github" width="1.5rem" />janpeterd</a
+          ><Icon icon="line-md:github" width="1.5rem" />janpeterd</a
         >
         <a
           href={$linkedInLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="mdi:linkedin" width="1.5rem" />Jan-Peter Dhallé</a
+          ><Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé</a
         >
         <a
           href={$mailLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="mdi:envelope" width="1.5rem" />janpeter.dhalle@gmail.com</a
+          ><Icon icon="line-md:email" width="1.5rem" />janpeter.dhalle@gmail.com</a
         >
       </div>
     </div>

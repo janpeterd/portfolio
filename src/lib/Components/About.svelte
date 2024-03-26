@@ -5,15 +5,18 @@
 <div
   class="container z-10 mx-auto my-24 rounded-2xl bg-white/10 p-8 backdrop-blur-lg backdrop-saturate-150"
 >
-  <h2 id="about" class="p-4 text-center font-elec text-5xl font-bold text-secondary/85">
-    Over mij
-  </h2>
-
   <div class="z-10 gap-3 p-8 md:grid md:grid-flow-row md:grid-cols-3">
     <div class="z-10 flex items-center justify-center">
       <LogoImg class="z-10 max-w-80" />
     </div>
     <article class="col-span-2 flex flex-col justify-center">
+      <h2
+        id="about"
+        class="p-4 font-elec text-5xl font-bold uppercase text-secondary/85 md:text-center"
+      >
+        Over mij
+      </h2>
+      <!-- Beschrijving -->
       <p
         class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
       >
