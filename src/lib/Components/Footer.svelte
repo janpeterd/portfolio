@@ -27,14 +27,14 @@
       <div
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2"
       >
-        <a href={$githubLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="mdi:github" width="3rem" /></a
-        >
-        <a href={$linkedInLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="mdi:linkedin" width="3rem" /></a
-        >
         <a href={$mailLink} class="mx-2 flex items-center justify-center"
           ><Icon icon="mdi:envelope" width="3rem" /></a
+        >
+        <a href={$githubLink} class="mx-2 flex items-center justify-center"
+        ><Icon icon="mdi:github" width="3rem" /></a
+        >
+        <a href={$linkedInLink} class="mx-2 flex items-center justify-center"
+        ><Icon icon="mdi:linkedin" width="3rem" /></a
         >
       </div>
     </div>

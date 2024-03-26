@@ -29,12 +29,27 @@
         werk actief mee in teamverband en hecht veel belang aan de kwaliteit en impact van mijn
         werk.
       </p>
+      <!-- Hobbies -->
       <p
         class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
       >
         Al sinds erg jonge leeftijd ben ik creatief bezig met muziek en instrumenten. Op driejarige
         leeftijd ben ik begonnen met vioolspelen. Met deze hobby heb ik deelgenomen aan
         internationale kampen en heb ik jonge muzikanten begeleid.
+      </p>
+      <!-- Toekomst abities -->
+      <p
+        class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
+      >
+        In de toekomst wil ik met mijn kennis binnen IT, het leven van andere mensen en bedrijven
+        verbeteren. Ook wil ik creativiteit combineren met IT om unieke producten te creëren.
+      </p>
+      <p
+        class="prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl"
+      >
+        Interesse? Aarzel niet om <a href="/contact" class="text-secondary">contact</a> op te nemen
+        en bekijk
+        <a href="/cv" class="text-secondary">mijn cv.</a>
       </p>
     </article>
   </div>

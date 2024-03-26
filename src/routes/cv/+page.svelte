@@ -19,15 +19,24 @@
     <h1 class="mt-4 pt-6 font-elec text-5xl font-bold text-secondary print:text-3xl">
       Jan-Peter Dhallé
     </h1>
-    <button class="cursor-pointer print:hidden" tabindex="0" on:click={() => window.print()}>
-      <Icon icon="mdi:printer" width="2rem" />
-    </button>
+    <div class="flex gap-x-4">
+      <button
+        class="hidden cursor-pointer sm:block print:hidden"
+        tabindex="0"
+        on:click={() => window.print()}
+      >
+        <Icon icon="mdi:printer" width="2rem" />
+      </button>
+      <a class="print:hidden" href="/doc/cv_Jan-Peter_Dhallé.pdf">
+        <Icon icon="carbon:generate-pdf" width="2rem" />
+      </a>
+    </div>
   </div>
   <span class="mb-6 block border-b pb-4 pl-2 font-elec text-lg italic print:border-black/20"
     >Web developer, full stack developer, data analist</span
   >
-  <div class="flex flex-col gap-10 md:mx-auto md:flex-row print:m-4 print:flex-row">
-    <div class="print:container-none min-w-[600px] flex-auto lg:order-first">
+  <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
+    <div class="print:container-none flex-auto lg:order-first lg:min-w-[600px]">
       <h2 class="cv_heading">Opleiding</h2>
       <div class="cv_flex">
         <span class="cv_item"
@@ -93,25 +102,26 @@
           >
           <span class="cv_date">April 2017</span>
         </div>
-        <div class="break-inside-avoid"></div>
         <h2 class="cv_heading">Technische Vaardigheden</h2>
-        <div class="my-6 ml-8 grid grid-cols-2 gap-x-4 gap-y-16 md:grid-cols-3">
-          <div>
+        <div
+          class="my-6 grid grid-cols-1 gap-x-4 gap-y-16 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-4"
+        >
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Programmeertalen</h2>
-            HTML/CSS, JavaScript, Python, PHP, Java, C#, C, C++, Go, Bash
+            <p>HTML/CSS, JavaScript, Python, PHP, Java, C#, C, C++, Go, Bash</p>
           </div>
 
-          <div>
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Databases</h2>
             SQL, PostgresSQL, MongoDB
           </div>
 
-          <div>
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Documentatie</h2>
             Markdown, UML, Org-mode, LaTeX
           </div>
 
-          <div>
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">
               Frameworks &amp; Libraries
             </h2>
@@ -119,13 +129,13 @@
             Svelte/Sveltekit
           </div>
 
-          <div>
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Tools</h2>
             Linux, Windows, Vim/Neovim, Emacs, Visual Studio, Visual Studio Code, Jetbrains IDEs, Axure
             RP, Figma, Photoshop, Git, GitHub, GNU make, GNU coreutils
           </div>
 
-          <div>
+          <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Infrastructuur</h2>
             Cisco network essentials, Docker, Kubernetes, Virtual machines
           </div>
@@ -140,11 +150,11 @@
       </div>
     </div>
     <div
-      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 md:max-w-96 print:max-w-96 print:rounded-none print:border-l print:border-black/20"
+      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4"
     >
       <img src={HeroImg} alt="Foto van Jan-Peter" />
       <h2 class="cv_heading">Contact</h2>
-      <ul class="hidden lg:visible">
+      <ul class="hidden lg:block">
         <div>
           <li class="py-2 font-elec text-lg font-bold print:text-base">Adres</li>
           <li>Kastelein 73, 2300 Turnhout</li>
@@ -159,18 +169,24 @@
             >https://www.linkedin.com/in/jan-peter-dhallé/</a
           >
         </li>
-        <li class="py-2 font-elec text-lg font-bold">Github</li>
+        <li class="py-2 font-elec text-lg font-bold print:text-base">Github</li>
         <li><a href="https://github.com/janpeterd">https://github.com/janpeterd</a></li>
       </ul>
-      <div class="flex flex-col items-start justify-center py-6">
-        <a href={$githubLink} class="mx-2 flex items-center justify-center gap-4 py-2 text-lg"
-          ><Icon icon="mdi:github" width="2rem" />janpeterd</a
+      <div class="flex flex-col items-start justify-center py-6 lg:hidden">
+        <a
+          href={$githubLink}
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+          ><Icon icon="mdi:github" width="1.5rem" />janpeterd</a
         >
-        <a href={$linkedInLink} class="mx-2 flex items-center justify-center gap-4 py-2 text-lg"
-          ><Icon icon="mdi:linkedin" width="2rem" />Jan-Peter Dhallé</a
+        <a
+          href={$linkedInLink}
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+          ><Icon icon="mdi:linkedin" width="1.5rem" />Jan-Peter Dhallé</a
         >
-        <a href={$mailLink} class="mx-2 flex items-center justify-center gap-4 py-2 text-lg"
-          ><Icon icon="mdi:envelope" width="2rem" />janpeter.dhalle@gmail.com</a
+        <a
+          href={$mailLink}
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+          ><Icon icon="mdi:envelope" width="1.5rem" />janpeter.dhalle@gmail.com</a
         >
       </div>
     </div>
@@ -180,10 +196,10 @@
 
 <style lang="postcss">
   h2.cv_heading {
-    @apply mb-4 border-b border-white/40 py-6 text-4xl print:text-xl;
+    @apply mb-4 border-b border-white/40 px-2 py-6 text-3xl lg:w-auto lg:text-4xl print:mb-2 print:border-black/30 print:py-4 print:text-xl;
   }
   span.cv_item {
-    @apply ml-8 text-2xl font-bold print:text-base;
+    @apply ml-2 text-lg font-bold lg:ml-8 lg:text-2xl print:text-base;
   }
 
   span.cv_item_extra {
@@ -195,7 +211,7 @@
   }
 
   div.cv_flex {
-    @apply flex w-full flex-row justify-between gap-10 p-4;
+    @apply flex flex-row justify-between gap-10 p-4 print:p-2;
   }
 
   .bottom-gradient {
