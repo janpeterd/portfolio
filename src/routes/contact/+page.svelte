@@ -136,22 +136,15 @@
       </div>
     </CardBody>
   </CardContainer>
-
-  <!-- <img -->
-  <!--   class="max-h-[50vh] min-h-[50vh] w-full object-cover object-top lg:rounded-xl" -->
-  <!--   src="/img/desk.png" -->
-  <!--   alt="desk" -->
-  <!-- /> -->
 </div>
 
 <Footer />
-
-<!-- url('/img/grain.webp'), -->
 
 <style lang="postcss">
   .contact_gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
-    background: radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
+    background: url('/img/grain.webp'),
+      radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
   }
 </style>
