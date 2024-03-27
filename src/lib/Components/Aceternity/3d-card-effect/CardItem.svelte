@@ -27,7 +27,6 @@
 <div
   bind:this={ref}
   class={cn('w-fit transition duration-200 ease-linear', className)}
-  {...$$props}
->
+  {...$$props}>
   <slot />
 </div>

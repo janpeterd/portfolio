@@ -7,5 +7,4 @@
 <img
   src={Logo}
   alt="logo"
-  class="transition-transform duration-300 hover:-rotate-12 hover:scale-105 {classes}"
-/>
+  class="transition-transform duration-300 hover:-rotate-12 hover:scale-105 {classes}" />

@@ -10,12 +10,10 @@
   <title>Portfolio - JP</title>
   <meta
     name="description"
-    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica"
-  />
+    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica" />
   <meta
     property="og:description"
-    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica"
-  />
+    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica" />
   <meta property="og:title" content="Portfolio - JP" />
 </svelte:head>
 

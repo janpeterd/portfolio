@@ -14,15 +14,15 @@
 
 <div class="container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-black">
   <div class="flex items-end justify-between">
-    <h1 class="mt-4 pt-6 font-elec text-5xl font-bold text-secondary print:text-3xl">
+    <h1
+      class="mt-4 pt-6 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
       Jan-Peter Dhallé
     </h1>
     <div class="flex gap-x-4">
       <button
         class="hidden cursor-pointer sm:block print:hidden"
         tabindex="0"
-        on:click={() => window.print()}
-      >
+        on:click={() => window.print()}>
         <Icon icon="mdi:printer" width="2rem" />
       </button>
       <a class="print:hidden" href="/doc/cv_Jan-Peter_Dhallé.pdf">
@@ -31,24 +31,21 @@
     </div>
   </div>
   <span class="mb-6 block border-b pb-4 pl-2 font-elec text-lg italic print:border-black/20"
-    >Web developer, full stack developer, data analist</span
-  >
+    >Web developer, full stack developer, data analist</span>
   <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
     <div class="print:container-none flex-auto lg:order-first lg:min-w-[600px]">
       <h2 class="cv_heading">Opleiding</h2>
       <div class="cv_flex">
         <span class="cv_item"
           >Toegepaste Informatica Thomas More<br />
-          <span class="cv_item_extra">Campus Geel</span></span
-        >
+          <span class="cv_item_extra">Campus Geel</span></span>
         <span class="cv_date">2021–Heden</span>
       </div>
 
       <div class="cv_flex">
         <span class="cv_item"
           >Industriële Ingenieurswetenschappen KU Leuven<br />
-          <span class="cv_item_extra">Groep T, Leuven</span></span
-        >
+          <span class="cv_item_extra">Groep T, Leuven</span></span>
         <span class="cv_date">2019-2021</span>
       </div>
 
@@ -80,30 +77,26 @@
           <span class="cv_item"
             >Zandhoven Natuurlijk!<br /><span class="cv_item_extra"
               >Vrijwilliger &mdash; webmaster</span
-            ></span
-          >
+            ></span>
           <span class="cv_date">2022–Heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
             >Vlaams Symfonisch Orkest<br /><span class="cv_item_extra"
               >Violist, plaatsvervangend concertmeester</span
-            ></span
-          >
+            ></span>
           <span class="cv_date">2020–Heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
             >Woonzorgcentrum Sint-Lucia<br /><span class="cv_item_extra"
               >Vrijwilliger &mdash; animator</span
-            ></span
-          >
+            ></span>
           <span class="cv_date">April 2017</span>
         </div>
         <h2 class="cv_heading">Technische Vaardigheden</h2>
         <div
-          class="my-6 grid grid-cols-1 gap-x-4 gap-y-16 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-4"
-        >
+          class="my-6 grid grid-cols-1 gap-x-4 gap-y-16 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-4">
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Programmeertalen</h2>
             <p>HTML/CSS, JavaScript, Python, PHP, Java, C#, C, C++, Go, Bash</p>
@@ -148,8 +141,7 @@
       </div>
     </div>
     <div
-      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4"
-    >
+      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
       <img src={HeroImg} alt="Foto van Jan-Peter" />
       <h2 class="cv_heading">Contact</h2>
       <ul class="hidden lg:block">
@@ -171,37 +163,38 @@
         </div>
         <div>
           <li class="py-2 font-elec text-lg font-bold print:text-base">
-            <a class="flex items-end gap-4" href={$githubLink}>
-              <Icon icon="line-md:github" width="2rem" inline={true} />
-              GitHub
-            </a>
-          </li>
-        </div>
-        <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">
             <a class="flex items-end gap-4" href={$xLink}>
               <Icon icon="line-md:twitter-x" width="2rem" inline={true} />
               Twitter (X)
             </a>
           </li>
         </div>
+        <div>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$githubLink}>
+              <Icon icon="line-md:github" width="2rem" inline={true} />
+              GitHub
+            </a>
+          </li>
+        </div>
       </ul>
       <div class="flex flex-col items-start justify-center py-6 lg:hidden">
         <a
-          href={$githubLink}
+          href={$mailLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:github" width="1.5rem" />janpeterd</a
-        >
+          ><Icon icon="line-md:email" width="1.5rem" />janpeter.dhalle@gmail.com</a>
         <a
           href={$linkedInLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé</a
-        >
+          ><Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé</a>
         <a
-          href={$mailLink}
+          href={$xLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:email" width="1.5rem" />janpeter.dhalle@gmail.com</a
-        >
+          ><Icon icon="line-md:twitter-x" width="1.5rem" />@jempie_3</a>
+        <a
+          href={$githubLink}
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+          ><Icon icon="line-md:github" width="1.5rem" />janpeterd</a>
       </div>
     </div>
   </div>

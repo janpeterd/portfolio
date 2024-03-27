@@ -5,9 +5,7 @@
   import NavLink from '$lib/Components/NavLink.svelte'
   import Logo from '$lib/assets/logo.svg'
 
-  import { githubLink } from '../../stores'
-  import { linkedInLink } from '../../stores'
-  import { mailLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
   import CardContainer from '$lib/Components/Aceternity/3d-card-effect/CardContainer.svelte'
   import CardItem from '$lib/Components/Aceternity/3d-card-effect/CardItem.svelte'
   import CardBody from '$lib/Components/Aceternity/3d-card-effect/CardBody.svelte'
@@ -20,48 +18,59 @@
 <div class="contact_gradient absolute top-0 h-full w-screen"></div>
 
 <div
-  class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row"
->
+  class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row">
   <div class="flex w-full md:w-4/6 lg:hidden">
     <div
-      class="relative mx-auto flex h-auto w-[30rem] flex-col items-center justify-center rounded-xl border border-white/[0.5] bg-white/5 py-8 hover:shadow-2xl hover:shadow-secondary/[0.2]"
-    >
-      <div class="block w-full p-12 text-center font-elec text-5xl font-bold text-secondary">
+      class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
+      <div class="block w-full p-2 text-center font-elec text-5xl font-bold text-secondary">
+        <img
+          class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
+          src="/img/desk.png"
+          alt="My desk setup" />
+      </div>
+      <div
+        class="group-hover: my-8 block w-full border-b border-b-2 border-white/20 p-6 font-elec text-5xl font-bold uppercase text-secondary group-hover:border-green-500/60">
         Contact
       </div>
 
-      <div class="mx-auto flex max-w-64 flex-row items-center justify-center gap-x-10 px-2 py-4">
+      <div
+        class="flex w-full max-w-64 flex-col items-start justify-center gap-x-10 self-start px-6 py-4">
         <div class="">
-          <NavLink
-            logo={true}
+          <a
             href={$mailLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:email" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:email" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >janpeter.dhalle@gmail.com</span
+            ></a>
         </div>
         <div>
-          <NavLink
-            logo={true}
+          <a
             href={$linkedInLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:linkedin" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:linkedin" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >Jan&#8209;Peter&nbsp;Dhallé</span
+            ></a>
         </div>
-        <div rotateX="10">
-          <NavLink
-            logo={true}
+        <div>
+          <a
+            href={$xLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:twitter-x" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >@jempie_3</span
+            ></a>
+        </div>
+        <div>
+          <a
             href={$githubLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:github" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:github" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >/janpeterd</span
+            ></a>
         </div>
-      </div>
-      <div class="block w-full p-2 text-center font-elec text-5xl font-bold text-secondary">
-        <img
-          class="max-h-[40vh] w-full object-cover object-top lg:rounded-xl"
-          src="/img/desk.png"
-          alt="desk"
-        />
       </div>
     </div>
   </div>
@@ -69,57 +78,62 @@
   <CardContainer
     bind:isMouseEntered
     containerClassName="hidden lg:flex w-4/6"
-    className="inter-var flex-1"
-  >
+    className="inter-var flex-1">
     <CardBody
-      className="py-8 h-auto w-[30rem] relative group/card  hover:shadow-2xl hover:shadow-secondary/[0.2] bg-white/5 border-white/[0.5] rounded-xl border flex flex-col justify-center items-center"
-    >
+      className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
+      <CardItem {isMouseEntered} translateZ="90" className="w-full">
+        <img
+          class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
+          src="/img/desk.png"
+          alt="My desk setup" />
+      </CardItem>
       <CardItem
         {isMouseEntered}
         translateZ="110"
-        translateY="40"
-        className="block font-bold p-6 w-full text-center text-5xl text-secondary lg:p-12 font-elec"
-      >
+        translateY="-10"
+        className="block font-bold p-6 my-8 w-full text-5xl text-secondary font-elec uppercase border-b border-white/20 group-hover:border-green-500/60 group-hover:border-b-2">
         Contact
       </CardItem>
 
-      <div class="mx-auto flex max-w-64 flex-row items-center justify-center gap-x-10 px-2 py-4">
-        <CardItem {isMouseEntered} translateZ="90" className="">
-          <NavLink
-            logo={true}
+      <div
+        class="flex w-full max-w-64 flex-col items-start justify-center gap-x-10 self-start px-6 py-4">
+        <CardItem {isMouseEntered} translateZ="100" rotateX="10">
+          <a
             href={$mailLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:email" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:email" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >janpeter.dhalle@gmail.com</span
+            ></a>
         </CardItem>
-        <CardItem {isMouseEntered} translateZ="110">
-          <NavLink
-            logo={true}
+        <CardItem {isMouseEntered} translateZ="130" className="">
+          <a
             href={$linkedInLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:linkedin" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:linkedin" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >Jan&#8209;Peter&nbsp;Dhallé</span
+            ></a>
         </CardItem>
         <CardItem {isMouseEntered} translateZ="90" rotateX="10">
-          <NavLink
-            logo={true}
+          <a
+            href={$xLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:twitter-x" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >@jempie_3</span
+            ></a>
+        </CardItem>
+        <CardItem {isMouseEntered} translateZ="80">
+          <a
             href={$githubLink}
-            class="flex items-center justify-center transition hover:text-green-500"
-            ><Icon icon="line-md:github" width="3rem" /></NavLink
-          >
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            ><Icon icon="line-md:github" width="2rem" /><span
+              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
+              >/janpeterd</span
+            ></a>
         </CardItem>
       </div>
-      <CardItem
-        {isMouseEntered}
-        translateZ="80"
-        className="block font-bold p-2 w-full text-center text-5xl text-secondary font-elec"
-      >
-        <img
-          class="max-h-[40vh] w-full object-cover object-top lg:rounded-xl"
-          src="/img/desk.png"
-          alt="desk"
-        />
-      </CardItem>
     </CardBody>
   </CardContainer>
 
@@ -132,11 +146,12 @@
 
 <Footer />
 
+<!-- url('/img/grain.webp'), -->
+
 <style lang="postcss">
   .contact_gradient {
     z-index: -10;
-    mask-image: radial-gradient(305vw 450px at 50% 0%, rgba(0, 0, 0, 1) 30%, transparent);
-    background: url('/img/grain.webp'),
-      radial-gradient(115vw 450px at 0% 10%, theme(colors.primary / 40%), transparent);
+    mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
+    background: radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
   }
 </style>

@@ -29,8 +29,7 @@
 
 <div
   class={cn('flex items-center justify-center py-20', containerClassName)}
-  style="perspective: 800px;"
->
+  style="perspective: 800px;">
   <div
     bind:this={containerRef}
     on:mouseenter={handleMouseEnter}
@@ -40,8 +39,7 @@
       'relative flex items-center justify-center transition-all duration-200 ease-linear',
       className
     )}
-    style="transform-style: preserve-3d;"
-  >
+    style="transform-style: preserve-3d;">
     <slot />
   </div>
 </div>

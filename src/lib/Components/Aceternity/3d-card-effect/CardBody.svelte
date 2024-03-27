@@ -5,10 +5,6 @@
 </script>
 
 <div
-  class={cn(
-    'w-full [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]',
-    className
-  )}
->
+  class={cn('w-full [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]', className)}>
   <slot />
 </div>
