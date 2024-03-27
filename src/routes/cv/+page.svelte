@@ -38,61 +38,61 @@
       <div class="cv_flex">
         <span class="cv_item"
           >Toegepaste Informatica Thomas More<br />
-          <span class="cv_item_extra">Campus Geel</span></span>
-        <span class="cv_date">2021–Heden</span>
+          <p class="cv_item_extra">Campus Geel</p>
+        </span>
+        <span class="cv_date">2021&#8209;heden</span>
       </div>
 
       <div class="cv_flex">
         <span class="cv_item"
           >Industriële Ingenieurswetenschappen KU Leuven<br />
-          <span class="cv_item_extra">Groep T, Leuven</span></span>
-        <span class="cv_date">2019-2021</span>
+          <p class="cv_item_extra">Groep T, Leuven</p>
+        </span>
+        <span class="cv_date">2020&#8209;2021</span>
       </div>
 
       <div class="cv_flex">
         <span class="cv_item">
           Diploma secundair onderwijs, wetenschappen-wiskunde<br />
-          <span class="cv_item_extra">Sint-Jozefcollege, Turnhout</span>
+          <p class="cv_item_extra">Sint-Jozefcollege, Turnhout</p>
         </span>
-        <span class="cv_date">2014–2020</span>
+        <span class="cv_date">2014&#8209;2020</span>
       </div>
       <div class="cv_flex">
         <span class="cv_item">
           SAMWD Turnhout<br />
-          <span class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</span>
+          <p class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</p>
         </span>
-        <span class="cv_date">2006-2020</span>
+        <span class="cv_date">2006&#8209;2020</span>
       </div>
       <h2 class="cv_heading">Professionele werkervaring</h2>
       <div class="cv_flex">
         <span class="cv_item"
           >R. Janssen &amp; Zn nv<br />
-          <span class="cv_item_extra">Jobstudent &mdash; inventory manager</span>
+          <p class="cv_item_extra">Jobstudent &mdash; inventory manager</p>
         </span>
-        <span class="cv_date">Juni 2019</span>
+        <span class="cv_date">juni&nbsp;2019</span>
       </div>
       <div>
         <h2 class="cv_heading">Verenigingen, vrijwilligerswerk en andere projecten</h2>
         <div class="cv_flex">
           <span class="cv_item"
-            >Zandhoven Natuurlijk!<br /><span class="cv_item_extra"
-              >Vrijwilliger &mdash; webmaster</span
-            ></span>
-          <span class="cv_date">2022–Heden</span>
+            >Zandhoven Natuurlijk!<br />
+            <p class="cv_item_extra">Vrijwilliger &mdash; webmaster</p></span>
+          <span class="cv_date">2022&#8209;heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
-            >Vlaams Symfonisch Orkest<br /><span class="cv_item_extra"
-              >Violist, plaatsvervangend concertmeester</span
-            ></span>
-          <span class="cv_date">2020–Heden</span>
+            >Vlaams Symfonisch Orkest<br />
+            <p class="cv_item_extra">Violist, plaatsvervangend concertmeester</p>
+          </span>
+          <span class="cv_date">2020&#8209;heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
-            >Woonzorgcentrum Sint-Lucia<br /><span class="cv_item_extra"
-              >Vrijwilliger &mdash; animator</span
-            ></span>
-          <span class="cv_date">April 2017</span>
+            >Woonzorgcentrum Sint-Lucia<br />
+            <p class="cv_item_extra">Vrijwilliger &mdash; animator</p></span>
+          <span class="cv_date">april&nbsp;2017</span>
         </div>
         <h2 class="cv_heading">Technische Vaardigheden</h2>
         <div
@@ -134,7 +134,8 @@
         <h2 class="cv_heading">Certificaten</h2>
         <div class="cv_flex">
           <span class="cv_item"
-            >LPI Linux Essentials<br /><span class="cv_item_extra">Resultaat 18/20</span>
+            >LPI Linux Essentials<br />
+            <p class="cv_item_extra">Resultaat 18/20</p>
           </span>
           <span class="cv_date">2023</span>
         </div>
@@ -206,11 +207,11 @@
     @apply mb-4 border-b border-white/40 px-2 py-6 text-3xl lg:w-auto lg:text-4xl print:mb-2 print:border-black/30 print:py-4 print:text-xl;
   }
   span.cv_item {
-    @apply ml-2 text-lg font-bold lg:ml-8 lg:text-2xl print:text-base;
+    @apply ml-2 text-lg font-bold lg:indent-8 lg:text-2xl print:text-base;
   }
 
-  span.cv_item_extra {
-    @apply ml-2 text-base font-normal italic;
+  p.cv_item_extra {
+    @apply ml-2 text-base font-normal italic lg:indent-8;
   }
 
   span.cv_date {
