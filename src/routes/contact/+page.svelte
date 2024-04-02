@@ -21,8 +21,9 @@
   class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row">
   <div class="flex w-full md:w-4/6 lg:hidden">
     <div
+      id="static_cardbody"
       class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
-      <div class="block w-full p-2 text-center font-elec text-5xl font-bold text-secondary">
+      <div class="block w-full text-center font-elec text-5xl font-bold text-secondary">
         <img
           class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
           src="/img/desk.png"
@@ -33,12 +34,11 @@
         Contact
       </div>
 
-      <div
-        class="flex w-full max-w-64 flex-col items-start justify-center gap-x-10 self-start px-6 py-4">
+      <div class="flex w-auto flex-col items-start justify-center gap-x-10 self-start px-6 py-4">
         <div class="">
           <a
             href={$mailLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-sm sm:mx-2 sm:text-lg print:text-base"
             ><Icon icon="line-md:email" width="2rem" /><span
               class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
               >janpeter.dhalle@gmail.com</span
@@ -47,7 +47,7 @@
         <div>
           <a
             href={$linkedInLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
             ><Icon icon="line-md:linkedin" width="2rem" /><span
               class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
               >Jan&#8209;Peter&nbsp;Dhallé</span
@@ -56,7 +56,7 @@
         <div>
           <a
             href={$xLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
             ><Icon icon="line-md:twitter-x" width="2rem" /><span
               class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
               >@jempie_3</span
@@ -65,7 +65,7 @@
         <div>
           <a
             href={$githubLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
             ><Icon icon="line-md:github" width="2rem" /><span
               class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
               >/janpeterd</span
@@ -77,7 +77,7 @@
 
   <CardContainer
     bind:isMouseEntered
-    containerClassName="hidden lg:flex w-4/6"
+    containerClassName="hidden lg:flex w-2/6"
     className="inter-var flex-1">
     <CardBody
       className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
@@ -146,5 +146,8 @@
     mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
     background: url('/img/grain.webp'),
       radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
+  }
+  #static_cardbody {
+    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
   }
 </style>

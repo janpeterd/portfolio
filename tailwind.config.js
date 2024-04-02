@@ -12,7 +12,21 @@ export default {
       colors: {
         primary: '#101233',
         secondary: '#FF7400'
-      }
+      },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.secondary'),
+              '&:hover': {
+                color: theme('colors.primary'),
+                background: theme('colors.secondary'),
+                fontWeight: "bold",
+              },
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [

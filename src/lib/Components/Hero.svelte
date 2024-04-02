@@ -11,7 +11,7 @@
     <img class="mx-auto rounded-3xl object-cover" src={HeroImg} alt="me" />
   </div>
 
-  <a href="#about" class="absolute -bottom-3">
+  <a href="#about" class="absolute -bottom-3 animate-bounce">
     <Icon icon="mdi:chevron-down" width="4rem" class="text-secondary/30" />
   </a>
 </div>

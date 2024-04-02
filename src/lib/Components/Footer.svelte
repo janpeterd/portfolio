@@ -25,13 +25,13 @@
       <div
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2">
         <a href={$mailLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="line-md:email" width="3rem" /></a>
+          ><Icon icon="line-md:email" width="2.5rem" /></a>
         <a href={$linkedInLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="line-md:linkedin" width="3rem" /></a>
+          ><Icon icon="line-md:linkedin" width="2.5rem" /></a>
         <a href={$xLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="line-md:twitter-x" width="3rem" /></a>
+          ><Icon icon="line-md:twitter-x" width="2.5rem" /></a>
         <a href={$githubLink} class="mx-2 flex items-center justify-center"
-          ><Icon icon="line-md:github" width="3rem" /></a>
+          ><Icon icon="line-md:github" width="2.5rem" /></a>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
       &copy; {now.getFullYear()} Jan-Peter Dhallé
     </span>
     <!-- svelte-ignore a11y-invalid-attribute -->
-    <a href="#" class="flex flex-auto items-center justify-center">
+    <a href="#" class="flex flex-auto animate-bounce items-center justify-center">
       <span class="text-right">Scroll&nbsp;naar&nbsp;boven</span>
       <Icon class="h-full text-4xl" icon="mdi:arrow-up-bold" />
     </a>

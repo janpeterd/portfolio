@@ -40,7 +40,7 @@
           >Toegepaste Informatica Thomas More<br />
           <p class="cv_item_extra">Campus Geel</p>
         </span>
-        <span class="cv_date">2021&#8209;heden</span>
+        <span class="cv_date">2021-heden</span>
       </div>
 
       <div class="cv_flex">
@@ -48,7 +48,7 @@
           >Industriële Ingenieurswetenschappen KU Leuven<br />
           <p class="cv_item_extra">Groep T, Leuven</p>
         </span>
-        <span class="cv_date">2020&#8209;2021</span>
+        <span class="cv_date">2020-2021</span>
       </div>
 
       <div class="cv_flex">
@@ -56,14 +56,14 @@
           Diploma secundair onderwijs, wetenschappen-wiskunde<br />
           <p class="cv_item_extra">Sint-Jozefcollege, Turnhout</p>
         </span>
-        <span class="cv_date">2014&#8209;2020</span>
+        <span class="cv_date">2014-2020</span>
       </div>
       <div class="cv_flex">
         <span class="cv_item">
           SAMWD Turnhout<br />
           <p class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</p>
         </span>
-        <span class="cv_date">2006&#8209;2020</span>
+        <span class="cv_date">2006-2020</span>
       </div>
       <h2 class="cv_heading">Professionele werkervaring</h2>
       <div class="cv_flex">
@@ -79,14 +79,14 @@
           <span class="cv_item"
             >Zandhoven Natuurlijk!<br />
             <p class="cv_item_extra">Vrijwilliger &mdash; webmaster</p></span>
-          <span class="cv_date">2022&#8209;heden</span>
+          <span class="cv_date">2022-heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
             >Vlaams Symfonisch Orkest<br />
             <p class="cv_item_extra">Violist, plaatsvervangend concertmeester</p>
           </span>
-          <span class="cv_date">2020&#8209;heden</span>
+          <span class="cv_date">2020-heden</span>
         </div>
         <div class="cv_flex">
           <span class="cv_item"
@@ -215,7 +215,7 @@
   }
 
   span.cv_date {
-    @apply italic leading-loose;
+    @apply italic leading-loose text-nowrap;
   }
 
   div.cv_flex {
