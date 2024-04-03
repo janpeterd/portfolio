@@ -5,14 +5,6 @@
   import About from '$lib/Components/About.svelte'
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
   import { onMount } from 'svelte'
-
-  onMount(() => {
-    document.querySelectorAll('*').forEach((elem) => {
-      if (elem.offsetWidth > document.documentElement.offsetWidth) {
-        console.log('Problem child: ', elem)
-      }
-    })
-  })
 </script>
 
 <svelte:head>
