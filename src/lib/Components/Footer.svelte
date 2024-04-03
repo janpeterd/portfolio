@@ -6,7 +6,7 @@
 </script>
 
 <footer
-  class="max-w-screen relative mt-8 flex flex-col items-center border-t bg-black/60 p-3 backdrop-blur backdrop-saturate-150 print:hidden">
+  class="max-w-screen relative mt-8 flex flex-col items-center overflow-x-hidden border-t bg-black/60 py-3 backdrop-blur backdrop-saturate-150 print:hidden">
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <div class="mb-3 max-h-[200px] min-h-[60px] w-64 flex-1 md:px-5">
       <LogoImg class="max-h-[200px] min-h-[60px] w-full" />
@@ -36,7 +36,7 @@
     </div>
   </div>
   <div
-    class="group flex w-screen flex-auto flex-col items-center p-1 py-1 pb-12 text-center text-xl decoration-green-500 transition-all duration-300 ease-in-out hover:text-zinc-200 sm:flex-row md:justify-center">
+    class="group flex w-full flex-auto flex-col items-center py-1 pb-12 text-center text-xl decoration-green-500 transition-all duration-300 ease-in-out hover:text-zinc-200 sm:flex-row md:justify-center">
     <span class="flex-auto">
       &copy; {now.getFullYear()} Jan-Peter Dhallé
     </span>

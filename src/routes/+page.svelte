@@ -4,6 +4,15 @@
   import Hero from '$lib/Components/Hero.svelte'
   import About from '$lib/Components/About.svelte'
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
+  import { onMount } from 'svelte'
+
+  onMount(() => {
+    document.querySelectorAll('*').forEach((elem) => {
+      if (elem.offsetWidth > document.documentElement.offsetWidth) {
+        console.log('Problem child: ', elem)
+      }
+    })
+  })
 </script>
 
 <svelte:head>
@@ -17,7 +26,7 @@
   <meta property="og:title" content="Portfolio - JP" />
 </svelte:head>
 
-<div class="bottom-gradient absolute bottom-0 h-screen w-screen"></div>
+<div class="bottom-gradient absolute bottom-0 h-screen w-screen overflow-hidden"></div>
 
 <Navbar />
 

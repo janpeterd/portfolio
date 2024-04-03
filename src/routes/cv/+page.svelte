@@ -15,7 +15,7 @@
 <div class="container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-black">
   <div class="flex items-end justify-between">
     <h1
-      class="mt-4 pt-6 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
+      class="mt-4 pt-6 pl-2 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
       Jan-Peter Dhallé
     </h1>
     <div class="flex gap-x-4">
@@ -30,7 +30,7 @@
       </a>
     </div>
   </div>
-  <span class="mb-6 block border-b pb-4 pl-2 font-elec text-lg italic print:border-black/20"
+  <span class="mb-6 block border-b pb-4 pl-3 font-elec text-lg italic print:border-black/20"
     >Web developer, full stack developer, data analist</span>
   <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
     <div class="print:container-none flex-auto lg:order-first lg:min-w-[600px]">
@@ -142,7 +142,7 @@
       </div>
     </div>
     <div
-      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
+      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] xl:min-w-0 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
       <img src={HeroImg} alt="Foto van Jan-Peter" />
       <h2 class="cv_heading">Contact</h2>
       <ul class="hidden lg:block">
@@ -215,7 +215,7 @@
   }
 
   span.cv_date {
-    @apply italic leading-loose text-nowrap;
+    @apply text-nowrap italic leading-loose;
   }
 
   div.cv_flex {

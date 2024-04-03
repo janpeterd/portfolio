@@ -13,7 +13,7 @@
 <div
   class="fixed top-0 z-50 flex w-screen justify-between bg-transparent pt-2 font-elec print:hidden">
   <div
-    class="justify-content m-2 flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150">
+    class="justify-content flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150">
     <NavLink logo={true} href="/" class="relative flex items-center justify-center px-6">
       <LogoImg class="absolute -left-4 -top-8 w-28" />
       <div class="min-w-[220px] pl-10 font-bold">Portfolio Jan&#8209Peter Dhallé</div>

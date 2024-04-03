@@ -16,7 +16,7 @@
         Projecten
       </h2>
     </div>
-    <div class="my-12 grid gap-16 overflow-y-scroll lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+    <div class="my-12 grid gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
       {#each posts as entry}
         <ProjectThumb {entry} />
       {/each}

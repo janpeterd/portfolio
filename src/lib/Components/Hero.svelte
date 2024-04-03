@@ -3,8 +3,8 @@
   import Icon from '@iconify/svelte'
 </script>
 
-<div class="bottom-gradient absolute top-0 h-full w-screen"></div>
-<div class="gradient2 absolute top-0 h-full w-screen"></div>
+<div class="bottom-gradient overflow-hidden absolute top-0 h-full w-screen"></div>
+<div class="gradient2 overflow-hidden absolute top-0 h-full w-screen"></div>
 
 <div class="relative flex items-center justify-center">
   <div class="relative z-10 mx-auto mb-14 mt-28 h-full w-full max-w-screen-md sm:w-4/5 lg:w-3/5">
