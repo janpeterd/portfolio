@@ -2,10 +2,19 @@
   import Footer from '$lib/Components/Footer.svelte'
   import Navbar from '$lib/Components/Navbar.svelte'
   import Icon from '@iconify/svelte'
-  import HeroImg from '$lib/assets/hero.jpg'
+  import HeroImg from '$lib/assets/hero.jpg?enhanced'
 
   import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
 </script>
+
+<svelte:head>
+  <title>Cv - Portfolio Jan-Peter</title>
+  <meta name="description" content="Cv van Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta
+    property="og:description"
+    content="Cv van Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta property="og:title" content="Cv - Portfolio Jan-Peter" />
+</svelte:head>
 
 <Navbar />
 
@@ -15,17 +24,18 @@
 <div class="container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-black">
   <div class="flex items-end justify-between">
     <h1
-      class="mt-4 pt-6 pl-2 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
+      class="mt-4 pl-2 pt-6 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
       Jan-Peter Dhallé
     </h1>
     <div class="flex gap-x-4">
       <button
         class="hidden cursor-pointer sm:block print:hidden"
         tabindex="0"
+        aria-label="print my cv"
         on:click={() => window.print()}>
         <Icon icon="mdi:printer" width="2rem" />
       </button>
-      <a class="print:hidden" href="/doc/cv_Jan-Peter_Dhallé.pdf">
+      <a class="print:hidden" href="/doc/cv_Jan-Peter_Dhallé.pdf" aria-label="download my cv in pdf format">
         <Icon icon="carbon:generate-pdf" width="2rem" />
       </a>
     </div>
@@ -142,8 +152,8 @@
       </div>
     </div>
     <div
-      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] xl:min-w-0 lg:max-w-96 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
-      <img src={HeroImg} alt="Foto van Jan-Peter" />
+      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] lg:max-w-96 xl:min-w-0 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
+      <enhanced:img src={HeroImg} alt="Foto van Jan-Peter" />
       <h2 class="cv_heading">Contact</h2>
       <ul class="hidden lg:block">
         <div>

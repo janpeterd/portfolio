@@ -2,9 +2,7 @@
   import Footer from '$lib/Components/Footer.svelte'
   import Navbar from '$lib/Components/Navbar.svelte'
   import Icon from '@iconify/svelte'
-  import NavLink from '$lib/Components/NavLink.svelte'
-  import Logo from '$lib/assets/logo.svg'
-
+  import DeskImg from '$lib/assets/desk.png?enhanced'
   import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
   import CardContainer from '$lib/Components/Aceternity/3d-card-effect/CardContainer.svelte'
   import CardItem from '$lib/Components/Aceternity/3d-card-effect/CardItem.svelte'
@@ -12,6 +10,15 @@
 
   let isMouseEntered = false
 </script>
+
+<svelte:head>
+  <title>Contact - Portfolio Jan-Peter</title>
+  <meta name="description" content="Contacteer Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta
+    property="og:description"
+    content="Contacteer Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta property="og:title" content="Contact - Portfolio Jan-Peter" />
+</svelte:head>
 
 <Navbar />
 
@@ -24,13 +31,15 @@
       id="static_cardbody"
       class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
       <div class="block w-full text-center font-elec text-5xl font-bold text-secondary">
-        <img
+        <enhanced:img
           class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
-          src="/img/desk.png"
-          alt="My desk setup" />
+          src={DeskImg}
+          alt="My desk setup"
+          fetchpriority="high"
+          loading="eager" />
       </div>
       <div
-        class="group-hover: my-8 block w-full border-b border-b-2 border-white/20 p-6 font-elec text-5xl font-bold uppercase text-secondary group-hover:border-green-500/60">
+        class="group-hover: my-8 block w-full border-b-2 border-white/20 p-6 font-elec text-5xl font-bold uppercase text-secondary group-hover:border-green-500/60">
         Contact
       </div>
 
@@ -82,10 +91,12 @@
     <CardBody
       className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
       <CardItem {isMouseEntered} translateZ="90" className="w-full">
-        <img
+        <enhanced:img
           class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
-          src="/img/desk.png"
-          alt="My desk setup" />
+          src={DeskImg}
+          alt="My desk setup"
+          fetchpriority="high"
+          loading="eager" />
       </CardItem>
       <CardItem
         {isMouseEntered}

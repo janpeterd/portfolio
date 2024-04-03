@@ -22,6 +22,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet" />
 
+<link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+        rel="stylesheet"
+        type="text/css"
+    />
+</noscript>
+
+
 <div class="relative py-1 overflow-x-hidden">
   <slot />
 </div>

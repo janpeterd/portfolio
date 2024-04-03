@@ -15,7 +15,7 @@
   <div
     class="justify-content flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150">
     <NavLink logo={true} href="/" class="relative flex items-center justify-center px-6">
-      <LogoImg class="absolute -left-4 -top-8 w-28" />
+      <LogoImg class="absolute -left-4 -top-8 w-28" width="112" height="112" />
       <div class="min-w-[220px] pl-10 font-bold">Portfolio Jan&#8209Peter Dhallé</div>
     </NavLink>
   </div>
@@ -30,6 +30,7 @@
 
   <button
     class="justify-content float-right m-2 flex items-center p-3 text-white md:hidden"
+    aria-label="hamburger menu"
     on:click={toggleExpanded}>
     {#if !isExpanded}
       <Icon icon="mdi:hamburger-menu" width="1.8rem" class="z-10" />

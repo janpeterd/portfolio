@@ -7,6 +7,16 @@
   const { posts } = data
 </script>
 
+<svelte:head>
+  <title>Projecten - Portfolio Jan-Peter</title>
+  <meta
+    name="description"
+    content="Projecten van Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta
+    property="og:description"
+    content="Projecten van Jan-Peter Dhallé, student toegepaste informatica" />
+  <meta property="og:title" content="Projecten - Portfolio Jan-Peter" />
+</svelte:head>
 <Navbar />
 
 <div class="my-24 px-4">
@@ -16,11 +26,11 @@
         Projecten
       </h2>
     </div>
-    <div class="my-12 grid gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+    <ul class="my-12 grid gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
       {#each posts as entry}
         <ProjectThumb {entry} />
       {/each}
-    </div>
+    </ul>
   </div>
 </div>
 
