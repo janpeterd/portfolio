@@ -35,7 +35,10 @@
         on:click={() => window.print()}>
         <Icon icon="mdi:printer" width="2rem" />
       </button>
-      <a class="print:hidden" href="/doc/cv_Jan-Peter_Dhallé.pdf" aria-label="download my cv in pdf format">
+      <a
+        class="print:hidden"
+        href="/doc/cv_Jan-Peter_Dhallé.pdf"
+        aria-label="download my cv in pdf format">
         <Icon icon="carbon:generate-pdf" width="2rem" />
       </a>
     </div>
@@ -156,38 +159,30 @@
       <enhanced:img src={HeroImg} alt="Foto van Jan-Peter" />
       <h2 class="cv_heading">Contact</h2>
       <ul class="hidden lg:block">
-        <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">
-            <a class="flex items-end gap-4" href={$mailLink}>
-              <Icon icon="line-md:email" width="2rem" inline={true} />
-              E-mail
-            </a>
-          </li>
-        </div>
-        <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">
-            <a class="flex items-end gap-4" href={$linkedInLink}>
-              <Icon icon="line-md:linkedin" width="2rem" inline={true} />
-              LinkedIn
-            </a>
-          </li>
-        </div>
-        <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">
-            <a class="flex items-end gap-4" href={$xLink}>
-              <Icon icon="line-md:twitter-x" width="2rem" inline={true} />
-              Twitter (X)
-            </a>
-          </li>
-        </div>
-        <div>
-          <li class="py-2 font-elec text-lg font-bold print:text-base">
-            <a class="flex items-end gap-4" href={$githubLink}>
-              <Icon icon="line-md:github" width="2rem" inline={true} />
-              GitHub
-            </a>
-          </li>
-        </div>
+        <li class="py-2 font-elec text-lg font-bold print:text-base">
+          <a class="flex items-end gap-4" href={$mailLink}>
+            <Icon icon="line-md:email" width="2rem" inline={true} />
+            E-mail
+          </a>
+        </li>
+        <li class="py-2 font-elec text-lg font-bold print:text-base">
+          <a class="flex items-end gap-4" href={$linkedInLink}>
+            <Icon icon="line-md:linkedin" width="2rem" inline={true} />
+            LinkedIn
+          </a>
+        </li>
+        <li class="py-2 font-elec text-lg font-bold print:text-base">
+          <a class="flex items-end gap-4" href={$xLink}>
+            <Icon icon="line-md:twitter-x" width="2rem" inline={true} />
+            Twitter (X)
+          </a>
+        </li>
+        <li class="py-2 font-elec text-lg font-bold print:text-base">
+          <a class="flex items-end gap-4" href={$githubLink}>
+            <Icon icon="line-md:github" width="2rem" inline={true} />
+            GitHub
+          </a>
+        </li>
       </ul>
       <div class="flex flex-col items-start justify-center py-6 lg:hidden">
         <a
