@@ -25,7 +25,7 @@
 <div class="contact_gradient absolute top-0 h-full w-screen"></div>
 
 <div
-  class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row">
+  class="mx-4 mb-20 mt-32 flex min-h-[50vh] lg:min-h-[70vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row">
   <div class="flex w-full md:w-4/6 lg:hidden">
     <div
       id="static_cardbody"

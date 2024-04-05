@@ -19,7 +19,7 @@
 </svelte:head>
 <Navbar />
 
-<div class="my-24 px-4">
+<div class="my-24 px-4 lg:min-h-[68.6vh]">
   <div class="mx-auto max-w-lg lg:max-w-7xl">
     <div class="border-b border-b-gray-200 pb-6">
       <h2 class="text-3xl font-semibold uppercase tracking-tight text-secondary sm:text-4xl">
