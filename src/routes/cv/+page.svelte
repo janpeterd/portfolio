@@ -129,7 +129,7 @@
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">
               Frameworks &amp; Libraries
             </h2>
-            Laravel, Tailwind, Django, Spring, Boot, .NET, core, Numpy, Pandas, Matplotlib, Express.js,
+            Laravel, Tailwind, Django, Spring Boot, .NET, core, Numpy, Pandas, Matplotlib, Express.js,
             Svelte/Sveltekit
           </div>
 
