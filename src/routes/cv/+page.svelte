@@ -146,11 +146,16 @@
         </div>
         <h2 class="cv_heading">Certificaten</h2>
         <div class="cv_flex">
-          <span class="cv_item"
-            >LPI Linux Essentials<br />
+          <span class="cv_item">
+            <a
+              href="/doc/certificaat Linux Essentials.pdf"
+              aria-label="download certificate in pdf format"
+              class="flex gap-x-2">
+              <span>LPI Linux Essentials<br /></span>
+            </a>
             <p class="cv_item_extra">Resultaat 18/20</p>
           </span>
-          <span class="cv_date">2023</span>
+          <span class="cv_date">januari&nbsp;2023</span>
         </div>
       </div>
     </div>
