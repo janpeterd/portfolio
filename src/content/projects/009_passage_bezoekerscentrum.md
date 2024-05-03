@@ -5,11 +5,11 @@ date: 2024-05-03
 
 # Opdracht
 
-Als eindopdracht van het eerste jaar heb ik een webapplicatie gemaakt voor het [bezoekerscentrum passage](https://www.opzgeel.be/nl/bezoekerscentrum) van het [OPZ](https://www.opzgeel.be/nl) in Geel. Deze applicatie voorziet een formulier voor bezoekers om een afspraak te plannen en verstuurt e-mails naar de verschillende gidsen van het museum. Als iemand van deze gidsen tijd heeft kan deze zichzelf inplannen voor dit bezoek anders. Als niemand kan gidsen, wordt de bezoeker via e-mail verwittigd.
+Als eindopdracht in het eerste jaar voor het vak professionele vaardigheden heb ik een webapplicatie gemaakt voor het [bezoekerscentrum passage](https://www.opzgeel.be/nl/bezoekerscentrum) van het [OPZ](https://www.opzgeel.be/nl) in Geel. Deze applicatie voorziet een formulier voor bezoekers om een afspraak te plannen en verstuurt e-mails naar de verschillende gidsen van het museum. Als iemand van deze gidsen tijd heeft kan deze zichzelf inplannen voor dit bezoek anders, als niemand kan gidsen, wordt de bezoeker via e-mail verwittigd en moet men een nieuw moment aanvragen.
 
 # Mijn inbreng
 
-Ik heb bijna de volledige applicatie gemaakt en ben hier nog steeds erg trots op. Dit was de eerste keer dat ik een webapplicatie maakte en hosting voorzag. Ik heb enorm veel bijgeleerd door dit allemaal zelf uit te zoeken.
+Ik heb bijna de volledige applicatie gemaakt en ben hier nog steeds erg trots op. Dit was de eerste keer dat ik een webapplicatie maakte en hosting voorzag. Ik heb enorm veel bijgeleerd door dit allemaal zelf uit te zoeken. Voordat ik deze applicatie maakte had ik enkel de basis van programmeren in python en het maken van simpele statische webpagina's met HTML en CSS.
 
 # Gebruikte technologieën
 
@@ -22,7 +22,8 @@ Ik heb bijna de volledige applicatie gemaakt en ben hier nog steeds erg trots op
 
 Het resultaat was een werkende applicatie die e-mails kon versturen, aan een database hing en de planning van een museum kon voorzien.
 
-Enkele foto's van het resultaat
+Enkele foto's van het resultaat:
+
 ![Homepage bezoekersformulier](/img/projects/ps1_project_home.png)
 ![Overzicht ingelogde gids](/img/projects/ps1_project_overzicht.png)
 ![Detailpagina bezoek](/img/projects/ps1_project_detail.png)

@@ -1,5 +1,5 @@
 ---
-title: Schoolapplicatie PHP
+title: Applicatie Digital Innovation
 date: 2024-05-03
 ---
 
@@ -7,22 +7,22 @@ date: 2024-05-03
 
 In het tweede semester van mijn tweede jaar toegepaste informatica was het tijd om een groot project volledig uit te werken in `PHP`. Voor deze opdracht werden we in groepjes verdeeld en moesten we verder werken vanuit het verslag van een ander groepje uit het eerste semester. Dit verslag bevatte informatie over de opdracht, uitgewerkte prototypes en use cases.
 
-De opdracht die ik met mijn groepje heb uitgewerkt is het maken van een webapplicatie voor de richting 'Digital innovation'. Dit is een richting die aangeboden wordt door de campus. Studenten die voor deze richting kiezen behalen alle eindtermen en leerdoelen door het voltooien van projecten. Ze hebben dus erg weinig of geen theoretische vakken.
+De opdracht die ik met mijn groepje heb uitgewerkt is het maken van een webapplicatie voor de richting _Digital innovation_. Dit is een richting die aangeboden wordt door de campus. Studenten die voor deze richting kiezen behalen alle eindtermen en leerdoelen door het voltooien van projecten. Ze hebben dus erg weinig of geen theoretische vakken.
 
-Onze applicatie moet dus een centrale plaats vormen waar al deze projecten uitgewerkt kunnen worden.
+Onze applicatie moet een centrale plaats vormen waar al deze projecten uitgewerkt kunnen worden.
 
 ## Gebruikers
 
 De applicatie moet door vier types van gebruikers gebruikt worden deze zijn:
 
-- student
-- docent
-- administrator
-- bedrijfscontact
+- `student`
+- `docent`
+- `administrator`
+- `bedrijfscontact`
 
 ## Functies
 
-De webapplicatie moet verschillende dingen kunnen, zoals:
+De webapplicatie moet vele verschillende functionaliteiten hebben. Enkele voorbeelden:
 
 - bedrijven moeten projectideeën kunnen doorgeven
 - docent moet deze ideeën kunnen accepteren of verwijderen
@@ -61,7 +61,7 @@ Ten slotte heb ik op andere pagina's meegeholpen aan het oplossen van fouten en 
 
 # Resultaat
 
-Ik schrijf dit artikel op een moment dat het project nog in ontwikkeling is. Op dit moment werken alle functionaliteiten bijna volledig, maar er moeten nog wat details uitgewerkt worden. Hier zijn enkele screenshots, maar de applicatie telt vele verschillende pagina's en de data die nu weergegeven wordt is enkel voor testing.
+Ik schrijf dit artikel op een moment dat het project nog in ontwikkeling is. Op dit moment werken alle functionaliteiten bijna volledig. Er moeten nog wat details uitgewerkt worden. Hier zijn enkele screenshots. De data die nu weergegeven wordt is enkel voor testing.
 
 ![Homepage gebruiker zonder authenticatie](/img/projects/php_project_home.png)
 ![Projectoverzicht voor docent](/img/projects/php_project_projects.png)
