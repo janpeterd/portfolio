@@ -3,6 +3,7 @@ title: IoT muizenval
 date: 2024-03-18
 ---
 
+
 ## IoT muizenval
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tCBAd3iY1O8?si=9nB02cXizRYY426I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -42,7 +43,10 @@ Deze componenten heb ik in een houten doos voor wijnflessen gestopt.
 Deze doos heb ik in twee compartimenten gesplitst, de voorste voor de muis die binnenkomt en de achterste voor de componenten.
 Bovenop de doos staat de stappenmotor die met behulp van een elastiek de doos opent, wanneer de val afgaat begint de motor te draaien en verslapt de elastiek, waardoor de deur sluit.
 
+![Behuizing muizenval](/img/projects/iot_muizenval.png)
+
 ### Besluit
 
 Op het einde van de rit was ik blij met het resultaat.
 Ondanks al deze moeite is het mij toch niet gelukt een muis te vangen...
+

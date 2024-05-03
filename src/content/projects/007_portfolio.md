@@ -30,11 +30,16 @@ Om dit te doen heb ik een API-route gemaakt die door middel van JavaScript-code 
 
 Wanneer iemand naar [/projects](/projects) surft, wordt deze API aangesproken en worden de resultaten op de pagina getoond.
 
+![Projecten overzicht](/img/projects/portfolio_projects.png)
+
 ## Cv
 
 Het maken van een digitale cv was niet erg moeilijk, maar ik heb wel veel tijd moeten spenderen aan het aanpassen van de layout. Omdat dit een website is een geen plat document moet de layout van de cv leesbaar zijn in vele formaten, ook op kleine smartphone-schermen.
 
 Men drukt een cv ook vaak af, daarom heb ik ook extra CSS geschreven, specifiek voor de printer-layout.
+
+![CV webpagina](/img/projects/porfolio_cv.png)
+![CV printer weergave](/img/projects/portfolio_print.png)
 
 ## Ontwerp
 
@@ -42,10 +47,15 @@ Voor het ontwerp van mijn portfolio wou ik een donkere achtergrond, omdat ik dit
 
 Deze gradiënten gaan van een lichte kleur naar doorzichtig. Ook gebruik ik voor dit effect een mask, zodat de gradient niet te groot is. Uiteindelijk heb ik ook besloten om een korrelige foto als achtergrond te gebruiken, omdat ik het effect hiervan wel mooi vond.
 
+![Homepage](/img/projects/portfolio_home.png)
+
 ## Logo
 
 Het logo heb ik zelf getekend in [Inkscape](https://inkscape.org/). Deze software is erg handig voor het maken van logo's, omdat het gebruikt wordt voor het maken van SVG's. Dit zijn vector-foto's die oneindig veel vergroot kunnen worden.
-Ideaal dus voor een logo dat je in verschillende formaten wilt gebruiken.
+Ideaal dus voor een logo dat je in verschillende formaten wilt gebruiken. Ik heb een logo gemaakt met een laptop en een met de letters van mijn voornaam. Deze laatste werkt beter als `favicon`.
+
+![Logo](/img/projects/portfolio_logo.png)
+![Logo tekst](/img/projects/portfolio_logotekst.png)
 
 ## Besluit
 
