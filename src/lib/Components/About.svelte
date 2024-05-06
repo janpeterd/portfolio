@@ -1,13 +1,11 @@
 <script>
-  import LogoImg from './LogoImg.svelte'
+  import PortraitImg from '$lib/assets/portrait.jpg?enhanced'
+  // import HeroImg from '$lib/assets/hero.jpg?enhanced'
 </script>
 
 <div
   class="z-10 mx-auto my-24 rounded-2xl bg-white/10 backdrop-blur-lg backdrop-saturate-150 md:container md:p-8">
-  <div class="z-10 gap-3 p-8 md:grid md:grid-flow-row md:grid-cols-3">
-    <div class="z-10 flex items-center justify-center">
-      <LogoImg class="z-10 max-w-80" />
-    </div>
+  <div class="z-10 gap-4 p-8 lg:grid lg:grid-flow-row lg:grid-cols-3">
     <article class="col-span-2 flex flex-col justify-center">
       <h2
         id="about"
@@ -43,6 +41,16 @@
         <a href="/cv">mijn cv.</a>
       </p>
     </article>
+    <div class="z-10 flex items-center justify-center">
+      <!-- <PortraitImg class="z-10 max-w-80" /> -->
+      <enhanced:img
+        class="z-10 mx-auto w-80 rounded-3xl object-cover"
+        src={PortraitImg}
+        alt="me"
+        fetchpriority="high"
+        loading="eager"
+        sizes="min(1300px, 100vw)" />
+    </div>
   </div>
 </div>
 

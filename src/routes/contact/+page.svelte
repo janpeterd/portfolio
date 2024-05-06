@@ -32,7 +32,7 @@
       class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
       <div class="block w-full text-center font-elec text-5xl font-bold text-secondary">
         <enhanced:img
-          class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
+          class="mx-auto max-h-[40vh] w-full saturate-150 contrast-105 object-cover object-top p-2 lg:rounded-2xl"
           src={DeskImg}
           alt="My desk setup"
           fetchpriority="high"
@@ -92,7 +92,7 @@
       className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
       <CardItem {isMouseEntered} translateZ="90" className="w-full">
         <enhanced:img
-          class="mx-auto max-h-[40vh] w-full object-cover object-top p-2 lg:rounded-2xl"
+          class="mx-auto max-h-[40vh] w-full saturate-150 contrast-105 object-cover object-top p-2 lg:rounded-2xl"
           src={DeskImg}
           alt="My desk setup"
           fetchpriority="high"
