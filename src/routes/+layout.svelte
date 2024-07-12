@@ -3,6 +3,9 @@
   import { afterNavigate, beforeNavigate } from '$app/navigation'
   import '../app.css'
 
+  // analytics
+  inject()
+
   // see: https://github.com/sveltejs/kit/pull/8724#issuecomment-1424436745
   /** @type {string}*/
   let scroll_behaviour
