@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         ...fontFamily,
+        sans: ['Source Sans Pro', ...fontFamily['sans']],
         elec: ['Electrolize', ...fontFamily['sans']],
       },
       colors: {

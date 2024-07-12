@@ -57,6 +57,8 @@ Een andere grote pagina die ik op mij heb genomen is de pagina waarop studenten 
 
 Verder heb ik ook veel gewerkt aan de `Tailwind`-styling van de tabellen op de verschillende webpagina's en heb ik meegewerkt aan het ontwerp van de layout, die op alle pagina's gebruikt wordt.
 
+Ook heb ik de styling van alle dashboard-pagina's verbeterd.
+
 Ten slotte heb ik op andere pagina's meegeholpen aan het oplossen van fouten en problemen.
 
 # Resultaat

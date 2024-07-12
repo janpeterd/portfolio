@@ -1,4 +1,5 @@
 <script>
+  import { inject } from '@vercel/analytics'
   import { afterNavigate, beforeNavigate } from '$app/navigation'
   import '../app.css'
 
@@ -23,20 +24,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet" />
 
 <link
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-/>
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'" />
 <noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+    rel="stylesheet"
+    type="text/css" />
 </noscript>
 
-
-<div class="relative py-1 overflow-x-hidden">
+<div class="relative overflow-x-hidden py-1">
   <slot />
 </div>

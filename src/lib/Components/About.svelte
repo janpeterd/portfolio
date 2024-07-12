@@ -41,7 +41,7 @@
         <a href="/cv">mijn cv.</a>
       </p>
     </article>
-    <div class="z-10 flex items-center justify-center">
+    <div class="z-10 mt-6 flex items-center justify-center lg:mt-0">
       <!-- <PortraitImg class="z-10 max-w-80" /> -->
       <enhanced:img
         class="z-10 mx-auto w-80 rounded-3xl object-cover"

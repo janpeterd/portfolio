@@ -17,7 +17,7 @@
 <article
   class="mt-navbar lg:mt-25 mx-auto flex max-w-4xl flex-col gap-6 px-6 pt-20 md:gap-8 md:px-8 lg:gap-14">
   <div class="flex items-center border-b border-white/40 py-8">
-    <a href="/projects/" class="mr-8 rounded-full text-center"
+    <a href="/projects/" class="mr-4 rounded-full text-center md:mr-8"
       ><Icon icon="mdi:arrow-left" width="2rem" /></a>
     <hgroup class="animate-in fade-in-0 slide-in-from-bottom-4 flex flex-col gap-5 duration-1000">
       <h1 class="text-4xl font-bold lg:text-6xl">

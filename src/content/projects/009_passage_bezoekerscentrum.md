@@ -15,7 +15,7 @@ Ik heb bijna de volledige applicatie gemaakt en ben hier nog steeds erg trots op
 
 - [Django](https://www.djangoproject.com/): MVC framework in `python`
 - [Supabase](https://supabase.com/): Cloud postgresSQL database
-- [Vercel](https://vercel.com/): gratis hosting (hier heb ik manueel een script voor moeten schrijven, omdat `Vercel` normaal alleen gebruikt wordt voor `JavaScript`-projecten)
+- [Vercel](https://vercel.com/): gratis hosting (hier heb ik manueel een script voor moeten schrijven, omdat `Vercel` normaal gebruikt wordt voor `JavaScript`-projecten)
 - [Gmail](https://mail.google.com/): verzending van e-mails
 
 # Resultaat
