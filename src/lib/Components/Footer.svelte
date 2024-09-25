@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="mb-3 flex-1 font-elec text-2xl">
-      <h2 class="mb-3 font-elec text-2xl text-secondary">Socials</h2>
+      <h2 class="mb-3 font-elec text-2xl text-secondary">Contact</h2>
       <div
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2">
         <a href={$mailLink} class="mx-2 flex items-center justify-center" aria-label="E-mail"

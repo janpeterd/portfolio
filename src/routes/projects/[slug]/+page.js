@@ -5,7 +5,6 @@ export async function load({ params, fetch }) {
             .then((response) => response.json())
             .then((projects) => projects.filter((entry) => entry.slug !== params.slug).slice(0, 6))
 
-        console.log(other)
         return {
             content: post.default,
             meta: post.metadata,
