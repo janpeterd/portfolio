@@ -248,7 +248,7 @@
           </div>
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Documentatie</h2>
-            Markdown, UML, Emacs org-mode, LaTeX
+            Markdown, UML, Emacs org-mode
           </div>
 
           <div class="ml-2 lg:ml-8">
