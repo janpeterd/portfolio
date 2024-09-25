@@ -300,12 +300,6 @@
           </a>
         </li>
         <li class="py-2 font-elec text-lg font-bold print:text-base">
-          <a class="flex items-end gap-4" href={$xLink}>
-            <Icon icon="line-md:twitter-x" width="2rem" inline={true} />
-            Twitter (X)
-          </a>
-        </li>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">
           <a class="flex items-end gap-4" href={$githubLink}>
             <Icon icon="line-md:github" width="2rem" inline={true} />
             GitHub
@@ -328,10 +322,6 @@
           href={$linkedInLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
           ><Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé</a>
-        <a
-          href={$xLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:twitter-x" width="1.5rem" />@{$x}</a>
         <a
           href={$githubLink}
           class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
