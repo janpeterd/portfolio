@@ -350,14 +350,14 @@
             <span class="cv_item">Persoonlijke website Isabel Dhallé</span>
             <p class="ml-2 py-3">
               Persoonlijke website voor violiste. Met login en aanpasbare inhoud door administrator.
-              Ook geconnecteerd met PostgresSQL database. Administrator kan evenementen/concerten
+              Ook verbonden met PostgresSQL database. Administrator kan evenementen/concerten
               toevoegen.
             </p>
             <ul class="ml-9">
               <li class="list-disc">Website volgens MVC patroon</li>
               <li class="list-disc">Django en Python</li>
               <li class="list-disc">Hosting in een VPS</li>
-              <li class="list-disc">Applicatie en databse in docker</li>
+              <li class="list-disc">Applicatie en database in docker</li>
             </ul>
           </div>
           <span class="cv_date">2023</span>
