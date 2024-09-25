@@ -34,87 +34,164 @@
 <div class="gradient1 absolute -top-20 h-screen w-screen print:hidden"></div>
 
 <div class="container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-black">
-  <div class="flex items-end justify-between">
-    <h1
-      class="mt-4 pl-2 pt-6 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
-      Jan-Peter Dhallé
-    </h1>
-    <div class="flex gap-x-4">
-      <button
-        class="hidden cursor-pointer sm:block print:hidden"
-        tabindex="0"
-        aria-label="print my cv"
-        on:click={() => window.print()}>
-        <Icon icon="mdi:printer" width="2rem" />
-      </button>
-      <a
-        class="print:hidden"
-        href="/doc/cv_Jan-Peter_Dhallé.pdf"
-        aria-label="download my cv in pdf format">
-        <Icon icon="carbon:generate-pdf" width="2rem" />
-      </a>
+  <div>
+    <div class="flex items-end justify-between">
+      <h1
+        class="mt-4 pl-2 pt-6 font-elec text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
+        Jan-Peter Dhallé
+      </h1>
+      <div class="flex gap-x-4">
+        <button
+          class="hidden cursor-pointer sm:block print:hidden"
+          tabindex="0"
+          aria-label="print my cv"
+          on:click={() => window.print()}>
+          <Icon icon="mdi:printer" width="2rem" />
+        </button>
+        <a
+          class="print:hidden"
+          href="/doc/cv_Jan-Peter_Dhallé.pdf"
+          aria-label="download my cv in pdf format">
+          <Icon icon="carbon:generate-pdf" width="2rem" />
+        </a>
+      </div>
     </div>
-  </div>
-  <span class="mb-6 block border-b pb-4 pl-3 font-elec text-lg italic print:border-black/20">
-    Full-Stack Developer
-  </span>
-  <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
-    <div class="print:container-none flex-auto lg:order-first lg:min-w-[600px]">
-      <h2 class="cv_heading">Profiel</h2>
-      <!--load from markdown file -->
-      <div class="ml-2">
-        <svelte:component this={data.content} />
+    <span class="mb-6 block border-b pb-4 pl-3 font-elec text-lg italic print:border-black/20">
+      Full-Stack Developer
+    </span>
+    <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
+      <div class="print:container-none flex-auto lg:min-w-[600px]">
+        <h2 class="cv_heading">Profiel</h2>
+        <!--load from markdown file -->
+        <div class="ml-2">
+          <svelte:component this={data.content} />
+        </div>
+
+        <!-- OPLEIDING -->
+        <h2 class="cv_heading">Opleiding</h2>
+        <div class="cv_flex">
+          <span class="cv_item">
+            Toegepaste Informatica Thomas More
+            <br />
+            <p class="cv_item_extra">Campus Geel</p>
+          </span>
+          <span class="cv_date">2022-heden</span>
+        </div>
+
+        <div class="cv_flex">
+          <span class="cv_item">
+            Industriële Ingenieurswetenschappen KU Leuven
+            <br />
+            <p class="cv_item_extra">Groep T, Leuven</p>
+          </span>
+          <span class="cv_date">2020-2022, Niet afgerond</span>
+        </div>
+
+        <div class="cv_flex">
+          <span class="cv_item">
+            Diploma secundair onderwijs, wetenschappen-wiskunde
+            <br />
+            <p class="cv_item_extra">Sint-Jozefcollege, Turnhout</p>
+          </span>
+          <span class="cv_date">2014-2020</span>
+        </div>
+        <div class="cv_flex">
+          <span class="cv_item">
+            SAMWD Turnhout
+            <br />
+            <p class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</p>
+          </span>
+          <span class="cv_date">2006-2020</span>
+        </div>
+
+        <!-- PROFESSIONELE WERKERVARING -->
+        <h2 class="cv_heading">Professionele werkervaring</h2>
+        <div class="cv_flex">
+          <span class="cv_item">
+            R. Janssen &amp; Zn nv
+            <br />
+            <p class="cv_item_extra">Jobstudent &mdash; inventory manager</p>
+          </span>
+          <span class="cv_date">juni&nbsp;2019</span>
+        </div>
       </div>
 
-      <!-- OPLEIDING -->
-      <h2 class="cv_heading">Opleiding</h2>
-      <div class="cv_flex">
-        <span class="cv_item">
-          Toegepaste Informatica Thomas More
-          <br />
-          <p class="cv_item_extra">Campus Geel</p>
-        </span>
-        <span class="cv_date">2021-heden</span>
-      </div>
+      <!-- SIDEBAR -->
+      <div
+        class="order-first rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] lg:max-w-96 xl:min-w-0 print:m-2 print:max-w-52 print:rounded-none print:border-r print:border-black/20 print:p-4">
+        <enhanced:img src={HeroImg} alt="Foto van Jan-Peter" />
 
-      <div class="cv_flex">
-        <span class="cv_item">
-          Industriële Ingenieurswetenschappen KU Leuven
-          <br />
-          <p class="cv_item_extra">Groep T, Leuven</p>
-        </span>
-        <span class="cv_date">2020-2021, Niet afgerond</span>
-      </div>
+        <!-- CONTACT -->
+        <h2 class="cv_heading">Contact</h2>
+        <ul class="block print:hidden">
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$phoneLink}>
+              <Icon icon="line-md:phone" width="2rem" inline={true} />
+              Phone
+            </a>
+          </li>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$mailLink}>
+              <Icon icon="line-md:email" width="2rem" inline={true} />
+              E-mail
+            </a>
+          </li>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$linkedInLink}>
+              <Icon icon="line-md:linkedin" width="2rem" inline={true} />
+              LinkedIn
+            </a>
+          </li>
+          <li class="py-2 font-elec text-lg font-bold print:text-base">
+            <a class="flex items-end gap-4" href={$githubLink}>
+              <Icon icon="line-md:github" width="2rem" inline={true} />
+              GitHub
+            </a>
+          </li>
+        </ul>
 
-      <div class="cv_flex">
-        <span class="cv_item">
-          Diploma secundair onderwijs, wetenschappen-wiskunde
-          <br />
-          <p class="cv_item_extra">Sint-Jozefcollege, Turnhout</p>
-        </span>
-        <span class="cv_date">2014-2020</span>
-      </div>
-      <div class="cv_flex">
-        <span class="cv_item">
-          SAMWD Turnhout
-          <br />
-          <p class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</p>
-        </span>
-        <span class="cv_date">2006-2020</span>
-      </div>
+        <!-- PRINTER CONTACT -->
+        <div class="hidden flex-col items-start justify-center py-6 print:flex">
+          <a
+            href={$phoneLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 print:text-base print:text-sm">
+            <Icon icon="line-md:phone" width="1.5rem" />{$phone}
+          </a>
+          <a
+            href={$mailLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 print:text-base print:text-xs">
+            <Icon icon="line-md:email" width="1.5rem" />{$mail}
+          </a>
+          <a
+            href={$linkedInLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 print:text-base print:text-sm">
+            <Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé
+          </a>
+          <a
+            href={$githubLink}
+            class="mx-2 flex items-center justify-center gap-4 py-2 print:text-base print:text-sm">
+            <Icon icon="line-md:github" width="1.5rem" />{$github}
+          </a>
+        </div>
 
-      <!-- PROFESSIONELE WERKERVARING -->
-      <h2 class="cv_heading">Professionele werkervaring</h2>
-      <div class="cv_flex">
-        <span class="cv_item">
-          R. Janssen &amp; Zn nv
-          <br />
-          <p class="cv_item_extra">Jobstudent &mdash; inventory manager</p>
-        </span>
-        <span class="cv_date">juni&nbsp;2019</span>
+        <!-- TALEN -->
+        <h2 class="cv_heading">Talen</h2>
+        <ul class="ml-4 font-elec text-lg">
+          <li class="list-disc">
+            Nederlands - <span class="text-sm italic">Moedertaal</span>
+          </li>
+          <li class="list-disc">
+            Engels - <span class="text-sm italic">Gevorderd</span>
+          </li>
+          <li class="list-disc">
+            Frans - <span class="text-sm italic">Basis</span>
+          </li>
+        </ul>
       </div>
+    </div>
 
-      <!-- VERENIGINGEN, VRIJWILLIGERSWERK EN ANDERE PROJECTEN -->
+    <!-- VERENIGINGEN, VRIJWILLIGERSWERK EN ANDERE PROJECTEN -->
+    <div class="break-before-page">
       <div>
         <h2 class="cv_heading">Verenigingen, vrijwilligerswerk</h2>
         <div class="cv_flex">
@@ -176,7 +253,7 @@
 
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Infrastructuur</h2>
-            Cisco network essentials, Docker, Kubernetes, Virtual machines
+            Cisco network essentials, Docker, Kubernetes, Virtual machines, Github Actions
           </div>
         </div>
 
@@ -210,8 +287,7 @@
               <br />
               De hardware en alle services/configuratie heb ik gedocumenteerd in een org-mode bestand.
               Met een commando kan ik vanuit dit bestand alle configuratiebestanden opnieuw genereren
-              <i>(literate programming)</i>
-              .
+              <i>(literate programming).</i>
             </p>
             <ul class="ml-9">
               <li class="list-disc">ZFS file system</li>
@@ -234,7 +310,7 @@
             <p class="ml-2 py-3">
               Een applicatie voor studenten, leraars en externe bedrijven, waarin studenten
               projecten kunnen kiezen die door bedrijven worden aangeboden. Inclusief een
-              blogsysteem en tijdsregistratiesysteem. Gebouwd met een team van studenten.
+              blogsysteem en tijdsregistratiesysteem. Gebouwd met een team van medestudenten.
             </p>
             <ul class="ml-9">
               <li class="list-disc">Laravel en PHP</li>
@@ -287,79 +363,6 @@
           <span class="cv_date">2023</span>
         </div>
       </div>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div
-      class="rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] lg:max-w-96 xl:min-w-0 print:m-2 print:max-w-72 print:rounded-none print:border-l print:border-black/20 print:p-4">
-      <enhanced:img src={HeroImg} alt="Foto van Jan-Peter" />
-
-      <!-- CONTACT -->
-      <h2 class="cv_heading">Contact</h2>
-      <ul class="hidden lg:block">
-        <li class="py-2 font-elec text-lg font-bold print:text-base">
-          <a class="flex items-end gap-4" href={$phoneLink}>
-            <Icon icon="line-md:phone" width="2rem" inline={true} />
-            Phone
-          </a>
-        </li>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">
-          <a class="flex items-end gap-4" href={$mailLink}>
-            <Icon icon="line-md:email" width="2rem" inline={true} />
-            E-mail
-          </a>
-        </li>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">
-          <a class="flex items-end gap-4" href={$linkedInLink}>
-            <Icon icon="line-md:linkedin" width="2rem" inline={true} />
-            LinkedIn
-          </a>
-        </li>
-        <li class="py-2 font-elec text-lg font-bold print:text-base">
-          <a class="flex items-end gap-4" href={$githubLink}>
-            <Icon icon="line-md:github" width="2rem" inline={true} />
-            GitHub
-          </a>
-        </li>
-      </ul>
-
-      <!-- PRINTER CONTACT -->
-      <div class="flex flex-col items-start justify-center py-6 lg:hidden">
-        <a
-          href={$phoneLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
-          <Icon icon="line-md:phone" width="1.5rem" />{$phone}
-        </a>
-        <a
-          href={$mailLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
-          <Icon icon="line-md:email" width="1.5rem" />{$mail}
-        </a>
-        <a
-          href={$linkedInLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
-          <Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé
-        </a>
-        <a
-          href={$githubLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
-          <Icon icon="line-md:github" width="1.5rem" />{$github}
-        </a>
-      </div>
-
-      <!-- TALEN -->
-      <h2 class="cv_heading">Talen</h2>
-      <ul class="ml-4 font-elec text-lg">
-        <li class="list-disc">
-          Nederlands - <span class="text-sm italic">Moedertaal</span>
-        </li>
-        <li class="list-disc">
-          Engels - <span class="text-sm italic">Gevorderd</span>
-        </li>
-        <li class="list-disc">
-          Frans - <span class="text-sm italic">Basis</span>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
