@@ -6,5 +6,6 @@ module.exports = {
 	printWidth: 100,
 	plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
 	tailwindFunctions: ['clsx'],
-	bracketSameLine: true
+	bracketSameLine: true,
+    htmlWhitespaceSensitivity: 'ignore',
 }

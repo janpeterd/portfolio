@@ -14,24 +14,28 @@
     <div class="mb-3 flex-1 font-elec text-2xl">
       <h2 class="mb-3 font-elec text-2xl text-secondary">Links</h2>
       <div class="border-green-500 sm:border-l-2">
-        <div class="ml-4 my-3"><a href="/#about">Over mij</a></div>
-        <div class="ml-4 my-3"><a href="/projects">Projecten</a></div>
-        <div class="ml-4 my-3"><a href="/cv">CV</a></div>
-        <div class="ml-4 my-3"><a href="/contact">Contact</a></div>
+        <div class="my-3 ml-4"><a href="/#about">Over mij</a></div>
+        <div class="my-3 ml-4"><a href="/projects">Projecten</a></div>
+        <div class="my-3 ml-4"><a href="/cv">CV</a></div>
+        <div class="my-3 ml-4"><a href="/contact">Contact</a></div>
       </div>
     </div>
     <div class="mb-3 flex-1 font-elec text-2xl">
       <h2 class="mb-3 font-elec text-2xl text-secondary">Contact</h2>
       <div
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2">
-        <a href={$mailLink} class="mx-2 flex items-center justify-center" aria-label="E-mail"
-          ><Icon icon="line-md:email" width="2.5rem" /></a>
-        <a href={$linkedInLink} class="mx-2 flex items-center justify-center" aria-label="LinkedIn"
-          ><Icon icon="line-md:linkedin" width="2.5rem" /></a>
-        <a href={$xLink} class="mx-2 flex items-center justify-center" aria-label="Twitter/X"
-          ><Icon icon="line-md:twitter-x" width="2.5rem" /></a>
-        <a href={$githubLink} class="mx-2 flex items-center justify-center" aria-label="GitHub"
-          ><Icon icon="line-md:github" width="2.5rem" /></a>
+        <a href={$mailLink} class="mx-2 flex items-center justify-center" aria-label="E-mail">
+          <Icon icon="line-md:email" width="2.5rem" />
+        </a>
+        <a href={$linkedInLink} class="mx-2 flex items-center justify-center" aria-label="LinkedIn">
+          <Icon icon="line-md:linkedin" width="2.5rem" />
+        </a>
+        <a href={$xLink} class="mx-2 flex items-center justify-center" aria-label="Twitter/X">
+          <Icon icon="line-md:twitter-x" width="2.5rem" />
+        </a>
+        <a href={$githubLink} class="mx-2 flex items-center justify-center" aria-label="GitHub">
+          <Icon icon="line-md:github" width="2.5rem" />
+        </a>
       </div>
     </div>
   </div>

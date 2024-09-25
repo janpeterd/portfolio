@@ -2,7 +2,7 @@ import { readable, writable } from 'svelte/store'
 
 // socials
 export const github = readable('janpeterd')
-export const githubLink = readable(`https://github.com/janpeterd`)
+export const githubLink = readable('https://github.com/janpeterd')
 export const linkedInLink = readable('https://www.linkedin.com/in/jan-peter-dhall%C3%A9/')
 export const x = readable('jempie_3')
 export const xLink = readable('https://twitter.com/jempie_3')

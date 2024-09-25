@@ -44,16 +44,24 @@
         class="absolute right-0 top-0 m-10 rounded-full bg-primary bg-slate-900/80 p-3 backdrop-blur-lg backdrop-saturate-150 transition hover:text-secondary">
         <Icon icon="mdi:close" width="1.8rem" class="z-10" />
       </button>
-      <a href="/" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
-        >Home</a>
-      <a href="/#about" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
-        >Over&nbsp;mij</a>
-      <a href="/projects" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
-        >Projecten</a>
-      <a href="/cv" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
-        >Cv</a>
-      <a href="/contact" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}
-        >Contact</a>
+      <a href="/" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>
+        Home
+      </a>
+      <a href="/#about" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>
+        Over&nbsp;mij
+      </a>
+      <a
+        href="/projects"
+        class="block p-5 text-center text-3xl font-bold"
+        on:click={toggleExpanded}>
+        Projecten
+      </a>
+      <a href="/cv" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>
+        Cv
+      </a>
+      <a href="/contact" class="block p-5 text-center text-3xl font-bold" on:click={toggleExpanded}>
+        Contact
+      </a>
     </div>
   {/if}
 </div>

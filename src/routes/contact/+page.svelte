@@ -25,14 +25,14 @@
 <div class="contact_gradient absolute top-0 h-full w-screen"></div>
 
 <div
-  class="mx-4 mb-20 mt-32 flex min-h-[50vh] lg:min-h-[70vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:flex-row">
+  class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:min-h-[70vh] lg:flex-row">
   <div class="flex w-full md:w-4/6 lg:hidden">
     <div
       id="static_cardbody"
       class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
       <div class="block w-full text-center font-elec text-5xl font-bold text-secondary">
         <enhanced:img
-          class="mx-auto max-h-[40vh] w-full saturate-150 contrast-105 object-cover object-top p-2 lg:rounded-2xl"
+          class="contrast-105 mx-auto max-h-[40vh] w-full object-cover object-top p-2 saturate-150 lg:rounded-2xl"
           src={DeskImg}
           alt="My desk setup"
           fetchpriority="high"
@@ -47,38 +47,42 @@
         <div class="">
           <a
             href={$mailLink}
-            class="mx-0 flex items-center justify-center gap-4 py-2 text-sm sm:mx-2 sm:text-lg print:text-base"
-            ><Icon icon="line-md:email" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >janpeter.dhalle@gmail.com</span
-            ></a>
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-sm sm:mx-2 sm:text-lg print:text-base">
+            <Icon icon="line-md:email" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              janpeter.dhalle@gmail.com
+            </span>
+          </a>
         </div>
         <div>
           <a
             href={$linkedInLink}
-            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
-            ><Icon icon="line-md:linkedin" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >Jan&#8209;Peter&nbsp;Dhallé</span
-            ></a>
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base">
+            <Icon icon="line-md:linkedin" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              Jan&#8209;Peter&nbsp;Dhallé
+            </span>
+          </a>
         </div>
         <div>
           <a
             href={$xLink}
-            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
-            ><Icon icon="line-md:twitter-x" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >@jempie_3</span
-            ></a>
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base">
+            <Icon icon="line-md:twitter-x" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              @jempie_3
+            </span>
+          </a>
         </div>
         <div>
           <a
             href={$githubLink}
-            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base"
-            ><Icon icon="line-md:github" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >/janpeterd</span
-            ></a>
+            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base">
+            <Icon icon="line-md:github" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              /janpeterd
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -92,7 +96,7 @@
       className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
       <CardItem {isMouseEntered} translateZ="90" className="w-full">
         <enhanced:img
-          class="mx-auto max-h-[40vh] w-full saturate-150 contrast-105 object-cover object-top p-2 lg:rounded-2xl"
+          class="contrast-105 mx-auto max-h-[40vh] w-full object-cover object-top p-2 saturate-150 lg:rounded-2xl"
           src={DeskImg}
           alt="My desk setup"
           fetchpriority="high"
@@ -111,38 +115,42 @@
         <CardItem {isMouseEntered} translateZ="100" rotateX="10">
           <a
             href={$mailLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-            ><Icon icon="line-md:email" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >janpeter.dhalle@gmail.com</span
-            ></a>
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+            <Icon icon="line-md:email" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              janpeter.dhalle@gmail.com
+            </span>
+          </a>
         </CardItem>
         <CardItem {isMouseEntered} translateZ="130" className="">
           <a
             href={$linkedInLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-            ><Icon icon="line-md:linkedin" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >Jan&#8209;Peter&nbsp;Dhallé</span
-            ></a>
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+            <Icon icon="line-md:linkedin" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              Jan&#8209;Peter&nbsp;Dhallé
+            </span>
+          </a>
         </CardItem>
         <CardItem {isMouseEntered} translateZ="90" rotateX="10">
           <a
             href={$xLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-            ><Icon icon="line-md:twitter-x" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >@jempie_3</span
-            ></a>
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+            <Icon icon="line-md:twitter-x" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              @jempie_3
+            </span>
+          </a>
         </CardItem>
         <CardItem {isMouseEntered} translateZ="80">
           <a
             href={$githubLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-            ><Icon icon="line-md:github" width="2rem" /><span
-              class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide"
-              >/janpeterd</span
-            ></a>
+            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+            <Icon icon="line-md:github" width="2rem" />
+            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
+              /janpeterd
+            </span>
+          </a>
         </CardItem>
       </div>
     </CardBody>

@@ -36,8 +36,8 @@
         producten te creëren.
       </p>
       <p class="about_text prose-a:text-secondary">
-        Geïnteresseerd? Neem gerust <a href="/contact" class="text-secondary">contact</a> met me op
-        of bekijk
+        Geïnteresseerd? Neem gerust <a href="/contact" class="text-secondary">contact</a>
+        met me op of bekijk
         <a href="/cv">mijn cv.</a>
       </p>
     </article>

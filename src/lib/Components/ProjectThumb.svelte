@@ -15,7 +15,8 @@
     </h2>
     <a
       href={link}
-      class="group flex max-w-max items-center gap-4 font-medium text-secondary transition-all hover:text-white"
-      >Lees <Icon icon="mdi:arrow-right" width="1rem" /></a>
+      class="group flex max-w-max items-center gap-4 font-medium text-secondary transition-all hover:text-white">
+      Lees <Icon icon="mdi:arrow-right" width="1rem" />
+    </a>
   </article>
 </li>

@@ -55,8 +55,9 @@
       </a>
     </div>
   </div>
-  <span class="mb-6 block border-b pb-4 pl-3 font-elec text-lg italic print:border-black/20"
-    >Full-Stack Developer</span>
+  <span class="mb-6 block border-b pb-4 pl-3 font-elec text-lg italic print:border-black/20">
+    Full-Stack Developer
+  </span>
   <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-4 print:flex-row print:gap-3">
     <div class="print:container-none flex-auto lg:order-first lg:min-w-[600px]">
       <h2 class="cv_heading">Profiel</h2>
@@ -68,16 +69,18 @@
       <!-- OPLEIDING -->
       <h2 class="cv_heading">Opleiding</h2>
       <div class="cv_flex">
-        <span class="cv_item"
-          >Toegepaste Informatica Thomas More<br />
+        <span class="cv_item">
+          Toegepaste Informatica Thomas More
+          <br />
           <p class="cv_item_extra">Campus Geel</p>
         </span>
         <span class="cv_date">2021-heden</span>
       </div>
 
       <div class="cv_flex">
-        <span class="cv_item"
-          >Industriële Ingenieurswetenschappen KU Leuven<br />
+        <span class="cv_item">
+          Industriële Ingenieurswetenschappen KU Leuven
+          <br />
           <p class="cv_item_extra">Groep T, Leuven</p>
         </span>
         <span class="cv_date">2020-2021, Niet afgerond</span>
@@ -85,14 +88,16 @@
 
       <div class="cv_flex">
         <span class="cv_item">
-          Diploma secundair onderwijs, wetenschappen-wiskunde<br />
+          Diploma secundair onderwijs, wetenschappen-wiskunde
+          <br />
           <p class="cv_item_extra">Sint-Jozefcollege, Turnhout</p>
         </span>
         <span class="cv_date">2014-2020</span>
       </div>
       <div class="cv_flex">
         <span class="cv_item">
-          SAMWD Turnhout<br />
+          SAMWD Turnhout
+          <br />
           <p class="cv_item_extra">Klassieke viool (Suzukimethode) &mdash; summa cum laude</p>
         </span>
         <span class="cv_date">2006-2020</span>
@@ -101,8 +106,9 @@
       <!-- PROFESSIONELE WERKERVARING -->
       <h2 class="cv_heading">Professionele werkervaring</h2>
       <div class="cv_flex">
-        <span class="cv_item"
-          >R. Janssen &amp; Zn nv<br />
+        <span class="cv_item">
+          R. Janssen &amp; Zn nv
+          <br />
           <p class="cv_item_extra">Jobstudent &mdash; inventory manager</p>
         </span>
         <span class="cv_date">juni&nbsp;2019</span>
@@ -112,22 +118,27 @@
       <div>
         <h2 class="cv_heading">Verenigingen, vrijwilligerswerk</h2>
         <div class="cv_flex">
-          <span class="cv_item"
-            >Zandhoven Natuurlijk!<br />
-            <p class="cv_item_extra">Vrijwilliger &mdash; webmaster</p></span>
+          <span class="cv_item">
+            Zandhoven Natuurlijk!
+            <br />
+            <p class="cv_item_extra">Vrijwilliger &mdash; webmaster</p>
+          </span>
           <span class="cv_date">2022-heden</span>
         </div>
         <div class="cv_flex">
-          <span class="cv_item"
-            >Vlaams Symfonisch Orkest<br />
+          <span class="cv_item">
+            Vlaams Symfonisch Orkest
+            <br />
             <p class="cv_item_extra">Violist, plaatsvervangend concertmeester</p>
           </span>
           <span class="cv_date">2020-heden</span>
         </div>
         <div class="cv_flex">
-          <span class="cv_item"
-            >Woonzorgcentrum Sint-Lucia<br />
-            <p class="cv_item_extra">Vrijwilliger &mdash; animator</p></span>
+          <span class="cv_item">
+            Woonzorgcentrum Sint-Lucia
+            <br />
+            <p class="cv_item_extra">Vrijwilliger &mdash; animator</p>
+          </span>
           <span class="cv_date">april&nbsp;2017</span>
         </div>
 
@@ -177,7 +188,10 @@
               href="/doc/certificaat Linux Essentials.pdf"
               aria-label="download certificate in pdf format"
               class="flex gap-x-2">
-              <span>LPI Linux Essentials<br /></span>
+              <span>
+                LPI Linux Essentials
+                <br />
+              </span>
             </a>
             <p class="cv_item_extra">Examenresultaat 18/20</p>
           </span>
@@ -192,10 +206,12 @@
             <p class="ml-2 py-3">
               Oude computer, waarvan ik enkele onderdelen veranderd heb en die nu dient als server.
               Host verschillende applicaties, zoals mediaserver, nextcloud, bestandssynchronisatie
-              en nog veel meer!<br />
+              en nog veel meer!
+              <br />
               De hardware en alle services/configuratie heb ik gedocumenteerd in een org-mode bestand.
               Met een commando kan ik vanuit dit bestand alle configuratiebestanden opnieuw genereren
-              <i>(literate programming)</i>.
+              <i>(literate programming)</i>
+              .
             </p>
             <ul class="ml-9">
               <li class="list-disc">ZFS file system</li>
@@ -311,29 +327,38 @@
       <div class="flex flex-col items-start justify-center py-6 lg:hidden">
         <a
           href={$phoneLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:phone" width="1.5rem" />{$phone}</a>
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+          <Icon icon="line-md:phone" width="1.5rem" />{$phone}
+        </a>
         <a
-          <a
           href={$mailLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:email" width="1.5rem" />{$mail}</a>
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+          <Icon icon="line-md:email" width="1.5rem" />{$mail}
+        </a>
         <a
           href={$linkedInLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé</a>
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+          <Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé
+        </a>
         <a
           href={$githubLink}
-          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base"
-          ><Icon icon="line-md:github" width="1.5rem" />{$github}</a>
+          class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
+          <Icon icon="line-md:github" width="1.5rem" />{$github}
+        </a>
       </div>
 
       <!-- TALEN -->
       <h2 class="cv_heading">Talen</h2>
       <ul class="ml-4 font-elec text-lg">
-        <li class="list-disc">Nederlands - <span class="text-sm italic">Moedertaal</span></li>
-        <li class="list-disc">Engels - <span class="text-sm italic">Gevorderd</span></li>
-        <li class="list-disc">Frans - <span class="text-sm italic">Basis</span></li>
+        <li class="list-disc">
+          Nederlands - <span class="text-sm italic">Moedertaal</span>
+        </li>
+        <li class="list-disc">
+          Engels - <span class="text-sm italic">Gevorderd</span>
+        </li>
+        <li class="list-disc">
+          Frans - <span class="text-sm italic">Basis</span>
+        </li>
       </ul>
     </div>
   </div>
