@@ -1,6 +1,6 @@
 <script>
   import Icon from '@iconify/svelte'
-  import LogoImg from './LogoImg.svelte'
+  import RenderLogoImg from './RenderLogoImg.svelte'
   import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
   let now = new Date()
 </script>
@@ -9,7 +9,7 @@
   class="max-w-screen relative mt-8 flex flex-col items-center overflow-x-hidden border-t bg-black/60 py-3 backdrop-blur backdrop-saturate-150 print:hidden">
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <div class="mb-3 max-h-[200px] min-h-[60px] w-64 flex-1 md:px-5">
-      <LogoImg class="h-[200px] w-[200px]" width="200" height="200" />
+      <RenderLogoImg class="max-h-[220px] max-w-[220px] mt-8" />
     </div>
     <div class="mb-3 flex-1 font-elec text-2xl">
       <h2 class="mb-3 font-elec text-2xl text-secondary">Links</h2>
