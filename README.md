@@ -1,6 +1,6 @@
 # create-svelte
 
-[Home page](./page.png) 
+![Home page](./page.png) 
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
