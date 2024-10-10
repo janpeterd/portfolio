@@ -2,6 +2,7 @@
   import NavLink from '$lib/Components/NavLink.svelte'
   import Icon from '@iconify/svelte'
   import LogoImg from '$lib/Components/LogoImg.svelte'
+  //import RenderLogoImg from './RenderLogoImg.svelte';
 
   let isExpanded = false
 
@@ -16,6 +17,7 @@
     class="justify-content flex w-auto flex-shrink items-center rounded-full bg-white/10 backdrop-blur backdrop-saturate-150">
     <NavLink logo={true} href="/" class="relative flex items-center justify-center px-6">
       <LogoImg class="absolute -left-4 -top-8 w-28" width="112" height="112" />
+      <!-- <RenderLogoImg class="absolute -left-[2px] -top-[10px] w-20" width="112" height="112" /> -->
       <div class="min-w-[220px] pl-10 font-bold">Portfolio Jan&#8209Peter Dhallé</div>
     </NavLink>
   </div>

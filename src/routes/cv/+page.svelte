@@ -3,7 +3,7 @@
   import Navbar from '$lib/Components/Navbar.svelte'
   import Icon from '@iconify/svelte'
   //import HeroImg from '$lib/assets/hero.jpg?enhanced'
-  import HeroImg from '$lib/assets/portrait.jpg?enhanced'
+  import HeroImg from '$lib/assets/portrait_scaled.jpg?enhanced'
 
   import {
     githubLink,

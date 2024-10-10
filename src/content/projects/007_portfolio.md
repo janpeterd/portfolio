@@ -57,6 +57,20 @@ Ideaal dus voor een logo dat je in verschillende formaten wilt gebruiken. Ik heb
 ![Logo](/img/projects/portfolio_logo.png)
 ![Logo tekst](/img/projects/portfolio_logotekst.png)
 
+## 3D logo
+
+Door wat rond te kijken en inspiratie op te doen had ik het idee gekregen om
+een 3d-versie van mijn logo te maken. Hiervoor heb ik een gratis 3d-model van
+een laptop gezocht en een 3d-model van mijn logo gemaakt in **blender**.
+![Working on the model](/img/projects/portfolio_blender.png)
+
+Ik ben erg tevreden met het eindresultaat.
+![Logo 3d render](/img/projects/portfolio_logorender.png)
+
+Uit nieuwsgierigheid heb ik ook een leuke animatie gemaakt. Ik gebruik het momenteel nergens, maar ik vind het wel erg goed gelukt!
+
+<video src="/img/projects/portfolio_logorender.mp4" loop controls></video>
+
 ## Besluit
 
 Met dit project heb ik een portfolio gemaakt, dat ik kan gebruiken om mezelf voor te stellen aan bedrijven en geïnteresseerden.
