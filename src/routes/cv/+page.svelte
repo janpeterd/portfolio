@@ -400,15 +400,15 @@
   }
 
   p.cv_item_extra {
-    @apply ml-2 text-base font-normal italic lg:indent-8;
+    @apply ml-2 text-base font-normal italic lg:indent-8 print:text-sm;
   }
 
   span.cv_date {
-    @apply text-nowrap italic leading-loose;
+    @apply text-nowrap italic leading-loose print:text-xs;
   }
 
   div.cv_flex {
-    @apply flex flex-row justify-between gap-10 p-4 print:p-2;
+    @apply flex flex-row justify-between gap-10 p-4 print:gap-0 print:p-2;
   }
 
   .bottom-gradient {
