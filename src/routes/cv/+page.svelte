@@ -88,7 +88,7 @@
             <br />
             <p class="cv_item_extra">Groep T, KU Leuven</p>
           </span>
-          <span class="cv_date">september 2020- juli 2022, Niet afgerond</span>
+          <span class="cv_date">september 2020- juli 2022, niet afgerond</span>
         </div>
 
         <div class="cv_flex">
