@@ -163,17 +163,17 @@
           <a
             href={$mailLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 print:text-xs">
-            <Icon icon="line-md:email" width="1.5rem" />{$mail}
+            <Icon icon="mdi:email" width="1.5rem" />{$mail}
           </a>
           <a
             href={$linkedInLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 print:text-sm">
-            <Icon icon="line-md:linkedin" width="1.5rem" />Jan-Peter Dhallé
+            <Icon icon="mdi:linkedin" width="1.5rem" />Jan-Peter Dhallé
           </a>
           <a
             href={$githubLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 print:text-sm">
-            <Icon icon="line-md:github" width="1.5rem" />{$github}
+            <Icon icon="mdi:github" width="1.5rem" />{$github}
           </a>
         </div>
 
