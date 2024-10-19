@@ -7,7 +7,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "pdf": "node ./scripts/generate_cv_pdf.js"
 	},
 	"devDependencies": {
 		"@iconify-json/icon-park": "^1.2.0",
