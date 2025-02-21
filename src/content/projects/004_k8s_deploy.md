@@ -1,6 +1,6 @@
 ---
 title: Kubernetes deployment
-date: 2024-03-18
+date: 2023-12-13
 ---
 
 ## Kubernetes deployment

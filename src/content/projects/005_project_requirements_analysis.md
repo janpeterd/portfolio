@@ -41,4 +41,4 @@ Ten slotte hebben we de verschillende functies en componenten van het systeem ge
 
 De verdeling van deze onderdelen heb ik gedaan in mijn groep.
 
-Het volledige rapport kan u [hier]("/docs/projects/Analyse-en-ontwerprapport_TVE2.pdf") lezen.
+Het volledige rapport kan u [hier](/doc/projects/Analyse-en-ontwerprapport_TVE2.pdf) lezen.

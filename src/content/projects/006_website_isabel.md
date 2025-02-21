@@ -1,11 +1,11 @@
 ---
 title: Website Isabel Dhallé
-date: 2024-03-26
+date: 2022-10-27
 ---
 
 ## Website Isabel Dhallé
 
-_Bekijk de website [hier](https://isabeldhalle.be)_
+_Bekijk de website [hier](https://isabeldhalle.be)_.
 
 Mijn zus studeert viool aan het conservatorium van Antwerpen. Op een dag vroeg ze aan mij of ik voor haar een website kon maken, zodat mensen haar konden terugvinden op het internet.
 
@@ -28,6 +28,6 @@ Door veel documentatie te lezen en bij te leren over deze concepten is het mij t
 
 Het hosten van de website was ook volledig nieuw voor mij. Om de website online te krijgen heb ik moeten bijleren over domeinen, VPS-servers, webservers, etc.
 
-Uiteindelijk heb ik gekozen voor digitalocean voor het hosten van de website.
+Uiteindelijk heb ik gekozen voor DigitalOcean voor het hosten van de website.
 
-Interesse? bekijk de website [hier](https://isabeldhalle.be)
+Interesse? Bekijk de website [hier](https://isabeldhalle.be).

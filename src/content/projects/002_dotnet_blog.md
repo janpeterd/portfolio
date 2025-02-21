@@ -1,6 +1,6 @@
 ---
 title: .NET blog met Contentful integratie
-date: 2024-03-18
+date: 2023-12-16
 ---
 
 ## .NET blog met Contentful integratie

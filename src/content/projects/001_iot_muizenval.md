@@ -1,8 +1,7 @@
 ---
 title: IoT muizenval
-date: 2024-03-18
+date: 2023-05-19
 ---
-
 
 ## IoT muizenval
 
@@ -49,4 +48,3 @@ Bovenop de doos staat de stappenmotor die met behulp van een elastiek de doos op
 
 Op het einde van de rit was ik blij met het resultaat.
 Ondanks al deze moeite is het mij toch niet gelukt een muis te vangen...
-
