@@ -15,7 +15,7 @@
       <!-- Beschrijving -->
       <p class="about_text">
         Ik ben een enthousiaste student met een grote interesse en nieuwsgierigheid voor informatica
-        en alles wat met computers te maken heeft. Ik ben leergierig en heb hierdoor zelfstandig,
+        en computers. Ik ben leergierig en heb hierdoor zelfstandig,
         door middel van zelfstudie, verschillende technologieën ontdekt en ervaringen opgedaan.
       </p>
       <p class="about_text">

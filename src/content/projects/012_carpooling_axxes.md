@@ -32,7 +32,7 @@ project. Hierbij hebben we een document opgesteld, waarin we verschillende
 technologieën vergelijken. Na het afwegen van verschillende factoren hebben we
 besloten volgende technologieën te gebruiken:
 
-- Java spring boot backend
+- Java Spring Boot backend
 - Nextjs frontend
 - Python FastAPI
 - Auth0 authenticatie
@@ -53,7 +53,7 @@ Hiernaast hebben we ook al UI-prototypes gemaakt voor alle pagina's in
 
 Aan het eind van deze fase hebben we onze plannen gepresenteerd voor een werknemer van Axxes.
 
-Het hele projectplan kan je [hier](/doc/projects/Carpool-Project-Plan.pdf) terugvinden.
+Het hele concept kan je [hier](/doc/projects/Carpool-Project-Plan.pdf) terugvinden.
 
 ## Realisatiefase
 
@@ -65,12 +65,12 @@ backend. Hierbij heb ik het database-model gerealiseerd in Java en voor elke
 entiteit volledige CRUD operaties API-endpoints gemaakt.
 
 Hierbij heb ik ook het notificatiesysteem gemaakt, dat zowel e-mails verstuurt
-alsook, notificaties verstuurt via een websocketsverbinding.
+alsook notificaties verstuurt via een websocketsverbinding.
 
 Naast de backend heb ik ook de frontend van het notificatiesysteem gemaakt, dat
 verbind via websockets met de backend en luistert naar globaal kanaal en een
 kanaal voor de ingelogde gebruiker. Op deze manier is het versturen van meldingen naar
-alle alsook specifieke gebruikers mogelijk.
+alle gebruikers en specifieke gebruikers mogelijk.
 
 ![Live notification](/img/projects/carpool_live_notification.png)
 ![notifications list](/img/projects/carpool_notifications.png)
@@ -99,16 +99,16 @@ kubernetes-cluster en CI/CD-pipeline op Gitlab.
 ![Pipeline](/img/projects/carpool_pipeline.png)
 
 We hebben als team hard gewerkt gedurende deze drie weken, maar hierdoor is
-onze communicatie en samenwerking als team erg sterk geworden en hebben we aan
+onze communicatie en samenwerking erg sterk geworden. Hierdoor hebben we aan
 het einde van deze fase een heel erg mooi resultaat kunnen afleveren aan Axxes.
 
 ![Team](/img/projects/carpool_team.jpg)
 
 ## Conclusie
 
-Zowel als team als persoonlijk ben ik erg trots op het resultaat. Het is een
-functionele applicatie, die goed werkt op apparaten van alle maten en die vele
-functies bevat.
+Zowel als team als op persoonlijk vlak ben ik erg trots op het resultaat. Het
+is een functionele applicatie die goed presteert op apparaten van verschillende
+formaten en die tal van handige functies biedt.
 
 Toen we onze applicatie een laatste keer presenteerde voor onze begeleider en
 een medewerker van Axxes waren ze erg onder de indruk en hebben we bijna

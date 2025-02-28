@@ -1,4 +1,5 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+//const { fontFamily } = require('tailwindcss/defaultTheme')
+import fontFamily from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,8 +8,8 @@ export default {
     extend: {
       fontFamily: {
         ...fontFamily,
-        sans: ['Source Sans Pro', ...fontFamily['sans']],
-        elec: ['Electrolize', ...fontFamily['sans']],
+        sans: ['Source Sans Pro', 'sans-serif'],
+        elec: ['Electrolize', 'sans-serif'],
       },
       colors: {
         primary: '#101233',

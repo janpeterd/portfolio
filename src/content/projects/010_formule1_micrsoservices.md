@@ -14,8 +14,9 @@ date: 2024-12-22
 
 In het vak _Advanced Programming Topics_ hebben we geleerd over de
 microservices-architectuur. We kregen daarom ook de opdracht om een applicatie
-te maken volgens deze architectuur. Ik heb gekozen voor een simpele **Formule
-1** applicatie, die informatie over chauffeurs, teams en circuits bijhoudt.
+te maken gebruikmakend van deze architectuur. Ik heb voor dit project gekozen
+voor een **Formule 1**-applicatie, die informatie over chauffeurs, teams,
+circuits en Grand Prix bijhoudt.
 
 ## Microservices
 
@@ -29,16 +30,16 @@ Hiernaast maakt mijn applicatie ook gebruik van Google OAuth2 voor authenticatie
 
 Toen ik het project startte ben ik begonnen met alles in
 [Docker](https://www.docker.com/) te maken. Later besloot ik om het ook in
-kubernetes te maken, dus heb ik mijn docker-compose.yaml bestand omgevormd naar
-configuratiebestanden voor kubernetes. Deze heb ik lokaal getest met
+kubernetes te maken, dus heb ik mijn `docker-compose.yaml`-bestand omgevormd naar
+configuratiebestanden voor kubernetes. Deze heb ik lokaal dan getest met
 [Minikube](https://minikube.sigs.k8s.io/).
 
 ## Services
 
-De applicatie die ik gebouwd heb bestaat uit **7 verschillende projecten**
+De applicatie die ik heb gebouwd bestaat uit **7 verschillende projecten**
 waaronder 5 _services_, 1 api-gateway en 1 react-project.
 
-De services die ik gebouwd heb zijn:
+De services:
 
 - `circuit-service`
 - `driver-service`
@@ -46,7 +47,7 @@ De services die ik gebouwd heb zijn:
 - `team-service`
 - `image-service` (uploaden en hosten van foto's, zoals `S3`)
 
-Zowel de services als de api-gateway maken gebruik van [spring boot](https://spring.io/projects/spring-boot/).
+Zowel de services als de api-gateway maken gebruik van [Spring Boot](https://spring.io/projects/spring-boot/).
 
 Binnen het netwerk, kunnen deze services data van elkaar gebruiken door
 api-requests te maken. Alle objecten worden geïdentificeerd met een
@@ -54,7 +55,7 @@ unieke `UUID`, in plaats van een database id, omdat elke service zijn eigen
 database gebruikt.
 
 Hiernaast heb ik voor alle **service-klassen** binnen de verschillende
-projecten **voor alle functies unit tests geschreven**. Hierbij heb ik gebruik
+projecten **voor alle functies unittests geschreven**. Hierbij heb ik gebruik
 gemaakt van _mock data_ voor het nabootsen van antwoorden van de overige
 services.
 

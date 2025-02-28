@@ -112,6 +112,27 @@
         <h2 class="cv_heading">Professionele werkervaring</h2>
         <div class="cv_flex">
           <span class="cv_item">
+            Lykios (Faros)
+            <br />
+            <p class="cv_item_extra">
+              Stage: Ontwikkeling Quiz platform 'Qurio' met Java Spring REST API, React frontend,
+              SCRUM
+            </p>
+          </span>
+          <span class="cv_date">sinds februari&nbsp;2025</span>
+        </div>
+        <div class="cv_flex">
+          <span class="cv_item">
+            Computerbouw
+            <br />
+            <p class="cv_item_extra">
+              Computer samengesteld en geassembleerd naar de noden van de klant
+            </p>
+          </span>
+          <span class="cv_date">maart 2023</span>
+        </div>
+        <div class="cv_flex">
+          <span class="cv_item">
             R. Janssen &amp; Zn nv
             <br />
             <p class="cv_item_extra">Jobstudent &mdash; magazijn en voorraadbeheer</p>
@@ -197,6 +218,10 @@
           <li class="list-disc">Boeken lezen</li>
           <li class="list-disc">Computerprojecten</li>
         </ul>
+        <h2 class="cv_heading mt-4">Overige</h2>
+        <ul class="ml-4 font-elec text-lg print:text-sm">
+          <li class="list-disc">Rijbewijs: B</li>
+        </ul>
       </div>
     </div>
 
@@ -235,7 +260,7 @@
           class="my-6 grid grid-cols-1 gap-x-4 gap-y-16 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-2">
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Programmeertalen</h2>
-            <p>HTML/CSS, JavaScript, Python, PHP, Java, C#, C, C++, Go, Bash</p>
+            <p>HTML/CSS, JavaScript, Java, Python, PHP, C#, C, C++, Bash</p>
           </div>
 
           <div class="ml-2 lg:ml-8">
@@ -247,23 +272,24 @@
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">
               Frameworks &amp; Libraries
             </h2>
-            React, Angular, Laravel, Tailwind, Django, Spring Boot, .NET core, .NET Maui, Numpy, Pandas,
-            Matplotlib, Svelte/Sveltekit
+            React, Angular, Spring Boot, Tailwind, Next.js, Django, .NET core, .NET Maui, Laravel, Numpy,
+            Pandas, Matplotlib, Svelte/Sveltekit, ...
           </div>
 
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Tools</h2>
-            Linux, Windows, Vim/Neovim, Emacs, Visual Studio, Visual Studio Code, Jetbrains IDEs, Axure
-            RP, Figma, Git, GitHub, GNU make, GNU coreutils, Terminal
+            Linux, Windows, Vim/Neovim, Microsoft Teams, Scrum, Jira, Visual Studio, Visual Studio Code,
+            Jetbrains IDEs, Figma, Git, GitHub, Bitbucket, GNU coreutils, Terminal
           </div>
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Documentatie</h2>
-            Markdown, UML, Emacs org-mode
+            Markdown, UML, Confluence
           </div>
 
           <div class="ml-2 lg:ml-8">
             <h2 class="py-2 font-elec text-lg font-bold print:text-base">Infrastructuur</h2>
-            Cisco network essentials, Docker, Kubernetes, Virtual machines, Github Actions
+            Kubernetes,Docker, Cisco network essentials, Linux, Virtual machines, Github Actions, Jenkins,
+            AWS, Azure
           </div>
         </div>
 
