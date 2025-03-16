@@ -19,8 +19,8 @@ const generatePdfAsync = async () => {
     margin: {
       top: '0.5in',
       bottom: '0.5in',
-      left: '0.5in',
-      right: '0.5in'
+      left: '0.3in',
+      right: '0.3in'
     }
   })
 
