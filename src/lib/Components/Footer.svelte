@@ -12,7 +12,7 @@
     <div class="relative mb-3 h-[200px] min-h-[200px] w-72 flex-1 md:px-5">
       <div class="absolute -left-20 -top-[100px] z-0 h-[400px] w-[400px] cursor-pointer">
         <Canvas>
-          <Logo3d defaultZoom={45} />
+          <Logo3d defaultZoom={45} rotate={true} />
         </Canvas>
       </div>
     </div>
