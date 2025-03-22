@@ -2,15 +2,14 @@
   import { Grid, interactivity, OrbitControls, useDraco, useGltf } from '@threlte/extras'
   import { Spring } from 'svelte/motion'
   import { Canvas, T } from '@threlte/core'
-  import { DEG2RAD } from 'three/src/math/MathUtils'
   import { OrthographicCamera } from 'three'
+  import { deg2rad } from '$lib/utils'
   import { goto } from '$app/navigation'
-
   let { defaultZoom = 25 } = $props()
 
   // Correctly use the Svelte 5 syntax and Threlte methods
   const dracoLoader = useDraco()
-  const gltf = useGltf('/img/3d-logo.glb', { dracoLoader })
+  const gltf = useGltf('/logo3d.glb', { dracoLoader })
   interactivity()
 
   // Focus only on displaying the 3D model
@@ -46,10 +45,10 @@
     minZoom={defaultZoom - defaultZoom / 2}
     zoomSpeed={0.1}
     rotateSpeed={0.05}
-    minPolarAngle={DEG2RAD * 45}
-    maxPolarAngle={DEG2RAD * 90}
-    minAzimuthAngle={DEG2RAD * -45}
-    maxAzimuthAngle={DEG2RAD * 45} />
+    minPolarAngle={deg2rad(45)}
+    maxPolarAngle={deg2rad(90)}
+    minAzimuthAngle={deg2rad(-45)}
+    maxAzimuthAngle={deg2rad(45)} />
 </T.OrthographicCamera>
 
 <!-- Improved lighting setup for better visibility -->
@@ -59,7 +58,7 @@
 <!-- Display the model if loaded -->
 {#if $gltf}
   <T.Group
-    rotation.y={DEG2RAD * 90}
+    rotation.y={deg2rad(90)}
     rotation.x={0}
     position={modelPosition}
     onclick={(e) => {
