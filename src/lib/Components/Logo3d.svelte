@@ -10,7 +10,7 @@
 
   // Correctly use the Svelte 5 syntax and Threlte methods
   const dracoLoader = useDraco()
-  const gltf = useGltf('/img/combined.glb', { dracoLoader })
+  const gltf = useGltf('/img/3d-logo.glb', { dracoLoader })
   interactivity()
 
   // Focus only on displaying the 3D model
