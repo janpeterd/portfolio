@@ -8,8 +8,8 @@ export default {
     extend: {
       fontFamily: {
         ...fontFamily,
-        sans: ['Source Sans Pro', 'sans-serif'],
-        elec: ['Electrolize', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        elec: ['Reddit Sans Condensed', 'sans-serif']
       },
       colors: {
         primary: '#101233',
@@ -23,19 +23,18 @@ export default {
               '&:hover': {
                 color: theme('colors.primary'),
                 background: theme('colors.secondary'),
-                fontWeight: "bold",
-              },
-            },
-          },
-        },
-      }),
-    },
+                fontWeight: 'bold'
+              }
+            }
+          }
+        }
+      })
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/container-queries'),
-  ],
+    require('@tailwindcss/container-queries')
+  ]
 }
-

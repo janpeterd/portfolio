@@ -1,11 +1,23 @@
 <script>
   import { cn } from '$lib/utils'
 
-  export let className = undefined
-  export let containerClassName = undefined
-  export let isMouseEntered = false
+  /**
+   * @typedef {Object} Props
+   * @property {any} [className]
+   * @property {any} [containerClassName]
+   * @property {boolean} [isMouseEntered]
+   * @property {import('svelte').Snippet} [children]
+   */
 
-  let containerRef
+  /** @type {Props} */
+  let {
+    className = undefined,
+    containerClassName = undefined,
+    isMouseEntered = $bindable(false),
+    children
+  } = $props();
+
+  let containerRef = $state()
 
   const handleMouseMove = (e) => {
     if (!containerRef) return
@@ -32,14 +44,14 @@
   style="perspective: 800px;">
   <div
     bind:this={containerRef}
-    on:mouseenter={handleMouseEnter}
-    on:mousemove={handleMouseMove}
-    on:mouseleave={handleMouseLeave}
+    onmouseenter={handleMouseEnter}
+    onmousemove={handleMouseMove}
+    onmouseleave={handleMouseLeave}
     class={cn(
       'relative flex items-center justify-center transition-all duration-200 ease-linear',
       className
     )}
     style="transform-style: preserve-3d;">
-    <slot />
+    {@render children?.()}
   </div>
 </div>

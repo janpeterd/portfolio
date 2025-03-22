@@ -1,6 +1,4 @@
 <script>
-  import Footer from '$lib/Components/Footer.svelte'
-  import Navbar from '$lib/Components/Navbar.svelte'
   import Icon from '@iconify/svelte'
   //import HeroImg from '$lib/assets/hero.jpg?enhanced'
   import HeroImg from '$lib/assets/portrait_scaled.jpg?enhanced'
@@ -17,7 +15,7 @@
     phone
   } from '../../stores'
 
-  export let data
+  let { data } = $props()
 </script>
 
 <svelte:head>
@@ -28,8 +26,6 @@
     content="Cv van Jan-Peter Dhallé, student toegepaste informatica" />
   <meta property="og:title" content="Cv - Portfolio Jan-Peter" />
 </svelte:head>
-
-<Navbar />
 
 <div class="bottom-gradient absolute bottom-0 h-screen w-screen print:hidden"></div>
 <div class="gradient1 absolute -top-20 h-screen w-screen print:hidden"></div>
@@ -47,7 +43,7 @@
           class="hidden cursor-pointer sm:block print:hidden"
           tabindex="0"
           aria-label="print my cv"
-          on:click={() => window.print()}>
+          onclick={() => window.print()}>
           <Icon icon="mdi:printer" width="2rem" />
         </button>
         <a
@@ -67,7 +63,7 @@
         <h2 class="cv_heading">Profiel</h2>
         <!--load from markdown file -->
         <div class="ml-2">
-          <svelte:component this={data.content} />
+          <data.content />
         </div>
 
         <!-- OPLEIDING -->
@@ -415,7 +411,6 @@
     </div>
   </div>
 </div>
-<Footer />
 
 <style lang="postcss">
   h2.cv_heading {
@@ -434,20 +429,22 @@
   }
 
   div.cv_flex {
-    @apply flex flex-row justify-between gap-10 p-4 print:gap-0 print:p-2;
+    @apply flex flex-row justify-between gap-10 p-4 align-baseline print:gap-0 print:p-2;
   }
 
   .bottom-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: url('/img/grain.webp'),
+    background:
+      url('/img/grain.webp'),
       radial-gradient(105vw 850px at 50% 90%, theme(colors.secondary / 10%), transparent);
   }
 
   .gradient1 {
     z-index: -10;
     mask-image: radial-gradient(302vw 220vh at -60% 35vh, rgba(0, 0, 0, 1) 30%, transparent);
-    background: url('/img/grain.webp'),
+    background:
+      url('/img/grain.webp'),
       radial-gradient(302vw 450px at -60% 35vh, theme(colors.primary / 80%), transparent);
   }
 </style>

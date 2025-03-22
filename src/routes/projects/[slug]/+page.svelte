@@ -1,10 +1,8 @@
 <script>
-  import Navbar from '$lib/Components/Navbar.svelte'
-  import Footer from '$lib/Components/Footer.svelte'
   import ProjectThumb from '$lib/Components/ProjectThumb.svelte'
   import Icon from '@iconify/svelte'
 
-  export let data
+  let { data } = $props()
 </script>
 
 <svelte:head>
@@ -12,8 +10,6 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content={data.meta.title} />
 </svelte:head>
-
-<Navbar />
 
 <article
   class="mt-navbar lg:mt-25 mx-auto flex max-w-4xl flex-col gap-6 px-6 pt-20 md:gap-8 md:px-8 lg:gap-14">
@@ -29,8 +25,8 @@
   </div>
   <!-- Post -->
   <div
-    class="animate-in fade-in-0 fill-mode-backwards prose prose-slate prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] lg:prose-xl prose-a:text-secondary prose-img:rounded-lg">
-    <svelte:component this={data.content} />
+    class="animate-in fade-in-0 fill-mode-backwards prose prose-slate prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-img:rounded-lg">
+    <data.content />
   </div>
 </article>
 
@@ -44,5 +40,3 @@
     </ul>
   </section>
 {/if}
-
-<Footer />

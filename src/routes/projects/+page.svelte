@@ -1,9 +1,7 @@
 <script>
-  import Navbar from '$lib/Components/Navbar.svelte'
-  import Footer from '$lib/Components/Footer.svelte'
   import ProjectThumb from '$lib/Components/ProjectThumb.svelte'
 
-  export let data
+  let { data } = $props()
   const { posts } = data
 </script>
 
@@ -17,7 +15,6 @@
     content="Projecten van Jan-Peter Dhallé, student toegepaste informatica" />
   <meta property="og:title" content="Projecten - Portfolio Jan-Peter" />
 </svelte:head>
-<Navbar />
 
 <div class="my-24 px-4 lg:min-h-[68.6vh]">
   <div class="mx-auto max-w-lg lg:max-w-7xl">
@@ -35,8 +32,6 @@
 </div>
 
 <div class="bottom-gradient absolute top-0 h-full w-screen"></div>
-
-<Footer />
 
 <style lang="postcss">
   .bottom-gradient {

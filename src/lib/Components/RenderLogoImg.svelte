@@ -1,8 +1,14 @@
 <script>
   import Logo from '$lib/assets/render.png?enhanced'
-  let classes = ''
+  /**
+   * @typedef {Object} Props
+   * @property {string} [class]
+   */
+
+  /** @type {Props} */
+  let { class: classes = '' } = $props();
   let width, height
-  export { classes as class }
+  
 </script>
 
 <enhanced:img

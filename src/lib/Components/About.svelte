@@ -15,8 +15,8 @@
       <!-- Beschrijving -->
       <p class="about_text">
         Ik ben een enthousiaste student met een grote interesse en nieuwsgierigheid voor informatica
-        en computers. Ik ben leergierig en heb hierdoor zelfstandig,
-        door middel van zelfstudie, verschillende technologieën ontdekt en ervaringen opgedaan.
+        en computers. Ik ben leergierig en heb hierdoor zelfstandig, door middel van zelfstudie,
+        verschillende technologieën ontdekt en ervaringen opgedaan.
       </p>
       <p class="about_text">
         Tijdens mijn opleiding Toegepaste Informatica heb ik de kans gekregen om veel
@@ -56,6 +56,6 @@
 
 <style lang="postcss">
   .about_text {
-    @apply prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white md:prose-xl;
+    @apply prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white;
   }
 </style>

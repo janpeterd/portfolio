@@ -1,8 +1,8 @@
 <script>
   import Icon from '@iconify/svelte'
 
-  export let entry
-  $: link = `/projects/${entry.slug}`
+  let { entry } = $props();
+  let link = $derived(`/projects/${entry.slug}`)
 </script>
 
 <li class="flex gap-14 px-5 py-3">

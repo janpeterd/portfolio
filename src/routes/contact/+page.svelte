@@ -1,6 +1,4 @@
 <script>
-  import Footer from '$lib/Components/Footer.svelte'
-  import Navbar from '$lib/Components/Navbar.svelte'
   import Icon from '@iconify/svelte'
   import DeskImg from '$lib/assets/desk.png?enhanced'
   import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
@@ -8,7 +6,7 @@
   import CardItem from '$lib/Components/Aceternity/3d-card-effect/CardItem.svelte'
   import CardBody from '$lib/Components/Aceternity/3d-card-effect/CardBody.svelte'
 
-  let isMouseEntered = false
+  let isMouseEntered = $state(false)
 </script>
 
 <svelte:head>
@@ -19,8 +17,6 @@
     content="Contacteer Jan-Peter Dhallé, student toegepaste informatica" />
   <meta property="og:title" content="Contact - Portfolio Jan-Peter" />
 </svelte:head>
-
-<Navbar />
 
 <div class="contact_gradient absolute top-0 h-full w-screen"></div>
 
@@ -156,8 +152,6 @@
     </CardBody>
   </CardContainer>
 </div>
-
-<Footer />
 
 <style lang="postcss">
   .contact_gradient {

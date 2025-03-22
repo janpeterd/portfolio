@@ -1,6 +1,4 @@
 <script>
-  import Navbar from '$lib/Components/Navbar.svelte'
-  import Footer from '$lib/Components/Footer.svelte'
   import Hero from '$lib/Components/Hero.svelte'
   import About from '$lib/Components/About.svelte'
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
@@ -20,15 +18,11 @@
 
 <div class="bottom-gradient absolute bottom-0 h-screen w-screen overflow-hidden"></div>
 
-<Navbar />
-
 <HugTextBg />
 
 <Hero />
 
 <About />
-
-<Footer />
 
 <style lang="postcss">
   .bottom-gradient {
