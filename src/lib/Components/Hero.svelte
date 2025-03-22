@@ -18,13 +18,3 @@
     <Icon icon="mdi:chevron-down" width="4rem" class="text-secondary/30" />
   </a>
 </div>
-
-<style lang="postcss">
-  .bottom-gradient {
-    z-index: -10;
-    mask-image: radial-gradient(305vw 450px at 50% 0%, rgba(0, 0, 0, 1) 30%, transparent);
-    background: url('/img/grain.webp'),
-      radial-gradient(115vw 450px at 110% 10%, theme(colors.blue.600 / 40%), transparent);
-  }
-
-</style>
