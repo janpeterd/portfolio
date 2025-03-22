@@ -13,10 +13,10 @@
 </script>
 
 <div
-  class="fixed top-0 z-50 flex w-screen justify-between bg-transparent pt-2 font-elec print:hidden">
+  class="fixed top-0 z-20 flex w-screen justify-between bg-transparent pt-2 font-elec print:hidden">
   <div
     class="justify-content flex w-auto flex-shrink items-center rounded-full bg-white/10 pr-4 backdrop-blur backdrop-saturate-150">
-    <div class="absolute -left-12 -top-24 h-[250px] w-48 cursor-pointer">
+    <div class="-top-18 absolute -left-12 z-0 h-[180px] w-48 cursor-pointer">
       <Canvas>
         <Logo3d />
       </Canvas>

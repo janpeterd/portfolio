@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<div class="bottom-gradient absolute top-0 h-full w-screen"></div>
+<div class="bottom-gradient fixed top-0 h-full w-screen"></div>
 
 <style lang="postcss">
   .bottom-gradient {

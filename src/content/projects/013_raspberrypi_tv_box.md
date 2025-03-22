@@ -1,13 +1,14 @@
 ---
-title: Raspberry Pi TV box
+title: Raspberry Pi TV-box
 date: 2025-02-27
+thumbnail: /img/projects/rpi_android_box.jpg
 ---
 
-## Raspberry pi TV box
+## Raspberry pi TV-box
 
 Aangezien ik thuis een server heb met wat films op, wou ik een makkelijke
 manier hebben om deze films te bekijken. Dit zou makkelijk zijn op een smart TV
-of TV box, maar deze heb ik niet.
+of TV-box, maar deze heb ik niet.
 Dus heb ik wat zitten rondkijken naar een oplossing voor dit probleem.
 
 ### Lineage OS

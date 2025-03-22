@@ -1,6 +1,7 @@
 ---
 title: .NET blog met Contentful integratie
 date: 2023-12-16
+thumbnail: /img/projects/dotnet_blogpost.png
 ---
 
 ## .NET blog met Contentful integratie

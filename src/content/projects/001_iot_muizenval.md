@@ -1,6 +1,7 @@
 ---
 title: IoT muizenval
 date: 2023-05-19
+thumbnail: /img/projects/iot_muizenval.png
 ---
 
 ## IoT muizenval

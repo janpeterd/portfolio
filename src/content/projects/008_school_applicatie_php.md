@@ -1,6 +1,7 @@
 ---
 title: Project Digital Innovation PHP
 date: 2024-05-21
+thumbnail: /img/projects/php_project_projectinfo.png 
 ---
 
 # De opdracht

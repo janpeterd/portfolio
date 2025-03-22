@@ -1,6 +1,8 @@
 ---
-title: ⭐ Portfolio
+title: Portfolio
 date: 2024-03-26
+thumbnail: /img/projects/portfolio_home.png 
+starred: true
 ---
 
 ## Mijn portfolio

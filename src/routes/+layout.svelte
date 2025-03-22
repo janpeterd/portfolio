@@ -41,6 +41,6 @@
 
 <div class="relative overflow-hidden py-1">
   <Navbar />
-  {@render children?.()}
+    {@render children?.()}
   <Footer />
 </div>

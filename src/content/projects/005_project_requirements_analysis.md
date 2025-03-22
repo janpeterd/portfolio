@@ -1,6 +1,7 @@
 ---
 title: Requirements analysis
 date: 2024-03-26
+thumbnail: /img/projects/req_analysis_uc_diagram.png
 ---
 
 ## Analyse- en ontwerprapport voor project

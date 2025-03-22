@@ -1,31 +1,30 @@
 ---
 title: Jpserv Home server
 date: 2025-02-27
+thumbnail: /img/projects/jpserv/2024-11-07_15-15-13_screenshot.png
 ---
 
 ## Hardware
 
 ### Build
 
-![](../.imgs/Hardware/2024-09-08_01-43-26_screenshot.png)
+![](/img/projects/jpserv/2024-09-08_01-43-26_screenshot.png)
 
-![](../.imgs/Hardware/2024-09-08_01-43-04_screenshot.png)
+![](/img/projects/jpserv/2024-09-08_01-43-04_screenshot.png)
 
-Name Component
-
----
-
-CPU AMD Ryzen 5 5600G
-GPU Integrated graphics (AMD Radeon Vega Series)
-Memory 2x8Gib (16Gib) Corsair DDR4 Vengeance LPX 3200
-Power supply Shark WPM Gold ZERO 750W
-Motherboard Gigabyte B550 GAMING X v2 B550
-Case Antec P101 Silent Midi Tower
-SATA expansion card Startech.com 10 port SATA PCIe expansion card 6Gbps
+| Name                | Component                                           |
+| ------------------- | :-------------------------------------------------- |
+| CPU                 | AMD Ryzen 5 5600G                                   |
+| GPU                 | Integrated graphics (AMD Radeon Vega Series)        |
+| Memory              | 2x8Gib (16Gib) Corsair DDR4 Vengeance LPX 3200      |
+| Power supply        | Shark WPM Gold ZERO 750W                            |
+| Motherboard         | Gigabyte B550 GAMING X v2 B550                      |
+| Case                | Antec P101 Silent Midi Tower                        |
+| SATA expansion card | Startech.com 10 port SATA PCIe expansion card 6Gbps |
 
 ### Drives
 
-![](../.imgs/Hardware/2024-11-07_15-15-13_screenshot.png)
+![](/img/projects/jpserv/2024-11-07_15-15-13_screenshot.png)
 
 - Crucial MX500 3D NAND SATA 2.5" Internal SSD (CT500MX500SSD1)
   _probably_
@@ -34,21 +33,19 @@ SATA expansion card Startech.com 10 port SATA PCIe expansion card 6Gbps
 
   - Physical configuration:
 
-  Drive Serial Number Capacity
-
-  ***
-
-  WW60B72Q 4Tb
-  WW609RF4 4Tb
-  WW60AVEA 4Tb
-  WW60794X 4Tb
-  WW60B37G 4Tb
-  WW64M90G 4Tb
-  WW64N39V 4Tb
+| Drive Serial Number | Capacity  |
+| :------------------ | --------: |
+| WW60B72Q            | 4Tb       |
+| WW609RF4            | 4Tb       |
+| WW60AVEA            | 4Tb       |
+| WW60794X            | 4Tb       |
+| WW60B37G            | 4Tb       |
+| WW64M90G            | 4Tb       |
+| WW64N39V            | 4Tb       |
 
 ### Ports
 
-![](../.imgs/Hardware/2024-09-08_01-41-31_screenshot.png)
+![](/img/projects/jpserv/2024-09-08_01-41-31_screenshot.png)
 
 - Back IO
   - 2 \* USB 2 port
@@ -71,7 +68,7 @@ SATA expansion card Startech.com 10 port SATA PCIe expansion card 6Gbps
 
 ### Operating System
 
-![](../.imgs/Software/2024-09-01_15-03-31_screenshot.png)
+![](/img/projects/jpserv/2024-09-01_15-03-31_screenshot.png)
 
 - Arch Linux
 
@@ -97,7 +94,7 @@ SATA expansion card Startech.com 10 port SATA PCIe expansion card 6Gbps
 
 - Good info on the [ArchWiki](https://wiki.archlinux.org/)
 
-![](../.imgs/Software/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
+![](/img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
 
 #### Fstab
 
@@ -219,18 +216,17 @@ GRUB_SAVEDEFAULT=true
 - Device: Crucial MX500 3D NAND SATA 2.5" Internal SSD
   (CT500MX500SSD1)
 
-Name Size File System Mountpoint(s)
+ | Name    | Size      | File System | Mountpoint(s)                                                                 |
+ |---------|-----------|-------------|-------------------------------------------------------------------------------|
+ | Boot    | 511Mib    | FAT32       |  /boot                                                                        |
+ | Primary | 465.26GiB | BTRFS       | /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log |
 
----
-
-Boot 511Mib FAT32 /boot
-Primary 465.26GiB BTRFS /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log
 
 #### /data
 
 1.  Information
 
-    ![](../.imgs/Software/2024-09-01_13-46-42_68747470733a2f2f6f70656e7a66732e6769746875622e696f2f6f70656e7a66732d646f63732f5f7374617469632f696d672f6c6f676f2f34383070782d4f70656e2d5a46532d5365636f6e646172792d4c6f676f2d436f6c6f75722d68616c6673697a652e706e67.png)
+    ![](/img/projects/jpserv/2024-09-01_13-46-42_68747470733a2f2f6f70656e7a66732e6769746875622e696f2f6f70656e7a66732d646f63732f5f7374617469632f696d672f6c6f676f2f34383070782d4f70656e2d5a46532d5365636f6e646172792d4c6f676f2d436f6c6f75722d68616c6673697a652e706e67.png)
 
     - ZFS File System
 
@@ -248,29 +244,14 @@ Primary 465.26GiB BTRFS /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/d
 
     - 3 `VDEVs`
 
-    mirror-0
+ | mirror-0                         | raidz1-1                         | mirror-2                         |
+ | -------------------------------- | ---------------------------------| ---------------------------------|
+ | ata-ST4000VN006-3CW104~WW60B72Q~ | ata-ST4000VN006-3CW104~WW60AVEA~ | ata-ST4000VN006-3CW104~WW64M90G~ |
+ | ata-ST4000VN006-3CW104~WW609RF4~ | ata-ST4000VN006-3CW104~WW60794X~ | ata-ST4000VN006-3CW104~WW64N39V~ |
+ | /                                | /                                | ata-ST4000VN006-3CW104~WW60B37G~ |
 
-    ***
 
-    ata-ST4000VN006-3CW104~WW60B72Q~
-    ata-ST4000VN006-3CW104~WW609RF4~
-
-    ***
-
-    raidz1-1
-    ata-ST4000VN006-3CW104~WW60AVEA~
-    ata-ST4000VN006-3CW104~WW60794X~
-    ata-ST4000VN006-3CW104~WW60B37G~
-
-    ***
-
-    mirror-2
-
-    ***
-
-    ata-ST4000VN006-3CW104~WW64M90G~
-    ata-ST4000VN006-3CW104~WW64N39V~
-
+```
           pool: data
          state: ONLINE
           scan: scrub repaired 0B in 19:52:20 with 0 errors on Mon Nov  4 19:52:21 2024
@@ -293,252 +274,236 @@ Primary 465.26GiB BTRFS /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/d
 
         NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
         data  18.2T  12.3T  5.82T        -         -    17%    67%  1.00x    ONLINE  -
+```
 
 2.  Services
-
-    1.  Auto Snapshots
-
-                      - ZFS snapshots are **read-only** copies of a ZFS file system
-                      - You can rollback to a previous snapshot with: `zfs rollback
-
-               vault@snapshot-name`        - You can browse the files of any snapshot at:
-
-        `mountpoint_of_zfs_pool/.zfs/snapshot/` - **AUR Package**:
-        [zfs-auto-snapshot](https://aur.archlinux.org/packages/zfs-auto-snapshot)
-
+  1.  Auto Snapshots
+    - ZFS snapshots are **read-only** copies of a ZFS file system
+    - You can rollback to a previous snapshot with: `zfs rollback vault@snapshot-name`        
+    - You can browse the files of any snapshot at: `mountpoint_of_zfs_pool/.zfs/snapshot/` 
+    - **AUR Package**: [zfs-auto-snapshot](https://aur.archlinux.org/packages/zfs-auto-snapshot)
     - I have enabled: -`zfs-auto-snapshot-hourly.timer`
+    - `zfs-auto-snapshot-weekly.timer`
 
-      - `zfs-auto-snapshot-weekly.timer`
+```
+# Get an overview of zfs snapshots
+zfs list -r -t snapshot
+```
 
-            ```shell
-            # Get an overview of zfs snapshots
-            zfs list -r -t snapshot
-            ```
+```
+Example output: NAME USED AVAIL REFER MOUNTPOINT
+  data@2024-07-29_22:24:29 39.8G - 5.99T - data@2024-08-09_23:39:02
+  28.8G - 6.01T - data@znap_2024-08-11-2200_weekly 56.0G - 6.62T -
+  data@znap_2024-08-18-2200_weekly 14.5G -  7.09T -
+  data@znap_2024-08-25-2200_weekly 32.3G -  7.28T -
+  data@znap_2024-08-31-1200_hourly 100M  -  7.27T -
+  data@znap_2024-08-31-1300_hourly 834K  -  7.27T -
+  data@znap_2024-08-31-1400_hourly 36.2M -  7.27T -
+  data@znap_2024-08-31-1500_hourly 2.26M -  7.27T -
+  data@znap_2024-08-31-1600_hourly 1.39M -  7.27T -
+  data@znap_2024-08-31-1700_hourly 1.25M -  7.27T -
+  data@znap_2024-08-31-1800_hourly 709K  -  7.27T -
+  data@znap_2024-08-31-1900_hourly 400K  -  7.27T -
+  data@znap_2024-08-31-2000_hourly 794K  -  7.27T -
+  data@znap_2024-08-31-2100_hourly 382K  -  7.28T -
+  data@znap_2024-08-31-2200_hourly 998K  -  7.28T -
+  data@znap_2024-08-31-2300_hourly 513K  -  7.28T -
+  data@znap_2024-09-01-0000_hourly 638K  -  7.28T -
+  data@znap_2024-09-01-0100_hourly 521K  -  7.28T -
+  data@znap_2024-09-01-0200_hourly 2.42M -  7.28T -
+  data@znap_2024-09-01-0300_hourly 1.22M -  7.27T -
+  data@znap_2024-09-01-0400_hourly 612K  -  7.28T -
+  data@znap_2024-09-01-0500_hourly 658K  -  7.28T -
+  data@znap_2024-09-01-0600_hourly 596K  -  7.28T -
+  data@znap_2024-09-01-0700_hourly 558K  -  7.28T -
+  data@znap_2024-09-01-0800_hourly 624K  -  7.28T -
+  data@znap_2024-09-01-0900_hourly 878K  -  7.28T -
+  data@znap_2024-09-01-1000_hourly 2.16M -  7.28T -
+  data@znap_2024-09-01-1100_hourly 774K  -  7.28T -
+```
 
-            ```example
-            Example output: NAME USED AVAIL REFER MOUNTPOINT
-             data@2024-07-29_22:24:29 39.8G - 5.99T - data@2024-08-09_23:39:02
-             28.8G - 6.01T - data@znap_2024-08-11-2200_weekly 56.0G - 6.62T -
-             data@znap_2024-08-18-2200_weekly 14.5G - 7.09T -
-             data@znap_2024-08-25-2200_weekly 32.3G - 7.28T -
-             data@znap_2024-08-31-1200_hourly 100M - 7.27T -
-             data@znap_2024-08-31-1300_hourly 834K - 7.27T -
-             data@znap_2024-08-31-1400_hourly 36.2M - 7.27T -
-             data@znap_2024-08-31-1500_hourly 2.26M - 7.27T -
-             data@znap_2024-08-31-1600_hourly 1.39M - 7.27T -
-             data@znap_2024-08-31-1700_hourly 1.25M - 7.27T -
-             data@znap_2024-08-31-1800_hourly 709K - 7.27T -
-             data@znap_2024-08-31-1900_hourly 400K - 7.27T -
-             data@znap_2024-08-31-2000_hourly 794K - 7.27T -
-             data@znap_2024-08-31-2100_hourly 382K - 7.28T -
-             data@znap_2024-08-31-2200_hourly 998K - 7.28T -
-             data@znap_2024-08-31-2300_hourly 513K - 7.28T -
-             data@znap_2024-09-01-0000_hourly 638K - 7.28T -
-             data@znap_2024-09-01-0100_hourly 521K - 7.28T -
-             data@znap_2024-09-01-0200_hourly 2.42M - 7.28T -
-             data@znap_2024-09-01-0300_hourly 1.22M - 7.27T -
-             data@znap_2024-09-01-0400_hourly 612K - 7.28T -
-             data@znap_2024-09-01-0500_hourly 658K - 7.28T -
-             data@znap_2024-09-01-0600_hourly 596K - 7.28T -
-             data@znap_2024-09-01-0700_hourly 558K - 7.28T -
-             data@znap_2024-09-01-0800_hourly 624K - 7.28T -
-             data@znap_2024-09-01-0900_hourly 878K - 7.28T -
-             data@znap_2024-09-01-1000_hourly 2.16M - 7.28T -
-             data@znap_2024-09-01-1100_hourly 774K - 7.28T -
-            ```
+  2. Auto scrub
+    - ZFS scrubbing solves **data corruption**. It is recommended to run regularly (weekly or monthly).
+    - **AUR Package**: [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
+    - Enabled with the command: `sudo systemctl enable --now
+  zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
+  [ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) I get notified by e-mail.
 
-    2.  Auto scrub
+  3. ZED: `zed.service`
+    - Notify on important events via **E-mail**
+    - Notify on scrub
+    - You can see the events with the command: `zpool events`
+    - This requires **mail command** to be setup
+    1.  Configuration
+      ```conf
+        ##
+        #
+        # zed.rc - ZEDLET configuration.
+        ##
+        # shellcheck disable=SC2034
 
-               - ZFS scrubbing solves **data corruption**. It is recommended
-                 to run regularly (weekly or monthly).
-               - **AUR Package**:
-                 [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
-               - Enabled with the command: `sudo systemctl enable --now
+        ##
+        # Absolute path to the debug output file.
+        #
+        #ZED_DEBUG_LOG="/tmp/zed.debug.log"
 
-        zpool-scrub@data.timer`. This will scrub the given pool
-        **weekly**. Via
-        [ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) I get
-        notified by e-mail.
+        ##
+        # Email address of the zpool administrator for receipt of notifications;
+        #   multiple addresses can be specified if they are delimited by whitespace.
+        # Email will only be sent if ZED_EMAIL_ADDR is defined.
+        # Enabled by default; comment to disable.
+        #
+        ZED_EMAIL_ADDR="REPLACE_ZFS_ZED_EMAIL"
 
-    3.  ZED: `zed.service`
+        ##
+        # Name or path of executable responsible for sending notifications via email;
+        #   the mail program must be capable of reading a message body from stdin.
+        # Email will only be sent if ZED_EMAIL_ADDR is defined.
+        #
+        ZED_EMAIL_PROG="mail"
 
-        - Notify on important events via **E-mail**
-        - Notify on scrub
-        - You can see the events with the command: `zpool events`
-        - This requires **mail command** to be setup
+        ##
+        # Command-line options for ZED_EMAIL_PROG.
+        # The string @ADDRESS@ will be replaced with the recipient email address(es).
+        # The string @SUBJECT@ will be replaced with the notification subject;
+        #   this should be protected with quotes to prevent word-splitting.
+        # Email will only be sent if ZED_EMAIL_ADDR is defined.
+        # If @SUBJECT@ was omited here, a "Subject: ..." header will be added to notification
+        #
+        ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
 
-        1.  Configuration
+        ##
+        # Default directory for zed lock files.
+        #
+        ZED_LOCKDIR="/var/lock"
 
-            ```conf
-            ##
-            #
-            # zed.rc - ZEDLET configuration.
-            ##
-            # shellcheck disable=SC2034
+        ##
+        # Minimum number of seconds between notifications for a similar event.
+        #
+        ZED_NOTIFY_INTERVAL_SECS=3600
 
-            ##
-            # Absolute path to the debug output file.
-            #
-            #ZED_DEBUG_LOG="/tmp/zed.debug.log"
+        ##
+        # Notification verbosity.
+        #   If set to 0, suppress notification if the pool is healthy.
+        #   If set to 1, send notification regardless of pool health.
+        #
+        ZED_NOTIFY_VERBOSE=1
 
-            ##
-            # Email address of the zpool administrator for receipt of notifications;
-            #   multiple addresses can be specified if they are delimited by whitespace.
-            # Email will only be sent if ZED_EMAIL_ADDR is defined.
-            # Enabled by default; comment to disable.
-            #
-            ZED_EMAIL_ADDR="REPLACE_ZFS_ZED_EMAIL"
+        ##
+        # Send notifications for 'ereport.fs.zfs.data' events.
+        # Disabled by default, any non-empty value will enable the feature.
+        #
+        #ZED_NOTIFY_DATA=
 
-            ##
-            # Name or path of executable responsible for sending notifications via email;
-            #   the mail program must be capable of reading a message body from stdin.
-            # Email will only be sent if ZED_EMAIL_ADDR is defined.
-            #
-            ZED_EMAIL_PROG="mail"
+        ##
+        # Pushbullet access token.
+        # This grants full access to your account -- protect it accordingly!
+        #   <https://www.pushbullet.com/get-started>
+        #   <https://www.pushbullet.com/account>
+        # Disabled by default; uncomment to enable.
+        #
+        #ZED_PUSHBULLET_ACCESS_TOKEN=""
 
-            ##
-            # Command-line options for ZED_EMAIL_PROG.
-            # The string @ADDRESS@ will be replaced with the recipient email address(es).
-            # The string @SUBJECT@ will be replaced with the notification subject;
-            #   this should be protected with quotes to prevent word-splitting.
-            # Email will only be sent if ZED_EMAIL_ADDR is defined.
-            # If @SUBJECT@ was omited here, a "Subject: ..." header will be added to notification
-            #
-            ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
+        ##
+        # Pushbullet channel tag for push notification feeds that can be subscribed to.
+        #   <https://www.pushbullet.com/my-channel>
+        # If not defined, push notifications will instead be sent to all devices
+        #   associated with the account specified by the access token.
+        # Disabled by default; uncomment to enable.
+        #
+        #ZED_PUSHBULLET_CHANNEL_TAG=""
 
-            ##
-            # Default directory for zed lock files.
-            #
-            ZED_LOCKDIR="/var/lock"
+        ##
+        # Slack Webhook URL.
+        # This allows posting to the given channel and includes an access token.
+        #   <https://api.slack.com/incoming-webhooks>
+        # Disabled by default; uncomment to enable.
+        #
+        #ZED_SLACK_WEBHOOK_URL=""
 
-            ##
-            # Minimum number of seconds between notifications for a similar event.
-            #
-            ZED_NOTIFY_INTERVAL_SECS=3600
+        ##
+        # Pushover token.
+        # This defines the application from which the notification will be sent.
+        #   <https://pushover.net/api#registration>
+        # Disabled by default; uncomment to enable.
+        # ZED_PUSHOVER_USER, below, must also be configured.
+        #
+        #ZED_PUSHOVER_TOKEN=""
 
-            ##
-            # Notification verbosity.
-            #   If set to 0, suppress notification if the pool is healthy.
-            #   If set to 1, send notification regardless of pool health.
-            #
-            ZED_NOTIFY_VERBOSE=1
+        ##
+        # Pushover user key.  This defines which user or group will receive
+        # Pushover notifications.  <https://pushover.net/api#identifiers>
+        # Disabled by default; uncomment to enable.  ZED_PUSHOVER_TOKEN,
+        # above, must also be configured.
+        #ZED_PUSHOVER_USER=""
 
-            ##
-            # Send notifications for 'ereport.fs.zfs.data' events.
-            # Disabled by default, any non-empty value will enable the feature.
-            #
-            #ZED_NOTIFY_DATA=
+        ##
+        # Default directory for zed state files.
+        #
+        #ZED_RUNDIR="/var/run"
 
-            ##
-            # Pushbullet access token.
-            # This grants full access to your account -- protect it accordingly!
-            #   <https://www.pushbullet.com/get-started>
-            #   <https://www.pushbullet.com/account>
-            # Disabled by default; uncomment to enable.
-            #
-            #ZED_PUSHBULLET_ACCESS_TOKEN=""
+        ##
+        # Turn on/off enclosure LEDs when drives get DEGRADED/FAULTED.  This works for
+        # device mapper and multipath devices as well.  This works with JBOD enclosures
+        # and NVMe PCI drives (assuming they're supported by Linux in sysfs).
+        #
+        ZED_USE_ENCLOSURE_LEDS=1
 
-            ##
-            # Pushbullet channel tag for push notification feeds that can be subscribed to.
-            #   <https://www.pushbullet.com/my-channel>
-            # If not defined, push notifications will instead be sent to all devices
-            #   associated with the account specified by the access token.
-            # Disabled by default; uncomment to enable.
-            #
-            #ZED_PUSHBULLET_CHANNEL_TAG=""
+        ##
+        # Run a scrub after every resilver Disabled by default, 1 to enable
+        # and 0 to disable.
+        #ZED_SCRUB_AFTER_RESILVER=0
 
-            ##
-            # Slack Webhook URL.
-            # This allows posting to the given channel and includes an access token.
-            #   <https://api.slack.com/incoming-webhooks>
-            # Disabled by default; uncomment to enable.
-            #
-            #ZED_SLACK_WEBHOOK_URL=""
+        ##
+        # The syslog priority (e.g., specified as a "facility.level" pair).
+        #
+        ZED_SYSLOG_PRIORITY="daemon.notice"
 
-            ##
-            # Pushover token.
-            # This defines the application from which the notification will be sent.
-            #   <https://pushover.net/api#registration>
-            # Disabled by default; uncomment to enable.
-            # ZED_PUSHOVER_USER, below, must also be configured.
-            #
-            #ZED_PUSHOVER_TOKEN=""
+        ##
+        # The syslog tag for marking zed events.
+        #
+        ZED_SYSLOG_TAG="zed"
 
-            ##
-            # Pushover user key.  This defines which user or group will receive
-            # Pushover notifications.  <https://pushover.net/api#identifiers>
-            # Disabled by default; uncomment to enable.  ZED_PUSHOVER_TOKEN,
-            # above, must also be configured.
-            #ZED_PUSHOVER_USER=""
+        ##
+        # Which set of event subclasses to log By default, events from all
+        # subclasses are logged.  If ZED_SYSLOG_SUBCLASS_INCLUDE is set,
+        # only subclasses matching the pattern are logged. Use the pipe
+        # symbol (|) or shell wildcards (*, ?) to match multiple
+        # subclasses.  Otherwise, if ZED_SYSLOG_SUBCLASS_EXCLUDE is set,
+        # the matching subclasses are excluded from logging.
+        #ZED_SYSLOG_SUBCLASS_INCLUDE="checksum|scrub_*|vdev.*"
+        ZED_SYSLOG_SUBCLASS_EXCLUDE="history_event"
 
-            ##
-            # Default directory for zed state files.
-            #
-            #ZED_RUNDIR="/var/run"
+        ##
+        # Use GUIDs instead of names when logging pool and vdevs Disabled
+        # by default, 1 to enable and 0 to disable.
+        #ZED_SYSLOG_DISPLAY_GUIDS=1
 
-            ##
-            # Turn on/off enclosure LEDs when drives get DEGRADED/FAULTED.  This works for
-            # device mapper and multipath devices as well.  This works with JBOD enclosures
-            # and NVMe PCI drives (assuming they're supported by Linux in sysfs).
-            #
-            ZED_USE_ENCLOSURE_LEDS=1
+        ##
+        # Power off the drive's slot in the enclosure if it becomes
+        # FAULTED.  This can help silence misbehaving drives.  This assumes
+        # your drive enclosure fully supports slot power control via sysfs.
+        #ZED_POWER_OFF_ENCLOSURE_SLOT_ON_FAULT=1
 
-            ##
-            # Run a scrub after every resilver Disabled by default, 1 to enable
-            # and 0 to disable.
-            #ZED_SCRUB_AFTER_RESILVER=0
+        ##
+        # Ntfy topic This defines which topic will receive the ntfy
+        # notification.  <https://docs.ntfy.sh/publish/> Disabled by
+        # default; uncomment to enable.
+        #ZED_NTFY_TOPIC=""
 
-            ##
-            # The syslog priority (e.g., specified as a "facility.level" pair).
-            #
-            ZED_SYSLOG_PRIORITY="daemon.notice"
+        ##
+        # Ntfy access token (optional for public topics) This defines an
+        # access token which can be used to allow you to authenticate when
+        # sending to topics <https://docs.ntfy.sh/publish/#access-tokens>
+        # Disabled by default; uncomment to enable.
+        #ZED_NTFY_ACCESS_TOKEN=""
 
-            ##
-            # The syslog tag for marking zed events.
-            #
-            ZED_SYSLOG_TAG="zed"
-
-            ##
-            # Which set of event subclasses to log By default, events from all
-            # subclasses are logged.  If ZED_SYSLOG_SUBCLASS_INCLUDE is set,
-            # only subclasses matching the pattern are logged. Use the pipe
-            # symbol (|) or shell wildcards (*, ?) to match multiple
-            # subclasses.  Otherwise, if ZED_SYSLOG_SUBCLASS_EXCLUDE is set,
-            # the matching subclasses are excluded from logging.
-            #ZED_SYSLOG_SUBCLASS_INCLUDE="checksum|scrub_*|vdev.*"
-            ZED_SYSLOG_SUBCLASS_EXCLUDE="history_event"
-
-            ##
-            # Use GUIDs instead of names when logging pool and vdevs Disabled
-            # by default, 1 to enable and 0 to disable.
-            #ZED_SYSLOG_DISPLAY_GUIDS=1
-
-            ##
-            # Power off the drive's slot in the enclosure if it becomes
-            # FAULTED.  This can help silence misbehaving drives.  This assumes
-            # your drive enclosure fully supports slot power control via sysfs.
-            #ZED_POWER_OFF_ENCLOSURE_SLOT_ON_FAULT=1
-
-            ##
-            # Ntfy topic This defines which topic will receive the ntfy
-            # notification.  <https://docs.ntfy.sh/publish/> Disabled by
-            # default; uncomment to enable.
-            #ZED_NTFY_TOPIC=""
-
-            ##
-            # Ntfy access token (optional for public topics) This defines an
-            # access token which can be used to allow you to authenticate when
-            # sending to topics <https://docs.ntfy.sh/publish/#access-tokens>
-            # Disabled by default; uncomment to enable.
-            #ZED_NTFY_ACCESS_TOKEN=""
-
-            ##
-            # Ntfy Service URL This defines which service the ntfy call will be
-            # directed toward <https://docs.ntfy.sh/install/> https://ntfy.sh
-            # by default; uncomment to enable an alternative service url.
-            #ZED_NTFY_URL="https://ntfy.sh"
-
-            ```
+        ##
+        # Ntfy Service URL This defines which service the ntfy call will be
+        # directed toward <https://docs.ntfy.sh/install/> https://ntfy.sh
+        # by default; uncomment to enable an alternative service url.
+        #ZED_NTFY_URL="https://ntfy.sh"
+    ```
 
 ### Docker
 
@@ -561,7 +526,7 @@ Primary 465.26GiB BTRFS /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/d
 
 #### VPN
 
-![](../.imgs/Software/2024-09-01_15-02-10_screenshot.png)
+![](/img/projects/jpserv/2024-09-01_15-02-10_screenshot.png)
 
 - Enable service: `tailscaled.service`
 
@@ -1003,7 +968,7 @@ Primary 465.26GiB BTRFS /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/d
 
 #### Jellyfin
 
-![](../.imgs/Software/2024-09-01_14-37-31_screenshot.png)
+![](/img/projects/jpserv/2024-09-01_14-37-31_screenshot.png)
 
 - Open source media solution to view media
 
@@ -1047,11 +1012,9 @@ server multiple times. I fixed this by doing a few things:
 
 1.  Limit container resources (see compose below)
 2.  In jellyfin admin settings -\> general -\> Performance set _Parallel
-    library scan tasks limit_
+    library scan tasks limit_ to 1
 
-to 1
-
-1.  Docker compose
+3.  Docker compose
 
     ```yaml
     services:
@@ -1087,33 +1050,23 @@ to 1
 
 #### Radarr
 
-- Movies download
-- Movies renaming
+- Movies library management
 - port: 7878
 
 #### Sonarr
 
-- TV shows download
-- Anime shows download
-- shows and anime renaming
+- TV shows library management
 - port: 8989
 
 #### Lidarr
 
-- Music download
-- Music rename and metadata
+- Music library download
 - port: 8686
 
 #### Bazarr
 
-- Subtitle download
-- Subtitle syncing
+- Subtitle library management
 - port: 6767
-
-#### Prowlarr
-
-- Torrent indexers
-- Spread to other services
 
 #### Combined compose file
 
@@ -1224,7 +1177,6 @@ services:
 - View and search images
 - Use metadata
 - Machine learning (face recognition, object search, etc.)
-- Android and IOS native clients
 - port: 2283
 
 1.  Borg backup
@@ -1232,7 +1184,7 @@ services:
     - Database backup
     - Images backup
 
-````bash
+```bash
     #!/bin/sh
     #IMMICH
 
@@ -1309,10 +1261,7 @@ services:
         printf "\n🔴 Attention required: One or more backup operations failed." | tee -a "$OUTPUT_FILE"
         mail -s "🔴 BACKUP =IMMICH= (attention)" $(echo "$EMAIL" | tr ',' ' ') < "$OUTPUT_FILE"
     fi
-
-
-
-    ```
+```
 
 #### Calibre
 
@@ -1342,7 +1291,7 @@ services:
 
 1.  Docker compose
 
-    ```yaml
+```yaml
     # NOTE: all the containers that need to communicate with each other need to be defined here.
     services:
       gluetun:
@@ -1540,35 +1489,28 @@ services:
           - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
           - TZ=Europe/Brussels
         restart: unless-stopped
-    ```
+```
 
 ### Services
 
 #### SSHD
 
-- If you want a machine to ssh into this server without password then
-
-copy the public key of the new machine into:
-`/home/jp/.ssh/authorized_keys`
+- If you want a machine to ssh into this server without password then copy the
+public key of the new machine into: `/home/jp/.ssh/authorized_keys`
 
 #### Reflector
 
 - Arch Linux updates are hosted on servers called **Mirrors**. These
   can change. It is important to keep these up to date and to use
-  mirrors closeby.
-  - Mirrors are defined in the file:
-    `/etc/pacman.d/mirrorlist`
-- **Reflector** is a service that updates the mirrorlist and sorts by
-  download rate
+  mirrors close by. - Mirrors are defined in the file: `/etc/pacman.d/mirrorlist`
+- **Reflector** is a service that updates the mirrorlist and sorts by download rate
 - Installed via package manager
-- Enable the service
-  (`sudo systemctl enable --now reflector.service`)
+- Enable the service (`sudo systemctl enable --now reflector.service`)
 
 1.  Configuration file
-
     - Located at: `/etc/xdg/reflector/reflector.conf`
 
-    ```conf
+```conf
     # Reflector configuration file for the systemd service.
     #
     # Empty lines and lines beginning with "#" are ignored.  All other lines should
@@ -1596,8 +1538,7 @@ copy the public key of the new machine into:
 
     # Sort the mirrors by synchronization time (--sort).
     --sort age
-
-    ```
+```
 
 #### Syncthing
 
@@ -1612,8 +1553,7 @@ copy the public key of the new machine into:
 - This server acts as a **central server**.
 - port: 8384
 - Locally installed (pacman)
-- Enabled via **user** systemd service:
-  `systemctl --user enable --now syncthing@jp.service`
+- Enabled via **user** systemd service: `systemctl --user enable --now syncthing@jp.service`
 - [website](https://syncthing.net/)
 
 #### Nextcloud

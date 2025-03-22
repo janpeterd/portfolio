@@ -16,7 +16,8 @@
   <meta property="og:title" content="Portfolio - JP" />
 </svelte:head>
 
-<div class="bottom-gradient absolute bottom-0 h-screen w-screen overflow-hidden"></div>
+<div class="top-gradient fixed bottom-0 h-screen w-screen overflow-hidden"></div>
+<div class="bottom-gradient fixed top-0 h-full w-screen overflow-hidden"></div>
 
 <HugTextBg />
 
@@ -25,10 +26,15 @@
 <About />
 
 <style lang="postcss">
+  .top-gradient {
+    z-index: -10;
+    mask-image: radial-gradient(305vw 450px at 50% 0%, rgba(0, 0, 0, 1) 30%, transparent);
+    background: url('/img/grain.webp'),
+      radial-gradient(115vw 450px at 110% 10%, theme(colors.blue.600 / 40%), transparent);
+  }
   .bottom-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: url('/img/grain.webp'),
-      radial-gradient(105vw 850px at 50% 120%, theme(colors.green.500 / 15%), transparent);
+    background: radial-gradient(105vw 850px at 50% 120%, theme(colors.secondary / 10%), transparent);
   }
 </style>

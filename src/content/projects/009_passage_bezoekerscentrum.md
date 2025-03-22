@@ -1,6 +1,7 @@
 ---
 title: Museumplanning bezoekerscentrum OPZ
 date: 2023-05-21
+thumbnail: /img/projects/ps1_project_home.png
 ---
 
 # Opdracht

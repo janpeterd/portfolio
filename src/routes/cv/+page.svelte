@@ -27,8 +27,8 @@
   <meta property="og:title" content="Cv - Portfolio Jan-Peter" />
 </svelte:head>
 
-<div class="bottom-gradient absolute bottom-0 h-screen w-screen print:hidden"></div>
-<div class="gradient1 absolute -top-20 h-screen w-screen print:hidden"></div>
+<div class="bottom-gradient fixed bottom-0 h-screen w-screen print:hidden"></div>
+<div class="gradient1 fixed -top-20 h-screen w-screen print:hidden"></div>
 
 <div
   class="container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-sm print:text-black">
@@ -140,7 +140,10 @@
       <!-- SIDEBAR -->
       <div
         class="order-first rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] lg:max-w-96 xl:min-w-0 print:m-2 print:mb-8 print:max-w-96 print:rounded-none print:border-r print:border-black/20 print:px-0 print:py-4 print:pr-2">
-        <enhanced:img src={HeroImg} alt="Foto van Jan-Peter" class="max-h-80 w-full object-cover" />
+        <enhanced:img
+          src={HeroImg}
+          alt="Foto van Jan-Peter"
+          class="max-h-80 w-full rounded-lg object-cover" />
         <!-- CONTACT -->
         <h2 class="cv_heading">Contact</h2>
         <ul class="block print:hidden">

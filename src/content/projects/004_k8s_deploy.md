@@ -1,6 +1,7 @@
 ---
 title: Kubernetes deployment
 date: 2023-12-13
+thumbnail: /img/projects/k8s_argocd.png
 ---
 
 ## Kubernetes deployment

@@ -1,6 +1,7 @@
 ---
 title: Website Isabel Dhallé
 date: 2022-10-27
+thumbnail: /img/projects/isabeldhalle.png 
 ---
 
 ## Website Isabel Dhallé

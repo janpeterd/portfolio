@@ -1,6 +1,7 @@
 ---
-title: ⭐ Carpooling applicatie voor Axxes
+title: Carpooling-applicatie voor Axxes
 date: 2025-02-20
+thumbnail: /img/projects/carpool_events.png
 ---
 
 ## Project 4.0

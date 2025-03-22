@@ -85,7 +85,7 @@
   <OrbitControls
     maxZoom={defaultZoom + defaultZoom / 2}
     minZoom={defaultZoom - defaultZoom / 2}
-    zoomSpeed={0.1}
+    zoomSpeed={0.5}
     rotateSpeed={0.5}
     minPolarAngle={deg2rad(45)}
     maxPolarAngle={deg2rad(90)}

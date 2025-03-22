@@ -18,7 +18,7 @@
   <meta property="og:title" content="Contact - Portfolio Jan-Peter" />
 </svelte:head>
 
-<div class="contact_gradient absolute top-0 h-full w-screen"></div>
+<div class="contact_gradient fixed top-0 h-full w-screen"></div>
 
 <div
   class="mx-4 mb-20 mt-32 flex min-h-[50vh] w-auto flex-col items-center justify-center gap-x-12 md:mb-28 lg:mt-10 lg:min-h-[70vh] lg:flex-row">
