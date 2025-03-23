@@ -1,7 +1,6 @@
 export async function getProjects() {
   const posts = Object.entries(import.meta.glob('/src/content/projects/*.md', { eager: true }))
     .flatMap(([path, { metadata }]) => {
-      console.log('metadata', metadata)
       const slug = path.split('/').at(-1)?.replace('.md', '')
       const rawDate = metadata.date
       const date = new Date(typeof rawDate === 'number' ? rawDate * 1000 : rawDate).getTime()
