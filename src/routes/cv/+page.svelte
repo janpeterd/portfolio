@@ -300,8 +300,9 @@
               href="/doc/certificate Angular.pdf"
               aria-label="download certificate in pdf format"
               class="flex gap-x-2">
-              <span class="underline print:no-underline">
+              <span class="flex items-center gap-2 underline print:no-underline">
                 Sololearn Angular
+                <Icon icon="mdi:external-link" width="1rem" />
                 <br />
               </span>
             </a>
@@ -314,8 +315,9 @@
               href="/doc/certificate Linux Essentials.pdf"
               aria-label="download certificate in pdf format"
               class="flex gap-x-2">
-              <span class="underline print:no-underline">
+              <span class="flex items-center gap-2 underline print:no-underline">
                 LPI Linux Essentials
+                <Icon icon="mdi:external-link" width="1rem" />
                 <br />
               </span>
             </a>
@@ -428,7 +430,7 @@
   }
 
   span.cv_date {
-    @apply text-nowrap italic leading-loose print:text-xs;
+    @apply italic leading-loose print:text-xs;
   }
 
   div.cv_flex {

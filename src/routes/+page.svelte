@@ -2,6 +2,7 @@
   import Hero from '$lib/Components/Hero.svelte'
   import About from '$lib/Components/About.svelte'
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
+  import Technologies from '$lib/Components/Technologies.svelte'
   import { onMount } from 'svelte'
 </script>
 
@@ -25,16 +26,23 @@
 
 <About />
 
+<Technologies />
+
 <style lang="postcss">
   .top-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 0%, rgba(0, 0, 0, 1) 30%, transparent);
-    background: url('/img/grain.webp'),
+    background:
+      url('/img/grain.webp'),
       radial-gradient(115vw 450px at 110% 10%, theme(colors.blue.600 / 40%), transparent);
   }
   .bottom-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: radial-gradient(105vw 850px at 50% 120%, theme(colors.secondary / 10%), transparent);
+    background: radial-gradient(
+      105vw 850px at 50% 120%,
+      theme(colors.secondary / 10%),
+      transparent
+    );
   }
 </style>

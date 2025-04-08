@@ -6,7 +6,7 @@ thumbnail: /img/projects/iot_muizenval.png
 
 ## IoT muizenval
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tCBAd3iY1O8?si=9nB02cXizRYY426I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="max-width: 100%;" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tCBAd3iY1O8?si=9nB02cXizRYY426I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 In mijn eerste jaar toegepaste informatica heb ik voor het vak _IoTEssentials_ een muizenval gemaakt die volledig automatisch werkt.
 

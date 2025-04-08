@@ -3,14 +3,15 @@
   import { Spring } from 'svelte/motion'
   import { Canvas, T, useTask } from '@threlte/core'
   import { OrthographicCamera } from 'three'
-  import { deg2rad } from '$lib/utils'
+  import { deg2rad, getIsMobile } from '$lib/utils'
   import { goto } from '$app/navigation'
   let { defaultZoom = 25, rotate } = $props()
 
   // Correctly use the Svelte 5 syntax and Threlte methods
   const dracoLoader = useDraco()
   const gltf = useGltf('/logo3d.glb', { dracoLoader })
-  interactivity()
+  let isMobile = getIsMobile()
+  if (!isMobile) interactivity()
 
   // Focus only on displaying the 3D model
   let model = $state(null)
@@ -84,13 +85,15 @@
   makeDefault>
   <OrbitControls
     maxZoom={defaultZoom + defaultZoom / 2}
+    enablePan={false}
     minZoom={defaultZoom - defaultZoom / 2}
     zoomSpeed={0.5}
     rotateSpeed={0.5}
     minPolarAngle={deg2rad(45)}
     maxPolarAngle={deg2rad(90)}
     minAzimuthAngle={deg2rad(-45)}
-    maxAzimuthAngle={deg2rad(45)} />
+    maxAzimuthAngle={deg2rad(45)}
+    enabled={!isMobile} />
 </T.OrthographicCamera>
 
 <!-- Improved lighting setup for better visibility -->
@@ -103,9 +106,7 @@
     rotation.y={rotate ? rotationY : deg2rad(90)}
     rotation.x={rotate ? rotationX : 0}
     position={modelPosition}
-    onclick={(e) => {
-      goto('/')
-    }}>
+    onclick={() => goto('/')}>
     <!-- Render the entire scene from the GLTF file -->
     <T is={$gltf.scene} />
   </T.Group>

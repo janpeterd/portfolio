@@ -1,6 +1,6 @@
 <script>
   import { page } from '$app/stores'
-  
+
   /**
    * @typedef {Object} Props
    * @property {string} [class]
@@ -10,12 +10,7 @@
    */
 
   /** @type {Props} */
-  let {
-    class: classes = '',
-    logo = false,
-    href,
-    children
-  } = $props();
+  let { class: classes = '', logo = false, href, children } = $props()
 </script>
 
 {#if logo}
