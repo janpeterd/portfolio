@@ -22,7 +22,7 @@ export const experiences = [
     title: 'Stage Full Stack Java developer',
     company: 'Lykios (Faros)',
     description:
-      'Ontwikkeling Quiz platform "Qurio" met Java Spring REST API, React frontend, SCRUM',
+      'Ontwikkeling quizplatform "Qurio" met Spring Boot REST-API, frontend in React, SCRUM',
     link: 'https://lykios.be/',
     type: 'work'
   },
@@ -63,6 +63,7 @@ export const experiences = [
     company: 'Zandhoven Natuurlijk!',
     description:
       'Vrijwilliger en verantwoordelijk voor het onderhoud en de ontwikkeling van de website',
+    link: 'https://www.zandhovennatuurlijk.be/',
     type: 'work'
   },
   {
@@ -100,7 +101,7 @@ export const experiences = [
     dateString: 'september 2020- juli 2022',
     title: 'Industriële Ingenieurswetenschappen',
     company: 'Groep T, KU Leuven',
-    description: 'niet afgerond',
+    description: '',
     type: 'education'
   },
   {

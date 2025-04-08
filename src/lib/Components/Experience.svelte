@@ -4,26 +4,11 @@
   /** @type {import('$lib/data/experiences.js').Experience[]} */
   let allExperiences = []
   /** @type {import('$lib/data/experiences.js').Experience[]} */
-  let experiences = $state([])
-  let include_projects = $state(false)
+  let experiences = baseExperiences
   // Scroll position tracking
   let scrollY = $state(0)
   // Track which items are visible
   let visibleItems = $state({})
-
-  // This function filters the experiences based on the toggle state
-  function updateExperiencesList() {
-    if (include_projects) {
-      experiences = allExperiences.filter((entry) => entry.type === 'project')
-    } else {
-      experiences = allExperiences.filter((entry) => entry.type !== 'project')
-    }
-  }
-
-  // Watch for changes to include_projects
-  $effect(() => {
-    updateExperiencesList()
-  })
 
   // Handle scroll events
   function handleScroll() {
@@ -31,40 +16,7 @@
   }
 
   onMount(async () => {
-    try {
-      // Start with base experiences
-      allExperiences = [...baseExperiences]
-      // Fetch projects from API
-      const response = await fetch('/api/projects')
-      if (!response.ok) throw new Error('Failed to fetch projects')
-      const projects = await response.json()
-      // Convert API projects to experience format
-      const projectExperiences = projects.map((project) => ({
-        startDate: new Date(project.date),
-        endDate: null,
-        dateString: new Date(project.date).toLocaleDateString('nl-BE', {
-          year: 'numeric',
-          month: 'long'
-        }),
-        title: project.title,
-        description: project.description || '',
-        slug: project.slug,
-        thumbnail: project.thumbnail,
-        type: 'project',
-        link: `/projects/${project.slug}`
-      }))
-      // Combine and sort all experiences
-      allExperiences = [...baseExperiences, ...projectExperiences].sort(
-        (a, b) => b.startDate - a.startDate
-      )
-      // Initialize filtered list
-      updateExperiencesList()
-
-      // Set up intersection observers for each experience item after rendering
-      setTimeout(setupObservers, 300)
-    } catch (error) {
-      console.error('Error fetching projects:', error)
-    }
+    setTimeout(setupObservers, 300)
   })
 
   // Setup intersection observers for all experience items
@@ -106,11 +58,6 @@
       class="p-4 font-elec text-3xl font-semibold uppercase tracking-tight text-secondary text-secondary/85 sm:text-4xl">
       Ervaring
     </h2>
-    <button
-      class="rounded-lg bg-secondary/20 px-4 py-2 font-elec transition-colors hover:bg-secondary/30"
-      onclick={() => (include_projects = !include_projects)}>
-      {include_projects ? 'Toon Werk' : 'Toon Projecten'}
-    </button>
   </div>
   <div
     id="line"
