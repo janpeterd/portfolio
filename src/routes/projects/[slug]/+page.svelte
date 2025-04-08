@@ -68,9 +68,9 @@
   </div>
 
   {#if data.other.length > 0}
-    <section class="mx-auto my-28 max-w-screen-lg md:my-36">
+    <section class="mx-auto my-28 w-full max-w-screen-lg md:my-36">
       <hr />
-      <ul class="grid-cols-2 gap-x-7 gap-y-16 py-10 sm:grid">
+      <ul class="w-full grid-cols-2 gap-x-7 gap-y-16 py-10 sm:grid">
         {#each data.other as entry}
           <ProjectThumb {entry} />
         {/each}

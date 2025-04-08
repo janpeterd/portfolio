@@ -51,7 +51,7 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<div class="p-8">
+<div class="p-4 md:p-8">
   <div class="flex items-center justify-between">
     <h2
       id="about"
@@ -61,7 +61,7 @@
   </div>
   <div
     id="line"
-    class="relative ms-14 flex max-w-screen-sm flex-col gap-4 rounded-bl-xl border-b-4 border-l-4 border-white/20 p-8">
+    class="relative ms-4 flex max-w-screen-sm flex-col gap-4 rounded-bl-xl border-b-4 border-l-4 border-white/20 p-2 md:ms-14 md:p-8">
     {#each experiences as entry, i}
       <a
         href={entry.link || '#'}
@@ -71,15 +71,15 @@
         data-id={i}>
         <div
           class="relative flex transform cursor-pointer flex-col gap-4 rounded-xl
-                 p-4 hover:bg-white/10">
+                 p-2 hover:bg-white/10 md:p-4">
           <div
             id="rectangle"
-            class="absolute -left-[2.9rem] top-3 size-6 rotate-45 rounded bg-secondary shadow-xl">
+            class="absolute -left-[1.4rem] top-3 size-6 rotate-45 rounded bg-secondary shadow-xl md:-left-[2.9rem]">
           </div>
           <p class="text-sm font-medium text-slate-400">
             {entry.dateString}
           </p>
-          <h2 class="p-4 font-elec font-bold">
+          <h2 class="p-2 font-elec font-bold md:p-4">
             {entry.title}
             {entry.company ? ` - ${entry.company}` : ''}
           </h2>
@@ -91,7 +91,7 @@
     {/each}
     <a
       href="/cv"
-      class="opacity-1 absolute -bottom-[1.85rem] right-0 z-20 inline w-max rounded-lg bg-gradient-to-br from-indigo-800 to-primary p-4 font-bold text-white transition-all hover:scale-105 hover:from-secondary hover:to-orange-700 hover:underline">
+      class="opacity-1 absolute -bottom-4 -right-1 z-20 inline w-max rounded-lg bg-gradient-to-br from-indigo-800 to-primary p-2 text-sm font-bold text-white transition-all hover:scale-105 hover:from-secondary hover:to-orange-700 hover:underline md:-bottom-[1.85rem] md:right-0 md:p-4">
       Bekijk CV
     </a>
   </div>

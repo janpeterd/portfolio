@@ -73,7 +73,7 @@
     Technologieën
   </h2>
 
-  <div class="h-auto overflow-x-auto py-4">
+  <div class="h-auto overflow-x-auto px-1 py-4">
     <div
       class="grid auto-cols-max grid-flow-col grid-rows-2 place-items-center gap-4 md:grid-flow-row md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8">
       {#each technologies as technology}
