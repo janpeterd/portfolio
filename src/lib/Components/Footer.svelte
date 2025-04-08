@@ -19,7 +19,9 @@
   class="max-w-screen relative mt-8 flex flex-col items-center overflow-x-hidden border-t bg-black/60 py-3 backdrop-blur backdrop-saturate-150 print:hidden">
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <button class="relative mb-3 h-[200px] min-h-[200px] w-72 flex-1 md:px-5" on:click={goto('/')}>
-      <div class="absolute -left-20 -top-[100px] z-0 h-[400px] w-[400px]">
+      <div
+        class="absolute -left-20 -top-[100px] z-0 h-[400px] w-[400px]"
+        class:pointer-events-none={getIsMobile()}>
         <Canvas>
           <Logo3d defaultZoom={45} rotate />
         </Canvas>
