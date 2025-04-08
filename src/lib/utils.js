@@ -66,6 +66,9 @@ export function getColorByExtension(extension) {
 }
 
 export function getIsMobile() {
+  if (typeof navigator === 'undefined') {
+    return false // Not in a browser environment
+  }
   let check = false
   ;(function (a) {
     if (
