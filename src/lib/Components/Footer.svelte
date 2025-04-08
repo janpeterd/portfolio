@@ -20,8 +20,7 @@
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <button class="relative mb-3 h-[200px] min-h-[200px] w-72 flex-1 md:px-5" on:click={goto('/')}>
       <div
-        class="absolute -left-20 -top-[100px] z-0 h-[400px] w-[400px]"
-        class:pointer-events-none={getIsMobile()}>
+        class={`absolute -left-20 -top-[100px] z-0 h-[400px] w-[400px] ${getIsMobile() ? 'pointer-events-none' : ''}`}>
         <Canvas>
           <Logo3d defaultZoom={45} rotate />
         </Canvas>
