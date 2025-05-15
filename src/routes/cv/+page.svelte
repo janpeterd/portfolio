@@ -297,6 +297,21 @@
         <div class="cv_flex">
           <span class="cv_item">
             <a
+              href="/doc/certificate Android Jetpack Compose.jpg"
+              aria-label="download certificate in jpg format"
+              class="flex gap-x-2">
+              <span class="flex items-center gap-2 underline print:no-underline">
+                Android Jetpack Compose
+                <Icon icon="mdi:external-link" width="1rem" />
+                <br />
+              </span>
+            </a>
+          </span>
+          <span class="cv_date">januari&nbsp;2025</span>
+        </div>
+        <div class="cv_flex">
+          <span class="cv_item">
+            <a
               href="/doc/certificate Angular.pdf"
               aria-label="download certificate in pdf format"
               class="flex gap-x-2">
