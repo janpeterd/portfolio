@@ -11,6 +11,14 @@
   import { goto } from '$app/navigation'
 
   let isExpanded = $state(false)
+  let links = [
+    { href: '/', name: 'Home' },
+    { href: '/#about', name: 'Over mij' },
+    { href: '/stage', name: 'Stage' },
+    { href: '/projects', name: 'Projecten' },
+    { href: '/cv', name: 'Cv' },
+    { href: '/contact', name: 'Contact' }
+  ]
 
   function toggleExpanded() {
     isExpanded = !isExpanded
@@ -55,11 +63,9 @@
   </button>
   <div
     class="justify-content m-2 hidden flex-shrink-0 items-center gap-x-2 rounded-full bg-white/10 px-2 text-white backdrop-blur-lg backdrop-saturate-150 [view-transition-name:header-right] md:flex">
-    <NavLink href="/">Home</NavLink>
-    <NavLink href="/#about">Over&nbsp;mij</NavLink>
-    <NavLink href="/projects">Projecten</NavLink>
-    <NavLink href="/cv">Cv</NavLink>
-    <NavLink href="/contact">Contact</NavLink>
+    {#each links as link}
+      <NavLink href={link.href}>{link.name}</NavLink>
+    {/each}
   </div>
 
   <button
@@ -79,11 +85,9 @@
         class="absolute right-0 top-0 m-3 rounded-full bg-primary bg-slate-900/80 p-3 backdrop-blur-lg backdrop-saturate-150 transition-all hover:text-secondary">
         <Icon icon="mdi:close" width="1.8rem" class="z-10" />
       </button>
-      <MobileNavLink href="/" onclick={toggleExpanded}>Home</MobileNavLink>
-      <MobileNavLink href="/#about" onclick={toggleExpanded}>Over&nbsp;mij</MobileNavLink>
-      <MobileNavLink href="/projects" onclick={toggleExpanded}>Projecten</MobileNavLink>
-      <MobileNavLink href="/cv" onclick={toggleExpanded}>Cv</MobileNavLink>
-      <MobileNavLink href="/contact" onclick={toggleExpanded}>Contact</MobileNavLink>
+      {#each links as link}
+        <MobileNavLink href={link.href} onclick={toggleExpanded}>{link.name}</MobileNavLink>
+      {/each}
     </div>
   {/if}
 </header>
