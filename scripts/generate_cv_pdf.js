@@ -10,7 +10,7 @@ const generatePdfAsync = async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto(`http://${hostname}:${port}${cv_route}`, {
-    waitUntil: 'networkidle2'
+    waitUntil: 'domcontentloaded'
   })
 
   await page.pdf({

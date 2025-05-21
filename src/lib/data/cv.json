@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "Cv - Portfolio Jan-Peter",
+    "description": "Cv van Jan-Peter Dhallé, student toegepaste informatica"
+  },
+  "personalInfo": {
+    "name": "Jan-Peter Dhallé",
+    "role": "Full-Stack Developer",
+    "cvPdfUrl": "/doc/cv_Jan-Peter_Dhallé.pdf",
+    "heroImage": {
+      "src": "$lib/assets/portrait_scaled.jpg?enhanced",
+      "alt": "Foto van Jan-Peter"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "items": [
+      {
+        "type": "email",
+        "label": "E-mail",
+        "icon": "line-md:email",
+        "printIcon": "mdi:email",
+        "storeLinkVariable": "mailLink",
+        "storeValueVariable": "mail"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "icon": "line-md:linkedin",
+        "printIcon": "mdi:linkedin",
+        "printValue": "Jan-Peter Dhallé",
+        "storeLinkVariable": "linkedInLink"
+      },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "icon": "line-md:github",
+        "printIcon": "mdi:github",
+        "storeLinkVariable": "githubLink",
+        "storeValueVariable": "github"
+      }
+    ]
+  },
+  "education": {
+    "title": "Opleiding",
+    "items": [
+      {
+        "degree": "Professionele bachelor in de Toegepaste Informatica",
+        "extras": [
+          "Specialisatie Application development",
+          "Thomas More Campus Geel"
+        ],
+        "period": "sinds september 2022"
+      },
+      {
+        "degree": "Industriële Ingenieurswetenschappen",
+        "extras": ["Groep T, KU Leuven"],
+        "period": "september 2020- juli 2022, niet afgerond"
+      },
+      {
+        "degree": "Diploma secundair onderwijs, wetenschappen-wiskunde",
+        "extras": ["Sint-Jozefcollege, Turnhout"],
+        "period": "september 2014- juni 2020"
+      },
+      {
+        "degree": "SAMWD Turnhout",
+        "extras": ["Klassieke viool (Suzukimethode) — summa cum laude"],
+        "period": "2006-2020"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Professionele werkervaring",
+    "items": [
+      {
+        "role_company": "Lykios (Faros)",
+        "description": "Stage: Ontwikkeling Quiz platform 'Qurio' met Java Spring REST API, React frontend, SCRUM",
+        "period": "sinds februari 2025"
+      },
+      {
+        "role_company": "Computerbouw",
+        "description": "Computer samengesteld en geassembleerd naar de noden van de klant",
+        "period": "maart 2023"
+      },
+      {
+        "role_company": "R. Janssen & Zn nv",
+        "description": "Jobstudent — magazijn en voorraadbeheer",
+        "period": "juni 2019, augustus 2022"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Talen",
+    "items": [
+      { "language": "Nederlands", "level": "Moedertaal" },
+      { "language": "Engels", "level": "Gevorderd" },
+      { "language": "Frans", "level": "Basis" }
+    ]
+  },
+  "hobbies": {
+    "title": "Vrije tijd",
+    "items": [
+      "Violist/Muzikant",
+      "Boeken lezen",
+      "Computerprojecten"
+    ]
+  },
+  "otherInfo": {
+    "title": "Overige",
+    "items": [
+      "Rijbewijs: B"
+    ]
+  },
+  "associations": {
+    "title": "Verenigingen, vrijwilligerswerk",
+    "items": [
+      {
+        "organization": "Zandhoven Natuurlijk!",
+        "role_description": "Vrijwilliger — webmaster",
+        "period": "2022-heden"
+      },
+      {
+        "organization": "Vlaams Symfonisch Orkest",
+        "role_description": "Violist, plaatsvervangend concertmeester",
+        "period": "2020-heden"
+      },
+      {
+        "organization": "Woonzorgcentrum Sint-Lucia",
+        "role_description": "Vrijwilliger — animator",
+        "period": "april 2017"
+      }
+    ]
+  },
+  "technicalSkills": {
+    "title": "Technische Vaardigheden",
+    "categories": [
+      {
+        "name": "Programmeertalen",
+        "skills": ["HTML/CSS", "JavaScript", "Java", "Python", "PHP", "C#", "C", "C++", "Bash"]
+      },
+      {
+        "name": "Databases",
+        "skills": ["SQL", "PostgresSQL", "MongoDB"]
+      },
+      {
+        "name": "Frameworks & Libraries",
+        "skills": ["React", "Angular", "Spring Boot", "Tailwind", "Next.js", "Django", ".NET core", ".NET Maui", "Laravel", "Numpy", "Pandas", "Matplotlib", "Svelte/Sveltekit", "..."]
+      },
+      {
+        "name": "Tools",
+        "skills": ["Linux", "Windows", "Vim/Neovim", "Microsoft Teams", "Scrum", "Jira", "Visual Studio", "Visual Studio Code", "Jetbrains IDEs", "Figma", "Git", "GitHub", "Bitbucket", "GNU coreutils", "Terminal"]
+      },
+      {
+        "name": "Documentatie",
+        "skills": ["Markdown", "UML", "Confluence"]
+      },
+      {
+        "name": "Infrastructuur",
+        "skills": ["Kubernetes", "Docker", "Cisco network essentials", "Linux", "Virtual machines", "Github Actions", "Jenkins", "AWS", "Azure"]
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Certificaten",
+    "items": [
+      {
+        "name": "Android Jetpack Compose",
+        "link": "/doc/certificate Android Jetpack Compose.jpg",
+        "ariaLabel": "download certificate in jpg format",
+        "date": "januari 2025",
+        "extra": null
+      },
+      {
+        "name": "Sololearn Angular",
+        "link": "/doc/certificate Angular.pdf",
+        "ariaLabel": "download certificate in pdf format",
+        "date": "september 2024",
+        "extra": null
+      },
+      {
+        "name": "LPI Linux Essentials",
+        "link": "/doc/certificate Linux Essentials.pdf",
+        "ariaLabel": "download certificate in pdf format",
+        "date": "januari 2023",
+        "extra": "Examenresultaat 18/20"
+      }
+    ]
+  }
+}
