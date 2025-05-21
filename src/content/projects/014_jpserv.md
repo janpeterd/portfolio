@@ -2,6 +2,10 @@
 title: Jpserv Home server
 date: 2025-02-27
 thumbnail: /img/projects/jpserv/2024-11-07_15-15-13_screenshot.png
+images:
+  - /img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png
+  - /img/projects/jpserv/2024-09-08_01-43-26_screenshot.png
+  - /img/projects/jpserv/2024-09-08_01-43-04_screenshot.png
 ---
 
 ## Hardware
@@ -33,15 +37,15 @@ thumbnail: /img/projects/jpserv/2024-11-07_15-15-13_screenshot.png
 
   - Physical configuration:
 
-| Drive Serial Number | Capacity  |
-| :------------------ | --------: |
-| WW60B72Q            | 4Tb       |
-| WW609RF4            | 4Tb       |
-| WW60AVEA            | 4Tb       |
-| WW60794X            | 4Tb       |
-| WW60B37G            | 4Tb       |
-| WW64M90G            | 4Tb       |
-| WW64N39V            | 4Tb       |
+| Drive Serial Number | Capacity |
+| :------------------ | -------: |
+| WW60B72Q            |      4Tb |
+| WW609RF4            |      4Tb |
+| WW60AVEA            |      4Tb |
+| WW60794X            |      4Tb |
+| WW60B37G            |      4Tb |
+| WW64M90G            |      4Tb |
+| WW64N39V            |      4Tb |
 
 ### Ports
 
@@ -216,11 +220,10 @@ GRUB_SAVEDEFAULT=true
 - Device: Crucial MX500 3D NAND SATA 2.5" Internal SSD
   (CT500MX500SSD1)
 
- | Name    | Size      | File System | Mountpoint(s)                                                                 |
- |---------|-----------|-------------|-------------------------------------------------------------------------------|
- | Boot    | 511Mib    | FAT32       |  /boot                                                                        |
- | Primary | 465.26GiB | BTRFS       | /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log |
-
+| Name    | Size      | File System | Mountpoint(s)                                                                 |
+| ------- | --------- | ----------- | ----------------------------------------------------------------------------- |
+| Boot    | 511Mib    | FAT32       | /boot                                                                         |
+| Primary | 465.26GiB | BTRFS       | /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log |
 
 #### /data
 
@@ -244,12 +247,11 @@ GRUB_SAVEDEFAULT=true
 
     - 3 `VDEVs`
 
- | mirror-0                         | raidz1-1                         | mirror-2                         |
- | -------------------------------- | ---------------------------------| ---------------------------------|
- | ata-ST4000VN006-3CW104~WW60B72Q~ | ata-ST4000VN006-3CW104~WW60AVEA~ | ata-ST4000VN006-3CW104~WW64M90G~ |
- | ata-ST4000VN006-3CW104~WW609RF4~ | ata-ST4000VN006-3CW104~WW60794X~ | ata-ST4000VN006-3CW104~WW64N39V~ |
- | /                                | /                                | ata-ST4000VN006-3CW104~WW60B37G~ |
-
+| mirror-0                         | raidz1-1                         | mirror-2                         |
+| -------------------------------- | -------------------------------- | -------------------------------- |
+| ata-ST4000VN006-3CW104~WW60B72Q~ | ata-ST4000VN006-3CW104~WW60AVEA~ | ata-ST4000VN006-3CW104~WW64M90G~ |
+| ata-ST4000VN006-3CW104~WW609RF4~ | ata-ST4000VN006-3CW104~WW60794X~ | ata-ST4000VN006-3CW104~WW64N39V~ |
+| /                                | /                                | ata-ST4000VN006-3CW104~WW60B37G~ |
 
 ```
           pool: data
@@ -277,10 +279,11 @@ GRUB_SAVEDEFAULT=true
 ```
 
 2.  Services
-  1.  Auto Snapshots
+1.  Auto Snapshots
+
     - ZFS snapshots are **read-only** copies of a ZFS file system
-    - You can rollback to a previous snapshot with: `zfs rollback vault@snapshot-name`        
-    - You can browse the files of any snapshot at: `mountpoint_of_zfs_pool/.zfs/snapshot/` 
+    - You can rollback to a previous snapshot with: `zfs rollback vault@snapshot-name`
+    - You can browse the files of any snapshot at: `mountpoint_of_zfs_pool/.zfs/snapshot/`
     - **AUR Package**: [zfs-auto-snapshot](https://aur.archlinux.org/packages/zfs-auto-snapshot)
     - I have enabled: -`zfs-auto-snapshot-hourly.timer`
     - `zfs-auto-snapshot-weekly.timer`
@@ -322,188 +325,193 @@ Example output: NAME USED AVAIL REFER MOUNTPOINT
   data@znap_2024-09-01-1100_hourly 774K  -  7.28T -
 ```
 
-  2. Auto scrub
-    - ZFS scrubbing solves **data corruption**. It is recommended to run regularly (weekly or monthly).
-    - **AUR Package**: [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
-    - Enabled with the command: `sudo systemctl enable --now
-  zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
-  [ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) I get notified by e-mail.
+2. Auto scrub
 
-  3. ZED: `zed.service`
-    - Notify on important events via **E-mail**
-    - Notify on scrub
-    - You can see the events with the command: `zpool events`
-    - This requires **mail command** to be setup
-    1.  Configuration
-      ```conf
-        ##
-        #
-        # zed.rc - ZEDLET configuration.
-        ##
-        # shellcheck disable=SC2034
+   - ZFS scrubbing solves **data corruption**. It is recommended to run regularly (weekly or monthly).
+   - **AUR Package**: [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
+   - Enabled with the command: `sudo systemctl enable --now
 
-        ##
-        # Absolute path to the debug output file.
-        #
-        #ZED_DEBUG_LOG="/tmp/zed.debug.log"
+zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
+[ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) I get notified by e-mail.
 
-        ##
-        # Email address of the zpool administrator for receipt of notifications;
-        #   multiple addresses can be specified if they are delimited by whitespace.
-        # Email will only be sent if ZED_EMAIL_ADDR is defined.
-        # Enabled by default; comment to disable.
-        #
-        ZED_EMAIL_ADDR="REPLACE_ZFS_ZED_EMAIL"
+3. ZED: `zed.service`
 
-        ##
-        # Name or path of executable responsible for sending notifications via email;
-        #   the mail program must be capable of reading a message body from stdin.
-        # Email will only be sent if ZED_EMAIL_ADDR is defined.
-        #
-        ZED_EMAIL_PROG="mail"
+   - Notify on important events via **E-mail**
+   - Notify on scrub
+   - You can see the events with the command: `zpool events`
+   - This requires **mail command** to be setup
 
-        ##
-        # Command-line options for ZED_EMAIL_PROG.
-        # The string @ADDRESS@ will be replaced with the recipient email address(es).
-        # The string @SUBJECT@ will be replaced with the notification subject;
-        #   this should be protected with quotes to prevent word-splitting.
-        # Email will only be sent if ZED_EMAIL_ADDR is defined.
-        # If @SUBJECT@ was omited here, a "Subject: ..." header will be added to notification
-        #
-        ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
+   1. Configuration
 
-        ##
-        # Default directory for zed lock files.
-        #
-        ZED_LOCKDIR="/var/lock"
+   ```conf
+     ##
+     #
+     # zed.rc - ZEDLET configuration.
+     ##
+     # shellcheck disable=SC2034
 
-        ##
-        # Minimum number of seconds between notifications for a similar event.
-        #
-        ZED_NOTIFY_INTERVAL_SECS=3600
+     ##
+     # Absolute path to the debug output file.
+     #
+     #ZED_DEBUG_LOG="/tmp/zed.debug.log"
 
-        ##
-        # Notification verbosity.
-        #   If set to 0, suppress notification if the pool is healthy.
-        #   If set to 1, send notification regardless of pool health.
-        #
-        ZED_NOTIFY_VERBOSE=1
+     ##
+     # Email address of the zpool administrator for receipt of notifications;
+     #   multiple addresses can be specified if they are delimited by whitespace.
+     # Email will only be sent if ZED_EMAIL_ADDR is defined.
+     # Enabled by default; comment to disable.
+     #
+     ZED_EMAIL_ADDR="REPLACE_ZFS_ZED_EMAIL"
 
-        ##
-        # Send notifications for 'ereport.fs.zfs.data' events.
-        # Disabled by default, any non-empty value will enable the feature.
-        #
-        #ZED_NOTIFY_DATA=
+     ##
+     # Name or path of executable responsible for sending notifications via email;
+     #   the mail program must be capable of reading a message body from stdin.
+     # Email will only be sent if ZED_EMAIL_ADDR is defined.
+     #
+     ZED_EMAIL_PROG="mail"
 
-        ##
-        # Pushbullet access token.
-        # This grants full access to your account -- protect it accordingly!
-        #   <https://www.pushbullet.com/get-started>
-        #   <https://www.pushbullet.com/account>
-        # Disabled by default; uncomment to enable.
-        #
-        #ZED_PUSHBULLET_ACCESS_TOKEN=""
+     ##
+     # Command-line options for ZED_EMAIL_PROG.
+     # The string @ADDRESS@ will be replaced with the recipient email address(es).
+     # The string @SUBJECT@ will be replaced with the notification subject;
+     #   this should be protected with quotes to prevent word-splitting.
+     # Email will only be sent if ZED_EMAIL_ADDR is defined.
+     # If @SUBJECT@ was omited here, a "Subject: ..." header will be added to notification
+     #
+     ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
 
-        ##
-        # Pushbullet channel tag for push notification feeds that can be subscribed to.
-        #   <https://www.pushbullet.com/my-channel>
-        # If not defined, push notifications will instead be sent to all devices
-        #   associated with the account specified by the access token.
-        # Disabled by default; uncomment to enable.
-        #
-        #ZED_PUSHBULLET_CHANNEL_TAG=""
+     ##
+     # Default directory for zed lock files.
+     #
+     ZED_LOCKDIR="/var/lock"
 
-        ##
-        # Slack Webhook URL.
-        # This allows posting to the given channel and includes an access token.
-        #   <https://api.slack.com/incoming-webhooks>
-        # Disabled by default; uncomment to enable.
-        #
-        #ZED_SLACK_WEBHOOK_URL=""
+     ##
+     # Minimum number of seconds between notifications for a similar event.
+     #
+     ZED_NOTIFY_INTERVAL_SECS=3600
 
-        ##
-        # Pushover token.
-        # This defines the application from which the notification will be sent.
-        #   <https://pushover.net/api#registration>
-        # Disabled by default; uncomment to enable.
-        # ZED_PUSHOVER_USER, below, must also be configured.
-        #
-        #ZED_PUSHOVER_TOKEN=""
+     ##
+     # Notification verbosity.
+     #   If set to 0, suppress notification if the pool is healthy.
+     #   If set to 1, send notification regardless of pool health.
+     #
+     ZED_NOTIFY_VERBOSE=1
 
-        ##
-        # Pushover user key.  This defines which user or group will receive
-        # Pushover notifications.  <https://pushover.net/api#identifiers>
-        # Disabled by default; uncomment to enable.  ZED_PUSHOVER_TOKEN,
-        # above, must also be configured.
-        #ZED_PUSHOVER_USER=""
+     ##
+     # Send notifications for 'ereport.fs.zfs.data' events.
+     # Disabled by default, any non-empty value will enable the feature.
+     #
+     #ZED_NOTIFY_DATA=
 
-        ##
-        # Default directory for zed state files.
-        #
-        #ZED_RUNDIR="/var/run"
+     ##
+     # Pushbullet access token.
+     # This grants full access to your account -- protect it accordingly!
+     #   <https://www.pushbullet.com/get-started>
+     #   <https://www.pushbullet.com/account>
+     # Disabled by default; uncomment to enable.
+     #
+     #ZED_PUSHBULLET_ACCESS_TOKEN=""
 
-        ##
-        # Turn on/off enclosure LEDs when drives get DEGRADED/FAULTED.  This works for
-        # device mapper and multipath devices as well.  This works with JBOD enclosures
-        # and NVMe PCI drives (assuming they're supported by Linux in sysfs).
-        #
-        ZED_USE_ENCLOSURE_LEDS=1
+     ##
+     # Pushbullet channel tag for push notification feeds that can be subscribed to.
+     #   <https://www.pushbullet.com/my-channel>
+     # If not defined, push notifications will instead be sent to all devices
+     #   associated with the account specified by the access token.
+     # Disabled by default; uncomment to enable.
+     #
+     #ZED_PUSHBULLET_CHANNEL_TAG=""
 
-        ##
-        # Run a scrub after every resilver Disabled by default, 1 to enable
-        # and 0 to disable.
-        #ZED_SCRUB_AFTER_RESILVER=0
+     ##
+     # Slack Webhook URL.
+     # This allows posting to the given channel and includes an access token.
+     #   <https://api.slack.com/incoming-webhooks>
+     # Disabled by default; uncomment to enable.
+     #
+     #ZED_SLACK_WEBHOOK_URL=""
 
-        ##
-        # The syslog priority (e.g., specified as a "facility.level" pair).
-        #
-        ZED_SYSLOG_PRIORITY="daemon.notice"
+     ##
+     # Pushover token.
+     # This defines the application from which the notification will be sent.
+     #   <https://pushover.net/api#registration>
+     # Disabled by default; uncomment to enable.
+     # ZED_PUSHOVER_USER, below, must also be configured.
+     #
+     #ZED_PUSHOVER_TOKEN=""
 
-        ##
-        # The syslog tag for marking zed events.
-        #
-        ZED_SYSLOG_TAG="zed"
+     ##
+     # Pushover user key.  This defines which user or group will receive
+     # Pushover notifications.  <https://pushover.net/api#identifiers>
+     # Disabled by default; uncomment to enable.  ZED_PUSHOVER_TOKEN,
+     # above, must also be configured.
+     #ZED_PUSHOVER_USER=""
 
-        ##
-        # Which set of event subclasses to log By default, events from all
-        # subclasses are logged.  If ZED_SYSLOG_SUBCLASS_INCLUDE is set,
-        # only subclasses matching the pattern are logged. Use the pipe
-        # symbol (|) or shell wildcards (*, ?) to match multiple
-        # subclasses.  Otherwise, if ZED_SYSLOG_SUBCLASS_EXCLUDE is set,
-        # the matching subclasses are excluded from logging.
-        #ZED_SYSLOG_SUBCLASS_INCLUDE="checksum|scrub_*|vdev.*"
-        ZED_SYSLOG_SUBCLASS_EXCLUDE="history_event"
+     ##
+     # Default directory for zed state files.
+     #
+     #ZED_RUNDIR="/var/run"
 
-        ##
-        # Use GUIDs instead of names when logging pool and vdevs Disabled
-        # by default, 1 to enable and 0 to disable.
-        #ZED_SYSLOG_DISPLAY_GUIDS=1
+     ##
+     # Turn on/off enclosure LEDs when drives get DEGRADED/FAULTED.  This works for
+     # device mapper and multipath devices as well.  This works with JBOD enclosures
+     # and NVMe PCI drives (assuming they're supported by Linux in sysfs).
+     #
+     ZED_USE_ENCLOSURE_LEDS=1
 
-        ##
-        # Power off the drive's slot in the enclosure if it becomes
-        # FAULTED.  This can help silence misbehaving drives.  This assumes
-        # your drive enclosure fully supports slot power control via sysfs.
-        #ZED_POWER_OFF_ENCLOSURE_SLOT_ON_FAULT=1
+     ##
+     # Run a scrub after every resilver Disabled by default, 1 to enable
+     # and 0 to disable.
+     #ZED_SCRUB_AFTER_RESILVER=0
 
-        ##
-        # Ntfy topic This defines which topic will receive the ntfy
-        # notification.  <https://docs.ntfy.sh/publish/> Disabled by
-        # default; uncomment to enable.
-        #ZED_NTFY_TOPIC=""
+     ##
+     # The syslog priority (e.g., specified as a "facility.level" pair).
+     #
+     ZED_SYSLOG_PRIORITY="daemon.notice"
 
-        ##
-        # Ntfy access token (optional for public topics) This defines an
-        # access token which can be used to allow you to authenticate when
-        # sending to topics <https://docs.ntfy.sh/publish/#access-tokens>
-        # Disabled by default; uncomment to enable.
-        #ZED_NTFY_ACCESS_TOKEN=""
+     ##
+     # The syslog tag for marking zed events.
+     #
+     ZED_SYSLOG_TAG="zed"
 
-        ##
-        # Ntfy Service URL This defines which service the ntfy call will be
-        # directed toward <https://docs.ntfy.sh/install/> https://ntfy.sh
-        # by default; uncomment to enable an alternative service url.
-        #ZED_NTFY_URL="https://ntfy.sh"
-    ```
+     ##
+     # Which set of event subclasses to log By default, events from all
+     # subclasses are logged.  If ZED_SYSLOG_SUBCLASS_INCLUDE is set,
+     # only subclasses matching the pattern are logged. Use the pipe
+     # symbol (|) or shell wildcards (*, ?) to match multiple
+     # subclasses.  Otherwise, if ZED_SYSLOG_SUBCLASS_EXCLUDE is set,
+     # the matching subclasses are excluded from logging.
+     #ZED_SYSLOG_SUBCLASS_INCLUDE="checksum|scrub_*|vdev.*"
+     ZED_SYSLOG_SUBCLASS_EXCLUDE="history_event"
+
+     ##
+     # Use GUIDs instead of names when logging pool and vdevs Disabled
+     # by default, 1 to enable and 0 to disable.
+     #ZED_SYSLOG_DISPLAY_GUIDS=1
+
+     ##
+     # Power off the drive's slot in the enclosure if it becomes
+     # FAULTED.  This can help silence misbehaving drives.  This assumes
+     # your drive enclosure fully supports slot power control via sysfs.
+     #ZED_POWER_OFF_ENCLOSURE_SLOT_ON_FAULT=1
+
+     ##
+     # Ntfy topic This defines which topic will receive the ntfy
+     # notification.  <https://docs.ntfy.sh/publish/> Disabled by
+     # default; uncomment to enable.
+     #ZED_NTFY_TOPIC=""
+
+     ##
+     # Ntfy access token (optional for public topics) This defines an
+     # access token which can be used to allow you to authenticate when
+     # sending to topics <https://docs.ntfy.sh/publish/#access-tokens>
+     # Disabled by default; uncomment to enable.
+     #ZED_NTFY_ACCESS_TOKEN=""
+
+     ##
+     # Ntfy Service URL This defines which service the ntfy call will be
+     # directed toward <https://docs.ntfy.sh/install/> https://ntfy.sh
+     # by default; uncomment to enable an alternative service url.
+     #ZED_NTFY_URL="https://ntfy.sh"
+   ```
 
 ### Docker
 
@@ -1292,203 +1300,203 @@ services:
 1.  Docker compose
 
 ```yaml
-    # NOTE: all the containers that need to communicate with each other need to be defined here.
-    services:
-      gluetun:
-        image: qmcgaw/gluetun
-        container_name: gluetun_vpn
-        # line above must be uncommented to allow external containers to connect.
-        # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
-        cap_add:
-          - NET_ADMIN
-        devices:
-          - /dev/net/tun:/dev/net/tun
-        ports:
-          - 8888:8888/tcp # HTTP proxy
-          - 8388:8388/tcp # Shadowsocks
-          - 8388:8388/udp # Shadowsocks
-          # UPTIME KUMA PORTS
-          - 3001:3001
-          # TRANSMISSION PORTS
-          - 9091:9091
-          - 51413:51413
-          - 51413:51413/udp
-          # SONARR
-          - 8989:8989
-          # PROWLARR
-          - 9696:9696
-          # FLARESOLVERR
-          - 8191:8191
-          # LIDARR
-          - 8686:8686
-          # RADARR
-          - 7878:7878
-          # BAZARR
-          - 6767:6767
-          # OVERSEERR/JELLYSEERR
-          - 5055:5055
-          # JELLYFIN
-          - 8096:8096
-        volumes:
-          - ./volume:/gluetun
-        restart: always
-        environment:
-          # See https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
-          - VPN_SERVICE_PROVIDER=mullvad
-          - VPN_TYPE=wireguard
-          # OpenVPN:
-          # - OPENVPN_USER=
-          # - OPENVPN_PASSWORD=
-          # Wireguard:
-          - WIREGUARD_PRIVATE_KEY=REPLACE_GLUETUN_WIREGUARD_PRIVATE_KEY
-          - WIREGUARD_ADDRESSES=10.71.143.17/32
-          # Timezone for accurate log times
-          - TZ=Europe/Brussels
-          # Server list updater
-          # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
-          - UPDATER_PERIOD=24h
-          # Use ownly servers owned by mullvad
-          - OWNED_ONLY=yes
-      transmission:
-        image: lscr.io/linuxserver/transmission:latest
-        network_mode: 'service:gluetun'
-        container_name: transmission
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Etc/UTC
-          # - TRANSMISSION_WEB_HOME= #optional
-          # - USER= #optional
-          # - PASS= #optional
-          # - WHITELIST= #optional
-          # - PEERPORT= #optional
-          # - HOST_WHITELIST= #optional
-        volumes:
-          - /data/downloads:/data/downloads
-          - ./transmission_config:/config
-        restart: always
-      prowlarr:
-        image: lscr.io/linuxserver/prowlarr:latest
-        network_mode: 'service:gluetun'
-        container_name: prowlarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Brussels
-        volumes:
-          - ./prowlarr_config:/config
-        restart: always
-      sonarr:
-        image: lscr.io/linuxserver/sonarr:latest
-        network_mode: 'service:gluetun'
-        container_name: sonarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Brussels
-        volumes:
-          - ./sonarr_config:/config
-          - /data:/data
-        restart: always
-      radarr:
-        image: lscr.io/linuxserver/radarr:latest
-        network_mode: 'service:gluetun'
-        container_name: radarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Brussels
-        volumes:
-          - ./radarr_config:/config
-          - /data:/data
-        restart: always
-      bazarr:
-        image: lscr.io/linuxserver/bazarr:latest
-        network_mode: 'service:gluetun'
-        container_name: bazarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Brussels
-        volumes:
-          - ./bazarr_config:/config
-          - /data:/data
-        restart: always
-      lidarr:
-        image: lscr.io/linuxserver/lidarr:latest
-        network_mode: 'service:gluetun'
-        container_name: lidarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Etc/UTC
-        volumes:
-          - ./lidarr_config:/config
-          - /data:/data
-        restart: unless-stopped
-      readarr:
-        image: lscr.io/linuxserver/readarr:develop
-        # network_mode: "service:gluetun"
-        ports:
-          - 8787:8787
-        container_name: readarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Brussels
-        volumes:
-          - ./readarr_config:/config
-          - /data:/data
-        restart: unless-stopped
-      jellyseerr:
-        image: fallenbagel/jellyseerr:latest
-        network_mode: 'service:gluetun'
-        container_name: jellyseerr
-        environment:
-          - LOG_LEVEL=debug
-          - TZ=Europe/Brussels
-          # - PORT=5055 #optional
-        volumes:
-          - ./jellyseerr_config:/app/config
-        restart: unless-stopped
-      jellyfin:
-        image: jellyfin/jellyfin
-        container_name: jellyfin
-        user: 1000:1000
-        group_add:
-          - '989' # Output of command: $ getent group render | cut -d: -f3
-          # - "985" # Output of command: $ getent group video | cut -d: -f3
-        network_mode: 'service:gluetun'
-        volumes:
-          - ./jellyfin_config:/config
-          - ./jellyfin_cache:/cache
-          - /data/media:/data/media
-          - /data/other media/:/data/other media/
-        devices:
-          - /dev/dri/renderD128:/dev/dri/renderD128
-          - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
-        environment:
-          - ROC_ENABLE_PRE_VEGA=1
-        restart: always
-        mem_swappiness: 0
-        deploy:
-          resources:
-            limits:
-              cpus: 10.0 # limit cores (jellyfin can sometimes hang entire system when doing intensive stuff)
-              memory: 10000M
-            reservations:
-              memory: 7192M
-      flaresolverr:
-        # DockerHub mirror flaresolverr/flaresolverr:latest
-        network_mode: 'service:gluetun'
-        image: ghcr.io/flaresolverr/flaresolverr:latest
-        container_name: flaresolverr
-        environment:
-          - LOG_LEVEL=${LOG_LEVEL:-info}
-          - LOG_HTML=${LOG_HTML:-false}
-          - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
-          - TZ=Europe/Brussels
-        restart: unless-stopped
+# NOTE: all the containers that need to communicate with each other need to be defined here.
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun_vpn
+    # line above must be uncommented to allow external containers to connect.
+    # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp # HTTP proxy
+      - 8388:8388/tcp # Shadowsocks
+      - 8388:8388/udp # Shadowsocks
+      # UPTIME KUMA PORTS
+      - 3001:3001
+      # TRANSMISSION PORTS
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+      # SONARR
+      - 8989:8989
+      # PROWLARR
+      - 9696:9696
+      # FLARESOLVERR
+      - 8191:8191
+      # LIDARR
+      - 8686:8686
+      # RADARR
+      - 7878:7878
+      # BAZARR
+      - 6767:6767
+      # OVERSEERR/JELLYSEERR
+      - 5055:5055
+      # JELLYFIN
+      - 8096:8096
+    volumes:
+      - ./volume:/gluetun
+    restart: always
+    environment:
+      # See https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
+      - VPN_SERVICE_PROVIDER=mullvad
+      - VPN_TYPE=wireguard
+      # OpenVPN:
+      # - OPENVPN_USER=
+      # - OPENVPN_PASSWORD=
+      # Wireguard:
+      - WIREGUARD_PRIVATE_KEY=REPLACE_GLUETUN_WIREGUARD_PRIVATE_KEY
+      - WIREGUARD_ADDRESSES=10.71.143.17/32
+      # Timezone for accurate log times
+      - TZ=Europe/Brussels
+      # Server list updater
+      # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
+      - UPDATER_PERIOD=24h
+      # Use ownly servers owned by mullvad
+      - OWNED_ONLY=yes
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    network_mode: 'service:gluetun'
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      # - TRANSMISSION_WEB_HOME= #optional
+      # - USER= #optional
+      # - PASS= #optional
+      # - WHITELIST= #optional
+      # - PEERPORT= #optional
+      # - HOST_WHITELIST= #optional
+    volumes:
+      - /data/downloads:/data/downloads
+      - ./transmission_config:/config
+    restart: always
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    network_mode: 'service:gluetun'
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./prowlarr_config:/config
+    restart: always
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    network_mode: 'service:gluetun'
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./sonarr_config:/config
+      - /data:/data
+    restart: always
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    network_mode: 'service:gluetun'
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./radarr_config:/config
+      - /data:/data
+    restart: always
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    network_mode: 'service:gluetun'
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./bazarr_config:/config
+      - /data:/data
+    restart: always
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    network_mode: 'service:gluetun'
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./lidarr_config:/config
+      - /data:/data
+    restart: unless-stopped
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    # network_mode: "service:gluetun"
+    ports:
+      - 8787:8787
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./readarr_config:/config
+      - /data:/data
+    restart: unless-stopped
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    network_mode: 'service:gluetun'
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Europe/Brussels
+      # - PORT=5055 #optional
+    volumes:
+      - ./jellyseerr_config:/app/config
+    restart: unless-stopped
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    user: 1000:1000
+    group_add:
+      - '989' # Output of command: $ getent group render | cut -d: -f3
+      # - "985" # Output of command: $ getent group video | cut -d: -f3
+    network_mode: 'service:gluetun'
+    volumes:
+      - ./jellyfin_config:/config
+      - ./jellyfin_cache:/cache
+      - /data/media:/data/media
+      - /data/other media/:/data/other media/
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+      - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
+    environment:
+      - ROC_ENABLE_PRE_VEGA=1
+    restart: always
+    mem_swappiness: 0
+    deploy:
+      resources:
+        limits:
+          cpus: 10.0 # limit cores (jellyfin can sometimes hang entire system when doing intensive stuff)
+          memory: 10000M
+        reservations:
+          memory: 7192M
+  flaresolverr:
+    # DockerHub mirror flaresolverr/flaresolverr:latest
+    network_mode: 'service:gluetun'
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_HTML=${LOG_HTML:-false}
+      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+      - TZ=Europe/Brussels
+    restart: unless-stopped
 ```
 
 ### Services
@@ -1496,7 +1504,7 @@ services:
 #### SSHD
 
 - If you want a machine to ssh into this server without password then copy the
-public key of the new machine into: `/home/jp/.ssh/authorized_keys`
+  public key of the new machine into: `/home/jp/.ssh/authorized_keys`
 
 #### Reflector
 
@@ -1758,6 +1766,8 @@ public key of the new machine into: `/home/jp/.ssh/authorized_keys`
 
   ```shell
   sudo x11vnc -repeat -ncache 10 -display :0 -auth /var/run/sddm/$(sudo ls /var/run/sddm/)
+  ```
+
 ````
 
 #### KOSync
@@ -2071,3 +2081,4 @@ You can use the script like this:
 
 - I have written a couple of useful scripts that I run on this server.
 - They are located at `/home/jp/Code/scripts`
+````

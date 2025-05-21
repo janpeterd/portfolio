@@ -39,6 +39,7 @@ body {
   color: theme(colors.white);
   background-color: theme(colors.black);
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html {

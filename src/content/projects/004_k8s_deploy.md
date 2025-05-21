@@ -2,6 +2,10 @@
 title: Kubernetes deployment
 date: 2023-12-13
 thumbnail: /img/projects/k8s_argocd.png
+repo: https://github.com/janpeterd/milestone2_argocd
+images:
+  - /img/projects/k8s_argocd.png
+  - /img/projects/k8s_prometheus.png
 ---
 
 ## Kubernetes deployment

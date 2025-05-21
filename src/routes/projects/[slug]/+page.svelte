@@ -4,8 +4,19 @@
   import Icon from '@iconify/svelte'
   import { pathToFileName, getIconByExtension, getColorByExtension } from '$lib/utils'
   import { goto } from '$app/navigation'
+  import ProjectItems from '$lib/Components/ProjectItems.svelte'
+  import { onMount } from 'svelte'
+  import { page } from '$app/state'
 
   let { data } = $props()
+
+  onMount(() => {
+    const key = 'ProjectRead-' + page.params.slug
+    const hasRead = localStorage.getItem(key)
+    if (!hasRead) {
+      localStorage.setItem(key, true)
+    }
+  })
 
   function navigate_back() {
     if (browser) {
@@ -19,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.meta.title}</title>
+  <title>{data.meta.title} - Portfolio Jan-Peter</title>
   <meta property="og:type" content="article" />
   <meta property="og:title" content={data.meta.title} />
 </svelte:head>
@@ -38,39 +49,21 @@
   </div>
   <!-- Attachments -->
   <div class="flex flex-col gap-4">
-    {#if data.meta.attachments && data.meta.attachments.length > 0}
-      <div class="flex flex-col gap-4 rounded-lg bg-white/10 p-6">
-        <h2 class="flex gap-4 text-lg font-bold">
-          <Icon icon="mdi:attachment" width="2rem" class="text-secondary" />
-          Bijlagen
-        </h2>
-        {#each data.meta.attachments as attachment}
-          <a
-            href={attachment}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={`flex items-center gap-2 font-medium ${getColorByExtension(attachment.replace(/.*\.(.*?$)/, '$1')) ?? 'text-secondary'} transition-all hover:text-white`}>
-            <Icon
-              icon={getIconByExtension(attachment.replace(/.*\.(.*?$)/, '$1'))}
-              width="2.5rem" />
-            <span>{pathToFileName(attachment)}</span>
-            <Icon icon="mdi:external-link" width="1rem" />
-          </a>
-        {/each}
-      </div>
+    {#if data.meta}
+      <ProjectItems data={data.meta} />
     {/if}
 
     <!-- Post -->
     <div
-      class="animate-in fade-in-0 fill-mode-backwards prose prose-slate prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-img:rounded-lg">
+      class="animate-in fade-in-0 fill-mode-backwards prose prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-img:max-h-[65vh] prose-img:rounded-lg">
       <data.content />
     </div>
   </div>
 
   {#if data.other.length > 0}
-    <section class="mx-auto my-28 w-full max-w-screen-lg md:my-36">
+    <section class="mx-auto my-20 w-full max-w-screen-lg">
       <hr />
-      <ul class="w-full grid-cols-2 gap-x-7 gap-y-16 py-10 sm:grid">
+      <ul class="w-full grid-cols-2 gap-x-7 gap-y-4 py-10 sm:grid">
         {#each data.other as entry}
           <ProjectThumb {entry} />
         {/each}

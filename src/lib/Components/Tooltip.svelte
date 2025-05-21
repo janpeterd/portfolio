@@ -27,7 +27,7 @@
 
     const { x, y } = await computePosition(triggerEl, tooltipEl, {
       placement,
-      middleware: [offset(8), flip(), shift({ padding })]
+      middleware: [offset(1), flip(), shift({ padding })]
     })
 
     Object.assign(tooltipEl.style, {
@@ -66,7 +66,7 @@
   on:focus={handleMouseEnter}
   on:blur={handleMouseLeave}
   tabindex="0"
-  class="trigger inline-block cursor-pointer">
+  class="trigger inline-block max-w-full cursor-pointer">
   {@render children()}
 </span>
 

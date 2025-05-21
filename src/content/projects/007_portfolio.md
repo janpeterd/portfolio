@@ -1,8 +1,9 @@
 ---
 title: Portfolio
 date: 2024-03-26
-thumbnail: /img/projects/portfolio_home.png 
-starred: true
+thumbnail: /img/projects/portfolio_home.png
+highlight: true
+link: https://janpeterdhalle.com
 ---
 
 ## Mijn portfolio

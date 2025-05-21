@@ -1,12 +1,11 @@
 ---
 title: Website Isabel Dhallé
 date: 2022-10-27
-thumbnail: /img/projects/isabeldhalle.png 
+thumbnail: /img/projects/isabeldhalle.png
+link: https://isabeldhalle.be
 ---
 
 ## Website Isabel Dhallé
-
-_Bekijk de website [hier](https://isabeldhalle.be)_.
 
 Mijn zus studeert viool aan het conservatorium van Antwerpen. Op een dag vroeg ze aan mij of ik voor haar een website kon maken, zodat mensen haar konden terugvinden op het internet.
 

@@ -136,27 +136,27 @@
     "categories": [
       {
         "name": "Programmeertalen",
-        "skills": ["HTML/CSS", "JavaScript", "Java", "Python", "PHP", "C#", "C", "C++", "Bash"]
+        "skills": ["Java", "Typescript", "JavaScript", "HTML/CSS","Python", "PHP", "C#", "C", "Bash"]
       },
       {
         "name": "Databases",
-        "skills": ["SQL", "PostgresSQL", "MongoDB"]
+        "skills": ["SQL", "PostgresSQL", "MongoDB", "JPA", "Hibernate", "Flyway"]
       },
       {
         "name": "Frameworks & Libraries",
-        "skills": ["React", "Angular", "Spring Boot", "Tailwind", "Next.js", "Django", ".NET core", ".NET Maui", "Laravel", "Numpy", "Pandas", "Matplotlib", "Svelte/Sveltekit", "..."]
+        "skills": ["Spring Boot", "React", "Angular", "TailwindCSS", "Next.js", "Django", ".NET core", ".NET Maui", "Laravel", "Numpy", "Pandas", "Matplotlib", "Svelte/Sveltekit", "..."]
       },
       {
         "name": "Tools",
-        "skills": ["Linux", "Windows", "Vim/Neovim", "Microsoft Teams", "Scrum", "Jira", "Visual Studio", "Visual Studio Code", "Jetbrains IDEs", "Figma", "Git", "GitHub", "Bitbucket", "GNU coreutils", "Terminal"]
+        "skills": ["Linux", "Windows", "Vim/Neovim", "Microsoft Teams", "Scrum", "Jira", "Visual Studio", "Visual Studio Code", "Jetbrains IDEs", "Figma", "Git", "GitHub", "Bitbucket", "GNU coreutils", "Terminal", "..."]
       },
       {
         "name": "Documentatie",
-        "skills": ["Markdown", "UML", "Confluence"]
+        "skills": ["Markdown", "UML", "Confluence", "MS Office"]
       },
       {
         "name": "Infrastructuur",
-        "skills": ["Kubernetes", "Docker", "Cisco network essentials", "Linux", "Virtual machines", "Github Actions", "Jenkins", "AWS", "Azure"]
+        "skills": ["Kubernetes", "Docker", "Cisco network essentials", "Linux", "Virtual machines", "Github Actions", "Jenkins", "Azure"]
       }
     ]
   },

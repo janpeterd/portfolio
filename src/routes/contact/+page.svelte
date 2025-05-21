@@ -1,7 +1,7 @@
 <script>
   import Icon from '@iconify/svelte'
   import DeskImg from '$lib/assets/desk.png?enhanced'
-  import { githubLink, linkedInLink, mailLink, xLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink } from '../../stores'
   import CardContainer from '$lib/Components/Aceternity/3d-card-effect/CardContainer.svelte'
   import CardItem from '$lib/Components/Aceternity/3d-card-effect/CardItem.svelte'
   import CardBody from '$lib/Components/Aceternity/3d-card-effect/CardBody.svelte'
@@ -57,16 +57,6 @@
             <Icon icon="line-md:linkedin" width="2rem" />
             <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
               Jan&#8209;Peter&nbsp;Dhallé
-            </span>
-          </a>
-        </div>
-        <div>
-          <a
-            href={$xLink}
-            class="mx-0 flex items-center justify-center gap-4 py-2 text-base sm:mx-2 sm:text-lg print:text-base">
-            <Icon icon="line-md:twitter-x" width="2rem" />
-            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
-              @jempie_3
             </span>
           </a>
         </div>
@@ -128,16 +118,6 @@
             </span>
           </a>
         </CardItem>
-        <CardItem {isMouseEntered} translateZ="90" rotateX="10">
-          <a
-            href={$xLink}
-            class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
-            <Icon icon="line-md:twitter-x" width="2rem" />
-            <span class="rounded-full bg-zinc-900 px-4 py-1 align-middle font-mono tracking-wide">
-              @jempie_3
-            </span>
-          </a>
-        </CardItem>
         <CardItem {isMouseEntered} translateZ="80">
           <a
             href={$githubLink}
@@ -157,7 +137,8 @@
   .contact_gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
-    background: url('/img/grain.webp'),
+    background:
+      url('/img/grain.webp'),
       radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
   }
   #static_cardbody {

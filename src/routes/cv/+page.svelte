@@ -2,17 +2,7 @@
   import Icon from '@iconify/svelte'
   import HeroImg from '$lib/assets/portrait_scaled.jpg?enhanced'
 
-  import {
-    githubLink,
-    github,
-    linkedInLink,
-    mailLink,
-    xLink,
-    phoneLink,
-    mail,
-    x,
-    phone
-  } from '../../stores'
+  import { githubLink, github, linkedInLink, mailLink, phoneLink, mail, phone } from '../../stores'
 
   let { data } = $props()
 
@@ -24,8 +14,6 @@
   storeMap.set('githubLink', githubLink)
   storeMap.set('github', github)
   storeMap.set('linkedInLink', linkedInLink)
-  storeMap.set('xLink', xLink)
-  storeMap.set('x', x)
 </script>
 
 <svelte:head>
@@ -75,34 +63,36 @@
         </div>
 
         <!-- OPLEIDING -->
-        <h2 class="cv_heading">{data.cv?.education.title}</h2>
-        {#each data.cv?.education.items as item}
-          <div class="cv_flex">
-            <span class="cv_item">
-              {item.degree}
-              <br />
-              {#each item.extras as extra}
-                <p class="cv_item_extra">{extra}</p>
-              {/each}
-            </span>
-            <span class="cv_date">sinds september 2022</span>
-          </div>
-        {/each}
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.education.title}</h2>
+          {#each data.cv?.education.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <p>{item.degree}</p>
+                {#each item.extras as extra}
+                  <p class="cv_item_extra">{extra}</p>
+                {/each}
+              </span>
+              <span class="cv_date">sinds september 2022</span>
+            </div>
+          {/each}
+        </div>
 
         <!-- PROFESSIONELE WERKERVARING -->
-        <h2 class="cv_heading">{data.cv?.experience.title}</h2>
-        {#each data.cv?.experience.items as item}
-          <div class="cv_flex">
-            <span class="cv_item">
-              {item.role_company}
-              <br />
-              <p class="cv_item_extra">{item.description}</p>
-            </span>
-            <span class="cv_date">
-              {item.period}
-            </span>
-          </div>
-        {/each}
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.experience.title}</h2>
+          {#each data.cv?.experience.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <p>{item.role_company}</p>
+                <p class="cv_item_extra">{item.description}</p>
+              </span>
+              <span class="cv_date">
+                {item.period}
+              </span>
+            </div>
+          {/each}
+        </div>
       </div>
 
       <!-- SIDEBAR -->
@@ -166,47 +156,50 @@
     <!-- VERENIGINGEN, VRIJWILLIGERSWERK -->
     <div>
       <div>
-        <h2 class="cv_heading break-before-page">{data.cv?.associations.title}</h2>
-        {#each data.cv?.associations.items as item}
-          <div class="cv_flex">
-            <span class="cv_item">
-              {item.organization}
-              <br />
-              <p class="cv_item_extra">{item.role_description}</p>
-            </span>
-            <span class="cv_date">{item.period}</span>
-          </div>
-        {/each}
-
-        <!-- TECHNISCHE VAARDIGHEDEN -->
-        <h2 class="cv_heading">{data.cv?.technicalSkills.title}</h2>
-        <div
-          class="my-6 grid grid-cols-1 gap-x-4 gap-y-16 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-2">
-          {#each data.cv?.technicalSkills.categories as category}
-            <div class="ml-2 lg:ml-8">
-              <h2 class="py-2 font-elec text-lg font-bold print:text-base">{category.name}</h2>
-              <p>{category.skills.join(', ')}</p>
+        <div class="my-4">
+          <h2 class="cv_heading break-before-page">{data.cv?.associations.title}</h2>
+          {#each data.cv?.associations.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <p>{item.organization}</p>
+                <p class="cv_item_extra">{item.role_description}</p>
+              </span>
+              <span class="cv_date">{item.period}</span>
             </div>
           {/each}
         </div>
 
-        <!-- CERTIFICATEN -->
-        <h2 class="cv_heading">{data.cv?.certificates.title}</h2>
-        {#each data.cv?.certificates.items as item}
-          <div class="cv_flex">
-            <span class="cv_item">
-              <a href={item.link} aria-label={item.ariaLabel} class="flex gap-x-2">
-                <span class="flex items-center gap-2 underline print:no-underline">
-                  {item.name}
-                  <Icon icon="mdi:external-link print:hidden" width="1rem" />
-                  <br />
-                </span>
-              </a>
-              <p class="cv_item_extra">{item.extra}</p>
-            </span>
-            <span class="cv_date">{item.date}</span>
+        <!-- TECHNISCHE VAARDIGHEDEN -->
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.technicalSkills.title}</h2>
+          <div
+            class="my-6 grid grid-cols-1 gap-x-4 gap-y-6 md:w-auto md:grid-cols-2 lg:grid-cols-3 print:my-2 print:gap-y-2">
+            {#each data.cv?.technicalSkills.categories as category}
+              <div class="ml-2 lg:ml-8">
+                <h2 class="py-2 font-elec text-lg font-bold print:text-base">{category.name}</h2>
+                <p>{category.skills.join(', ')}</p>
+              </div>
+            {/each}
           </div>
-        {/each}
+        </div>
+        <!-- CERTIFICATEN -->
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.certificates.title}</h2>
+          {#each data.cv?.certificates.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <a href={item.link} aria-label={item.ariaLabel} class="flex gap-x-2">
+                  <span class="flex items-center gap-2 underline print:no-underline">
+                    <p>{item.name}</p>
+                    <Icon icon="mdi:external-link print:hidden" width="1rem" />
+                  </span>
+                </a>
+                <p class="cv_item_extra">{item.extra}</p>
+              </span>
+              <span class="cv_date">{item.date}</span>
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
   </div>
@@ -214,10 +207,10 @@
 
 <style lang="postcss">
   h2.cv_heading {
-    @apply mb-4 border-b border-white/40 px-2 py-6 text-3xl lg:w-auto lg:text-4xl print:mb-2 print:border-black/30 print:py-2 print:text-base;
+    @apply mb-4 border-b border-white/40 px-2 py-6 font-elec text-3xl font-bold lg:w-auto lg:text-4xl print:mb-2 print:border-black/30 print:py-2 print:text-base;
   }
   span.cv_item {
-    @apply ml-2 text-lg font-bold lg:indent-8 lg:text-2xl print:text-base;
+    @apply ml-2 text-lg font-semibold lg:text-2xl print:text-base;
   }
 
   p.cv_item_extra {
@@ -225,11 +218,11 @@
   }
 
   span.cv_date {
-    @apply italic leading-loose print:text-xs;
+    @apply float-right italic leading-loose print:text-xs;
   }
 
   div.cv_flex {
-    @apply flex flex-row justify-between gap-10 p-4 align-baseline print:gap-0 print:p-2;
+    @apply flex flex-row justify-between p-2 align-baseline print:p-2;
   }
 
   .bottom-gradient {

@@ -2,6 +2,9 @@
 title: Zoo application in Java
 date: 2023-05-18
 thumbnail: /img/projects/java_project_zoo.png
+images:
+  - /img/projects/java_project_zoo.png
+  - /img/projects/java_project_zoos.png
 ---
 
 ## Zoo application in Java

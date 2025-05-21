@@ -1,8 +1,17 @@
 <script>
   import ProjectThumb from '$lib/Components/ProjectThumb.svelte'
+  import Icon from '@iconify/svelte'
 
+  import { storageCleared } from '../../stores'
   let { data } = $props()
   const { posts } = data
+
+  async function reset_read() {
+    localStorage.clear()
+    storageCleared.set(true)
+    await Promise.resolve()
+    storageCleared.set(false)
+  }
 </script>
 
 <svelte:head>
@@ -23,7 +32,15 @@
         Projecten
       </h2>
     </div>
-    <ul class="my-12 grid w-full gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+    <div class="flex w-full justify-end">
+      <button
+        onclick={reset_read}
+        class="m-4 flex items-center justify-center gap-2 rounded-xl bg-primary p-2 text-center font-elec font-bold text-slate-400 transition-all hover:scale-105 hover:text-secondary">
+        <Icon icon="mdi:eye" width="1.5rem" class="shrink-0" />
+        Reset gelezen
+      </button>
+    </div>
+    <ul class="my-12 grid w-full gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-0 lg:gap-y-5">
       {#each posts as entry}
         <ProjectThumb {entry} />
       {/each}

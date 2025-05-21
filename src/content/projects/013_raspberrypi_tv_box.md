@@ -2,6 +2,7 @@
 title: Raspberry Pi TV-box
 date: 2025-02-27
 thumbnail: /img/projects/rpi_android_box.jpg
+video: /img/projects/rpi_android_box.mp4
 ---
 
 ## Raspberry pi TV-box
@@ -32,15 +33,15 @@ sluiten, waardoor het systeem werkt met een afstandsbediening.
 Ik heb dus een
 [TSOP4838](https://nl.mouser.com/ProductDetail/Vishay-Semiconductors/TSOP4838?qs=yGXpg7PJZCiwO12kec0Sug%3D%3D&srsltid=AfmBOoot30yr_YHhYU8-1sj4fbinX5nzJg1f9do-iry0CusGCqWZDtZu)
 IR module besteld en heb deze met de juiste pinnen van de raspberry pi
-verbonden. Hierna heb ik in de action een universele afstandsbediening gekocht.
+verbonden. Hierna heb ik een universele afstandsbediening gekocht.
 
 ![Raspberry Pi met IR sensor](/img/projects/rpi_android_box.jpg)
 
 ### IR codes
 
-Toen ik de afstandsbediening wou testen merkte ik al snel dat het niet werkte.
-Het bleek dat ik aan de raspberry pi de juiste IR-codes van de
-afstandsbediening moest mappen naar acties binnen Android TV.
+Toen ik de afstandsbediening wou testen merkte ik al snel dat het niet
+werkte. Het bleek dat juiste IR-codes van de afstandsbediening nog moest
+mappen naar acties binnen Android TV.
 
 Hiervoor heb ik dit bestand aangemaakt.
 

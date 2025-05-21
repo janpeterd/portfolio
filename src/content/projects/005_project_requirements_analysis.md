@@ -5,6 +5,8 @@ thumbnail: /img/projects/req_analysis_uc_diagram.png
 description: test
 attachments:
   - /doc/projects/Analyse-en-ontwerprapport_TVE2.pdf
+images:
+  - /img/projects/req_analysis_uc_diagram.png
 ---
 
 ## Analyse- en ontwerprapport voor project

@@ -66,24 +66,6 @@ export const experiences = [
     link: 'https://www.zandhovennatuurlijk.be/',
     type: 'work'
   },
-  {
-    startDate: new Date('2020-01-01'),
-    endDate: null,
-    dateString: '2020-heden',
-    title: 'Violist, plaatsvervangend concertmeester',
-    company: 'Vlaams Symfonisch Orkest',
-    description: 'Orkestlid en plaatsvervangend concertmeester bij het Vlaams Symfonisch Orkest',
-    type: 'work'
-  },
-  {
-    startDate: new Date('2017-04-01'),
-    endDate: new Date('2017-04-30'),
-    dateString: 'April 2017',
-    title: 'Vrijwilliger',
-    company: 'Woonzorgcentrum Sint-Lucia',
-    description: 'Animator bij activiteiten voor ouderen',
-    type: 'work'
-  },
 
   // Education
   {

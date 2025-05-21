@@ -2,9 +2,10 @@
 title: Tagmaster, cross-platform app met AI
 date: 2024-11-10
 thumbnail: /img/projects/tagmaster_edit_list.png
+repo: https://github.com/janpeterd/tagmaster
+images:
+  - /img/projects/tagmaster_edit_list.png
 ---
-
-- [Github repository](https://github.com/janpeterd/tagmaster)
 
 ![Tagmaster image list and edit pages](/img/projects/tagmaster_edit_list.png)
 

@@ -1,16 +1,29 @@
 ---
 title: Project Digital Innovation PHP
 date: 2024-05-21
-thumbnail: /img/projects/php_project_projectinfo.png 
+thumbnail: /img/projects/php_project_projectinfo.png
+images:
+  - /img/projects/php_project_home.png
+  - /img/projects/php_project_projectinfo.png
+  - /img/projects/php_project_time.png
 ---
 
 # De opdracht
 
-In het tweede semester van mijn tweede jaar toegepaste informatica was het tijd om een groot project volledig uit te werken in `PHP`. Voor deze opdracht werden we in groepjes verdeeld en moesten we verder werken vanuit het verslag van een ander groepje uit het eerste semester. Dit verslag bevatte informatie over de opdracht, uitgewerkte prototypes en use cases.
+In het tweede semester van mijn tweede jaar toegepaste informatica was het tijd
+om een groot project volledig uit te werken in `PHP`. Voor deze opdracht werden
+we in groepjes verdeeld en moesten we verder werken vanuit het verslag van een
+ander groepje uit het eerste semester. Dit verslag bevatte informatie over de
+opdracht, uitgewerkte prototypes en use cases.
 
-De opdracht die ik met mijn groepje heb uitgewerkt is het maken van een webapplicatie voor de richting _Digital innovation_. Dit is een richting die aangeboden wordt door de campus. Studenten die voor deze richting kiezen behalen alle eindtermen en leerdoelen door het voltooien van projecten. Ze hebben dus erg weinig of geen theoretische vakken.
+De opdracht die ik met mijn groepje heb uitgewerkt is het maken van een
+webapplicatie voor de richting _Digital innovation_. Dit is een richting die
+aangeboden wordt door de campus. Studenten die voor deze richting kiezen
+behalen alle eindtermen en leerdoelen door het voltooien van projecten. Ze
+hebben dus erg weinig of geen theoretische vakken.
 
-Onze applicatie moet een centrale plaats vormen waar al deze projecten uitgewerkt kunnen worden.
+Onze applicatie moet een centrale plaats vormen waar al deze projecten
+uitgewerkt kunnen worden.
 
 ## Gebruikers
 

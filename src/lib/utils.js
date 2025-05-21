@@ -54,6 +54,27 @@ export function getIconByExtension(extension) {
   }
 }
 
+export function getIconAndColorForUrl(urlString) {
+  let url = ''
+  try {
+    url = new URL(urlString)
+  } catch (e) {
+    console.error('Cannot create URL object from', urlString)
+  }
+  switch (url.host) {
+    case 'www.youtube.com':
+      return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
+    case 'youtube.com':
+      return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
+    case 'www.github.com':
+      return { icon: 'mdi:github', textColor: 'text-[#F0F6FC]' }
+    case 'github.com':
+      return { icon: 'mdi:github', textColor: 'text-[#F0F6FC]' }
+    default:
+      return null
+  }
+}
+
 export function getColorByExtension(extension) {
   switch (extension) {
     case 'pdf':
@@ -62,6 +83,8 @@ export function getColorByExtension(extension) {
       return 'text-blue-500'
     case 'xls' || 'xlsx':
       return 'text-green-500'
+    default:
+      return null
   }
 }
 
