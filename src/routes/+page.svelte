@@ -8,13 +8,6 @@
 
 <svelte:head>
   <title>Portfolio - JP</title>
-  <meta
-    name="description"
-    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica" />
-  <meta
-    property="og:description"
-    content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica" />
-  <meta property="og:title" content="Portfolio - JP" />
 </svelte:head>
 
 <div class="top-gradient fixed bottom-0 h-screen w-screen overflow-hidden"></div>

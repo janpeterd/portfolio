@@ -98,7 +98,9 @@ images:
 
 - Good info on the [ArchWiki](https://wiki.archlinux.org/)
 
-![](/img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
+- I had experienced hardware issues on Ubuntu and Debian
+
+  ![](/img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
 
 #### Fstab
 
@@ -107,7 +109,7 @@ images:
 - It is a very **important file**. If you don\'t mount your root file
   system correctly the machine wont boot.
 - it is located at `/etc/fstab`
-- NOTE: **[ZFS](id:8782426f-a2c4-4985-b979-84142f70be70)** filesystems
+- NOT: **[ZFS](id:8782426f-a2c4-4985-b979-84142f70be70)** filesystems
   (like /data) are not defined in fstab, because it has a service that
   mounts it
 
