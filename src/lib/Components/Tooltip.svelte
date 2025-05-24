@@ -67,7 +67,7 @@
   on:focus={handleMouseEnter}
   on:blur={handleMouseLeave}
   tabindex="0"
-  class={`trigger inline-block max-w-full cursor-pointer ${className}`}>
+  class={`trigger max-w-full cursor-pointer ${className}`}>
   {@render children()}
 </span>
 

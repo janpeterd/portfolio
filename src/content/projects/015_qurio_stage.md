@@ -47,7 +47,7 @@ Java met Spring boot. De frontend gebruikt Typescript met React en [React Router
   - [Mapstruct](https://mapstruct.org/)
   - ...
 
-## Tests
+## Testen
 
 Tijdens de ontwikkeling van de applicatie hebben ik erg veel aandacht besteed
 aan het schrijven van tests. Dit waren tests op elk niveau: unittests,
@@ -72,6 +72,10 @@ hier volgt een kort overzicht van de belangrijkste functies.
 - Validatie op alle formuliervelden
   ![Validatie](/img/projects/qurio_validation.png)
 - Authenticatie en permissiecontrole op elke pagina.
+
+- Validatie voor elk endpoint in de backend
+- Endpoint-beveiliging en permissiecontrole voor elk enpdoint in backend.
+- Paginering in backend voor het versturen van grote objecten.
 
 ### Authenticatie
 
@@ -153,3 +157,7 @@ permanent opstond.
 Om toch een _productieomgeving_ te simuleren heb ik via
 [ngrok](http://ngrok.com/) een lokale omgeving naar een statisch domain
 gentunneled.
+
+Ngrok biedt gratis maar 1 statisch domein aan, daarom heb ik eerst met
+[nginx](https://nginx.org/) een reverse-proxy opgesteld, zodat ik frontend en
+backend hetzelfde domein konden gebruiken.
