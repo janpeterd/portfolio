@@ -1,6 +1,7 @@
 ---
 title: Jpserv Home server
 date: 2025-02-27
+highlight: true
 thumbnail: /img/projects/jpserv/2024-11-07_15-15-13_screenshot.png
 images:
   - /img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png
@@ -8,75 +9,110 @@ images:
   - /img/projects/jpserv/2024-09-08_01-43-04_screenshot.png
 ---
 
+## Achtergrondinfo
+
+Dit document bevat informatie over mijn server: `jpserv`. Ik ben begonnen met
+het werken aan deze server in 2023, initieel maakte ik gebruik van oude
+hardware Doorheen de jaren is de server geëvolueerd, samen met mijn kennis en
+vaardigheden.
+
+De server heeft nu een grote opslagcapaciteit, waarop ik mijn persoonlijke data
+en de data van mijn gezin opsla. Ook host het verschillende applicaties en
+**services die dagelijks door verschillende mensen gebruikt worden**.
+
+Dit project was een van de eerste projecten waar ik aan begonnen ben als
+student met weinig kennis en ervaring. Maar door dit project heb ik een schat
+van kennis opgedaan. Deze server is ook mijn **speeltuin waarmee ik kan
+experimenteren**. De toegang tot zo'n speeltuin was cruciaal in de ontwikkeling
+van mijn vaardigheden en heeft mijn **leertraject versneld**.
+
+Vanuit dit project heb ik bijgeleerd over:
+
+- containers, docker, docker-compose
+- Virtuele machines, hypervisors
+- Cloud, applicatiehosting
+- Linux, monitoring, serveronderhoud op lange termijn
+- Filesystems, ZFS
+- Backupsystemen en dataintegriteit
+- Netwerken, VPNs, webservers, proxies, netwerksecurity, domeinen
+- Automatisatie door scripting, Bash
+- Computer hardware en bouwen van computers
+- Debugging
+- ...
+
+Dit document dient ook als **referentiedocument** (voor mezelf), om de gebruikte hardware
+geïnstalleerde software bij te houden. Hierdoor zal de volgende tekst eerder technisch
+zijn van aard.
+
 ## Hardware
 
-### Build
+### Bouw
 
-![](/img/projects/jpserv/2024-09-08_01-43-26_screenshot.png)
+![Zijaanzicht server open (oud)](/img/projects/jpserv/2024-09-08_01-43-26_screenshot.png)
 
-![](/img/projects/jpserv/2024-09-08_01-43-04_screenshot.png)
+![Frontaal aanzicht server](/img/projects/jpserv/2024-09-08_01-43-04_screenshot.png)
 
-| Name                | Component                                           |
-| ------------------- | :-------------------------------------------------- |
-| CPU                 | AMD Ryzen 5 5600G                                   |
-| GPU                 | Integrated graphics (AMD Radeon Vega Series)        |
-| Memory              | 2x8Gib (16Gib) Corsair DDR4 Vengeance LPX 3200      |
-| Power supply        | Shark WPM Gold ZERO 750W                            |
-| Motherboard         | Gigabyte B550 GAMING X v2 B550                      |
-| Case                | Antec P101 Silent Midi Tower                        |
-| SATA expansion card | Startech.com 10 port SATA PCIe expansion card 6Gbps |
+| Naam                   | Component                                                |
+| ---------------------- | :------------------------------------------------------- |
+| CPU                    | AMD Ryzen 5 5600G                                        |
+| GPU                    | Geïntegreerde grafische kaart (AMD Radeon Vega Series)   |
+| Geheugen               | 2x8GiB (16GiB) Corsair DDR4 Vengeance LPX 3200           |
+| Voeding                | Shark WPM Gold ZERO 750W                                 |
+| Moederbord             | Gigabyte B550 GAMING X v2 B550                           |
+| Behuizing              | Antec P101 Silent Midi Tower                             |
+| SATA-uitbreidingskaart | Startech.com 10-poorts SATA PCIe-uitbreidingskaart 6Gbps |
 
-### Drives
+### Schijven
 
-![](/img/projects/jpserv/2024-11-07_15-15-13_screenshot.png)
+![Zijaanzicht server open (nieuw)](/img/projects/jpserv/2024-11-07_15-15-13_screenshot.png)
 
-- Crucial MX500 3D NAND SATA 2.5" Internal SSD (CT500MX500SSD1)
-  _probably_
+- Crucial MX500 3D NAND SATA 2.5" Interne SSD (CT500MX500SSD1)
+  _waarschijnlijk_
 
 - 7x Seagate HDD NAS 3.5" 4TB ST-4000VN006 Ironwolf
 
-  - Physical configuration:
+  - Fysieke configuratie:
 
-| Drive Serial Number | Capacity |
-| :------------------ | -------: |
-| WW60B72Q            |      4Tb |
-| WW609RF4            |      4Tb |
-| WW60AVEA            |      4Tb |
-| WW60794X            |      4Tb |
-| WW60B37G            |      4Tb |
-| WW64M90G            |      4Tb |
-| WW64N39V            |      4Tb |
+| Serienummer schijf | Capaciteit |
+| :----------------- | ---------: |
+| WW60B72Q           |        4TB |
+| WW609RF4           |        4TB |
+| WW60AVEA           |        4TB |
+| WW60794X           |        4TB |
+| WW60B37G           |        4TB |
+| WW64M90G           |        4TB |
+| WW64N39V           |        4TB |
 
-### Ports
+### Poorten
 
-![](/img/projects/jpserv/2024-09-08_01-41-31_screenshot.png)
+![Poorten achteraan server](/img/projects/jpserv/2024-09-08_01-41-31_screenshot.png)
 
-- Back IO
-  - 2 \* USB 2 port
-  - 3 \* USB 3.2 port
-  - USB (bios flash) (probably USB 2)
+- Achterpaneel IO
+  - 2 \* USB 2-poort
+  - 3 \* USB 3.2-poort
+  - USB (bios flash) (waarschijnlijk USB 2)
   - HDMI
-  - DVI port
-  - LAN port
-  - Mic
+  - DVI-poort
+  - LAN-poort
+  - Microfoon
   - Line out
   - Line in
-  - Old Mouse and keyboard port
-- Front IO
-  - 2 \* USB 2 port
-  - 2 \* USB 3 port
-  - Headphone jack
-  - Microphone jack
+  - Oude muis- en toetsenbordpoort
+- Voorpaneel IO
+  - 2 \* USB 2-poort
+  - 2 \* USB 3-poort
+  - Koptelefoonaansluiting
+  - Microfoonaansluiting
 
 ## Software
 
-### Operating System
+### Besturingssysteem
 
-![](/img/projects/jpserv/2024-09-01_15-03-31_screenshot.png)
+![Arch linux logo](/img/projects/jpserv/2024-09-01_15-03-31_screenshot.png)
 
 - Arch Linux
 
-- **LTS** kernel (best for ZFS kernel module compatibility)
+- **LTS** kernel (beste voor compatibiliteit met ZFS kernelmodule)
 
 - 4GiB SWAP
 
@@ -88,30 +124,26 @@ images:
 
 - Window manager: [Awesome WM](https://awesomewm.org/)
 
-- Package manager: **pacman**
+- Pakketbeheerder: **pacman**
 
-- AUR (repository with community maintained packages)
+- AUR (repository met door de gemeenschap onderhouden pakketten)
 
-  - Install and update with [yay](https://github.com/Jguer/yay)
+  - Installeren en updaten met [yay](https://github.com/Jguer/yay)
 
-- Hostname: jpserv (defined in `/etc/hostname`)
+- Hostnaam: jpserv (gedefinieerd in `/etc/hostname`)
 
-- Good info on the [ArchWiki](https://wiki.archlinux.org/)
+- Goede info op de [ArchWiki](https://wiki.archlinux.org/)
 
-- I had experienced hardware issues on Ubuntu and Debian
+- Ik had hardwareproblemen ondervonden op Ubuntu en Debian
 
-  ![](/img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
+  ![Screenshot Awesome WM met terminals](/img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png)
 
 #### Fstab
 
-- Fstab file is used to define how the system should **mount**
-  partitions.
-- It is a very **important file**. If you don\'t mount your root file
-  system correctly the machine wont boot.
-- it is located at `/etc/fstab`
-- NOT: **[ZFS](id:8782426f-a2c4-4985-b979-84142f70be70)** filesystems
-  (like /data) are not defined in fstab, because it has a service that
-  mounts it
+- Het Fstab-bestand wordt gebruikt om te definiëren hoe het systeem partities moet **koppelen** (mounten).
+- Het is een zeer **belangrijk bestand**. Als je je root-bestandssysteem niet correct koppelt, zal de machine niet opstarten.
+- het bevindt zich op `/etc/fstab`
+- LET OP: **[ZFS](id:8782426f-a2c4-4985-b979-84142f70be70)**-bestandssystemen (zoals /data) worden niet gedefinieerd in fstab, omdat ZFS een service heeft die ze koppelt.
 
 ```fstab
 ## Static information about the filesystems.
@@ -141,11 +173,10 @@ UUID="01bccb10-3911-49c9-a6a4-978818bb3471"  /backup     btrfs     rw,exec,subvo
 
 ```
 
-#### Boot loader
+#### Bootloader
 
 - Grub bootloader
-- You modify the file: `/etc/default/grub` and to install
-  the changes you run
+- Je wijzigt het bestand: `/etc/default/grub` en om de wijzigingen te installeren voer je uit:
   `sudo grub-mkconfig /boot/grub/grub.cfg`
 
 ```conf
@@ -215,35 +246,35 @@ GRUB_SAVEDEFAULT=true
 
 ```
 
-### File systems
+### Bestandssystemen
 
 #### / (root)
 
-- Device: Crucial MX500 3D NAND SATA 2.5" Internal SSD
+- Apparaat: Crucial MX500 3D NAND SATA 2.5" Interne SSD
   (CT500MX500SSD1)
 
-| Name    | Size      | File System | Mountpoint(s)                                                                 |
-| ------- | --------- | ----------- | ----------------------------------------------------------------------------- |
-| Boot    | 511Mib    | FAT32       | /boot                                                                         |
-| Primary | 465.26GiB | BTRFS       | /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log |
+| Naam    | Grootte   | Bestandssysteem | Koppelpunten(s)                                                               |
+| ------- | --------- | --------------- | ----------------------------------------------------------------------------- |
+| Boot    | 511MiB    | FAT32           | /boot                                                                         |
+| Primair | 465.26GiB | BTRFS           | /, /home, /.snapshots, /var/cache/pacman/pkg, /var/lib/docker/btrfs, /var/log |
 
 #### /data
 
-1.  Information
+1.  Informatie
 
-    ![](/img/projects/jpserv/2024-09-01_13-46-42_68747470733a2f2f6f70656e7a66732e6769746875622e696f2f6f70656e7a66732d646f63732f5f7374617469632f696d672f6c6f676f2f34383070782d4f70656e2d5a46532d5365636f6e646172792d4c6f676f2d436f6c6f75722d68616c6673697a652e706e67.png)
+    ![OpenZFS logo](/img/projects/jpserv/2024-09-01_13-46-42_68747470733a2f2f6f70656e7a66732e6769746875622e696f2f6f70656e7a66732d646f63732f5f7374617469632f696d672f6c6f676f2f34383070782d4f70656e2d5a46532d5365636f6e646172792d4c6f676f2d436f6c6f75722d68616c6673697a652e706e67.png)
 
-    - ZFS File System
+    - ZFS Bestandssysteem
 
-    - Systemd Services to enable automatic
+    - Systemd Services om automatische
       **[snapshots](id:7fcc0dbb-5c5e-46d3-a033-923a43b82bf3)**,
-      **[scrubbing](id:b23e2537-3dce-4944-83fa-cd8ecc4a3a10)**,
-      **[monitoring and
-      alerts](id:43252712-cfd0-4bce-b126-0fd2556832ad)**
+      **[scrubbing](id:b23e2537-3dce-4944-83fa-cd8ecc4a3a10)** (data-integriteitscontrole),
+      **[monitoring en
+      meldingen](id:43252712-cfd0-4bce-b126-0fd2556832ad)** in te schakelen
 
     - 7x Seagate HDD NAS 3.5" 4TB ST-4000VN006 Ironwolf
 
-    - ZFS file system
+    - ZFS bestandssysteem
 
     - 1 `Zpool`
 
@@ -281,13 +312,13 @@ GRUB_SAVEDEFAULT=true
 ```
 
 2.  Services
-1.  Auto Snapshots
+1.  Automatische Snapshots
 
-    - ZFS snapshots are **read-only** copies of a ZFS file system
-    - You can rollback to a previous snapshot with: `zfs rollback vault@snapshot-name`
-    - You can browse the files of any snapshot at: `mountpoint_of_zfs_pool/.zfs/snapshot/`
-    - **AUR Package**: [zfs-auto-snapshot](https://aur.archlinux.org/packages/zfs-auto-snapshot)
-    - I have enabled: -`zfs-auto-snapshot-hourly.timer`
+    - ZFS snapshots zijn **alleen-lezen** kopieën van een ZFS bestandssysteem
+    - Je kunt teruggaan naar een vorige snapshot met: `zfs rollback vault@snapshot-naam`
+    - Je kunt door de bestanden van elke snapshot bladeren op: `koppelpunt_van_zfs_pool/.zfs/snapshot/`
+    - **AUR Pakket**: [zfs-auto-snapshot](https://aur.archlinux.org/packages/zfs-auto-snapshot)
+    - Ik heb ingeschakeld: -`zfs-auto-snapshot-hourly.timer`
     - `zfs-auto-snapshot-weekly.timer`
 
 ```
@@ -327,23 +358,23 @@ Example output: NAME USED AVAIL REFER MOUNTPOINT
   data@znap_2024-09-01-1100_hourly 774K  -  7.28T -
 ```
 
-2. Auto scrub
+2. Automatisch scrubben
 
-   - ZFS scrubbing solves **data corruption**. It is recommended to run regularly (weekly or monthly).
-   - **AUR Package**: [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
-   - Enabled with the command: `sudo systemctl enable --now
+   - ZFS scrubbing lost **datacorruptie** op. Het wordt aanbevolen om dit regelmatig (wekelijks of maandelijks) uit te voeren.
+   - **AUR Pakket**: [systemd-zpool-scrub](https://aur.archlinux.org/packages/systemd-zpool-scrub)
+   - Ingeschakeld met het commando: `sudo systemctl enable --now
 
-zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
-[ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) I get notified by e-mail.
+zpool-scrub@data.timer`. Dit zal de opgegeven pool **wekelijks** scrubben. Via
+[ZED](id:43252712-cfd0-4bce-b126-0fd2556832ad) word ik per e-mail op de hoogte gesteld.
 
 3. ZED: `zed.service`
 
-   - Notify on important events via **E-mail**
-   - Notify on scrub
-   - You can see the events with the command: `zpool events`
-   - This requires **mail command** to be setup
+   - Melden van belangrijke gebeurtenissen via **E-mail**
+   - Melden bij scrubben
+   - Je kunt de gebeurtenissen zien met het commando: `zpool events`
+   - Dit vereist dat het **mail commando** is ingesteld
 
-   1. Configuration
+   1. Configuratie
 
    ```conf
      ##
@@ -517,62 +548,57 @@ zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
 
 ### Docker
 
-- I deploy a lot of services using
-  **[Docker](https://www.docker.com/)** containers.
-- I prefer using **[docker
-  compose](https://docs.docker.com/compose/)** to define containers in
-  a declarative manner.
-- I save most of the docker container setup and related metadata and
-  cache in the location: `/home/jp/docker/`
-  - I have inserted most of the services configurations in this
-    document in the appropriate section.
+- Ik implementeer veel services met **[Docker](https://www.docker.com/)** containers.
+- Ik geef de voorkeur aan het gebruik van **[docker
+  compose](https://docs.docker.com/compose/)** om containers op een declaratieve manier te definiëren.
+- Ik sla de meeste Docker-containerconfiguraties en gerelateerde metadata en cache op in de locatie: `/home/jp/docker/`
+  - Ik heb de meeste configuraties van de services in dit document in de juiste sectie ingevoegd.
 
-### Networking
+### Netwerken
 
-- Managed by `NetworkManager.service`
-- Configured static IP address: `192.168.1.138`
-- Ethernet interface: `enp4s0`
-- using command `nmtui`
+- Beheerd door `NetworkManager.service`
+- Geconfigureerd statisch IP-adres: `192.168.1.138`
+- Ethernet-interface: `enp4s0`
+- met het commando `nmtui`
 
 #### VPN
 
-![](/img/projects/jpserv/2024-09-01_15-02-10_screenshot.png)
+![tailscale logo](/img/projects/jpserv/2024-09-01_15-02-10_screenshot.png)
 
-- Enable service: `tailscaled.service`
+- Service inschakelen: `tailscaled.service`
 
-- Tailscale address: `100.115.150.80`
+- Tailscale-adres: `100.115.150.80`
 
-- Linked to my Google account
+- Gekoppeld aan mijn Google-account
 
 - [Tailscale](https://tailscale.com/)
 
-  - implements easy DNS
-  - easy sharing with other users
-    - **lots of cross platform clients!**
-  - OAuth authentication (I set it up with Google)
-  - nice and easy to use portal for administrators
-  - generous free tier
+  - implementeert eenvoudige DNS
+  - eenvoudig delen met andere gebruikers
+    - **veel cross-platform clients!**
+  - OAuth-authenticatie (ik heb het ingesteld met Google)
+  - mooie en makkelijk te gebruiken portal voor beheerders
+  - genereus gratis niveau
 
-- VPN tunnel based on [Wireguard](https://www.wireguard.com/)
+- VPN-tunnel gebaseerd op [Wireguard](https://www.wireguard.com/)
 
-  - UDP ports (instead of `TCP`)
-  - goes through **Firewall** (important for my home application)
+  - UDP-poorten (in plaats van `TCP`)
+  - gaat door **Firewall** (belangrijk voor mijn thuistoepassing)
 
 ### Monitoring
 
 #### Monit
 
-- enable `monit.service`
-- Email notifications
-- Notify on excessive resource usage (RAM, CPU load, ...)
-- Notify on almost full File system
-- Check if ping to backup server (`orangepi`) is possible
-- Check if [uptime kuma](id:1d002a31-0da0-4fcb-93c6-0538a2522b35) is
-  running (another more user friendly monitoring service)
+- schakel `monit.service` in
+- E-mailnotificaties
+- Melden bij overmatig resourcegebruik (RAM, CPU-belasting, ...)
+- Melden bij bijna vol bestandssysteem
+- Controleren of ping naar back-upserver (`orangepi`) mogelijk is
+- Controleren of [uptime kuma](id:1d002a31-0da0-4fcb-93c6-0538a2522b35) draait (een andere, gebruiksvriendelijkere monitoring service)
 
-1.  Configuration
+1.  Configuratie
 
-    - Location: `/etc/monitrc`
+    - Locatie: `/etc/monitrc`
 
     ```conf
     ###############################################################################
@@ -907,11 +933,9 @@ zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
 
     ```
 
-    - and the script that is used to get the **memory usage**
-    - I needed this because **ZFS file system uses a lot of memory**,
-      which isn\'t really used. If another program needs the memory
-      ZFS wont use it any more. That\'s why it shouldn\'t be counted.
-    - location:
+    - en het script dat wordt gebruikt om het **geheugengebruik** te verkrijgen
+    - Ik had dit nodig omdat het **ZFS-bestandssysteem veel geheugen gebruikt**, wat niet echt wordt gebruikt. Als een ander programma het geheugen nodig heeft, zal ZFS het niet meer gebruiken. Daarom moet het niet worden meegeteld.
+    - locatie:
       `/home/jp/Code/scripts/monit/actual_memory_persentage.sh`
 
     ```bash
@@ -938,10 +962,10 @@ zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
 
 #### Uptime Kuma
 
-- Easy webinterface to track uptime of services
-- Docker integration
-- Network pings
-- E-mail notifications
+- Eenvoudige webinterface om de uptime van services te volgen
+- Docker-integratie
+- Netwerkpings
+- E-mailnotificaties
 
 1.  Docker compose
 
@@ -966,63 +990,53 @@ zpool-scrub@data.timer`. This will scrub the given pool **weekly**. Via
 
 ### Media
 
-- There are two variants of this setup:
-  1.  Regular: Each service setup separately, using host network (or
-      default docker network settings)
-  2.  Gluetun Send outside
-      traffic through a VPN. For users, this shouldn\'t affect
-      anything. It is just a safety/ privacy measure. I **only torrent
-      using this setup**.
-- [TRaSH Guides](https://trash-guides.info/): Handy website with best
-  practices and configurations for some of the following services.
+- Er zijn twee varianten van deze setup:
+  1.  Standaard: Elke service afzonderlijk geconfigureerd, gebruikmakend van het hostnetwerk (of standaard Docker-netwerkinstellingen)
+  2.  Gluetun: Stuur extern verkeer via een VPN. Voor gebruikers zou dit niets moeten beïnvloeden. Het is slechts een veiligheids-/privacymaatregel. Ik **torrente alleen via deze setup**.
+- [TRaSH Guides](https://trash-guides.info/): Handige website met best practices en configuraties voor enkele van de volgende services.
 
 #### Jellyfin
 
-![](/img/projects/jpserv/2024-09-01_14-37-31_screenshot.png)
+![Jellyfin logo](/img/projects/jpserv/2024-09-01_14-37-31_screenshot.png)
 
-- Open source media solution to view media
+- Open source mediaoplossing om media te bekijken
 
-- Metadata for everything
+- Metadata voor alles
 
-- Support for custom directories
+- Ondersteuning voor aangepaste mappen
 
-- Support for music
+- Ondersteuning voor muziek
 
-- Cross-platform (android, IOS, Web, ...)
+- Cross-platform (Android, iOS, Web, ...)
 
-- Good community native mobile clients (prefer for mobile viewing):
+- Goede community native mobiele clients (voorkeur voor mobiel kijken):
 
-  - [Swiftfin](https://github.com/jellyfin/Swiftfin) (IOS)
+  - [Swiftfin](https://github.com/jellyfin/Swiftfin) (iOS)
   - [Findroid](https://github.com/jarnedemeulemeester/findroid)
     (Android)
 
-- port: 8096
+- poort: 8096
 
-- Make sure to **configure Transcoding** under admin settings -\>
-  Playback -\> transcoding
+- Zorg ervoor dat je **Transcoding configureert** onder admin-instellingen -> Afspelen -> Transcoding
 
-  - use Video Acceleration (VAAPI)
-  - device: `/dev/dri/renderD128`
-  - enable decoding for
+  - gebruik Video Acceleration (VAAPI)
+  - apparaat: `/dev/dri/renderD128`
+  - schakel decodering in voor
     - h264
     - hevc
     - VC1
     - HEVC 10 bit
     - VP9 10 bit
-  - enable hardware encoding
+  - schakel hardware-encoding in
 
-- I had some **issues** with jellyfin **taking up all my RAM** when it
-  was
+- Ik had wat **problemen** met Jellyfin dat **al mijn RAM in beslag nam** toen het
 
-- I also enabled **trickplay**. It took a long time to generate but
-  after it\'s done jellyfin will show images when scrubbing.
+- Ik heb ook **trickplay** ingeschakeld. Het duurde lang om te genereren, maar nadat het klaar is, zal Jellyfin afbeeldingen tonen bij het scrubben.
 
-generating thumbnail images for local videos. It crashed my entire
-server multiple times. I fixed this by doing a few things:
+miniatuurafbeeldingen genereerde voor lokale video's. Het crashte mijn hele server meerdere keren. Ik heb dit opgelost door een paar dingen te doen:
 
-1.  Limit container resources (see compose below)
-2.  In jellyfin admin settings -\> general -\> Performance set _Parallel
-    library scan tasks limit_ to 1
+1.  Beperk containerresources (zie compose hieronder)
+2.  In Jellyfin admin-instellingen -> Algemeen -> Prestaties zet _Parallelle bibliotheek scantaken limiet_ op 1
 
 3.  Docker compose
 
@@ -1060,25 +1074,25 @@ server multiple times. I fixed this by doing a few things:
 
 #### Radarr
 
-- Movies library management
-- port: 7878
+- Beheer van filmbibliotheek
+- poort: 7878
 
 #### Sonarr
 
-- TV shows library management
-- port: 8989
+- Beheer van tv-seriebibliotheek
+- poort: 8989
 
 #### Lidarr
 
-- Music library download
-- port: 8686
+- Downloaden van muziekbibliotheek
+- poort: 8686
 
 #### Bazarr
 
-- Subtitle library management
-- port: 6767
+- Beheer van ondertitelbibliotheek
+- poort: 6767
 
-#### Combined compose file
+#### Gecombineerd compose-bestand
 
 ```yaml
 services:
@@ -1178,21 +1192,21 @@ services:
 
 #### Jellyseerr
 
-- Platform for users to requests movies
-- Integrates with Jellyfin, Sonarr and Radarr
-- port: 5055
+- Platform voor gebruikers om films aan te vragen
+- Integreert met Jellyfin, Sonarr en Radarr
+- poort: 5055
 
 #### Immich
 
-- View and search images
-- Use metadata
-- Machine learning (face recognition, object search, etc.)
-- port: 2283
+- Bekijk en zoek afbeeldingen
+- Gebruik metadata
+- Machine learning (gezichtsherkenning, object zoeken, etc.)
+- poort: 2283
 
 1.  Borg backup
 
-    - Database backup
-    - Images backup
+    - Database back-up
+    - Afbeeldingen back-up
 
 ```bash
     #!/bin/sh
@@ -1275,29 +1289,22 @@ services:
 
 #### Calibre
 
-- Manage e-books
-- native installation (NOT DOCKER)
-- start Calibre server via cron on startup `@reboot calibre-server`
+- Beheer e-books
+- native installatie (NIET DOCKER)
+- start Calibre server via cron bij opstarten `@reboot calibre-server`
 
 1.  Calibre server
 
-    - Website to read and download books
-    - port: 8080
+    - Website om boeken te lezen en te downloaden
+    - poort: 8080
 
 #### Gluetun setup
 
-- [gluetun](https://github.com/qdm12/gluetun) is a docker container
-  that sends all traffic through a VPN.
-- All files for this setup are located at `/home/jp/docker/gluetun/`
-  with symlinks to the per setting directories, to keep configuration
-  across both setups.
-- I only download torrents using a VPN (often
-  [Mullvad](https://mullvad.net/))
-- For the containers to be able to communicate with each other, while
-  sending outside traffic through VPN, all the containers need to be
-  in the same network.
-- I set it up using a **single docker compose** file for all these
-  services
+- [gluetun](https://github.com/qdm12/gluetun) is een dockercontainer die al het verkeer via een VPN stuurt.
+- Alle bestanden voor deze setup bevinden zich op `/home/jp/docker/gluetun/` met symlinks naar de mappen per instelling, om de configuratie over beide setups heen te behouden.
+- Ik download alleen torrents via een VPN (vaak [Mullvad](https://mullvad.net/))
+- Om de containers met elkaar te laten communiceren, terwijl extern verkeer via VPN wordt gestuurd, moeten alle containers zich in hetzelfde netwerk bevinden.
+- Ik heb het ingesteld met een **enkel docker compose** bestand voor al deze services
 
 1.  Docker compose
 
@@ -1505,20 +1512,17 @@ services:
 
 #### SSHD
 
-- If you want a machine to ssh into this server without password then copy the
-  public key of the new machine into: `/home/jp/.ssh/authorized_keys`
+- Als je wilt dat een machine zonder wachtwoord kan ssh'en naar deze server, kopieer dan de publieke sleutel van de nieuwe machine naar: `/home/jp/.ssh/authorized_keys`
 
 #### Reflector
 
-- Arch Linux updates are hosted on servers called **Mirrors**. These
-  can change. It is important to keep these up to date and to use
-  mirrors close by. - Mirrors are defined in the file: `/etc/pacman.d/mirrorlist`
-- **Reflector** is a service that updates the mirrorlist and sorts by download rate
-- Installed via package manager
-- Enable the service (`sudo systemctl enable --now reflector.service`)
+- Arch Linux-updates worden gehost op servers die **Mirrors** worden genoemd. Deze kunnen veranderen. Het is belangrijk om deze up-to-date te houden en mirrors te gebruiken die dichtbij zijn. - Mirrors worden gedefinieerd in het bestand: `/etc/pacman.d/mirrorlist`
+- **Reflector** is een service die de mirrorlist bijwerkt en sorteert op downloadsnelheid
+- Geïnstalleerd via pakketbeheerder
+- Schakel de service in (`sudo systemctl enable --now reflector.service`)
 
-1.  Configuration file
-    - Located at: `/etc/xdg/reflector/reflector.conf`
+1.  Configuratiebestand
+    - Bevindt zich op: `/etc/xdg/reflector/reflector.conf`
 
 ```conf
     # Reflector configuration file for the systemd service.
@@ -1552,28 +1556,28 @@ services:
 
 #### Syncthing
 
-- Very fast way to synchronize folders across devices.
-- I use this for:
-  - **Keepass** files (passwords and `TOTF`)
-  - Phone backups
-  - School files
-  - Notes
-  - Agenda synchronization
+- Zeer snelle manier om mappen tussen apparaten te synchroniseren.
+- Ik gebruik dit voor:
+  - **Keepass**-bestanden (wachtwoorden en `TOTF`)
+  - Telefoonback-ups
+  - Schoolbestanden
+  - Notities
+  - Agendasynchronisatie
   - ...
-- This server acts as a **central server**.
-- port: 8384
-- Locally installed (pacman)
-- Enabled via **user** systemd service: `systemctl --user enable --now syncthing@jp.service`
+- Deze server fungeert als een **centrale server**.
+- poort: 8384
+- Lokaal geïnstalleerd (pacman)
+- Ingeschakeld via **gebruiker** systemd service: `systemctl --user enable --now syncthing@jp.service`
 - [website](https://syncthing.net/)
 
 #### Nextcloud
 
-- Self hosted Cloud
-- File storage (like google drive)
-- Notes storage (google keep)
+- Zelf-gehoste Cloud
+- Bestandsopslag (zoals Google Drive)
+- Opslag van notities (Google Keep)
 - Agenda
 - ...
-- Currently installed through docker and on **port 2002**
+- Momenteel geïnstalleerd via docker en op **poort 2002**
 - [website](https://nextcloud.com/)
 
 1.  Docker compose
@@ -1614,15 +1618,15 @@ services:
 
 #### Cgit
 
-- Simple website for Git server
-- separate git user
-  - groups: wheel, git
-- Repos stored at `/srv/git`
+- Eenvoudige website voor Git-server
+- aparte git-gebruiker
+  - groepen: wheel, git
+- Repos opgeslagen op `/srv/git`
 
 1.  Config
 
-    - Configuration for Cgit
-    - Location: `/etc/cgitrc`
+    - Configuratie voor Cgit
+    - Locatie: `/etc/cgitrc`
 
     ```conf
     #
@@ -1670,7 +1674,7 @@ services:
 
 2.  Script
 
-    - Made a script to quickly make new repos on this server:
+    - Een script gemaakt om snel nieuwe repos op deze server aan te maken:
 
     ```shell
     #!/usr/bin/env bash
@@ -1701,9 +1705,9 @@ services:
 
 #### Cron
 
-- Periodically run tasks/ scripts
+- Periodiek taken/scripts uitvoeren
 
-1.  User
+1.  Gebruiker
 
     ```sh
 
@@ -1759,23 +1763,19 @@ services:
 
 #### VNC
 
-- Screen share (like **remote desktop**)
+- Scherm delen (zoals **remote desktop**)
 
-- Using `x11vnc`
+- Gebruikmakend van `x11vnc`
 
-- Simplest way that I have found to start a VNC server on the fly is
-  to **ssh** into this server and to run the following command:
+- De eenvoudigste manier die ik heb gevonden om een VNC-server direct te starten, is door **ssh** te gebruiken om in te loggen op deze server en het volgende commando uit te voeren:
 
   ```shell
   sudo x11vnc -repeat -ncache 10 -display :0 -auth /var/run/sddm/$(sudo ls /var/run/sddm/)
   ```
 
-````
-
 #### KOSync
 
-- Sync progress between [KOreader](http://koreader.rocks/) apps
-  (e-book reader)
+- Synchroniseer voortgang tussen [KOreader](http://koreader.rocks/) apps (e-book reader)
 - [Repository](https://github.com/koreader/koreader-sync-server)
 
 1.  Docker compose
@@ -1797,13 +1797,10 @@ services:
 
 #### Pi-hole
 
-- DNS server that blocks ads
-- Since I cannot change the DNS-server for my home network I just have
-  some devices where I manually set the DNS-server to the IP address
-  of this server (no port required)
-- I also use **cloudflared** as a **encrypted DNS** proxy.
-  - Without it I had some issues using the pi-hole as DNS on android
-    due to [android private
+- DNS-server die advertenties blokkeert
+- Aangezien ik de DNS-server voor mijn thuisnetwerk niet kan wijzigen, heb ik gewoon enkele apparaten waarbij ik handmatig de DNS-server instel op het IP-adres van deze server (geen poort vereist)
+- Ik gebruik ook **cloudflared** als een **versleutelde DNS** proxy.
+  - Zonder dit had ik wat problemen met het gebruik van de pi-hole als DNS op Android vanwege [Android private
     DNS](https://discourse.pi-hole.net/t/no-internet-with-pi-hole-when-using-androids-private-dns-feature/71818)
 - [website](https://pi-hole.net/)
 
@@ -1853,16 +1850,15 @@ services:
 
 #### Portainer
 
-- Website to manage docker containers
-- I mainly use the commandline to manage my containers, but sometimes
-  this GUI comes in handy
-- port: 9443 (https)
+- Website om docker containers te beheren
+- Ik gebruik voornamelijk de commandline om mijn containers te beheren, maar soms is deze GUI handig
+- poort: 9443 (https)
 - [website](https://www.portainer.io/)
 
 #### Samba
 
-- To share directories via the network I use samba (smb)
-- Configuration is located at: `/etc/samba/smb.conf`
+- Om mappen via het netwerk te delen gebruik ik samba (smb)
+- Configuratie bevindt zich op: `/etc/samba/smb.conf`
 
 ```
 [global]
@@ -1965,21 +1961,15 @@ recycle:excludedir = /recycle,/.recycle,/tmp,/temp,/TMP,/TEMP
 
 ### Backups
 
-- Using [Borg backup](https://borgbackup.readthedocs.io/en/stable/)
-  for **deduplicated** (if there is duplicate data between backups it
-  is only saved once) backups.
-- Borg works also over
-  **[ssh](id:0539ed24-d8c8-42f9-8727-24077ef8a93b)**
-- These are being backed up to my **Orange Pi** server in the other
-  building.
-- A backup is a **repository** with **archives** in them
-- Important commands:
-  - `borg init`: create a new repository
-  - `borg create`: create a new archive
-  - `borg prune`: remove some archives according to rules
-    (example keep 3 daily archives and 2 weekly)
-  - `borg compact`: compact segment files in the
-    repository
+- Gebruikmakend van [Borg backup](https://borgbackup.readthedocs.io/en/stable/) voor **gededupliceerde** (als er dubbele data is tussen backups wordt deze maar één keer opgeslagen) backups.
+- Borg werkt ook over **[ssh](id:0539ed24-d8c8-42f9-8727-24077ef8a93b)**
+- Deze worden geback-upt naar mijn **Orange Pi** server in het andere gebouw.
+- Een backup is een **repository** met **archieven** erin
+- Belangrijke commando's:
+  - `borg init`: maak een nieuwe repository aan
+  - `borg create`: maak een nieuw archief aan
+  - `borg prune`: verwijder enkele archieven volgens regels (bijvoorbeeld bewaar 3 dagelijkse archieven en 2 wekelijkse)
+  - `borg compact`: comprimeer segmentbestanden in de repository
 
 #### Borg repositories
 
@@ -1990,9 +1980,9 @@ recycle:excludedir = /recycle,/.recycle,/tmp,/temp,/TMP,/TEMP
 - `music-borg`
 - `ons-borg`
 
-#### General backup script
+#### Algemeen back-upscript
 
-This script is what I use to backup.
+Dit script gebruik ik om back-ups te maken.
 
 ```bash
 ##!/bin/bash
@@ -2073,7 +2063,7 @@ fi
 
 ```
 
-You can use the script like this:
+Je kunt het script als volgt gebruiken:
 
 ```bash
 ./borg-backup.sh '/data/other media/handycam' 'jp@192.168.1.155' '/data/borg' 'test.testing@gmail.com,another@outlook.com 'handycam-borg'
@@ -2081,6 +2071,5 @@ You can use the script like this:
 
 ### Scripts
 
-- I have written a couple of useful scripts that I run on this server.
-- They are located at `/home/jp/Code/scripts`
-````
+- Ik heb een paar handige scripts geschreven die ik op deze server draai.
+- Ze bevinden zich op `/home/jp/Code/scripts`

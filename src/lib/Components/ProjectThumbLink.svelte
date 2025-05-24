@@ -74,7 +74,7 @@
           <img
             src={props.destination}
             alt={linkObj.text}
-            class="my-2 max-h-[40vh] max-w-3xl rounded-xl object-cover" />
+            class="my-2 max-h-[25vh] max-w-[85vw] rounded-xl object-cover md:max-h-[40vh] md:max-w-3xl" />
           <span class="text-xs text-slate-300">Move your cursor to hide this image view</span>
         </a>
       {/if}

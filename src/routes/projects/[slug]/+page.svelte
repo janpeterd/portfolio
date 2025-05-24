@@ -11,10 +11,17 @@
   let { data } = $props()
 
   onMount(() => {
-    const key = 'ProjectRead-' + page.params.slug
-    const hasRead = localStorage.getItem(key)
-    if (!hasRead) {
-      localStorage.setItem(key, true)
+    let readStatus = localStorage.getItem('PostReadStatus')
+    if (!readStatus) {
+      const readMap = new Map()
+      readMap[page.params.slug] = true
+      localStorage.setItem('PostReadStatus', JSON.stringify(readMap))
+    } else {
+      const data = JSON.parse(readStatus)
+      if (!data[page.params.slug]) {
+        data[page.params.slug] = true
+        localStorage.setItem('PostReadStatus', JSON.stringify(data))
+      }
     }
   })
 
@@ -55,7 +62,7 @@
 
     <!-- Post -->
     <div
-      class="animate-in fade-in-0 fill-mode-backwards prose prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-img:max-h-[65vh] prose-img:rounded-lg">
+      class="animate-in fade-in-0 fill-mode-backwards prose prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-pre:rounded-none prose-pre:border-l-2 prose-pre:border-green-500/60 prose-img:max-h-[65vh] prose-img:rounded-lg">
       <data.content />
     </div>
   </div>

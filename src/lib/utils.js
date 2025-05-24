@@ -66,6 +66,8 @@ export function getIconAndColorForUrl(urlString) {
       return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
     case 'youtube.com':
       return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
+    case 'youtu.be':
+      return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
     case 'www.github.com':
       return { icon: 'mdi:github', textColor: 'text-[#F0F6FC]' }
     case 'github.com':

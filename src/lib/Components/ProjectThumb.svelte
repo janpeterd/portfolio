@@ -19,13 +19,14 @@
   )
   let hasRead = $state(false)
   onMount(() => {
-    console.log('getting read status', 'ProjectRead-' + entry.slug)
-    hasRead = Boolean(localStorage.getItem('ProjectRead-' + entry.slug))
+    const readStatus = JSON.parse(localStorage.getItem('PostReadStatus'))
+    hasRead = Boolean(readStatus ? readStatus[entry.slug] : false)
   })
 
   $effect(() => {
     if ($storageCleared === true) {
-      hasRead = Boolean(localStorage.getItem('ProjectRead-' + entry.slug))
+      const readStatus = JSON.parse(localStorage.getItem('PostReadStatus'))
+      hasRead = Boolean(readStatus ? readStatus[entry.slug] : false)
     }
   })
 </script>
