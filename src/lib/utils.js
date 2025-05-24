@@ -59,7 +59,7 @@ export function getIconAndColorForUrl(urlString) {
   try {
     url = new URL(urlString)
   } catch (e) {
-    console.error('Cannot create URL object from', urlString)
+    console.log('Cannot create URL object from', urlString)
   }
   switch (url.host) {
     case 'www.youtube.com':

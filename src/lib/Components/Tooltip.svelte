@@ -7,6 +7,7 @@
   export let tooltipContent = undefined
   /** @type {import('svelte').Snippet | undefined} */
   export let children = undefined
+  export let className = ''
 
   /** @type {string} */
   export let placement = 'top'
@@ -66,7 +67,7 @@
   on:focus={handleMouseEnter}
   on:blur={handleMouseLeave}
   tabindex="0"
-  class="trigger inline-block max-w-full cursor-pointer">
+  class={`trigger inline-block max-w-full cursor-pointer ${className}`}>
   {@render children()}
 </span>
 
