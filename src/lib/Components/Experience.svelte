@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import baseExperiences from '$lib/data/experiences.js'
+  import HomeTitle from './HomeTitle.svelte'
   /** @type {import('$lib/data/experiences.js').Experience[]} */
   let allExperiences = []
   /** @type {import('$lib/data/experiences.js').Experience[]} */
@@ -53,11 +54,7 @@
 
 <div class="p-4 md:p-8">
   <div class="flex items-center justify-between">
-    <h2
-      id="about"
-      class="p-4 font-elec text-3xl font-semibold uppercase tracking-tight text-secondary text-secondary/85 sm:text-4xl">
-      Ervaring
-    </h2>
+    <HomeTitle title="Ervaring" id="experience" />
   </div>
   <div
     id="line"
@@ -79,7 +76,7 @@
           <p class="text-sm font-medium text-slate-400">
             {entry.dateString}
           </p>
-          <h2 class="p-2 font-elec font-bold md:p-4">
+          <h2 class="p-2 font-tight font-bold md:p-4">
             {entry.title}
             {entry.company ? ` - ${entry.company}` : ''}
           </h2>

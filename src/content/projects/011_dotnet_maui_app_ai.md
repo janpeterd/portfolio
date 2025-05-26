@@ -5,6 +5,9 @@ thumbnail: /img/projects/tagmaster_edit_list.png
 repo: https://github.com/janpeterd/tagmaster
 images:
   - /img/projects/tagmaster_edit_list.png
+technologies:
+  - csharp
+  - dotnet
 ---
 
 ![Tagmaster image list and edit pages](/img/projects/tagmaster_edit_list.png)

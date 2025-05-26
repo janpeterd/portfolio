@@ -3,6 +3,14 @@ title: Website Isabel Dhallé
 date: 2022-10-27
 thumbnail: /img/projects/isabeldhalle.png
 link: https://isabeldhalle.be
+technologies:
+  - python
+  - django
+  - git
+  - docker
+  - javascript
+  - linux
+  - bash
 ---
 
 ## Website Isabel Dhallé

@@ -3,6 +3,11 @@ title: IoT muizenval
 date: 2023-05-19
 thumbnail: /img/projects/iot_muizenval.png
 video: https://youtu.be/tCBAd3iY1O8
+technologies:
+  - linux
+  - bash
+  - python
+  - django
 ---
 
 ## IoT muizenval

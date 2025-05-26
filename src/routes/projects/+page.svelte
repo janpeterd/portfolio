@@ -5,6 +5,7 @@
 
   import { storageCleared } from '../../stores'
   import Tooltip from '$lib/Components/Tooltip.svelte'
+  import HomeTitle from '$lib/Components/HomeTitle.svelte'
   let { data } = $props()
   const { posts } = data
   let sortedPosts = $state(posts)
@@ -88,10 +89,8 @@
 <div class="my-24 w-full lg:min-h-[68.6vh]">
   <div class="mx-auto w-full max-w-lg lg:max-w-7xl">
     <div
-      class="flex flex-col items-start justify-center gap-4 border-b border-b-gray-600/80 px-4 pb-6 sm:flex-row sm:justify-between sm:items-end sm:gap-0">
-      <h2 class="text-3xl font-semibold uppercase tracking-tight text-secondary sm:text-4xl">
-        Projecten
-      </h2>
+      class="flex flex-col items-start justify-center gap-4 border-b border-b-gray-600/80 px-4 pb-6 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
+      <HomeTitle title="Projecten" id="projects" className="!py-0" />
       <div class="flex items-stretch justify-center gap-2">
         {#if hasReadAnything}
           <Tooltip className="flex items-stretch pt-6">
@@ -101,17 +100,17 @@
               </div>
             {/snippet}
             {#snippet children()}
-            <button
-              onclick={reset_read}
-              class="my-0 flex items-center gap-2 rounded-lg bg-primary py-1 px-3 text-center font-elec font-semibold text-slate-400 transition-all hover:scale-105 hover:text-secondary">
-              Reset gelezen
-              <Icon icon="mdi:eye" width="1rem" class="shrink-0" />
-            </button>
-          {/snippet}
+              <button
+                onclick={reset_read}
+                class="my-0 flex items-center gap-2 rounded-lg bg-primary px-3 py-1 text-center font-tight font-semibold text-slate-400 transition-all hover:scale-105 hover:text-secondary">
+                Reset gelezen
+                <Icon icon="mdi:eye" width="1rem" class="shrink-0" />
+              </button>
+            {/snippet}
           </Tooltip>
         {/if}
         {#each filters as filter}
-          <div class="flex flex-col justify-center gap-1 font-elec">
+          <div class="flex flex-col justify-center gap-1 font-tight">
             <label for={filter.id} class="text-sm font-semibold text-neutral-300/80">
               {filter.label}
             </label>

@@ -1,6 +1,11 @@
 <script>
   import Icon from '@iconify/svelte'
-  import { pathToFileName, getIconByExtension, getColorByExtension } from '$lib/utils'
+  import {
+    pathToFileName,
+    getIconByExtension,
+    getColorByExtension,
+    getIconAndColorForUrl
+  } from '$lib/utils'
   let props = $props()
   let totalItems = 0
 
@@ -38,12 +43,13 @@
       </a>
     {/each}
     {#if props?.data?.repo}
+      {@const iconColor = getIconAndColorForUrl(props?.data?.repo)}
       <a
         href={props?.data?.repo}
         target="_blank"
         rel="noopener noreferrer"
         class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
-        <Icon icon="material-icon-theme:git" width="2.0rem" class="text-[#e64a19]" />
+        <Icon icon={iconColor.icon} width="2.0rem" class={iconColor.textcolor} />
         <span class="font-bold">{new URL(props?.data?.repo).hostname}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>

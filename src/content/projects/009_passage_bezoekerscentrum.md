@@ -6,6 +6,10 @@ repo: https://github.com/janpeterd/PS1-project
 images:
   - /img/projects/ps1_project_home.png
   - /img/projects/ps1_project_overzicht.png
+technologies:
+  - python
+  - django
+  - git
 ---
 
 # Opdracht

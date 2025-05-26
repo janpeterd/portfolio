@@ -3,6 +3,9 @@ title: Raspberry Pi TV-box
 date: 2025-02-27
 thumbnail: /img/projects/rpi_android_box.jpg
 video: /img/projects/rpi_android_box.mp4
+technologies:
+  - linux
+  - vim
 ---
 
 ## Raspberry pi TV-box

@@ -6,8 +6,21 @@ thumbnail: /img/projects/qurio_home.png
 images:
   - /img/projects/qurio_home.png
 attachments:
-  - /doc/projects/Realisatiedocument_Stage.pdf
-  - /doc/projects/Functionele_User_Manual.pdf
+  - /doc/stage/Projectplan stage Lykios 2025 - Jan-Peter Dhallé.pdf
+  - /doc/stage/Realisatiedocument stage Lykios 2025 - Jan-Peter Dhallé.pdf
+  - /doc/stage/Functionele User Manual Qurio - Lykios stage 2025.pdf
+technologies:
+  - java
+  - spring
+  - javascript
+  - typescript
+  - react
+  - postgresql
+  - docker
+  - jenkins
+  - vscode
+  - git
+  - figma
 ---
 
 Tijdens mijn [stageperiode bij Lykios](/stage) heb ik samen met één andere
@@ -15,17 +28,16 @@ stagiaire gewerkt aan een quizplatform genaamd `Qurio`. Zoals de naam zegt was
 het primaire doel ervan om mensen toe te laten om quizzen aan te maken en te
 spelen. De vele functies van de applicatie omvatten onder andere:
 
-- Gebruikers met **verschillende rollen en permissies**.
-- Eigen authenticatie zonder externe services.
+- Gebruikers met **verschillende rollen en permissies**
+- Authenticatie op basis van JWT, zonder gebruik te maken van externe services.
 - Wachtwoord-reset, via e-mail
-- Verschillende vraagtypes en **makkelijk uitbreidbare architectuur** om er toe
-  nog te voegen.
-- Uitgebreide zoekfunctionaliteit voor het zoeken van quizzen en gebruikers.
-- Het beheren van veschillende types vragen, met "Rich Text"-ondersteuning
+- Verschillende vraagtypes en **makkelijk uitbreidbare, modulaire architectuur** om er toe nog te voegen.
+- Uitgebreide zoekfunctionaliteit voor het zoeken van quizzen en gebruikers
+- Het beheren van verschillende types vragen, met "Rich Text"-ondersteuning
 - Transparante scoreberekening die per antwoord de toegevoegde of verloren
   score toont
-- Genereren van een uitnodigingslink, zodat gebruikers zonder account ook een
-  quiz kunnen spelen.
+- Generatie van een uitnodigingslink, waarmee gebruikers zonder account ook
+  deel kunnen nemen aan een quiz.
 - Gebruikersprofiel en instellingen per gebruiker
 - Statistieken per quiz
 - Feedback op quiz of vraag
@@ -45,18 +57,32 @@ Java met Spring boot. De frontend gebruikt Typescript met React en [React Router
   - [Flyway](https://github.com/flyway/flyway)
   - [Lombok](https://projectlombok.org/)
   - [Mapstruct](https://mapstruct.org/)
+  - [JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token)
   - ...
 
-## Testen
+Ook heb ik veel rekening gehouden met de modulariteit en uitbreidbaarheid van
+de applicatie. Daarom heb ik gebruik gemaakt van het
+[strategieontwerpatroon](https://refactoring.guru/design-patterns/strategy) om
+een abstractie te maken voor de scoreberekening per soort vraag.
+
+Ook hebben we onze eigen [annotaties](https://en.wikipedia.org/wiki/Java_annotation) gemaakt om complexe
+logica te hergebruiken.
+
+Belangrijke beslissingen en uitleg over de werking van algoritmes hebben we ook
+steeds opgeschreven in een document. Hieruit kunnen toekomstige ontwikkelaars
+belangrijke informatie halen.
+
+# Testen
 
 Tijdens de ontwikkeling van de applicatie hebben ik erg veel aandacht besteed
 aan het schrijven van tests. Dit waren tests op elk niveau: unittests,
 unitegratietesten en end-to-end testen.
 
-Het project telt **meer dan 300 testen** met een **coverage van 80%**, hier ben
-ik erg trots op.
+Aan het einde van de stage telde project **meer dan 300 testen** met een
+**code-coverage van 80%**. Hier ben ik erg trots op.
 
-Deze werden ook allemaal automatisch uitgevoerd voor elke branch via Jenkins.
+Deze werden ook allemaal automatisch uitgevoerd voor elke branch via een
+Jenkins CI/CD-pipeline die ik ook zelf heb geïnstalleerd op een reservelaptop.
 
 ## Resultaat
 
@@ -64,7 +90,7 @@ Het resultaat is een erg robuuste applicatie met veel verschillende functies.
 Het zou in de toekomst zeker nog uitgebreid kunnen worden om deze
 functionaliteiten commercieel aan te bieden aan bedrijven en gebruikers.
 
-Tijdens de stageperiode hebben we erg veel verschillende functies uitgewerkt,
+Tijdens de stageperiode hebben we veel verschillende functies uitgewerkt,
 hier volgt een kort overzicht van de belangrijkste functies.
 
 ### Algemeen
@@ -74,7 +100,7 @@ hier volgt een kort overzicht van de belangrijkste functies.
 - Authenticatie en permissiecontrole op elke pagina.
 
 - Validatie voor elk endpoint in de backend
-- Endpoint-beveiliging en permissiecontrole voor elk enpdoint in backend.
+- Endpointbeveiliging en permissiecontrole voor elk endpoint in backend.
 - Paginering in backend voor het versturen van grote objecten.
 
 ### Authenticatie

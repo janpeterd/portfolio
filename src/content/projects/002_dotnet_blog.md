@@ -5,6 +5,10 @@ thumbnail: /img/projects/dotnet_blogpost.png
 repo: https://github.com/janpeterd/techBlog
 images:
   - /img/projects/dotnet_blogpost.png
+technologies:
+  - csharp
+  - dotnet
+  - docker
 ---
 
 ## .NET blog met Contentful integratie

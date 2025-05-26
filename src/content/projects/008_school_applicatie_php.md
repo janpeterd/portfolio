@@ -6,6 +6,10 @@ images:
   - /img/projects/php_project_home.png
   - /img/projects/php_project_projectinfo.png
   - /img/projects/php_project_time.png
+technologies:
+  - php
+  - laravel
+  - git
 ---
 
 # De opdracht

@@ -75,7 +75,7 @@
 <div
   bind:this={tooltipEl}
   role="tooltip"
-  class={`pointer-events-auto absolute left-0 top-0 z-50 w-max p-2 font-bold ${!showTooltip && 'hidden'}`}
+  class={`pointer-events-auto absolute left-0 top-0 z-[55] w-max p-2 font-bold ${!showTooltip && 'hidden'}`}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}>
   <div class="max-w-max rounded-lg bg-black/80 p-2 backdrop-blur-lg">

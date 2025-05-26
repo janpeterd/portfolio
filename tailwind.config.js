@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         ...fontFamily,
         sans: ['Inter', 'sans-serif'],
-        elec: ['Reddit Sans Condensed', 'sans-serif']
+        tight: ['Reddit Sans Condensed', 'sans-serif']
       },
       colors: {
         primary: '#101233',

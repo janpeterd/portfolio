@@ -26,8 +26,8 @@
         </Canvas>
       </div>
     </button>
-    <div class="z-10 mb-3 flex-1 font-elec text-xl">
-      <h2 class="mb-3 font-elec font-bold text-secondary">Links</h2>
+    <div class="z-10 mb-3 flex-1 font-tight text-xl">
+      <h2 class="mb-3 font-tight font-bold text-secondary">Links</h2>
       <div class="border-green-500 sm:border-l-2">
         <div class="my-3 ml-4"><a href="/#about">Over mij</a></div>
         <div class="my-3 ml-4"><a href="/projects">Projecten</a></div>
@@ -35,8 +35,8 @@
         <div class="my-3 ml-4"><a href="/contact">Contact</a></div>
       </div>
     </div>
-    <div class="mb-3 flex-1 font-elec text-xl">
-      <h2 class="mb-3 font-elec font-bold text-secondary">Contact</h2>
+    <div class="mb-3 flex-1 font-tight text-xl">
+      <h2 class="mb-3 font-tight font-bold text-secondary">Contact</h2>
       <div
         class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2">
         <a href={$mailLink} class="mx-2 flex items-center justify-center" aria-label="E-mail">

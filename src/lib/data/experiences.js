@@ -23,7 +23,7 @@ export const experiences = [
     company: 'Lykios (Faros)',
     description:
       'Ontwikkeling quizplatform "Qurio" met Spring Boot REST-API, frontend in React, SCRUM',
-    link: 'https://lykios.be/',
+    link: '/stage',
     type: 'work'
   },
   {
@@ -42,6 +42,7 @@ export const experiences = [
     title: 'Jobstudent',
     company: 'R. Janssen & Zn nv',
     description: 'Magazijn en voorraadbeheer',
+    link: 'https://janssenr.be/nl/',
     type: 'work'
   },
   {
@@ -51,6 +52,7 @@ export const experiences = [
     title: 'Jobstudent',
     company: 'R. Janssen & Zn nv',
     description: 'Magazijn en voorraadbeheer',
+    link: 'https://janssenr.be/nl/',
     type: 'work'
   },
 
@@ -62,7 +64,7 @@ export const experiences = [
     title: 'Webmaster',
     company: 'Zandhoven Natuurlijk!',
     description:
-      'Vrijwilliger en verantwoordelijk voor het onderhoud en de ontwikkeling van de website',
+      'Als vrijwilliger verantwoordelijk voor het onderhoud en de (door)ontwikkeling van de website, gebaseerd op Duda CMS. Tevens de migratie van de nieuwsbriefprovider van Mailchimp naar Laposta geleid.',
     link: 'https://www.zandhovennatuurlijk.be/',
     type: 'work'
   },
@@ -75,6 +77,7 @@ export const experiences = [
     title: 'Professionele bachelor in de Toegepaste Informatica',
     company: 'Thomas More Campus Geel',
     description: 'Specialisatie Application development',
+    link: 'https://thomasmore.be/nl/opleidingen/professionele-bachelor/toegepaste-informatica/application-development/geel/basistraject',
     type: 'education'
   },
   {
@@ -84,6 +87,7 @@ export const experiences = [
     title: 'Industriële Ingenieurswetenschappen',
     company: 'Groep T, KU Leuven',
     description: '',
+    link: 'https://www.kuleuven.be/campussen/campus-groep-t-leuven/studeren/opleidingen-industrieel-ingenieur-campus-groep-t',
     type: 'education'
   },
   {
@@ -92,6 +96,7 @@ export const experiences = [
     dateString: 'september 2014- juni 2020',
     title: 'Diploma secundair onderwijs, wetenschappen-wiskunde',
     company: 'Sint-Jozefcollege, Turnhout',
+    link: 'https://www.sjt.be/',
     type: 'education'
   },
   {
@@ -101,6 +106,7 @@ export const experiences = [
     title: 'SAMWD Turnhout',
     company: null,
     description: 'Klassieke viool (Suzukimethode) — summa cum laude',
+    link: 'https://muziekacademieturnhout.turnhout.be/viool',
     type: 'education'
   }
 ]

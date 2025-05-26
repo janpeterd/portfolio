@@ -4,6 +4,14 @@ date: 2024-12-22
 thumbnail: /img/projects/formula1_frontend_gp_page.png
 repo: https://github.com/janpeterd/formula1-microservices
 video: https://www.youtube.com/watch?v=SGmIv60Sp4Q
+technologies:
+  - java
+  - spring
+  - react
+  - typescript
+  - javascript
+  - postgresql
+  - git
 ---
 
 - [Project demo](https://www.youtube.com/watch?v=SGmIv60Sp4Q)

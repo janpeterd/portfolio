@@ -8,6 +8,15 @@ attachments:
 images:
   - /img/projects/carpool_events.png
   - /img/projects/carpool_rides.png
+technologies:
+  - react
+  - javascript
+  - typescript
+  - java
+  - spring
+  - kubernetes
+  - figma
+  - git
 ---
 
 ## Project 4.0

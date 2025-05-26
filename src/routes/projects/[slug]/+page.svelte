@@ -78,3 +78,23 @@
     </section>
   {/if}
 </article>
+<div class="bottom-gradient fixed top-0 h-full w-screen"></div>
+
+<div class="contact_gradient fixed top-0 h-full w-screen"></div>
+
+<style lang="postcss">
+  .bottom-gradient {
+    z-index: -10;
+    mask-image: radial-gradient(100vw 50vh at 50% 80%, rgba(0, 0, 0, 1) 80%, transparent);
+    background:
+      url('/img/grain.webp'),
+      radial-gradient(100vw 50vh at 50% 80%, theme(colors.green.500 / 18%), transparent);
+  }
+  .contact_gradient {
+    z-index: -10;
+    mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
+    background:
+      url('/img/grain.webp'),
+      radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
+  }
+</style>

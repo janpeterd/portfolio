@@ -14,8 +14,8 @@
   let links = [
     { href: '/', name: 'Home' },
     { href: '/#about', name: 'Over mij' },
-    { href: '/stage', name: 'Stage' },
     { href: '/projects', name: 'Projecten' },
+    { href: '/stage', name: 'Stage' },
     { href: '/cv', name: 'Cv' },
     { href: '/contact', name: 'Contact' }
   ]
@@ -48,7 +48,7 @@
 {/if}
 
 <header
-  class="fixed top-0 z-20 flex w-screen justify-between bg-transparent pt-2 font-elec print:hidden">
+  class="font-tight fixed top-0 z-20 flex w-screen justify-between bg-transparent pt-2 print:hidden">
   <button
     class="justify-content flex w-auto flex-shrink cursor-pointer items-center rounded-full bg-white/10 pr-4 backdrop-blur backdrop-saturate-150 [view-transition-name:header-left]"
     onclick={goto('/')}>

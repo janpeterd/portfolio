@@ -4,6 +4,12 @@ date: 2024-03-26
 thumbnail: /img/projects/portfolio_home.png
 highlight: true
 link: https://janpeterdhalle.com
+technologies:
+  - svelte
+  - sveltekit
+  - javascript
+  - figma
+  - git
 ---
 
 ## Mijn portfolio

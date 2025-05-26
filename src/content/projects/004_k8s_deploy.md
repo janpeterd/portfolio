@@ -6,6 +6,12 @@ repo: https://github.com/janpeterd/milestone2_argocd
 images:
   - /img/projects/k8s_argocd.png
   - /img/projects/k8s_prometheus.png
+technologies:
+  - kubernetes
+  - linux
+  - docker
+  - bash
+  - javascript
 ---
 
 ## Kubernetes deployment

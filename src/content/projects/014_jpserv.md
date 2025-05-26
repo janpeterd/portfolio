@@ -7,6 +7,12 @@ images:
   - /img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png
   - /img/projects/jpserv/2024-09-08_01-43-26_screenshot.png
   - /img/projects/jpserv/2024-09-08_01-43-04_screenshot.png
+technologies:
+  - linux
+  - bash
+  - docker
+  - git
+  - vim
 ---
 
 ## Achtergrondinfo

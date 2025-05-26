@@ -26,7 +26,7 @@
     <div
       id="static_cardbody"
       class="group relative mx-auto flex h-auto w-[25rem] flex-col items-center justify-center rounded-lg border border-white/20 bg-white/5 pb-8 hover:border-secondary hover:shadow-xl hover:shadow-secondary/15">
-      <div class="block w-full text-center font-elec text-5xl font-bold text-secondary">
+      <div class="block w-full text-center font-tight text-5xl font-bold text-secondary">
         <enhanced:img
           class="contrast-105 mx-auto max-h-[40vh] w-full object-cover object-top p-2 saturate-150 lg:rounded-2xl"
           src={DeskImg}
@@ -35,7 +35,7 @@
           loading="eager" />
       </div>
       <div
-        class="group-hover: my-8 block w-full border-b-2 border-white/20 p-6 font-elec text-5xl font-bold uppercase text-secondary group-hover:border-green-500/60">
+        class="group-hover: my-8 block w-full border-b-2 border-white/20 p-6 font-tight text-5xl font-bold uppercase text-secondary group-hover:border-green-500/60">
         Contact
       </div>
 
@@ -92,7 +92,7 @@
         {isMouseEntered}
         translateZ="110"
         translateY="-10"
-        className="block font-bold p-6 my-8 w-full text-5xl text-secondary font-elec uppercase border-b border-white/20 group-hover:border-green-500/60 group-hover:border-b-2">
+        className="block font-bold p-6 my-8 w-full text-5xl text-secondary font-tight uppercase border-b border-white/20 group-hover:border-green-500/60 group-hover:border-b-2">
         Contact
       </CardItem>
 
