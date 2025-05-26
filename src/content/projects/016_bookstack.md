@@ -20,7 +20,7 @@ project om in mijn vrije tijd aan te werken.
 
 ## Wat
 
-Het resultaat is een compact (~350 regels code) en lichte
+Het resultaat is een compact (~350 regels code) en licht
 command-line-programma (CLI). Hiermee kan de gebruiker boeken toevoegen en
 vervolgens een ASCII-weergave van de boekenstapel genereren. Het programma
 houdt rekening met het formaat van het boek en het aantal pagina's.
