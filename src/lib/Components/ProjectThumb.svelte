@@ -11,7 +11,7 @@
   const hasExtras = $derived(
     !!(
       entry?.attachments?.length > 0 ||
-      entry?.repo ||
+      entry?.repos?.length > 0 ||
       entry?.video ||
       entry?.link ||
       entry?.images?.length > 0
@@ -107,6 +107,11 @@
         {/if}
         {#if entry.repo}
           <ProjectThumbLink destination={entry.repo} type={'repo'} />
+        {/if}
+        {#if entry.repos && entry.repos.length > 0}
+          {#each entry.repos as repo}
+            <ProjectThumbLink destination={repo} type={'repo'} />
+          {/each}
         {/if}
         {#if entry.video}
           <ProjectThumbLink destination={entry.video} type={'video'} />

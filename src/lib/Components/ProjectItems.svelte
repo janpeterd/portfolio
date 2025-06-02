@@ -7,10 +7,13 @@
     getIconAndColorForUrl
   } from '$lib/utils'
   let props = $props()
-  let totalItems = 0
+  let totalItems = $state(0)
 
   if (props?.data?.attachments) {
     totalItems += props.data.attachments.length
+  }
+  if (props?.data?.repos) {
+    totalItems += props.data.repos.length
   }
 
   if (props?.data?.link) {
@@ -50,10 +53,22 @@
         rel="noopener noreferrer"
         class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
         <Icon icon={iconColor.icon} width="2.0rem" class={iconColor.textcolor} />
-        <span class="font-bold">{new URL(props?.data?.repo).hostname}</span>
+        <span class="font-bold">{new URL(props?.data?.repo).pathname}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>
     {/if}
+    {#each props?.data?.repos as repo}
+      {@const iconColor = getIconAndColorForUrl(repo)}
+      <a
+        href={repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
+        <Icon icon={iconColor.icon} width="2.0rem" class={iconColor.textcolor} />
+        <span class="font-bold">{new URL(repo).pathname}</span>
+        <Icon icon="mdi:external-link" width="1rem" />
+      </a>
+    {/each}
     {#if props?.data?.link}
       <a
         href={props?.data?.link}

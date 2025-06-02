@@ -85,16 +85,14 @@
 <style lang="postcss">
   .bottom-gradient {
     z-index: -10;
-    mask-image: radial-gradient(100vw 50vh at 50% 80%, rgba(0, 0, 0, 1) 80%, transparent);
-    background:
-      url('/img/grain.webp'),
-      radial-gradient(100vw 50vh at 50% 80%, theme(colors.green.500 / 18%), transparent);
+    mask-image: radial-gradient(100vw 30vh at 50% 94%, rgba(0, 0, 0, 1) 80%, transparent);
+    background: radial-gradient(100vw 30vh at 50% 94%, theme(colors.green.500 / 10%), transparent);
   }
   .contact_gradient {
     z-index: -10;
-    mask-image: radial-gradient(305vw 450px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
+    mask-image: radial-gradient(305vw 850px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
     background:
       url('/img/grain.webp'),
-      radial-gradient(305vw 450px at 0% 40%, theme(colors.primary / 40%), transparent);
+      radial-gradient(305vw 850px at 0% 40%, theme(colors.primary / 40%), transparent);
   }
 </style>
