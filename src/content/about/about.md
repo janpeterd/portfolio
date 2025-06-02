@@ -1,15 +1,21 @@
-Ik ben een enthousiaste student met een grote interesse en nieuwsgierigheid voor informatica
-en computers. Ik ben leergierig en heb hierdoor zelfstandig, door middel van zelfstudie,
-verschillende technologieën ontdekt en ervaringen opgedaan.
+**Leergierige student Toegepaste Informatica met een passie voor het
+ontwikkelen van applicaties.** Ik ben gedreven om continu nieuwe technologieën
+te doorgronden – vaak via zelfstudie – en **houd ervan om deze technische
+vaardigheden bij te leren en in te zetten om een breed scala aan problemen aan
+te pakken.**
 
-Tijdens mijn opleiding Toegepaste Informatica heb ik de kans gekregen om veel praktijkgerichte
-projecten uit te voeren, vaak in teamverband en soms voor bedrijven. Ik werk graag samen met
-anderen en hecht veel waarde aan de kwaliteit en impact van mijn werk.
+Tijdens mijn opleiding heb ik mijn vaardigheden aangescherpt in talrijke
+praktijkgerichte projecten, zowel in teamverband als voor externe
+opdrachtgevers. Samenwerken geeft mij energie, en ik **streef naar het
+schrijven van kwaliteitsvolle, snelle en elegante code** die een concrete,
+positieve impact heeft.
 
-Al van jongs af aan ben ik creatief bezig met muziek en instrumenten. Op driejarige leeftijd
-ben ik begonnen met vioolspelen. Met deze hobby heb ik deelgenomen aan internationale kampen
-en heb ik jonge muzikanten begeleid.
+Mijn creativiteit en discipline komen ook tot uiting in mijn jarenlange passie
+voor vioolspelen (sinds mijn derde). Dit heeft niet alleen geleid tot deelname
+aan internationale kampen, maar ook mijn coachende en begeleidende vaardigheden
+versterkt.
 
-In de toekomst wil ik mijn kennis binnen de IT-sector inzetten om het leven van mensen en
-bedrijven te verbeteren. Daarnaast wil ik mijn creativiteit combineren met IT om unieke
-producten te creëren.
+Mijn ambitie is om mijn IT-expertise in te zetten om tastbare verbeteringen te
+realiseren voor zowel mensen als bedrijven. Ik ben ervan overtuigd dat de
+combinatie van mijn technische vaardigheden en creatieve achtergrond leidt tot
+de ontwikkeling van innovatieve en betekenisvolle oplossingen.

@@ -5,21 +5,20 @@
    */
 
   /** @type {Props} */
-  let { string = 'Jan‑Peter Dhallé' } = $props();
+  let { string = 'Jan‑Peter Dhallé' } = $props()
 
   let scroll = $state()
 </script>
 
 <svelte:window bind:scrollY={scroll} />
-<p
+<div
   id="hugetext_scroll"
-  class="z-0 hidden select-none overflow-hidden text-center font-tight text-7xl font-bold uppercase opacity-10 md:block md:text-9xl"
+  class="relative z-0 hidden select-none overflow-hidden text-center font-tight font-bold md:block"
   style="transform: translateY({scroll * 0.085 + 7}rem);">
-  {string}
-</p>
-
+  <span class="text-7xl uppercase opacity-10">{string}</span>
+</div>
 <p
   id="hugetext"
-  class="z-0 translate-y-20 select-none overflow-hidden text-center font-tight text-7xl font-bold uppercase opacity-10 md:hidden md:text-9xl">
+  class="relative z-0 translate-y-20 select-none overflow-hidden text-center font-tight text-7xl font-bold uppercase opacity-10 md:hidden">
   {string}
 </p>

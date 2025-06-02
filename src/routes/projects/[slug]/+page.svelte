@@ -62,7 +62,7 @@
 
     <!-- Post -->
     <div
-      class="animate-in fade-in-0 fill-mode-backwards prose prose-invert max-w-none transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-pre:rounded-none prose-pre:border-l-2 prose-pre:border-green-500/60 prose-img:max-h-[65vh] prose-img:rounded-lg">
+      class="animate-in fade-in-0 fill-mode-backwards prose prose-invert w-full max-w-full transition-none delay-500 [animation-duration:2500ms] prose-a:text-secondary prose-pre:rounded-none prose-pre:border-l-2 prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[65vh] prose-img:rounded-lg">
       <data.content />
     </div>
   </div>

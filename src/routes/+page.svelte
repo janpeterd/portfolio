@@ -13,9 +13,10 @@
 <div class="top-gradient fixed bottom-0 h-screen w-screen overflow-hidden"></div>
 <div class="bottom-gradient fixed top-0 h-full w-screen overflow-hidden"></div>
 
-<HugTextBg />
-
-<Hero />
+<div class="md:-mt-12">
+  <HugTextBg />
+  <Hero />
+</div>
 
 <About />
 
@@ -32,6 +33,6 @@
   .bottom-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: radial-gradient(80vw 80vh at 20% 130%, theme(colors.secondary / 60%), transparent);
+    background: radial-gradient(80vw 80vh at 20% 130%, theme(colors.green.500 / 30%), transparent);
   }
 </style>

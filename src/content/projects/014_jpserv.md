@@ -46,9 +46,9 @@ Vanuit dit project heb ik bijgeleerd over:
 - Debugging
 - ...
 
-Dit document dient ook als **referentiedocument** (voor mezelf), om de gebruikte hardware
-geïnstalleerde software bij te houden. Hierdoor zal de volgende tekst eerder technisch
-zijn van aard.
+Dit document dient ook als **referentiedocument** (voor mezelf), om de
+gebruikte hardware en geïnstalleerde software bij te houden. Hierdoor zal de
+volgende tekst eerder technisch zijn van aard.
 
 ## Hardware
 

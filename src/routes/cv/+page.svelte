@@ -1,20 +1,34 @@
 <script>
   import Icon from '@iconify/svelte'
-  import HeroImg from '$lib/assets/portrait_scaled.jpg?enhanced'
+  import HeroImg from '$lib/assets/portrait.jpg?enhanced'
 
-  import { githubLink, github, linkedInLink, mailLink, phoneLink, mail, phone } from '../../stores'
+  import {
+    githubLink,
+    github,
+    linkedInLink,
+    linkedIn,
+    mailLink,
+    phoneLink,
+    mail,
+    phone
+  } from '../../constants'
   import HomeTitle from '$lib/Components/HomeTitle.svelte'
+  import { onMount } from 'svelte'
 
   let { data } = $props()
 
   const storeMap = new Map()
 
-  storeMap.set('phoneLink', phoneLink)
-  storeMap.set('mailLink', mailLink)
-  storeMap.set('mail', mail)
-  storeMap.set('githubLink', githubLink)
-  storeMap.set('github', github)
-  storeMap.set('linkedInLink', linkedInLink)
+  if (phoneLink !== undefined) storeMap.set('phoneLink', phoneLink)
+  if (mailLink !== undefined) storeMap.set('mailLink', mailLink)
+  if (githubLink !== undefined) storeMap.set('githubLink', githubLink)
+  if (linkedInLink !== undefined) storeMap.set('linkedInLink', linkedInLink)
+
+  if (mail !== undefined) storeMap.set('mail', mail)
+  if (phone !== undefined) storeMap.set('phone', phone)
+  if (github !== undefined) storeMap.set('github', github)
+  if (linkedIn !== undefined) storeMap.set('linkedIn', linkedIn)
+  console.log('storeMap', storeMap)
 </script>
 
 <svelte:head>
@@ -28,7 +42,7 @@
 <div class="gradient1 fixed -top-20 h-screen w-screen print:hidden"></div>
 
 <div
-  class="font-tight container mx-auto mt-24 print:mt-0 print:max-w-none print:bg-white print:text-sm print:text-black">
+  class="container mx-auto mt-24 font-tight print:mt-0 print:max-w-none print:bg-white print:font-sans print:text-sm print:text-black">
   <div>
     <div class="flex items-end justify-between">
       <h1
@@ -58,7 +72,7 @@
       <div class="print:container-none flex-auto lg:min-w-[600px]">
         <h2 class="cv_heading">Profiel</h2>
         <!--load from markdown file -->
-        <div class="ml-2 text-lg">
+        <div class="ml-2 text-lg print:text-sm">
           <data.content />
         </div>
 
@@ -101,7 +115,7 @@
         <enhanced:img
           src={HeroImg}
           alt="Foto van Jan-Peter"
-          class="max-h-80 w-full rounded-lg object-cover" />
+          class="mb-8 max-h-80 w-full rounded-lg object-cover" />
         <!-- CONTACT -->
         <h2 class="cv_heading">{data.cv?.contact.title}</h2>
         <ul class="block print:hidden">
@@ -119,10 +133,10 @@
         <div class="hidden flex-col items-start justify-center py-6 print:flex print:p-0">
           {#each data.cv?.contact.items as item}
             <a
-              href={$mailLink}
+              href={storeMap.get(item.storeLinkVariable)}
               class="mx-2 flex items-center justify-center gap-4 py-2 print:text-xs">
               <Icon icon={item.printIcon} width="1.5rem" />
-              {$mail}
+              {storeMap.get(item.storeValueVariable)}
             </a>
           {/each}
         </div>

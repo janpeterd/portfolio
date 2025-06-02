@@ -74,7 +74,7 @@ belangrijke informatie halen.
 
 # Testen
 
-Tijdens de ontwikkeling van de applicatie hebben ik erg veel aandacht besteed
+Tijdens de ontwikkeling van de applicatie heb ik erg veel aandacht besteed
 aan het schrijven van tests. Dit waren tests op elk niveau: unittests,
 unitegratietesten en end-to-end testen.
 

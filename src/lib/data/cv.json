@@ -29,7 +29,8 @@
         "icon": "line-md:linkedin",
         "printIcon": "mdi:linkedin",
         "printValue": "Jan-Peter Dhallé",
-        "storeLinkVariable": "linkedInLink"
+        "storeLinkVariable": "linkedInLink",
+        "storeValueVariable": "linkedIn"
       },
       {
         "type": "github",
@@ -108,7 +109,8 @@
   "otherInfo": {
     "title": "Overige",
     "items": [
-      "Rijbewijs: B"
+      "Rijbewijs: B",
+      "Gemeente: Turnhout"
     ]
   },
   "associations": {

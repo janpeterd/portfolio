@@ -11,7 +11,7 @@
     <p class="about_text prose-a:text-secondary">
       <!-- {About} -->
       {#if browser}
-        <About></About>
+        <About />
       {/if}
     </p>
     <p class="about_text prose-a:text-secondary">
@@ -22,7 +22,7 @@
   </article>
   <div class="z-10 mt-6 flex items-center justify-center lg:mt-0">
     <enhanced:img
-      class="z-10 mx-auto w-80 rounded-3xl object-cover"
+      class="z-10 mx-auto h-96 w-80 rounded-3xl object-cover"
       src={PortraitImg}
       alt="me"
       fetchpriority="high"

@@ -12,6 +12,7 @@ const generatePdfAsync = async () => {
   await page.goto(`http://${hostname}:${port}${cv_route}`, {
     waitUntil: 'domcontentloaded'
   })
+  await new Promise((resolve) => setTimeout(resolve, 2000))
 
   await page.pdf({
     path: pdfPath,
