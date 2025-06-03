@@ -35,5 +35,10 @@ en het eigen maken van geavanceerde Git-workflows.
 
 Voor een diepgaand inzicht in het projectplan, de realisatie, functionele
 specificaties en persoonlijke reflecties, verwijs ik graag naar de [bijgevoegde
-documenten](#). Het uiteindelijke resultaat en een demonstratie van Qurio zijn
+documenten](#).
+
+Een overzicht van het uiteindelijke resultaat en een demonstratie van Qurio zijn
 tevens te vinden op de [projectpagina](/projects/015_qurio_stage).
+
+![Spelen van quiz](/img/projects/qurio_play.png)
+![Resultaat quiz](/img/projects/qurio_result.png)
