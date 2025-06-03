@@ -36,10 +36,10 @@
   }
 
   // Extract all unique technologies from posts
-  const usedTechnologiesArray = () => {
+  const usedTechnologiesArray = $derived(() => {
     const techSet = new Set()
-    if (posts) {
-      posts.forEach((post) => {
+    if (data.posts) {
+      data.posts.forEach((post) => {
         if (post?.technologies?.length) {
           post.technologies.forEach((tech) => {
             if (typeof tech === 'string') {
@@ -50,7 +50,7 @@
       })
     }
     return Array.from(techSet).sort((a, b) => a.localeCompare(b))
-  }
+  })
 
   // Create technology options with "All" option
   const technologyOptions = () => {
@@ -75,7 +75,7 @@
     return techExists ? techFromUrl : 'all'
   }
 
-  let technologyFilter = $state({ value: getInitialTechnologyFilter() })
+  let selectedTechnologies = $derived([])
 
   // Combined Filters Configuration for UI
   let filters = $derived([
@@ -116,14 +116,10 @@
     let processedPosts = [...posts]
 
     // Apply technology filter
-    const currentTechFilterValue = technologyFilter.value
-    if (currentTechFilterValue && currentTechFilterValue !== 'all') {
+    if (selectedTechnologies.length > 0) {
       processedPosts = processedPosts.filter((post) => {
-        return (
-          post &&
-          post.technologies?.some(
-            (tech) => tech.toLowerCase() === currentTechFilterValue.toLowerCase()
-          )
+        return post?.technologies?.some(tech => 
+          selectedTechnologies.includes(tech.toLowerCase())
         )
       })
     }
@@ -204,40 +200,57 @@
           </Tooltip>
         {/if}
         {#each filters as filter (filter.id)}
-          <div class="font-elec flex flex-col justify-end gap-1 pt-6 sm:pt-0">
-            <label for={filter.id} class="text-sm font-semibold text-neutral-300/80">
-              {filter.label}
-            </label>
-            <div
-              class="flex items-center justify-center rounded-lg bg-primary font-semibold text-neutral-300/80">
-              {#if filter.withDirection}
-                <select
-                  class="rounded-l-lg border-b-0 border-l-0 border-r-2 border-t-0 border-r-white/20 bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
+          {#if filter.id === 'technology'}
+            <div class="font-elec flex flex-col justify-end gap-1 pt-6 sm:pt-0">
+              <label for={filter.id} class="text-sm font-semibold text-neutral-300/80">
+                {filter.label}
+              </label>
+              <div class="flex items-center justify-center rounded-lg bg-primary font-semibold text-neutral-300/80">
+                <MultiSelect
                   id={filter.id}
-                  bind:value={filter.state.option.value}>
-                  {#each filter.options as option (option.value)}
-                    <option value={option.value}>
-                      {option.label}
-                    </option>
-                  {/each}
-                </select>
-                <button
-                  onclick={toggleDirection}
-                  class="rounded-r-lg px-2 py-1 hover:bg-slate-700/50">
-                  <Icon icon={filter.state.direction.icon} width="1.5rem" class="shrink-0" />
-                </button>
-              {:else}
-                <select
-                  class="rounded-lg border-none bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
-                  id={filter.id}
-                  bind:value={filter.state.value}>
-                  {#each filter.options as option (option.value)}
-                    <option value={option.value}>{option.label}</option>
-                  {/each}
-                </select>
-              {/if}
+                  options={usedTechnologiesArray()}
+                  selected={selectedTechnologies}
+                  on:change={(e) => selectedTechnologies = e.detail}
+                  placeholder="Select technologies..."
+                />
+              </div>
             </div>
-          </div>
+          {:else}
+            <div class="font-elec flex flex-col justify-end gap-1 pt-6 sm:pt-0">
+              <label for={filter.id} class="text-sm font-semibold text-neutral-300/80">
+                {filter.label}
+              </label>
+              <div
+                class="flex items-center justify-center rounded-lg bg-primary font-semibold text-neutral-300/80">
+                {#if filter.withDirection}
+                  <select
+                    class="rounded-l-lg border-b-0 border-l-0 border-r-2 border-t-0 border-r-white/20 bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
+                    id={filter.id}
+                    bind:value={filter.state.option.value}>
+                    {#each filter.options as option (option.value)}
+                      <option value={option.value}>
+                        {option.label}
+                      </option>
+                    {/each}
+                  </select>
+                  <button
+                    onclick={toggleDirection}
+                    class="rounded-r-lg px-2 py-1 hover:bg-slate-700/50">
+                    <Icon icon={filter.state.direction.icon} width="1.5rem" class="shrink-0" />
+                  </button>
+                {:else}
+                  <select
+                    class="rounded-lg border-none bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
+                    id={filter.id}
+                    bind:value={filter.state.value}>
+                    {#each filter.options as option (option.value)}
+                      <option value={option.value}>{option.label}</option>
+                    {/each}
+                  </select>
+                {/if}
+              </div>
+            </div>
+          {/if}
         {/each}
       </div>
     </div>
