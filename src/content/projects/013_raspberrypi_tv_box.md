@@ -8,76 +8,89 @@ technologies:
   - vim
 ---
 
-## Raspberry pi TV-box
+## Het Doel: Mijn eigen Media Center
 
-Aangezien ik thuis een server heb met wat films op, wou ik een makkelijke
-manier hebben om deze films te bekijken. Dit zou makkelijk zijn op een smart TV
-of TV-box, maar deze heb ik niet.
-Dus heb ik wat zitten rondkijken naar een oplossing voor dit probleem.
+Met een bibliotheek aan digitale media, zocht ik naar een
+gebruiksvriendelijke manier om deze content te bekijken zonder te investeren
+in een nieuwe smart TV of commerciële TV-box. Dit leidde tot het project om
+een Raspberry Pi om te toveren tot een volwaardig media center.
 
-### Lineage OS
+### Stap 1: Android TV via LineageOS
 
-In het verleden heb ik al eens een andere ROM naar mijn smartphone geflasht en
-ik bedacht me dat raspberry pi dezelfde processorarchitectuur heeft als mijn
-GSM, dus ben ik gaan rondkijken naar ROMs voor android TV. Zo ben ik uitgekomen
-bij een build van [Lineage OS android
-14](https://konstakang.com/devices/rpi4/LineageOS21-ATV/).
+Mijn eerdere ervaring met het flashen van custom ROMs op smartphones,
+gecombineerd met de kennis dat de Raspberry Pi een vergelijkbare
+ARM-processorarchitectuur deelt, bracht me op het idee om te zoeken naar
+Android TV ROMs. Mijn zoektocht leidde me naar een geschikte build van
+[LineageOS 21 (Android 14 TV)](https://konstakang.com/devices/rpi4/LineageOS21-ATV/) specifiek voor de
+Raspberry Pi 4.
 
-Na wat lezen en het volgen van de instructies had ik een werkende versie van
-Android TV op mijn raspberry pi en kon ik gewoon films kijken! Het probleem was
-wel dat het niet zo makkelijk te bedienen was. Op dit moment kon ik het enkel
-besturen met een toetsenbord of muis.
+Na het zorgvuldig volgen van de installatie-instructies had ik een
+functioneel Android TV-systeem draaien op de Raspberry Pi. Films streamen
+vanaf mijn server was nu mogelijk, maar de bediening via toetsenbord en muis
+was verre van ideaal voor een woonkamer-setup.
 
-### IR afstandsbediening (TSOP4838 IR module)
+### Stap 2: Integratie van een IR-Afstandsbediening
 
-Tijdens het lezen van de documentatie had ik ook gelezen dat het mogelijk was
-om via de externe GPIO-pinnen van de raspberry pi een externe IR-module aan te
-sluiten, waardoor het systeem werkt met een afstandsbediening.
-Ik heb dus een
-[TSOP4838](https://nl.mouser.com/ProductDetail/Vishay-Semiconductors/TSOP4838?qs=yGXpg7PJZCiwO12kec0Sug%3D%3D&srsltid=AfmBOoot30yr_YHhYU8-1sj4fbinX5nzJg1f9do-iry0CusGCqWZDtZu)
-IR module besteld en heb deze met de juiste pinnen van de raspberry pi
-verbonden. Hierna heb ik een universele afstandsbediening gekocht.
+De documentatie van LineageOS bood een oplossing: de mogelijkheid om een
+externe infrarood (IR) ontvanger aan te sluiten op de GPIO-pinnen van de
+Raspberry Pi. Dit zou bediening via een standaard afstandsbediening mogelijk
+maken. Ik bestelde een [TSOP4838 IR-module](https://nl.mouser.com/ProductDetail/Vishay-Semiconductors/TSOP4838?qs=yGXpg7PJZCiwO12kec0Sug%3D%3D&srsltid=AfmBOoot30yr_YHhYU8-1sj4fbinX5nzJg1f9do-iry0CusGCqWZDtZu),
+verbond deze met de correcte GPIO-pinnen en schafte een universele
+afstandsbediening aan.
 
-![Raspberry Pi met IR sensor](/img/projects/rpi_android_box.jpg)
+![De Raspberry Pi met de aangesloten TSOP4838 IR-sensor.](/img/projects/rpi_android_box.jpg)
 
-### IR codes
+### Stap 3: IR-Codes Configureren
 
-Toen ik de afstandsbediening wou testen merkte ik al snel dat het niet
-werkte. Het bleek dat juiste IR-codes van de afstandsbediening nog moest
-mappen naar acties binnen Android TV.
+De initiële test met de afstandsbediening was echter niet succesvol. De
+ontvangen IR-signalen moesten nog correct gemapt worden aan specifieke acties
+binnen Android TV. Dit vereiste het aanmaken van een configuratiebestand (een
+`.kl` of "key layout" file) dat de hexadecimale IR-codes koppelt aan de
+corresponderende Android key events.
 
-Hiervoor heb ik dit bestand aangemaakt.
+Het volgende bestand definieert deze mapping (bijvoorbeeld opgeslagen als
+`Vendor_XXXX_Product_XXXX.kl` in de juiste systeemmap):
 
+```plaintext
+# Keycode  # Android Key Event
+0xc        KEY_POWER
+0xd        KEY_MUTE
+0x1        KEY_1
+0x2        KEY_2
+0x3        KEY_3
+0x4        KEY_4
+0x5        KEY_5
+0x6        KEY_6
+0x7        KEY_7
+0x8        KEY_8
+0x9        KEY_9
+0x0        KEY_0
+0x20       KEY_CHANNELUP
+0x21       KEY_CHANNELDOWN
+0x10       KEY_VOLUMEUP
+0x11       KEY_VOLUMEDOWN
+0x24       KEY_RECORD
+0x29       KEY_STOP
+0x3c       KEY_TEXT
+0x55       KEY_LEFT
+0x56       KEY_RIGHT
+0x50       KEY_UP
+0x51       KEY_DOWN
+0x57       KEY_OK
+0x22       KEY_BACK
+0x52       KEY_MENU
+0x53       KEY_HOMEPAGE
 ```
-0xc KEY_POWER
-0xd KEY_MUTE
-0x1 KEY_1
-0x2 KEY_2
-0x3 KEY_3
-0x4 KEY_4
-0x5 KEY_5
-0x6 KEY_6
-0x7 KEY_7
-0x8 KEY_8
-0x9 KEY_9
-0x0 KEY_0
-0x20 KEY_CHANNELUP
-0x21 KEY_CHANNELDOWN
-0x10 KEY_VOLUMEUP
-0x11 KEY_VOLUMEDOWN
-0x24 KEY_RECORD
-0x29 KEY_STOP
-0x3c KEY_TEXT
-0x55 KEY_LEFT
-0x56 KEY_RIGHT
-0x50 KEY_UP
-0x51 KEY_DOWN
-0x57 KEY_OK
-0x22 KEY_BACK
-0x52 KEY_MENU
-0x53 KEY_HOMEPAGE
-```
 
-En nu werkt het!
+## Het Resultaat
 
-<video style="max-height: 600px" src="/img/projects/rpi_android_box.mp4" height="600" autoplay controls loop />
+Na het implementeren van deze keymap functioneerde de afstandsbediening naar
+wens, wat resulteerde in een intuïtief bedienbaar media center, zoals te zien
+in onderstaande demonstratie:
+
+<video style="max-width: 100%; max-height: 600px; display: block; margin: auto;" src="/img/projects/rpi_android_box.mp4" autoplay controls loop aria-label="Demonstratie Raspberry Pi TV-box met afstandsbediening"></video>
+<br/>
+
+Dit project toont hoe een Raspberry Pi met wat software-aanpassingen en
+minimale hardware-toevoegingen kan transformeren in een functionele en
+budgetvriendelijke oplossing voor thuisentertainment.

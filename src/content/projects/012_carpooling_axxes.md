@@ -19,118 +19,71 @@ technologies:
   - git
 ---
 
-## Project 4.0
+## Introductie: Het Afstudeerproject "Project 4.0"
 
-In het laatste jaar toegepaste informatica, krijgen alle studenten een vak om
-een groot project te realiseren in teamverband. Het team bestaat uit studenten
-uit verschillende specialisaties. De opdracht is telkens afkomstig van een bedrijf.
+Als sluitstuk van de opleiding Toegepaste Informatica werkten we in ons laatste jaar aan "Project 4.0", een omvangrijk project in teamverband. Ons team bestond uit zes studenten, waaronder internationale studenten, met een diverse mix aan specialisaties: drie applicatieontwikkelaars (waaronder ikzelf), twee AI-specialisten, en één cybersecurity-expert. Elke projectopdracht was afkomstig van een extern bedrijf.
 
-Mijn team bestond uit 6 medestudenten, waaronder internationale studenten. Het
-was ook erg divers qua specialisaties en telde 3 studenten
-applicatieontwikkeling, 2 studenten AI en één student cybersecurity.
+Onze opdrachtgever was [Axxes](https://axxes.com/), een gerenommeerd IT-consultancybedrijf, voornamelijk gevestigd in Antwerpen.
 
-Onze opdrachtgever was [Axxes](https://axxes.com/), een IT consultancy bedrijf
-voornamelijk gebaseerd in Antwerpen.
+![Logo van Axxes, de opdrachtgever](/img/projects/carpool_logo.webp)
 
-![Logo](/img/projects/carpool_logo.webp)
+## De Opdracht: Een AI-Gedreven Carpool Applicatie
 
-## Opdracht: Carpool applicatie
+Axxes gaf ons de opdracht een webapplicatie te ontwikkelen die het carpoolproces naar bedrijfsevenementen voor hun medewerkers vereenvoudigt. Een kernvereiste was de integratie van een intelligent systeem dat gebruikers niet alleen groepeert op basis van geografische locatie, maar ook rekening houdt met individuele voorkeuren om optimale carpoolmatches te genereren.
 
-De opdracht was een webapplicatie die het proces van carpooling naar evenementen
-vereenvoudigd voor medewerkers van Axxes. Hiervoor wilden ze dat we een
-AI-systeem maakten dat gebruikers groepeert op basis van locatie, maar ook
-rekening houdt met de persoonlijke voorkeuren van de gebruiker.
+## Fase 1: Grondige Planning en Ontwerp
 
-## Planningsfase
+Het eerste semester stond in het teken van een gedetailleerde planningsfase. We stelden een uitgebreid document op waarin we diverse technologieën vergeleken en afwogen. Op basis van deze analyse selecteerden we de volgende technologiestack:
 
-In het eerste semester van dit jaar hebben we gewerkt aan de planning van dit
-project. Hierbij hebben we een document opgesteld, waarin we verschillende
-technologieën vergelijken. Na het afwegen van verschillende factoren hebben we
-besloten volgende technologieën te gebruiken:
+- **Backend:** Java Spring Boot
+- **Frontend:** Next.js (React)
+- **AI-services:** Python FastAPI
+- **Authenticatie:** Auth0
+- **Mapping & Locatie:** Mapbox API (kaartvisualisatie), Google Maps API's (locatieberekeningen)
+- **Opslag:** Google Cloud Storage (foto-uploads), MySQL (database)
+- **Infrastructuur & Deployment:** Kubernetes (EKS-cluster op AWS), Docker
+- **Versiebeheer & CI/CD:** GitLab
 
-- Java Spring Boot backend
-- Nextjs frontend
-- Python FastAPI
-- Auth0 authenticatie
-- Mapbox API (kaartpagina)
-- Google maps APIs (locatieberekeningen)
-- Google Cloud Storage (foto uploads)
-- MySQL database
-- Kubernetes, EKS cluster op AWS
-- Gitlab (VCS, CI/CD)
+Naast de technologische keuzes werkten we gedetailleerde modellen uit voor de systeeminfrastructuur, de databaselay-out, en een use-case diagram. Parallel hieraan ontwikkelden we UI-prototypes voor alle schermen in [Figma](http://figma.com/).
 
-Ook hebben we modellen gemaakt van de infrastructuur, database-layout en een
-use-case diagram.
+![UI Prototypes ontwikkeld in Figma](/img/projects/carpool_prototypes.png)
 
-Hiernaast hebben we ook al UI-prototypes gemaakt voor alle pagina's in
-[Figma](http://figma.com/).
+Deze planningsfase werd afgesloten met een presentatie van onze concepten en plannen aan een vertegenwoordiger van Axxes. Het volledige projectplan is [hier](/doc/projects/Carpool-Project-Plan.pdf) te raadplegen.
 
-![Prototypes in Figma](/img/projects/carpool_prototypes.png)
+## Fase 2: Realisatie in Sprints
 
-Aan het eind van deze fase hebben we onze plannen gepresenteerd voor een werknemer van Axxes.
+De realisatiefase was opgedeeld in drie intensieve sprints, elk met de duur van een volledige schoolweek. Gedurende deze periodes werkten we fulltime op school aan de ontwikkeling van de applicatie.
 
-Het hele concept kan je [hier](/doc/projects/Carpool-Project-Plan.pdf) terugvinden.
+### Mijn Kernbijdragen:
 
-## Realisatiefase
+Binnen dit multidisciplinaire team heb ik me voornamelijk gericht op de ontwikkeling van de **backend** en gerelateerde systemen:
 
-De realisatiefase bestond uit 3 sprints van telkens een schoolweek. Tijdens
-deze sprints werkten we hele dagen aan dit project op school.
+- **Database & API Ontwikkeling:** Ik heb het databasemodel geïmplementeerd in Java (Spring Data JPA) en voor elke entiteit volledige CRUD (Create, Read, Update, Delete) API-endpoints ontwikkeld.
+- **Notificatiesysteem:** Ik was verantwoordelijk voor het ontwerpen en bouwen van een robuust notificatiesysteem. Dit omvatte:
+  - **E-mailnotificaties:** Handmatige implementatie in Java Spring Boot, gebruikmakend van [Thymeleaf](https://www.thymeleaf.org/)-templates voor de opmaak van de e-mails.
+  - **Realtime Notificaties:** Opzet van een WebSocket-verbinding voor directe meldingen. Dit systeem ondersteunt zowel globale meldingen naar alle gebruikers als specifieke meldingen naar individuele, ingelogde gebruikers. De frontend-component voor dit systeem, die luistert naar deze WebSocket-kanalen, heb ik eveneens ontwikkeld.
+- **Authenticatie & Autorisatie (Auth0):**
+  - **Backend Beveiliging:** API-routes beveiligd met Auth0. Dit omvatte het valideren van JWT's, het beperken van toegang tot ingelogde gebruikers, het implementeren van resource-specifieke toegang (op basis van JWT claims), en op rollen gebaseerde toegang (bijv. admin-rechten).
+  - **Frontend Beveiliging:** Een _Guard_-component ontwikkeld in Next.js om admin-specifieke routes af te schermen voor gebruikers zonder de benodigde admin-rol.
+- **Frontend Ondersteuning:** Naast mijn backend-focus heb ik bijgedragen aan de ontwikkeling en styling van diverse UI-componenten en heb ik geholpen bij het oplossen van bugs in de frontend.
+- **DevOps & Deployment:** Ik heb actief meegewerkt aan de deployment-strategie, inclusief het schrijven van Dockerfiles, het bouwen van Docker-containers, en het configureren van de Kubernetes-cluster en de CI/CD-pipeline in GitLab.
 
-Binnen dit project heb ik mij vooral beziggehouden met het bouwen van de
-backend. Hierbij heb ik het database-model gerealiseerd in Java en voor elke
-entiteit volledige CRUD operaties API-endpoints gemaakt.
+![Een live notificatie verschijnt in de applicatie](/img/projects/carpool_live_notification.png)
+![Overzicht van ontvangen notificaties](/img/projects/carpool_notifications.png)
+![Voorbeelden van gegenereerde e-mailnotificaties](/img/projects/carpool_emails.png)
+![Overzicht van de CI/CD pipeline in GitLab](/img/projects/carpool_pipeline.png)
 
-Hierbij heb ik ook het notificatiesysteem gemaakt, dat zowel e-mails verstuurt
-alsook notificaties verstuurt via een websocketsverbinding.
+De intensieve samenwerking tijdens deze sprints heeft de communicatie en teamdynamiek enorm versterkt, wat cruciaal was voor het succesvol opleveren van een hoogwaardig product aan Axxes.
 
-Naast de backend heb ik ook de frontend van het notificatiesysteem gemaakt, dat
-verbind via websockets met de backend en luistert naar globaal kanaal en een
-kanaal voor de ingelogde gebruiker. Op deze manier is het versturen van meldingen naar
-alle gebruikers en specifieke gebruikers mogelijk.
+![Het projectteam tijdens de realisatiefase](/img/projects/carpool_team.jpg)
 
-![Live notification](/img/projects/carpool_live_notification.png)
-![notifications list](/img/projects/carpool_notifications.png)
+## Conclusie en Ontvangst
 
-Het verzenden van e-mails heb ik handmatig gemaakt in java spring-boot. Voor de
-opmaak van de e-mails heb ik gebruik gemaakt van
-[Thymeleaf](https://www.thymeleaf.org/)-templates.
+Zowel op teamniveau als op persoonlijk vlak ben ik bijzonder trots op het eindresultaat. We hebben een volledig functionele, responsieve applicatie afgeleverd die een breed scala aan nuttige functies biedt en goed presteert op diverse apparaten.
 
-![Some emails](/img/projects/carpool_emails.png)
+Tijdens de eindpresentatie aan onze begeleiders en de vertegenwoordiger van Axxes waren de reacties zeer positief. Ze waren onder de indruk van de gerealiseerde functionaliteiten en de algehele kwaliteit van de applicatie.
 
-Ook heb ik gewerkt aan de authenticatie van de frontend en de backend. Hiervoor
-gebruikten we [auth0](https://auth0.com/). In de java backend heb ik api-routes
-beveiligd, sommige heb ik beschikbaar gemaakt voor ingelogde gebruikers, andere
-voor specifieke gebruikers (door de JWT te bekijken) en anderen op basis van
-rol (admin).
-In de frontend heb ik een _Guard_-component gemaakt om admin-routes af te
-schermen voor alle gebruikers die de admin-rol niet hebben.
-
-Tussendoor heb ik ook geholpen met het programmeren en opmaak van verschillende
-component binnen de UI. En het oplossen van verschillende fouten in de applicatie en interface.
-
-Ook heb ik geholpen met de deployment van de applicatie, waaronder het
-schrijven en bouwen van Docker-containers, meehelpen aan de
-kubernetes-cluster en CI/CD-pipeline op Gitlab.
-
-![Pipeline](/img/projects/carpool_pipeline.png)
-
-We hebben als team hard gewerkt gedurende deze drie weken, maar hierdoor is
-onze communicatie en samenwerking erg sterk geworden. Hierdoor hebben we aan
-het einde van deze fase een heel erg mooi resultaat kunnen afleveren aan Axxes.
-
-![Team](/img/projects/carpool_team.jpg)
-
-## Conclusie
-
-Zowel als team als op persoonlijk vlak ben ik erg trots op het resultaat. Het
-is een functionele applicatie die goed presteert op apparaten van verschillende
-formaten en die tal van handige functies biedt.
-
-Toen we onze applicatie een laatste keer presenteerde voor onze begeleider en
-een medewerker van Axxes waren ze erg onder de indruk en hebben we bijna
-uitsluitend lovende reacties gekregen.
-
-![event system](/img/projects/carpool_events.png)
-![rides](/img/projects/carpool_rides.png)
-![admin events](/img/projects/carpool_admin_events.png)
-![carpool events w search](/img/projects/carpool_events_search.png)
+![Overzicht van evenementen in de carpool applicatie](/img/projects/carpool_events.png)
+![Detailpagina van beschikbare ritten](/img/projects/carpool_rides.png)
+![Admin-interface voor het beheren van evenementen](/img/projects/carpool_admin_events.png)
+![Zoekfunctionaliteit binnen de evenementenlijst](/img/projects/carpool_events_search.png)

@@ -80,7 +80,7 @@
     className="inter-var flex-1">
     <CardBody
       className="pb-8 h-auto w-[25rem] relative group/card hover:shadow-2xl hover:shadow-secondary/15 bg-white/5 rounded-lg flex flex-col justify-center items-center border border-white/20 hover:border-secondary group">
-      <CardItem {isMouseEntered} translateZ="90" className="w-full">
+      <CardItem {isMouseEntered} translateZ="65" rotateZ="5" className="w-full">
         <enhanced:img
           class="contrast-105 mx-auto max-h-[40vh] w-full object-cover object-top p-2 saturate-150 lg:rounded-2xl"
           src={DeskImg}
@@ -90,15 +90,16 @@
       </CardItem>
       <CardItem
         {isMouseEntered}
-        translateZ="110"
+        translateZ="40"
         translateY="-10"
+        rotateZ="-5"
         className="block font-bold p-6 my-8 w-full text-5xl text-secondary font-tight uppercase border-b border-white/20 group-hover:border-green-500/60 group-hover:border-b-2">
         Contact
       </CardItem>
 
       <div
         class="flex w-full max-w-64 flex-col items-start justify-center gap-x-10 self-start px-6 py-4">
-        <CardItem {isMouseEntered} translateZ="100" rotateX="10">
+        <CardItem {isMouseEntered} translateZ="10" rotateX="10">
           <a
             href={$mailLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
@@ -108,7 +109,7 @@
             </span>
           </a>
         </CardItem>
-        <CardItem {isMouseEntered} translateZ="130" className="">
+        <CardItem {isMouseEntered} translateZ="10" className="">
           <a
             href={$linkedInLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">
@@ -118,7 +119,7 @@
             </span>
           </a>
         </CardItem>
-        <CardItem {isMouseEntered} translateZ="80">
+        <CardItem {isMouseEntered} translateZ="10">
           <a
             href={$githubLink}
             class="mx-2 flex items-center justify-center gap-4 py-2 text-lg print:text-base">

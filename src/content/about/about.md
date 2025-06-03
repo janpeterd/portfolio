@@ -11,9 +11,8 @@ schrijven van kwaliteitsvolle, snelle en elegante code** die een concrete,
 positieve impact heeft.
 
 Mijn creativiteit en discipline komen ook tot uiting in mijn jarenlange passie
-voor vioolspelen (sinds mijn derde). Dit heeft niet alleen geleid tot deelname
-aan internationale kampen, maar ook mijn coachende en begeleidende vaardigheden
-versterkt.
+voor vioolspelen. Dit heeft niet alleen geleid tot deelname aan internationale
+kampen, maar ook mijn coachende en begeleidende vaardigheden versterkt.
 
 Mijn ambitie is om mijn IT-expertise in te zetten om tastbare verbeteringen te
 realiseren voor zowel mensen als bedrijven. Ik ben ervan overtuigd dat de

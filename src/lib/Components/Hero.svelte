@@ -7,14 +7,17 @@
   <div
     class="relative mx-auto mb-0 mt-28 h-full w-full max-w-[90vw] sm:w-4/5 md:max-w-screen-md lg:w-3/5">
     <enhanced:img
-      class="mx-auto rounded-3xl object-cover"
+      class="mx-auto -mt-4 rounded-3xl object-cover sm:mt-0"
       src={HeroImg}
       alt="me"
       fetchpriority="high"
       loading="eager"
       sizes="min(1300px, 100vw)" />
   </div>
-  <div class="mt-2 text-center text-2xl font-bold uppercase opacity-50">Full stack Developer</div>
+  <div
+    class="mt-2 flex flex-col items-center justify-center gap-1 text-center font-bold uppercase opacity-30">
+    <span class="text-3xl">Full stack Developer</span>
+  </div>
 
   <a href="#about" class="absolute -bottom-16 animate-bounce" aria-label="Scroll down">
     <Icon icon="mdi:chevron-down" width="4rem" class="text-secondary/30" />

@@ -1,54 +1,93 @@
 <script>
   import HomeTitle from './HomeTitle.svelte'
+  const imgPath = '/img/technologies/'
 
   const technologies = [
-    { name: 'Java', image: '/img/technologies/java.svg' },
-    { name: 'Python', image: '/img/technologies/python.svg' },
-    { name: 'JavaScript', image: '/img/technologies/javascript.svg' },
-    { name: 'React', image: '/img/technologies/react.svg' },
-    { name: 'Git', image: '/img/technologies/git.svg' },
-    { name: 'C#', image: '/img/technologies/csharp.svg' },
-    { name: 'C', image: '/img/technologies/c.svg' },
-    { name: 'Bash', image: '/img/technologies/bash.svg' },
-    { name: 'Linux', image: '/img/technologies/linux.svg' },
-    { name: 'Angular', image: '/img/technologies/angular.svg' },
-    { name: 'Spring', image: '/img/technologies/spring.svg' },
-    { name: 'Django', image: '/img/technologies/django.svg' },
-    { name: 'Postgresql', image: '/img/technologies/postgresql.svg' },
-    { name: 'Kubernetes', image: '/img/technologies/kubernetes.svg' },
-    { name: 'Docker', image: '/img/technologies/docker.svg' },
-    { name: 'Figma', image: '/img/technologies/figma.svg' },
-    { name: 'Vscode', image: '/img/technologies/vscode.svg' },
-    { name: 'VIM', image: '/img/technologies/vim.svg' },
-    { name: 'Jenkins', image: '/img/technologies/jenkins.svg' },
-    { name: '.NET', image: '/img/technologies/dotnet.svg' },
-    { name: 'PHP', image: '/img/technologies/php.svg' },
-    { name: 'Laravel', image: '/img/technologies/laravel.svg' },
-    { name: 'Svelte', image: '/img/technologies/svelte.svg' }
+    { name: 'Java, Spring Boot', image: 'java.svg', skillLevel: 92 },
+    { name: 'JavaScript, Typescript', image: 'javascript.svg', skillLevel: 75 },
+    { name: 'Linux', image: 'linux.svg', skillLevel: 68 },
+    { name: 'Python, Django', image: 'python.svg', skillLevel: 72 },
+    { name: 'React', image: 'react.svg', skillLevel: 75 },
+    { name: 'Angular', image: 'angular.svg', skillLevel: 55 },
+    { name: 'Bash', image: 'bash.svg', skillLevel: 73 },
+    { name: 'C#, .NET', image: 'csharp.svg', skillLevel: 64 },
+    { name: 'C', image: 'c.svg', skillLevel: 38 },
+    { name: 'Docker', image: 'docker.svg', skillLevel: 92 },
+    { name: 'Flutter', image: 'flutter.svg', skillLevel: 58 },
+    { name: 'Git', image: 'git.svg', skillLevel: 85 },
+    { name: 'Jenkins', image: 'jenkins.svg', skillLevel: 45 },
+    { name: 'Kubernetes', image: 'kubernetes.svg', skillLevel: 55 },
+    { name: 'PHP, Laravel', image: 'php.svg', skillLevel: 44 },
+    { name: 'Postgresql', image: 'postgresql.svg', skillLevel: 52 },
+    { name: 'Svelte, Sveltekit', image: 'svelte.svg', skillLevel: 51 },
+    { name: 'Figma', image: 'figma.svg', skillLevel: 30 }
   ]
+
+  function handleMouseMove(event) {
+    const card = event.currentTarget
+    const rect = card.getBoundingClientRect()
+
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+
+    card.style.setProperty('--mouse-x', `${x}px`)
+    card.style.setProperty('--mouse-y', `${y}px`)
+  }
 </script>
 
 <div class="z-10 mx-auto my-24 rounded-2xl px-1 md:container md:p-8">
   <HomeTitle title="Technologieën" id="technologies" />
-
-  <div class="h-auto overflow-x-auto px-1 py-4">
-    <div
-      class="grid auto-cols-max grid-flow-col grid-rows-2 place-items-center gap-4 md:grid-flow-row md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8">
+  <div class="w-full px-1 py-4">
+    <div class="mx-auto flex w-full flex-wrap items-stretch justify-center gap-5">
       {#each technologies as technology}
         <div
-          class="relative flex size-40 flex-col items-center justify-center gap-2 rounded-3xl bg-[#474747] transition-all hover:scale-105 hover:shadow-xl hover:shadow-secondary/15">
+          class="card-glow-container relative flex w-[90vw] items-center justify-start gap-3 rounded-xl bg-white/10 p-4 backdrop-blur-md transition-all hover:scale-105 md:w-[320px] lg:w-96"
+          on:mousemove={handleMouseMove}
+          role="group"
+          aria-label={`Technology card for ${technology.name}`}>
           <img
-            src={technology.image}
+            src={`${imgPath}${technology.image}`}
             alt={technology.name}
             fetchpriority="high"
             loading="eager"
-            class="size-24 object-contain" />
-          <p
-            class="absolute -bottom-1 mb-0.5 text-center font-tight text-xs font-bold uppercase text-[#242424]">
-            {technology.name}
-          </p>
+            class="size-16 flex-shrink-0 object-contain" />
+          <div class="flex flex-1 flex-col justify-center gap-1">
+            <p class="text-md truncate font-tight font-bold uppercase text-white">
+              {technology.name}
+            </p>
+            <div class="relative h-2 w-full overflow-hidden rounded-full bg-black/30">
+              <div
+                class="absolute inset-y-0 left-0 h-full rounded-full bg-transparent bg-gradient-to-r from-yellow-400 via-secondary to-red-800 transition-all duration-300 ease-out"
+                style={`width: ${technology.skillLevel}%;`}>
+              </div>
+            </div>
+          </div>
         </div>
       {/each}
     </div>
   </div>
 </div>
+
+<style lang="postcss">
+  .card-glow-container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+
+    background: radial-gradient(
+      350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      theme(colors.secondary / 20%),
+      transparent 60%
+    );
+
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .card-glow-container:hover::before {
+    opacity: 1;
+  }
+</style>

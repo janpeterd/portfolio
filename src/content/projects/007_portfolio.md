@@ -12,75 +12,120 @@ technologies:
   - git
 ---
 
-## Mijn portfolio
+## Introductie: De Keuze voor SvelteKit
 
-Mijn portfolio (de website waarop je dit nu leest) heb ik gemaakt met [Sveltekit](https://kit.Svelte.dev/). Dit is een erg intuïtief JavaScript-framework dat ervoor zorgt dat je JavaScript-, HTML- en CSS-code erg makkelijk kan combineren.
+Deze website, mijn digitale visitekaartje, heb ik volledig zelf ontwikkeld met
+behulp van [SvelteKit](https://kit.svelte.dev/). SvelteKit is een modern en
+intuïtief JavaScript-framework dat een naadloze integratie van JavaScript, HTML
+en CSS mogelijk maakt. Hoewel ik in het verleden al eens kort kennis had
+gemaakt met Svelte, bood dit project de perfecte gelegenheid om dieper in de
+materie te duiken en er een volwaardig project mee te realiseren.
 
-In het verleden had ik al eens kort naar Svelte gekeken, maar ik had er nog nooit een project mee gemaakt. Daarom vond ik dit project de perfecte kans om ermee aan de slag te gaan.
+## Kernfunctionaliteiten van het Portfolio
 
-## Onderdelen
+Vanaf het begin stelde ik enkele essentiële eisen aan de functionaliteit en
+inhoud van mijn portfolio:
 
-Mijn portfolio moest een paar onderdelen zeker bevatten. Deze zijn:
+- Een **digitaal CV** met een overzicht van mijn vaardigheden en ervaring.
+- De mogelijkheid om mijn **CV als PDF te downloaden**.
+- Een dynamisch **overzicht van mijn projecten**, vergelijkbaar met een blog.
+- Een persoonlijke **"Over Mij" sectie**.
 
-- Digitaal cv
-- Download cv pdf
-- Overzicht van projecten
-- Tekst over mezelf
+Hoewel sommige van deze onderdelen relatief eenvoudig te implementeren zijn met
+standaard HTML en CSS, vereiste met name het projectenoverzicht een meer
+geavanceerde, gebruiksvriendelijke en blog-achtige aanpak.
 
-Deze zijn niet zo moeilijk om te maken met gewoon HTML en CSS, maar voor het overzicht van de projecten wou ik toch een makkelijk, bruikbaar en blog-achtig systeem maken.
+## De Projectensectie: Dynamisch en Content-Gedreven
 
-## Projecten
+Om de projectartikelen flexibel en eenvoudig te kunnen beheren, schrijf ik deze
+in [Markdown](https://en.wikipedia.org/wiki/Markdown). Markdown is een
+lichtgewicht opmaaktaal die het mogelijk maakt om platte tekst te structureren
+met elementen zoals koppen, lijsten en tekstopmaak (zoals **vet** of
+_cursief_).
 
-Alle project-artikels schrijf ik in [Markdown](https://en.wikipedia.org/wiki/Markdown), deze bestanden voeg ik dan toe aan mijn project. Markdown is een systeem om erg makkelijk platte tekst te schrijven en toch gebruik te maken van rijkere elementen, zoals hoofdingen, lijsten, **vette** tekst etc.
-Svelte heeft een goede preprocessor die Markdown om kan zetten naar Svelte-componenten genaamd: [mdsvex](https://mdsvex.pngwn.io/docs). Deze gebruik ik in dit project om de Markdown om te zetten naar Svelte-code.
+Voor de integratie van Markdown in SvelteKit maak ik gebruik van
+[mdsvex](https://mdsvex.pngwn.io/docs), een krachtige preprocessor die
+Markdown-bestanden omzet naar Svelte-componenten. Dit stelt me in staat om de
+content van mijn projecten efficiënt te beheren en weer te geven.
 
-Het moeilijkste onderdeel van dit systeem was het genereren van een overzichtspagina met alle posts en de links naar andere post op de pagina van een artikel.
-Om dit te doen heb ik een API-route gemaakt die door middel van JavaScript-code op de server alle Markdown-bestanden in de juiste folder zoekt en deze indexeert in een lijst. Ook maakt dit script een `slug`, dit is het gedeelte dat in de URL verschijnt. Ten slotte haalt het ook de datum waarop de post gemaakt is uit de bestanden. Al deze gegevens worden dan via de API in JSON-formaat teruggegeven.
+Het meest uitdagende technische aspect was het dynamisch genereren van de
+overzichtspagina voor projecten en het implementeren van navigatie (zoals links
+naar vorige/volgende artikelen) binnen individuele projectpagina's. Hiervoor
+heb ik een server-side API-route gecreëerd. Dit script:
 
-Wanneer iemand naar [/projects](/projects) surft, wordt deze API aangesproken en worden de resultaten op de pagina getoond.
+1.  Scant de daarvoor bestemde map op Markdown-bestanden.
+2.  Indexeert deze bestanden in een lijst.
+3.  Genereert een unieke `slug` voor elk artikel (het deel dat in de URL
+    verschijnt).
+4.  Extraheert metadata zoals de publicatiedatum uit de bestanden. Deze
+    gestructureerde data wordt vervolgens via de API in JSON-formaat aangeboden aan
+    de frontend. Wanneer een bezoeker de [/projects](/projects) pagina opent, wordt
+    deze API aangeroepen en worden de projecten overzichtelijk gepresenteerd.
 
-![Projecten overzicht](/img/projects/portfolio_projects.png)
+![Overzicht van de projectenpagina](/img/projects/portfolio_projects.png)
 
-## Cv
+## Het Curriculum Vitae: Responsief en Printvriendelijk
 
-Het maken van een digitale cv was niet erg moeilijk, maar ik heb wel veel tijd moeten spenderen aan het aanpassen van de layout. Omdat dit een website is een geen plat document moet de layout van de cv leesbaar zijn in vele formaten, ook op kleine smartphone-schermen.
+Hoewel de basisstructuur van een digitale CV relatief eenvoudig is, besteedde
+ik veel aandacht aan de layout. De uitdaging lag voornamelijk in het creëren
+van een responsief ontwerp dat op diverse schermformaten – van desktop tot
+smartphone – optimaal leesbaar blijft.
 
-Men drukt een cv ook vaak af, daarom heb ik ook extra CSS geschreven, specifiek voor de printer-layout.
+Aangezien een CV vaak wordt afgedrukt, heb ik specifieke CSS-regels toegevoegd
+die enkel van toepassing zijn bij het printen. Dit zorgt voor een schone en
+professionele weergave op papier, geoptimaliseerd voor het A4-formaat.
 
-![CV webpagina](/img/projects/porfolio_cv.png)
-![CV printer weergave](/img/projects/portfolio_print.png)
+![De CV-pagina op de website](/img/projects/porfolio_cv.png)
+![Printer-vriendelijke weergave van de CV](/img/projects/portfolio_print.png)
 
-## Ontwerp
+## Visueel Ontwerp: Een Donker Thema met Subtiele Effecten
 
-Voor het ontwerp van mijn portfolio wou ik een donkere achtergrond, omdat ik dit zelf aangenamer vind om naar te kijken. Op het begin heb ik veel moeten experimenteren om een mooi design te vinden, maar uiteindelijk heb ik besloten om van radiale-gradiënten gebruik te maken.
+Voor het visuele ontwerp koos ik bewust voor een donker thema, wat ik
+persoonlijk als prettiger ervaar voor langere leessessies. Het vinden van de
+juiste esthetiek vergde enig experimenteren. Uiteindelijk viel mijn keuze op
+het gebruik van subtiele radiale gradiënten, die van een lichte kleur naar
+volledige transparantie verlopen. Een masker zorgt ervoor dat dit effect
+verfijnd en niet overheersend is. Een achtergrondafbeelding met een lichte
+korreltextuur voegt diepte en een tastbaar element toe aan het geheel.
 
-Deze gradiënten gaan van een lichte kleur naar doorzichtig. Ook gebruik ik voor dit effect een mask, zodat de gradient niet te groot is. Uiteindelijk heb ik ook besloten om een korrelige foto als achtergrond te gebruiken, omdat ik het effect hiervan wel mooi vond.
+![De homepage van het portfolio](/img/projects/portfolio_home.png)
 
-![Homepage](/img/projects/portfolio_home.png)
+## Logo Ontwerp: Van 2D naar 3D
 
-## Logo
+### Het Basislogo
 
-Het logo heb ik zelf getekend in [Inkscape](https://inkscape.org/). Deze software is erg handig voor het maken van logo's, omdat het gebruikt wordt voor het maken van SVG's. Dit zijn vector-foto's die oneindig veel vergroot kunnen worden.
-Ideaal dus voor een logo dat je in verschillende formaten wilt gebruiken. Ik heb een logo gemaakt met een laptop en een met de letters van mijn voornaam. Deze laatste werkt beter als `favicon`.
+Mijn logo's heb ik zelf ontworpen met [Inkscape](https://inkscape.org/). Ik heb hiervoor Inkscape gebruikt,
+open-source software die ideaal is voor het creëren van Scalable Vector
+Graphics (SVG's). Het voordeel van SVG is dat de afbeeldingen oneindig
+schaalbaar zijn zonder kwaliteitsverlies, wat essentieel is voor een logo dat
+in verschillende formaten en contexten gebruikt wordt. Ik heb een variant met
+een laptop-icoon en een tekstlogo gebaseerd op mijn voorletters ontwikkeld.
+Laatstgenoemde bleek bijzonder geschikt als `favicon`.
 
-![Logo](/img/projects/portfolio_logo.png)
-![Logo tekst](/img/projects/portfolio_logotekst.png)
+![Het laptop-icoon logo](/img/projects/portfolio_logo.png) ![Het
+tekstlogo](/img/projects/portfolio_logotekst.png)
 
-## 3D logo
+### Een 3D-Dimensie
 
-Door wat rond te kijken en inspiratie op te doen had ik het idee gekregen om
-een 3d-versie van mijn logo te maken. Hiervoor heb ik een gratis 3d-model van
-een laptop gezocht en een 3d-model van mijn logo gemaakt in **blender**.
-![Working on the model](/img/projects/portfolio_blender.png)
+Geïnspireerd door online voorbeelden, besloot ik een extra dimensie toe te voegen door een 3D-versie van mijn logo te creëren. Met behulp
+van **Blender** heb ik een gratis 3D-model van een laptop gecombineerd met een
+zelfgemaakt 3D-model van mijn logo.
 
-Ik ben erg tevreden met het eindresultaat.
-![Logo 3d render](/img/projects/portfolio_logorender.png)
+![Werken aan het 3D-model in Blender](/img/projects/portfolio_blender.png)
 
-Uit nieuwsgierigheid heb ik ook een leuke animatie gemaakt. Ik gebruik het momenteel nergens, maar ik vind het wel erg goed gelukt!
+Het eindresultaat is een render waar ik erg tevreden over ben. ![De 3D-render
+van het logo](/img/projects/portfolio_logorender.png)
 
-<video src="/img/projects/portfolio_logorender.mp4" loop controls></video>
+Als extra uitdaging en uit pure nieuwsgierigheid, heb ik ook een korte animatie
+van het 3D-logo gemaakt. Hoewel deze momenteel niet actief op de site wordt
+gebruikt, ben ik trots op het resultaat:
 
-## Besluit
+<video src="/img/projects/portfolio_logorender.mp4" loop controls aria-label="3D logo animatie"></video>
 
-Met dit project heb ik een portfolio gemaakt, dat ik kan gebruiken om mezelf voor te stellen aan bedrijven en geïnteresseerden.
-Door dit te maken heb ik ook bijgeleerd over Svelte en Sveltekit.
+## Conclusie: Een Leerzaam en Functioneel Project
+
+Dit portfolio project was een waardevolle onderneming. Het heeft niet alleen
+geresulteerd in een platform waarmee ik mezelf professioneel kan presenteren
+aan potentiële werkgevers en andere geïnteresseerden, maar het bood me ook een
+uitstekende gelegenheid om mijn vaardigheden in Svelte en SvelteKit verder te
+ontwikkelen en te verdiepen.

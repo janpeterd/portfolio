@@ -8,14 +8,14 @@
 <div class="z-10 gap-4 p-8 lg:grid lg:grid-flow-row lg:grid-cols-3">
   <article class="col-span-2 flex flex-col justify-center">
     <HomeTitle title="Over mij" id="about" />
-    <p class="about_text prose-a:text-secondary">
+    <p class="about_text prose-p:mb-4 prose-a:text-secondary">
       <!-- {About} -->
       {#if browser}
         <About />
       {/if}
     </p>
     <p class="about_text prose-a:text-secondary">
-      Geïnteresseerd? Neem gerust <a href="/contact" class="text-secondary">contact</a>
+      Neem gerust <a href="/contact" class="text-secondary">contact</a>
       met me op of bekijk
       <a href="/cv">mijn cv.</a>
     </p>

@@ -38,24 +38,13 @@ export const experiences = [
   {
     startDate: new Date('2022-08-01'),
     endDate: new Date('2022-08-31'),
-    dateString: 'Augustus 2022',
+    dateString: 'Juni 2019, Augustus 2022',
     title: 'Jobstudent',
     company: 'R. Janssen & Zn nv',
     description: 'Magazijn en voorraadbeheer',
     link: 'https://janssenr.be/nl/',
     type: 'work'
   },
-  {
-    startDate: new Date('2019-06-01'),
-    endDate: new Date('2019-06-30'),
-    dateString: 'Juni 2019',
-    title: 'Jobstudent',
-    company: 'R. Janssen & Zn nv',
-    description: 'Magazijn en voorraadbeheer',
-    link: 'https://janssenr.be/nl/',
-    type: 'work'
-  },
-
   // Volunteer and Associations
   {
     startDate: new Date('2022-01-01'),
@@ -78,35 +67,6 @@ export const experiences = [
     company: 'Thomas More Campus Geel',
     description: 'Specialisatie Application development',
     link: 'https://thomasmore.be/nl/opleidingen/professionele-bachelor/toegepaste-informatica/application-development/geel/basistraject',
-    type: 'education'
-  },
-  {
-    startDate: new Date('2020-09-01'),
-    endDate: new Date('2022-07-01'),
-    dateString: 'september 2020- juli 2022',
-    title: 'Industriële Ingenieurswetenschappen',
-    company: 'Groep T, KU Leuven',
-    description: '',
-    link: 'https://www.kuleuven.be/campussen/campus-groep-t-leuven/studeren/opleidingen-industrieel-ingenieur-campus-groep-t',
-    type: 'education'
-  },
-  {
-    startDate: new Date('2014-09-01'),
-    endDate: new Date('2020-06-30'),
-    dateString: 'september 2014- juni 2020',
-    title: 'Diploma secundair onderwijs, wetenschappen-wiskunde',
-    company: 'Sint-Jozefcollege, Turnhout',
-    link: 'https://www.sjt.be/',
-    type: 'education'
-  },
-  {
-    startDate: new Date('2006-01-01'),
-    endDate: new Date('2020-01-01'),
-    dateString: '2006-2020',
-    title: 'SAMWD Turnhout',
-    company: null,
-    description: 'Klassieke viool (Suzukimethode) — summa cum laude',
-    link: 'https://muziekacademieturnhout.turnhout.be/viool',
     type: 'education'
   }
 ]

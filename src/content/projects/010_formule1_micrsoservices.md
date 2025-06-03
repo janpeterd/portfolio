@@ -14,97 +14,107 @@ technologies:
   - git
 ---
 
-- [Project demo](https://www.youtube.com/watch?v=SGmIv60Sp4Q)
-- [Github repository](https://github.com/janpeterd/formula1-microservices)
+## De Opdracht: Een Microservices Architectuur in de Praktijk
 
-## Opdracht
+In het kader van het vak _Advanced Programming Topics_ lag de focus op het
+doorgronden en toepassen van de microservices-architectuur. De opdracht was
+dan ook het ontwerpen en realiseren van een applicatie die deze
+architecturale principes demonstreert. Ik koos ervoor een **Formule 1
+informatieplatform** te ontwikkelen, gericht op het beheren en presenteren
+van data over coureurs, teams, circuits en Grand Prix-evenementen.
 
-![Frontend Formula 1: Grand Prix page](/img/projects/formula1_frontend_gp_page.png)
-![Frontend Formula 1: Drivers page](/img/projects/formula1_frontend_drivers_page.png)
-![Frontend Formula 1: GP form](/img/projects/formula1_frontend_gp_form.png)
+## Architectuur: Gedistribueerd en Geschaald
 
-In het vak _Advanced Programming Topics_ hebben we geleerd over de
-microservices-architectuur. We kregen daarom ook de opdracht om een applicatie
-te maken gebruikmakend van deze architectuur. Ik heb voor dit project gekozen
-voor een **Formule 1**-applicatie, die informatie over chauffeurs, teams,
-circuits en Grand Prix bijhoudt.
+![Diagram van de microservices-architectuur](/img/projects/formula1_architecture_diagram.png)
 
-## Microservices
+De kern van de applicatie is een microservices-architectuur waarbij alle
+services autonoom opereren en met elkaar communiceren binnen een
+[Kubernetes](https://kubernetes.io/)-netwerk. Elke service beschikt over een
+eigen, geïsoleerde database. Externe toegang is beperkt tot de frontend
+applicatie en een centrale API Gateway, die als enige ingangspunten dienen.
+Voor authenticatie en autorisatie is Google OAuth2 geïntegreerd.
 
-![Diagram architectuur](/img/projects/formula1_architecture_diagram.png)
-
-In mijn microservices-architectuur communiceren alle services met elkaar binnen
-een [kubernetes](https://kubernetes.io/url)-netwerk. Elke service heeft zijn eigen database.
-Enkel de frontend en de api-gateway zijn blootgesteld voor externe gebruikers.
-
-Hiernaast maakt mijn applicatie ook gebruik van Google OAuth2 voor authenticatie.
-
-Toen ik het project startte ben ik begonnen met alles in
-[Docker](https://www.docker.com/) te maken. Later besloot ik om het ook in
-kubernetes te maken, dus heb ik mijn `docker-compose.yaml`-bestand omgevormd naar
-configuratiebestanden voor kubernetes. Deze heb ik lokaal dan getest met
+Het ontwikkelproces startte met het containeriseren van alle componenten met
+[Docker](https://www.docker.com/). Vervolgens heb ik de
+`docker-compose.yaml`-configuratie getransformeerd naar
+Kubernetes-manifestbestanden, die lokaal getest en gevalideerd werden met
 [Minikube](https://minikube.sigs.k8s.io/).
 
-## Services
+## Componenten: Services, Gateway en Frontend
 
-De applicatie die ik heb gebouwd bestaat uit **7 verschillende projecten**
-waaronder 5 _services_, 1 api-gateway en 1 react-project.
+Het volledige systeem bestaat uit **zeven afzonderlijke projecten**: vijf
+backend microservices, een API Gateway, en een React-gebaseerde frontend.
 
-De services:
+### De Microservices: Alle backend services en de API Gateway zijn ontwikkeld
 
-- `circuit-service`
-- `driver-service`
-- `gp-service`
-- `team-service`
-- `image-service` (uploaden en hosten van foto's, zoals `S3`)
+met [Spring Boot](https://spring.io/projects/spring-boot/):
 
-Zowel de services als de api-gateway maken gebruik van [Spring Boot](https://spring.io/projects/spring-boot/).
+- `circuit-service`: Beheer van circuitinformatie.
+- `driver-service`: Beheer van coureursdata.
+- `gp-service`: Beheer van Grand Prix-evenementen en resultaten.
+- `team-service`: Beheer van teaminformatie.
+- `image-service`: Een generieke service voor het uploaden en serveren van
+  afbeeldingen, vergelijkbaar met een S3-bucket functionaliteit.
 
-Binnen het netwerk, kunnen deze services data van elkaar gebruiken door
-api-requests te maken. Alle objecten worden geïdentificeerd met een
-unieke `UUID`, in plaats van een database id, omdat elke service zijn eigen
-database gebruikt.
+Binnen het Kubernetes-netwerk wisselen deze services data uit via
+API-requests. Om onafhankelijkheid van database-specifieke ID's te garanderen
+en consistentie over services heen te bewaren, worden alle entiteiten
+geïdentificeerd met een unieke `UUID`.
 
-Hiernaast heb ik voor alle **service-klassen** binnen de verschillende
-projecten **voor alle functies unittests geschreven**. Hierbij heb ik gebruik
-gemaakt van _mock data_ voor het nabootsen van antwoorden van de overige
-services.
+Een belangrijk aspect van de ontwikkeling was het waarborgen van de
+betrouwbaarheid van elke service. Hiervoor heb ik **uitgebreide unit tests
+geschreven voor alle service-klassen** binnen elk project. Deze tests maken
+gebruik van _mock data_ om de antwoorden van afhankelijke services te
+simuleren, waardoor elke service geïsoleerd getest kon worden.
 
-## Frontend
+## Frontend: Een Moderne Gebruikersinterface
 
-![Frontend Fromula 1](/img/projects/formula1_frontend_home_page.png)
+![Homepage van de Formule 1 frontend applicatie](/img/projects/formula1_frontend_home_page.png)
 
-De frontend heb ik gebouwd in [React](https://react.dev/), met behulp van
-[Shadcn/ui](https://ui.shadcn.com/) en
-[TailwindCSS](https://tailwindcss.com/). Alle formulieren worden gevalideerd
-met [zod](https://zod.dev/). Ik heb hier ook Google-login geïmplementeerd.
-Alle admin-pagina's zijn daarom ook beveiligd met deze login.
+De frontend is gebouwd met [React](https://react.dev/) en gestyled met
+[TailwindCSS](https://tailwindcss.com/), gebruikmakend van de
+componentenbibliotheek [Shadcn/ui](https://ui.shadcn.com/).
+Formuliervalidatie wordt afgehandeld door [Zod](https://zod.dev/). Google
+OAuth2 is geïntegreerd voor gebruikersauthenticatie, waarmee admin-specifieke
+pagina's en functionaliteiten beveiligd zijn.
 
-## Extra functies
+Bekijk hier enkele schermen van de applicatie:
+![Grand Prix detailpagina](/img/projects/formula1_frontend_gp_page.png)
+![Overzichtspagina van coureurs](/img/projects/formula1_frontend_drivers_page.png)
+![Formulier voor het beheren van Grand Prix data](/img/projects/formula1_frontend_gp_form.png)
 
-Naast alle bovenstaande functies, heb ik ook nog wat extra's toegevoegd. Zoals
-erg uitgebreide monitoring functionaliteit met behulp van:
+## Geavanceerde Functionaliteiten
 
-- [Prometheus](https://prometheus.io/)
-- [Grafana](https://grafana.com/)
-- [Cadviser](https://github.com/google/cadvisor)
-- [Node exporter](https://github.com/prometheus/node_exporter)
+Om de robuustheid en het operationele aspect van de applicatie te versterken,
+heb ik enkele extra features geïmplementeerd:
 
-Enkel de grafana-pod is blootgesteld aan het internet, de rest van de pods zijn enkel binnen het
-kubernetes-netwerk bereikbaar.
+### Uitgebreide Monitoring Een complete monitoring-stack is opgezet met:
 
-Nog een extraatje dat ik heb geïmplementeerd is **rate limiting** op de
-api-gateway. Deze limit op het `ip-adres` van de gebruiker en maakt gebruik van
-een [Redis](https://redis.io/) KV-database.
+- [Prometheus](https://prometheus.io/) voor het verzamelen van metrics.
+- [Grafana](https://grafana.com/) voor het visualiseren van deze metrics in
+  dashboards.
+- [cAdvisor](https://github.com/google/cadvisor) voor container-specifieke
+  monitoring.
+- [Node Exporter](https://github.com/prometheus/node_exporter) voor het
+  exporteren van host-level metrics. Enkel de Grafana-pod is extern
+  toegankelijk; de overige monitoringcomponenten opereren uitsluitend binnen
+  het Kubernetes-netwerk.
 
-## Besluit
+### Rate Limiting
 
-Ik vond dit een erg fijn project om aan te werken, omdat het een combinatie van
-hosting/infrastructuur en applicatieontwikkeling bevat. Beide zaken vind ik
-interessant en doe ik graag.
+Op de API Gateway is **rate limiting** geïmplementeerd om misbruik te
+voorkomen. Deze limiet is gebaseerd op het `IP-adres` van de gebruiker en
+maakt gebruik van een [Redis](https://redis.io/) key-value database om
+request-counts bij te houden.
 
-Het was ook al even geleden, sinds ik een kubernetes-cluster opgezet had en het
-was daarom een goede opfrisser van deze vaardigheden.
+## Conclusie: Een Leerzaam en Succesvol Project
 
-Ik ben daarom ook erg blij met het resultaat, en
-ik was niet de enige, want ik kreeg van de leraar een **20/20** voor deze opdracht!
+Dit project was bijzonder waardevol omdat het een diepgaande combinatie van
+infrastructuur/hosting-aspecten en applicatieontwikkeling vereiste – twee
+domeinen die mijn sterke interesse hebben. Het bood tevens een uitstekende
+gelegenheid om mijn kennis van Kubernetes op te frissen en verder te
+verdiepen.
+
+Ik ben zeer tevreden met het eindresultaat. Deze tevredenheid werd gedeeld
+door de docent, wat resulteerde in een **beoordeling van 20/20** voor deze
+opdracht.

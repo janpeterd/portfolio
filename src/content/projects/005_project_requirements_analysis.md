@@ -9,49 +9,77 @@ images:
   - /img/projects/req_analysis_uc_diagram.png
 ---
 
-## Analyse- en ontwerprapport voor project
+## Inleiding: De Opdracht
 
-Voor het vak Requirements analysis kregen we de opdracht om voor een realistisch project een analyse- en ontwerprapport te maken.
-Hiervoor werden de studenten in groepjes van 5 opgedeeld.
+In het kader van het vak **Requirements Analysis** kregen wij, als team van
+vijf studenten, de opdracht om een diepgaand analyse- en ontwerprapport op te
+stellen voor een realistisch softwareproject. Het primaire doel was het
+produceren van een document dat als solide blauwdruk kan dienen voor een
+ontwikkelteam, waarmee zij een volledig functioneel systeem kunnen realiseren.
 
-Het doel van deze opdracht is om een document te leveren dat achteraf door een
-groep programmeurs gebruikt kan worden om een volledig systeem uit te werken.
+## De Uitdaging: Een Planningssysteem voor Internationale Evenementen
 
-## Achtergrondinfo
+Ons team kreeg de taak een systeem te analyseren en ontwerpen dat het
+planningsproces voor een jaarlijks internationaal evenement stroomlijnt. De
+opdrachtgever, een docente aan de hogeschool, organiseert dit evenement waarbij
+zij onderwijzers uit diverse landen uitnodigt. Momenteel verloopt de volledige
+organisatie – van uitnodigingen tot agendabeheer – via Excel, wat een zeer
+tijdrovend en foutgevoelig proces is. Een specifiek voor dit doel ontwikkeld
+systeem kan hierin aanzienlijke tijdsbesparing en efficiëntiewinst opleveren.
 
-De opdracht die mijn groepje moest analyseren voor een systeem dat het
-organiseren van een internationaal evenement vergemakkelijkt. De opdrachtgever
-is een lerares aan de hogeschool en elk jaar organiseert zij een evenement
-waarbij zij verschillende onderwijzers uit verschillende landen uitnodigt. Dit
-evenement vergt veel werk om te organiseren en op dit moment doet ze alles vie
-Excel. Een systeem dat specifiek hiervoor gemaakt is kan dus enorm veel tijd en
-werk besparen.
+## Onze Aanpak: Analyse en Ontwerp
 
-Ons document bevat ook een volledige omschrijving van de eisen en achtergrondinfo, hier was ik verantwoordelijk voor binnen mijn groep.
+Ons rapport omvat een gedetailleerde beschrijving van de vereisten, de
+achtergrond van het project, en een ontwerpvoorstel. Hieronder worden de
+belangrijkste componenten van onze analyse toegelicht.
 
-## Eisenanalyse
+### Eisenanalyse met Use Cases
 
-In de eisenanalyse modelleren we alle functionele eisen van de opdrachtgever met behulp van een use case diagram. Deze analyse gaat niet over de implementatie van het systeem zelf, maar over hoe actoren het systeem kunnen gebruiken en welke acties ze ermee kunnen uitvoeren.
+De kern van onze analyse bestond uit het identificeren en modelleren van alle
+functionele eisen van de opdrachtgever. Dit hebben we gevisualiseerd met een
+**use case diagram**. Deze methode focust niet op de technische implementatie,
+maar beschrijft helder hoe verschillende actoren (zoals de organisator of
+deelnemers) het systeem zullen gebruiken en welke specifieke acties zij ermee
+kunnen uitvoeren.
 
-Elke use case hebben we dan beschreven volgens de regels. Indien er alternatieven zijn hebben we ook steeds een alternatieve flow omschreven.
+Elke use case is vervolgens gedetailleerd uitgewerkt volgens gestandaardiseerde
+beschrijvingen, inclusief eventuele alternatieve scenario's (flows) om een
+volledig beeld te schetsen van de systeeminteracties.
 
-![Een foto van ons model](/img/projects/req_analysis_uc_diagram.png)
+![Ons use case diagram dat de systeeminteracties visualiseert.](/img/projects/req_analysis_uc_diagram.png)
 
-## Prototypes
+### Interactieve Prototypes
 
-Om het concept nog duidelijk voor te stellen hebben voor elke use-case ook prototypes gemaakt. Deze prototypes zijn interactief, wat wil zeggen dat elke actie die een gebruiker in het afgewerkte systeem kan uitvoeren ook minstens een keer volledig als prototype gemaakt is.
+Om het conceptuele ontwerp tastbaarder te maken en de beoogde
+gebruikerservaring te verduidelijken, hebben we voor elke significante use case
+**interactieve prototypes** ontwikkeld. Deze prototypes simuleren de
+belangrijkste interacties die een gebruiker in het afgewerkte systeem zou
+kunnen uitvoeren, waardoor een concrete impressie van de werking en flow van
+het systeem ontstaat.
 
-Ikzelf heb enkele prototypes gemaakt.
+### Prioritering volgens MoSCoW
 
-## Prioriteiten toewijzen
+Om richting te geven aan een eventueel ontwikkeltraject, hebben we de
+geïdentificeerde functies en systeemcomponenten geprioriteerd. Hiervoor pasten
+we de **MoSCoW-methode** toe, waarbij functionaliteiten worden ingedeeld in:
 
-Ten slotte hebben we de verschillende functies en componenten van het systeem gegroepeerd per prioriteit. Deze verdeling volgt de **MoSCoW methode**, hierbij staat MoSCoW voor:
+- **M**ust have (essentieel voor het functioneren)
+- **S**hould have (belangrijk, maar niet cruciaal voor de basiswerking)
+- **C**ould have (wenselijk indien tijd en middelen het toelaten)
+- **W**ould like to have (leuk voor de toekomst, maar nu niet noodzakelijk)
 
-- Must
-- Should
-- Could
-- Would
+## Mijn Bijdrage
 
-De verdeling van deze onderdelen heb ik gedaan in mijn groep.
+Binnen dit groepsproject was ik specifiek verantwoordelijk voor:
 
-Het volledige rapport kan u [hier](/doc/projects/Analyse-en-ontwerprapport_TVE2.pdf) lezen.
+- Het uitwerken van de volledige omschrijving van de eisen en de
+  achtergrondinformatie.
+- Het ontwikkelen van een aantal van de interactieve prototypes.
+- Het toepassen van de MoSCoW-methode voor de prioritering van de
+  systeemonderdelen.
+
+## Volledig Rapport
+
+Het volledige analyse- en ontwerprapport, dat een gedetailleerd overzicht biedt
+van onze bevindingen en aanbevelingen, kunt u
+[hier](/doc/projects/Analyse-en-ontwerprapport_TVE2.pdf) downloaden en inzien.

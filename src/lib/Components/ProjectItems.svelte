@@ -26,7 +26,7 @@
 </script>
 
 {#if totalItems > 0}
-  <div class="mb-12 flex max-w-lg flex-col gap-4 rounded-lg bg-white/10 p-6">
+  <div class="mb-12 flex max-w-2xl flex-col gap-2 rounded-lg bg-white/10 p-6">
     <h2 class="flex gap-4 border-b-2 border-b-gray-600/20 pb-4 text-lg font-bold">
       <Icon icon="mdi:attachment" width="2rem" class="text-secondary" />
       Bijlagen
@@ -36,10 +36,10 @@
         href={attachment}
         target="_blank"
         rel="noopener noreferrer"
-        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
+        class={`flex items-center gap-2 text-sm font-medium transition-all hover:text-white hover:underline`}>
         <Icon
           icon={getIconByExtension(attachment.replace(/.*\.(.*?$)/, '$1'))}
-          width="2.0rem"
+          width="1.8rem"
           class={`${getColorByExtension(attachment.replace(/.*\.(.*?$)/, '$1')) ?? 'text-secondary'}`} />
         <span class="font-bold">{pathToFileName(attachment)}</span>
         <Icon icon="mdi:external-link" width="1rem" />
@@ -51,8 +51,8 @@
         href={props?.data?.repo}
         target="_blank"
         rel="noopener noreferrer"
-        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
-        <Icon icon={iconColor.icon} width="2.0rem" class={iconColor.textcolor} />
+        class={`flex items-center gap-2 text-sm font-medium transition-all hover:text-white hover:underline`}>
+        <Icon icon={iconColor.icon} width="1.8rem" class={iconColor.textcolor} />
         <span class="font-bold">{new URL(props?.data?.repo).pathname}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>
@@ -63,8 +63,8 @@
         href={repo}
         target="_blank"
         rel="noopener noreferrer"
-        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
-        <Icon icon={iconColor.icon} width="2.0rem" class={iconColor.textcolor} />
+        class={`flex items-center gap-2 text-sm font-medium transition-all hover:text-white hover:underline`}>
+        <Icon icon={iconColor.icon} width="1.8rem" class={iconColor.textcolor} />
         <span class="font-bold">{new URL(repo).pathname}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>
@@ -74,8 +74,8 @@
         href={props?.data?.link}
         target="_blank"
         rel="noopener noreferrer"
-        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
-        <Icon icon="iconamoon:link-external-duotone" width="2.0rem" class="text-[#008FE6]" />
+        class={`flex items-center gap-2 text-sm font-medium transition-all hover:text-white hover:underline`}>
+        <Icon icon="iconamoon:link-external-duotone" width="1.8rem" class="text-[#008FE6]" />
         <span class="font-bold">{props?.data?.link}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>
@@ -85,8 +85,8 @@
         href={props?.data?.video}
         target="_blank"
         rel="noopener noreferrer"
-        class={`flex items-center gap-2 font-medium transition-all hover:text-white`}>
-        <Icon icon="mdi:video-box" width="2.0rem" class="text-red-500" />
+        class={`flex items-center gap-2 text-sm font-medium transition-all hover:text-white hover:underline`}>
+        <Icon icon="mdi:video-box" width="1.8rem" class="text-red-500" />
         <span class="font-bold">{props?.data?.video}</span>
         <Icon icon="mdi:external-link" width="1rem" />
       </a>

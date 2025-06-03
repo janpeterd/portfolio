@@ -13,29 +13,74 @@ technologies:
   - bash
 ---
 
-## Website Isabel Dhallé
+## Aanleiding
 
-Mijn zus studeert viool aan het conservatorium van Antwerpen. Op een dag vroeg ze aan mij of ik voor haar een website kon maken, zodat mensen haar konden terugvinden op het internet.
+Toen mijn zus Isabel, violiste aan het conservatorium van Antwerpen, me vroeg
+om een website voor haar te maken, stond ik aan het begin van mijn studie
+Toegepaste Informatica. Deze vraag markeerde het begin van een leerzaam traject
+en mijn eerste "echte" webproject.
 
-Toen zij deze vraag stelde zat ik in mijn eerste jaar toegepaste informatica. Hier had ik juist wat geleerd over HTML en CSS en dus ging ik aan de slag.
+## Initiële Versie: HTML & CSS
 
-Dit was de eerste website die ik voor iemand maakte. De website op zich was niet veel speciaals. Toch heb ik erg veel geleerd door dit project uit te voeren. Achteraf heb ik nog vele andere websites gemaakt en de ervaring die ik met dit project opgedaan had, gaf me een duidelijke voorsprong op vele van mijn medestudenten.
+Met de verse kennis van HTML en CSS uit mijn eerstejaarsvakken ging ik aan de
+slag. De eerste versie van [isabeldhalle.be](https://isabeldhalle.be) werd
+volledig handmatig gecodeerd. Hoewel functioneel, bracht dit een belangrijk
+nadeel met zich mee: elke wijziging vereiste handmatige aanpassingen in de code
+en een nieuwe deployment. Dit was omslachtig en niet gebruiksvriendelijk voor
+Isabel.
 
-## Eerste versie
+## Evolutie naar Django: Een MVC-aanpak
 
-Zoals ik hierboven omschreef was de eerste versie volledig met de hand geschreven in pure HTML en CSS. Dit was veel werk, maar dat vond ik niet zo erg.
-Het probleem was dat ik achteraf, bij elke verandering, de code moest veranderen en opnieuw online zetten. Dit was niet praktisch. Daarom had ik besloten om de website om te zetten naar een MVC-website met login, zodat Isabel zelf haar website kon aanpassen.
+Om Isabel de mogelijkheid te geven haar website zelfstandig te beheren, besloot
+ik de site om te bouwen naar een dynamische webapplicatie met een
+Model-View-Controller (MVC) architectuur. De keuze viel op **Django**, een
+krachtig Python-framework.
 
-## Django
+![over mij-pagina](/img/projects/isabel_about.png)
+![concertenpagina](/img/projects/isabel_concerts.png)
+![contactpagina](/img/projects/isabel_contact.png)
 
-Deze tweede versie was niet makkelijk om te maken. Ik had nog nooit een MVC-website gemaakt of met [Django](https://www.djangoproject.com/) gewerkt. In dit project heb ik dus voor de eerste keer kennisgemaakt met een hoop belangrijke concepten die ik pas in het tweede jaar van mijn studies zou tegenkomen.
+Deze transitie was een significante uitdaging. Concepten als MVC, databases,
+ORM, en templating waren destijds nieuw voor mij en zouden pas later in mijn
+studie uitgebreid aan bod komen. Door intensief documentatie te bestuderen en
+te experimenteren, slaagde ik erin de website succesvol te migreren. De nieuwe
+versie bevatte belangrijke functionaliteiten zoals:
 
-Door veel documentatie te lezen en bij te leren over deze concepten is het mij toch gelukt om de website te converteren.
+- Een **beheersysteem voor concerten**, waarmee Isabel zelf concertdata kon
+  toevoegen, wijzigen en verwijderen.
+  ![admin](/img/projects/isabel_manage.png)
 
-## Hosting
+- Een **Markdown-editor** voor het bewerken van de "Over Mij"-pagina, wat
+  rich text opmaak mogelijk maakte op een gebruiksvriendelijke manier.
+  ![admin](/img/projects/isabel_richtext.png)
 
-Het hosten van de website was ook volledig nieuw voor mij. Om de website online te krijgen heb ik moeten bijleren over domeinen, VPS-servers, webservers, etc.
+- Volledige **tweetaligheid** (Nederlands en Frans), zodat de content voor
+  een breder publiek toegankelijk werd.
 
-Uiteindelijk heb ik gekozen voor DigitalOcean voor het hosten van de website.
+Dit project bood een vroege, diepgaande kennismaking met backend-ontwikkeling
+en het implementeren van concrete gebruikersfeatures.
 
-Interesse? Bekijk de website [hier](https://isabeldhalle.be).
+## Hosting en Deployment
+
+Ook het online brengen van de Django-applicatie was een leerproces. Ik
+verdiepte me in domeinnamen, DNS, Virtual Private Servers (VPS), webservers
+(zoals Nginx/Gunicorn), en het beveiligen van een server. Uiteindelijk koos ik
+voor DigitalOcean als hostingprovider, waar ik de applicatie succesvol heb
+gedeployd.
+
+## Leerresultaten en Stabiliteit
+
+Dit project was fundamenteel voor mijn ontwikkeling als programmeur. Het bood
+niet alleen praktische ervaring met HTML, CSS, Python en Django, maar ook met
+de volledige ontwikkelcyclus, van initiële vraag tot deployment en onderhoud.
+De opgedane kennis en het probleemoplossend vermogen gaven me een waardevolle
+voorsprong in latere projecten en studies.
+
+Een bewijs van de robuustheid van de gekozen technologieën en de opzet is dat
+de website ondertussen al jaren stabiel online staat, met minimaal onderhoud,
+weinig tot geen downtime en zonder noemenswaardige problemen.
+
+![Isabel monitoring](/img/projects/isabel_status.png)
+
+De website is nog steeds actief en te bezoeken via
+[isabeldhalle.be](https://isabeldhalle.be).

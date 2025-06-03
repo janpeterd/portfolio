@@ -33,6 +33,6 @@
   .bottom-gradient {
     z-index: -10;
     mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: radial-gradient(80vw 80vh at 20% 130%, theme(colors.green.500 / 30%), transparent);
+    background: radial-gradient(80vw 80vh at 20% 130%, theme(colors.green.600 / 20%), transparent);
   }
 </style>

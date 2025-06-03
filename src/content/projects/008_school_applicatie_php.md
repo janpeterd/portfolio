@@ -12,81 +12,65 @@ technologies:
   - git
 ---
 
-# De opdracht
+## De Uitdaging: Een Centrale Hub voor Projectgestuurd Onderwijs
 
-In het tweede semester van mijn tweede jaar toegepaste informatica was het tijd
-om een groot project volledig uit te werken in `PHP`. Voor deze opdracht werden
-we in groepjes verdeeld en moesten we verder werken vanuit het verslag van een
-ander groepje uit het eerste semester. Dit verslag bevatte informatie over de
-opdracht, uitgewerkte prototypes en use cases.
+In het tweede semester van mijn tweede jaar Toegepaste Informatica stond een omvangrijk `PHP`-project centraal. In teamverband kregen we de opdracht om voort te bouwen op een analyse- en ontwerprapport dat door een ander team in het eerste semester was opgesteld. Dit rapport bevatte de initiële projectinformatie, uitgewerkte prototypes en use cases.
 
-De opdracht die ik met mijn groepje heb uitgewerkt is het maken van een
-webapplicatie voor de richting _Digital innovation_. Dit is een richting die
-aangeboden wordt door de campus. Studenten die voor deze richting kiezen
-behalen alle eindtermen en leerdoelen door het voltooien van projecten. Ze
-hebben dus erg weinig of geen theoretische vakken.
+Ons team kreeg de taak een webapplicatie te ontwikkelen specifiek voor de onderwijsrichting **Digital Innovation** binnen onze campus. Kenmerkend voor deze richting is dat studenten alle eindtermen en leerdoelen behalen door het succesvol afronden van projecten, met minimale of geen traditionele theorielessen. Onze applicatie moest dienen als een centrale, digitale omgeving waarbinnen al deze projecten beheerd, gedocumenteerd en gevolgd konden worden.
 
-Onze applicatie moet een centrale plaats vormen waar al deze projecten
-uitgewerkt kunnen worden.
+## Doelgroepen en Kernfunctionaliteiten
 
-## Gebruikers
+De te ontwikkelen webapplicatie moest toegankelijk zijn voor vier verschillende gebruikerstypes, elk met eigen rechten en mogelijkheden:
 
-De applicatie moet door vier types van gebruikers gebruikt worden deze zijn:
+- **Student:** Kan projecten bekijken, interesse tonen, bestanden uploaden, tijd registreren, en blogposts publiceren.
+- **Docent:** Beheert projectideeën (accepteren/verwijderen), wijst studenten toe aan projecten, beheert rollen, leerdoelen en projectdetails.
+- **Administrator:** Heeft volledige controle over gebruikersbeheer (inclusief genders, logins), systeembrede instellingen, en andere administratieve taken.
+- **Bedrijfscontact:** Kan projectideeën indienen ter overweging door docenten.
 
-- `student`
-- `docent`
-- `administrator`
-- `bedrijfscontact`
+De applicatie moest een breed scala aan functionaliteiten ondersteunen, waaronder:
 
-## Functies
+- **Projectmanagement:** Indienen, goedkeuren, en beheren van projecten en projectideeën.
+- **Gebruikers- en Rollenbeheer:** Toewijzen van studenten aan projecten en beheren van specifieke rollen binnen teams.
+- **Content Management:** Uploaden van projectbestanden, schrijven en publiceren van blogposts.
+- **Tijdsregistratie:** Gedetailleerd bijhouden van bestede tijd per project of taak door studenten.
+- **Beheer van Onderwijscomponenten:** Creëren en beheren van leerdoelen en rollen.
+- **Systeembeheer:** Accountaanvragen, authenticatie (login, wachtwoordherstel), e-mailnotificaties (met templates), en meertaligheid (Engels en Nederlands).
 
-De webapplicatie moet vele verschillende functionaliteiten hebben. Enkele voorbeelden:
+## Technische Stack en Hosting
 
-- bedrijven moeten projectideeën kunnen doorgeven
-- docent moet deze ideeën kunnen accepteren of verwijderen
-- docent moet studenten op een project zetten, en rollen veranderen
-- docent moet leerdoelen, rollen, projecten kunnen beheren
-- studenten kunnen voorgestelde projecten zien en zich opgeven als geïnteresseerde
-- studenten kunnen bestanden uploaden voor een project
-- studenten kunnen hun tijdsbestedingen registreren voor elk project of andere taak
-- studenten kunnen blogposts schrijven en publiceren
-- administrator moet genders, gebruikers, logins, etc. kunnen beheren
-- en nog veel meer (accountaanvragen, authenticatie, wachtwoordreset, e-mailverzendingen en templates, lokalisatie (Engels en Nederlands)), ...
+Voor de realisatie van dit project hebben we gekozen voor de volgende technologieën:
 
-# Technologieën
+- **Backend:** `PHP` met het robuuste [`Laravel`](https://laravel.com/) framework.
+- **Database:** `MySQL` voor dataopslag.
+- **Frontend Dynamiek:** [`Livewire`](https://livewire.laravel.com/) om interactieve interfaces te bouwen zonder complexe JavaScript-frameworks.
+- **Styling:** [`TailwindCSS`](https://tailwindcss.com/) voor een utility-first benadering van het ontwerp.
 
-De applicatie is geschreven in `PHP` met het [`Laravel`](https://laravel.com/) framework. Als database gebruiken we `MySQL`. Om dynamische webpagina's te voorzien gebruiken we [`Livewire`](https://livewire.laravel.com/). De styling van de webpagina's doen we met behulp van [`TailwindCss`](https://tailwindcss.com/).
+De applicatie wordt gehost op een Virtual Machine (VM) via [Combell](https://www.combell.com/nl/).
 
-# Hosting
+## Samenwerking en Teamdynamiek
 
-De hosting doen we op [Combell](https://www.combell.com/nl/) op een `VM`.
+De teamindeling was gebaseerd op de resultaten van het PHP-examen uit het eerste semester. Dit resulteerde in een team waarin elk lid een solide basiskennis van PHP bezat en gemotiveerd was om kwalitatief werk te leveren.
 
-# Samenwerking
+De samenwerking binnen ons team verliep uitstekend. Er waren geen significante conflicten die de voortgang belemmerden. Taken werden vooraf duidelijk verdeeld, en elk teamlid nam verantwoordelijkheid voor zijn of haar toegewezen onderdelen. Waar overlap was of vergelijkbare functionaliteiten ontwikkeld moesten worden, werkten we nauw samen en deelden we code. Alle taken, verantwoordelijkheden en de voortgang werden nauwgezet bijgehouden op ons [Jira](https://www.atlassian.com/software/jira)-bord.
 
-De teams waren verdeeld op basis van de examenresultaten van het examen PHP uit het eerste semester. Ik had hier een goede score op behaald, dus ik belandde in een groep met teamgenoten die een gelijkaardige score behaald hadden. Dit zorgt ervoor dat elk teamlid goed begrijpt waar hij mee bezig is en ook de nodig moeite wil doen om dit op een goede manier te implementeren.
+## Mijn Specifieke Bijdragen
 
-Naast de vaardigheden van elk teamlid zijn er nooit grote conflicten geweest die de samenwerking blokkeerde. Ik denk dat we erg goed werken als een team. De taken worden op voorhand duidelijk verdeeld en iedereen voltooid zijn deel. Als bepaalde delen gelijkaardig zijn, dan wordt er samengewerkt en code gedeeld. De taken en verantwoordelijken per taak worden ook allemaal bijgehouden op ons [Jira](https://www.atlassian.com/software/jira)-bord.
+Binnen dit project heb ik me geconcentreerd op de volgende kernonderdelen:
 
-## Mijn bijdrage
+- **Ontwikkeling van de projectbeheerpagina:** Dit was een complexe module die data uit diverse databasetabellen moest samenvoegen en presenteren. Functionaliteiten zoals het uploaden van bestanden en het aanpassen van rollen waren hierin geïntegreerd.
+- **Implementatie van de tijdsregistratiemodule voor studenten:** Hiermee kunnen studenten hun gewerkte uren per project of taak registreren.
+- **Frontend Styling:** Ik heb significant bijgedragen aan de `TailwindCSS`-styling van datatabellen op diverse pagina's en was medeverantwoordelijk voor het ontwerp van de overkoepelende layout die consistent door de hele applicatie wordt gebruikt.
+- **Verbetering van Dashboard Pagina's:** De visuele presentatie en gebruiksvriendelijkheid van diverse dashboard-pagina's heb ik verfijnd.
+- **Algemene Bugfixing en Ondersteuning:** Daarnaast heb ik actief meegeholpen aan het identificeren en oplossen van bugs en problemen op andere pagina's.
 
-Ik heb de pagina voor het beheren van de projecten op mij genomen. Dit was een redelijk complexe pagina, want hiervoor moest ik vele verschillende soorten data combineren. Deze data staat in de database over verschillende tabellen verspreid. Ook is het mogelijk om op deze pagina bestanden te uploaden, rollen te veranderen, etc.
+## Huidige Status en Voorlopige Resultaten
 
-Een andere grote pagina die ik op mij heb genomen is de pagina waarop studenten hun tijdregistratie kunnen uitvoeren.
+Op het moment van schrijven is het project nog in de afrondende ontwikkelingsfase. De meeste kernfunctionaliteiten zijn geïmplementeerd en operationeel. Enkele details en verfijningen worden momenteel nog uitgewerkt. Onderstaande screenshots geven een impressie van de applicatie (de getoonde data is uitsluitend voor testdoeleinden).
 
-Verder heb ik ook veel gewerkt aan de `Tailwind`-styling van de tabellen op de verschillende webpagina's en heb ik meegewerkt aan het ontwerp van de layout, die op alle pagina's gebruikt wordt.
-
-Ook heb ik de styling van alle dashboard-pagina's verbeterd.
-
-Ten slotte heb ik op andere pagina's meegeholpen aan het oplossen van fouten en problemen.
-
-# Resultaat
-
-Ik schrijf dit artikel op een moment dat het project nog in ontwikkeling is. Op dit moment werken alle functionaliteiten bijna volledig. Er moeten nog wat details uitgewerkt worden. Hier zijn enkele screenshots. De data die nu weergegeven wordt is enkel voor testing.
-
-![Homepage gebruiker zonder authenticatie](/img/projects/php_project_home.png)
-![Projectoverzicht voor docent](/img/projects/php_project_projects.png)
-![Projectinfo voor docent](/img/projects/php_project_projectinfo.png)
-![Leerdoelen overzicht](/img/projects/php_project_learnobj.png)
-![Nieuw project toevoegen](/img/projects/php_project_newproject.png)
-![Student tijdsregistratie overzicht](/img/projects/php_project_time.png)
-![Student tijdsregistratie formulier](/img/projects/php_project_timeform.png)
+![Homepage voor niet-geauthenticeerde gebruikers](/img/projects/php_project_home.png)
+![Projectoverzicht voor docenten](/img/projects/php_project_projects.png)
+![Detailpagina van een project voor docenten](/img/projects/php_project_projectinfo.png)
+![Overzicht van leerdoelen](/img/projects/php_project_learnobj.png)
+![Formulier voor het toevoegen van een nieuw project](/img/projects/php_project_newproject.png)
+![Overzicht van tijdsregistraties voor studenten](/img/projects/php_project_time.png)
+![Formulier voor het invoeren van tijdsregistratie door studenten](/img/projects/php_project_timeform.png)
