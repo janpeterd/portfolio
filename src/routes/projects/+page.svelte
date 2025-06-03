@@ -40,22 +40,20 @@
   }
 
   // Extract all unique technologies from posts
-  // This derived state is never ran and the usedTechnologiesArray is empty can you fix this? AI!
   const usedTechnologiesArray = $derived(() => {
     const techSet = new Set()
-    posts.forEach((post) => {
-      console.log('POST', post)
-      console.log('POST TECH', post.technologies)
-      if (post && post.technologies && Array.isArray(post.technologies)) {
-        post.technologies.forEach((tech) => {
-          console.log('TECH loop', tech)
-          if (tech && typeof tech === 'string') {
-            console.log('adding to set')
-            techSet.add(tech.trim())
-          }
-        })
-      }
-    })
+    // Access posts through data to maintain reactivity
+    if (data.posts) {
+      data.posts.forEach((post) => {
+        if (post?.technologies?.length) {
+          post.technologies.forEach((tech) => {
+            if (typeof tech === 'string') {
+              techSet.add(tech.trim())
+            }
+          })
+        }
+      })
+    }
     return Array.from(techSet).sort((a, b) => a.localeCompare(b))
   })
 
