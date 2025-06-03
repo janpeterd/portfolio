@@ -1,6 +1,5 @@
 <script>
-  console.log('Svelte component script executing')
-
+  // in this file can you add support specifically with the technilogyfilter to allow multiple technologies to be selected? AI!
   import ProjectThumb from '$lib/Components/ProjectThumb.svelte'
   import Icon from '@iconify/svelte'
   import { onMount } from 'svelte'
@@ -12,10 +11,7 @@
   import HomeTitle from '$lib/Components/HomeTitle.svelte'
 
   let { data } = $props()
-  const { posts = [] } = data
-
-  console.log('Component loaded, data:', data)
-  console.log('Posts from data:', posts)
+  const { posts } = data
 
   const sortOptions = [
     { label: 'Datum', value: 'date' },
@@ -40,11 +36,10 @@
   }
 
   // Extract all unique technologies from posts
-  const usedTechnologiesArray = $derived(() => {
+  const usedTechnologiesArray = () => {
     const techSet = new Set()
-    // Access posts through data to maintain reactivity
-    if (data.posts) {
-      data.posts.forEach((post) => {
+    if (posts) {
+      posts.forEach((post) => {
         if (post?.technologies?.length) {
           post.technologies.forEach((tech) => {
             if (typeof tech === 'string') {
@@ -55,26 +50,24 @@
       })
     }
     return Array.from(techSet).sort((a, b) => a.localeCompare(b))
-  })
+  }
 
   // Create technology options with "All" option
-  const technologyOptions = $derived(() => {
+  const technologyOptions = () => {
     const baseOptions = [{ label: 'Alle Technologieën', value: 'all' }]
-    const dynamicOptions = usedTechnologiesArray.map((techName) => ({
-      label: techName,
+    const dynamicOptions = usedTechnologiesArray().map((techName) => ({
+      label: techName.at(0).toUpperCase() + techName.slice(1),
       value: techName
     }))
     return [...baseOptions, ...dynamicOptions]
-  })
+  }
 
-  // Initialize technology filter - simplified approach
   const getInitialTechnologyFilter = () => {
     const techFromUrl = initialUrlParams.get('technology')
     if (!techFromUrl || techFromUrl === 'all') {
       return 'all'
     }
 
-    // Check if the technology from URL exists in our posts
     const techExists = posts.some((post) =>
       post.technologies?.some((tech) => tech.toLowerCase() === techFromUrl.toLowerCase())
     )
@@ -87,18 +80,18 @@
   // Combined Filters Configuration for UI
   let filters = $derived([
     {
+      id: 'technology',
+      label: 'Technologie',
+      state: technologyFilter,
+      options: technologyOptions(),
+      withDirection: false
+    },
+    {
       id: 'sort',
       label: 'Sorteer',
       state: sort,
       options: sortOptions,
       withDirection: true
-    },
-    {
-      id: 'technology',
-      label: 'Technologie',
-      state: technologyFilter,
-      options: technologyOptions,
-      withDirection: false
     }
   ])
 
@@ -219,7 +212,7 @@
               class="flex items-center justify-center rounded-lg bg-primary font-semibold text-neutral-300/80">
               {#if filter.withDirection}
                 <select
-                  class="rounded-l-lg border-b-0 border-l-0 border-r-2 border-t-0 border-r-white/20 bg-primary py-1 pl-3 pr-2 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
+                  class="rounded-l-lg border-b-0 border-l-0 border-r-2 border-t-0 border-r-white/20 bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
                   id={filter.id}
                   bind:value={filter.state.option.value}>
                   {#each filter.options as option (option.value)}
@@ -235,7 +228,7 @@
                 </button>
               {:else}
                 <select
-                  class="rounded-lg border-none bg-primary py-1 pl-3 pr-2 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
+                  class="rounded-lg border-none bg-primary py-1 pl-3 pr-8 text-base focus:outline-none focus:ring-1 focus:ring-secondary"
                   id={filter.id}
                   bind:value={filter.state.value}>
                   {#each filter.options as option (option.value)}
@@ -250,7 +243,7 @@
     </div>
     <!-- DEBUG: Force derived to run -->
     <div style="display: none;">
-      Debug technologies: {JSON.stringify(usedTechnologiesArray)}
+      Debug technologies: {JSON.stringify(usedTechnologiesArray())}
     </div>
 
     <ul class="my-12 grid w-full gap-16 overflow-y-auto lg:grid-cols-3 lg:gap-x-0 lg:gap-y-5">
