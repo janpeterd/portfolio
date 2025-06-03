@@ -14,9 +14,9 @@
       loading="eager"
       sizes="min(1300px, 100vw)" />
   </div>
-  <div
-    class="mt-2 flex flex-col items-center justify-center gap-1 text-center font-bold uppercase opacity-30">
-    <span class="text-3xl">Full stack Developer</span>
+  <div class="mt-2 flex flex-col items-center justify-center gap-1 text-center">
+    <span class="text-3xl font-bold uppercase opacity-30">Student Applicatieontwikkeling</span>
+    <span class="text-sm opacity-35">Welkom op mijn portfoliowebsite</span>
   </div>
 
   <a href="#about" class="absolute -bottom-16 animate-bounce" aria-label="Scroll down">
