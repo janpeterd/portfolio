@@ -8,5 +8,6 @@ export async function POST({ request, cookies }) {
    */
   const { technologyNames } = /** @type {RequestBody} */ (await request.json())
   const technologies = await getTechnologies()
+  // the goal of this endpoint is to return all technolgy objects where the name is in the technologyNames array, implement this AI!
   return json(technologies)
 }
