@@ -73,18 +73,9 @@
       </p>
       <p class="mt-6 text-lg leading-8 text-muted-foreground">
         Als afsluiting van mijn opleiding liep ik drie maanden stage bij
-        <strong class="text-foreground">{stageData.companyName}</strong>
-        , een IT-consultancybedrijf met focus op Java en Spring.
+        <strong class="text-foreground">{stageData.companyName},</strong>
+        een IT-consultancybedrijf met focus op Java en Spring.
       </p>
-
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a
-          href={stageData.blogPostLink}
-          class="inline-flex items-center gap-x-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-          Lees het artikel
-          <Icon icon="mdi:arrow-right" class="h-5 w-5" aria-hidden="true" />
-        </a>
-      </div>
 
       <a href={stageData.companyWebsite} target="_blank" rel="noopener noreferrer">
         <img
@@ -154,6 +145,14 @@
             </li>
           {/each}
         </ul>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a
+            href={stageData.blogPostLink}
+            class="inline-flex items-center gap-x-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+            Lees het artikel
+            <Icon icon="mdi:arrow-right" class="h-5 w-5" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
