@@ -104,7 +104,7 @@
     </div>
 
     <div
-      class="mx-auto mt-4 flex w-full max-w-full flex-col gap-6 px-4 md:flex-row md:gap-8 lg:gap-12">
+      class="mx-auto mt-4 flex w-full max-w-full flex-col gap-6 px-4 md:gap-8 lg:flex-row lg:gap-12">
       <!-- Main Content Area (Post) -->
       <div class="md:order-0 grow-1 order-1 md:flex-1 md:overflow-x-hidden">
         <article class="flex w-full flex-col gap-6 md:gap-8 lg:gap-10">
@@ -122,7 +122,7 @@
 
       <!-- Sidebar -->
       {#if data.meta}
-        <div class="order-0 shrink-0 md:order-1 md:w-72 lg:hidden lg:w-80">
+        <div class="order-0 shrink-0 lg:hidden">
           <ProjectMeta data={data.meta} technologies={data.technologies} />
         </div>
       {/if}
