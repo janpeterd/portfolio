@@ -9,11 +9,12 @@
     register()
   })
 
-  // All data is neatly organized here for easy management.
   const stageData = {
     companyLogo: { src: '/img/stage/lykios.png', alt: 'Logo van Lykios' },
     companyName: 'Lykios',
+    companyWebsite: 'https://lykios.be',
     projectTitle: 'Stage: Ontwikkeling van een quizplatform',
+    blogPostLink: '/projects/015_qurio_stage',
     highlights: [
       {
         icon: 'mdi:lightbulb-on-outline',
@@ -75,13 +76,24 @@
         <strong class="text-foreground">{stageData.companyName}</strong>
         , een IT-consultancybedrijf met focus op Java en Spring.
       </p>
-      <img
-        src={stageData.companyLogo.src}
-        alt={stageData.companyLogo.src}
-        class="mx-auto size-40" />
+
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href={stageData.blogPostLink}
+          class="inline-flex items-center gap-x-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          Lees het artikel
+          <Icon icon="mdi:arrow-right" class="h-5 w-5" aria-hidden="true" />
+        </a>
+      </div>
+
+      <a href={stageData.companyWebsite} target="_blank" rel="noopener noreferrer">
+        <img
+          src={stageData.companyLogo.src}
+          alt={stageData.companyLogo.alt}
+          class="mx-auto mt-8 size-40" />
+      </a>
     </div>
 
-    <!-- 3-Column Highlights Grid -->
     <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
       <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
         {#each stageData.highlights as item}
