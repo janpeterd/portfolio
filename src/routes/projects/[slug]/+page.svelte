@@ -53,7 +53,7 @@
 
 <div class="w-full">
   <SectionDivider class="text-transparent dark:text-primary" />
-  <div class="w-full max-w-full overflow-hidden bg-background-alt">
+  <div class="w-full max-w-full overflow-hidden bg-background-alt pt-12 md:pt-0">
     <div class="flex items-center py-2">
       <button onclick={navigate_back} class="z-50 mr-4 rounded-full text-center md:mr-8">
         <Icon icon="mdi:arrow-left" width="2rem" />

@@ -3,7 +3,7 @@
   import Icon from '@iconify/svelte'
 </script>
 
-<div class="relative flex h-screen w-full flex-col items-center justify-center">
+<div class="relative flex h-[100dvh] w-full flex-col items-center justify-center">
   <div class="fixed top-0 -z-10 mx-auto mb-0 h-full w-full blur brightness-[30%]">
     <enhanced:img
       class="mx-auto size-full object-cover object-center"

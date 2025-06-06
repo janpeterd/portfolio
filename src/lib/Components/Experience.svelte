@@ -67,11 +67,12 @@
               href={entry.link || '#'}
               target={entry.link ? '_blank' : '_self'}
               rel={entry.link ? 'noopener noreferrer' : ''}
-              class="ml-16 block rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+              class="ml-16 block rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+              class:pointer-events-none={!entry.link}>
               <!-- Card Header -->
               <div
-                class="flex flex-wrap items-center justify-between gap-4 border-b border-border p-4 md:p-5">
-                <div class="flex flex-shrink-0 items-center gap-4">
+                class="flex flex-wrap items-center justify-between gap-4 overflow-x-hidden border-b border-border p-4 md:p-5">
+                <div class="flex w-full flex-shrink-0 items-center gap-4">
                   {#if entry.image}
                     <div
                       class="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-md border border-border bg-background p-2 md:h-24 md:w-24">
