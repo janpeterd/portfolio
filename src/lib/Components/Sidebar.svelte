@@ -168,7 +168,7 @@
             href={link.href}
             class="group flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
             class:bg-primary={current}
-            class:text-secondary-foreground={current}
+            class:text-primary-foreground={current}
             class:text-muted-foreground={!current}
             class:hover:text-muted-foreground={!current}
             class:hover:bg-muted={!current}
