@@ -1,8 +1,10 @@
 ---
 title: TagMaster, cross-platform app met AI
 date: 2024-11-10
+projectType: Schoolproject
 thumbnail: /img/projects/tagmaster_edit_list.png
-repo: https://github.com/janpeterd/tagmaster
+repos:
+  - https://github.com/janpeterd/tagmaster
 images:
   - /img/projects/tagmaster_edit_list.png
 technologies:
@@ -10,58 +12,36 @@ technologies:
   - dotnet
 ---
 
-## De Uitdaging: Een Native Applicatie met AI-Integratie
+### 1. Inleiding
 
-Voor dit project was de opdracht het ontwikkelen van een 'native' applicatie
-met behulp van het [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui?view=net-maui-9.0)
-framework, met een verplichte integratie van Artificiële Intelligentie via
-[Microsoft Azure AI Services](https://azure.microsoft.com/nl-nl). Dit bracht
-mij op het idee voor **TagMaster**, een applicatie ontworpen om het
-organiseren en terugvinden van foto's significant te vereenvoudigen.
+#### De Opdracht: Een Native Applicatie met AI-Integratie
 
-## Het Concept: TagMaster - Automatische Fototagging en Beschrijving
+Voor dit schoolproject was de uitdaging helder: ontwikkel een ‘native’ cross-platform applicatie met het **.NET MAUI** framework, met een verplichte integratie van Artificiële Intelligentie via **Microsoft Azure AI Services**. Deze opdracht bracht mij op het idee voor **TagMaster**, een applicatie ontworpen om het organiseren en terugvinden van digitale foto's significant te vereenvoudigen.
 
-TagMaster stelt gebruikers in staat om foto's te importeren, waarna de
-applicatie Azure AI gebruikt om automatisch een relevante beschrijving en een
-set bijpassende tags voor elke foto te genereren. Deze metadata wordt
-vervolgens opgeslagen, waardoor gebruikers in een overzichtelijke
-lijstweergave eenvoudig kunnen filteren op specifieke tags om snel de
-gewenste foto's te lokaliseren. Het doel is om de vaak tijdrovende taak van
-handmatig taggen te automatiseren en de doorzoekbaarheid van fotocollecties
-te verbeteren.
+### 2. Wat is TagMaster?
+
+#### Een Slimme Oplossing voor Foto-organisatie
+
+TagMaster is een cross-platform applicatie die de tijdrovende taak van het handmatig taggen van foto's automatiseert. Gebruikers importeren hun foto's, waarna de applicatie Azure AI inzet om voor elke afbeelding automatisch een relevante beschrijving en een set bijpassende tags te genereren.
+
+Deze metadata wordt lokaal opgeslagen, waardoor gebruikers in een overzichtelijke lijstweergave eenvoudig kunnen filteren op specifieke tags om snel de gewenste foto's te vinden. Het doel is om de doorzoekbaarheid van fotocollecties te verbeteren en het beheer ervan efficiënter te maken.
 
 ![Lijstweergave van afbeeldingen met filteropties en bewerkingspagina in TagMaster](/img/projects/tagmaster_edit_list.png)
 
-## Technische Architectuur en Implementatie
+### 3. De Technische Aanpak
 
-De ontwikkeling van TagMaster is gebaseerd op de volgende technologische
-keuzes:
+#### Framework en Architectuur
 
-- **Framework:** [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui?view=net-maui-9.0)
-  is gebruikt voor het bouwen van een cross-platform native applicatie vanuit
-  één C# codebase.
-- **Architectuurpatroon:** Het [Model-View-ViewModel (MVVM)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
-  patroon is strikt toegepast. Dit zorgt voor een heldere scheiding tussen de
-  gebruikersinterface (View), de presentatielogica en state (ViewModel), en de
-  businesslogica en data (Model), wat de testbaarheid en onderhoudbaarheid ten
-  goede komt.
-- **AI-Integratie:** De kernfunctionaliteit voor automatische beschrijvingen
-  en tagging wordt geleverd door [Azure AI Cognitive Services](https://azure.microsoft.com/nl-nl/products/ai-services), specifiek
-  de Computer Vision API.
-- **Dataopslag:** Er is bewust gekozen voor een lokale, cross-platform
-  [SQLite](https://www.sqlite.org/index.html) database. Dit stelt de applicatie
-  in staat om volledig offline te functioneren zonder afhankelijkheid van een
-  externe backend-service, wat bijdraagt aan de gebruiksvriendelijkheid en
-  toegankelijkheid.
-- **Gebruikersinterface:** De volledige UI is opgebouwd met
-  [XAML](https://learn.microsoft.com/en-us/dotnet/maui/xaml/xaml-basics?view=net-maui-9.0),
-  de declaratieve markup-taal binnen het .NET MAUI ecosysteem. Dit project was
-  mijn eerste ervaring met het ontwikkelen van UI's in XAML.
+De applicatie is gebouwd met **.NET MAUI**, wat het mogelijk maakt om vanuit één C# codebase een native app voor meerdere platformen te ontwikkelen. Ik heb het **Model-View-ViewModel (MVVM)** architectuurpatroon strikt toegepast. Dit zorgt voor een heldere scheiding tussen de UI (View), de logica (ViewModel) en de data (Model), wat de onderhoudbaarheid en testbaarheid van de code aanzienlijk verbetert.
 
-## Conclusie
+#### AI-Integratie en Dataopslag
 
-TagMaster demonstreert hoe .NET MAUI en Azure AI gecombineerd kunnen worden
-om een intelligente, gebruiksvriendelijke native applicatie te creëren. De
-focus op een lokale database en het MVVM-patroon resulteert in een robuuste
-en onderhoudbare oplossing voor een alledaags probleem: het efficiënt beheren
-van digitale fotocollecties.
+De kern van de intelligentie wordt geleverd door de **Azure AI Computer Vision API**, die de analyse van de afbeeldingen voor zijn rekening neemt. Voor dataopslag heb ik bewust gekozen voor een lokale, cross-platform **SQLite** database. Hierdoor kan de applicatie volledig offline functioneren zonder afhankelijkheid van een externe backend, wat de gebruiksvriendelijkheid en toegankelijkheid ten goede komt.
+
+#### Gebruikersinterface met XAML
+
+De volledige gebruikersinterface is opgebouwd met **XAML**, de declaratieve markup-taal van het .NET ecosysteem. Dit project was mijn eerste concrete ervaring met het bouwen van een UI in XAML, wat een waardevol leerproces was.
+
+### 4. Besluit en Reflectie
+
+TagMaster is een succesvol voorbeeld van hoe moderne technologieën zoals .NET MAUI en Azure AI gecombineerd kunnen worden tot een praktische en intelligente applicatie. De keuze voor een solide architectuur (MVVM) en een lokale database heeft geresulteerd in een robuuste en gebruiksvriendelijke oplossing voor een alledaags probleem. Het project was niet alleen een uitstekende introductie in de wereld van cross-platform development met C#, maar toont ook de kracht van AI in het automatiseren van dagelijkse taken.

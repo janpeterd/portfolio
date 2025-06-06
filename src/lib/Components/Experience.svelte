@@ -1,95 +1,118 @@
 <script>
   import { onMount } from 'svelte'
-  import baseExperiences from '$lib/data/experiences.js'
+  import experiences from '$lib/data/experiences.json'
   import HomeTitle from './HomeTitle.svelte'
-  /** @type {import('$lib/data/experiences.js').Experience[]} */
-  let allExperiences = []
-  /** @type {import('$lib/data/experiences.js').Experience[]} */
-  let experiences = baseExperiences
-  // Scroll position tracking
-  let scrollY = $state(0)
-  // Track which items are visible
+  import SectionDivider from './SectionDivider.svelte'
+  import Icon from '@iconify/svelte'
+
   let visibleItems = $state({})
 
-  // Handle scroll events
-  function handleScroll() {
-    scrollY = window.scrollY
-  }
+  onMount(() => {
+    const setupObservers = () => {
+      const experienceItems = document.querySelectorAll('.experience-item')
+      if (experienceItems.length === 0) return
 
-  onMount(async () => {
-    setTimeout(setupObservers, 300)
-  })
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.dataset.id
+              visibleItems = { ...visibleItems, [id]: true }
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { rootMargin: '0px 0px -10% 0px' }
+      )
 
-  // Setup intersection observers for all experience items
-  function setupObservers() {
-    const experienceItems = document.querySelectorAll('.experience-item')
-
-    const observerOptions = {
-      root: null, // viewport
-      rootMargin: '0px',
-      threshold: 0.1 // 10% of the item must be visible
+      experienceItems.forEach((item) => observer.observe(item))
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        // Check if element is intersecting AND we've scrolled past a minimum threshold
-        if (entry.isIntersecting && scrollY > 10) {
-          const id = entry.target.dataset.id
-          // Update the visibleItems object
-          visibleItems = { ...visibleItems, [id]: true }
-          // Stop observing once animation is triggered
-          observer.unobserve(entry.target)
-        }
-      })
-    }, observerOptions)
-
-    // Observe each experience item
-    experienceItems.forEach((item) => {
-      observer.observe(item)
-    })
-  }
+    setTimeout(setupObservers, 100)
+  })
 </script>
 
-<svelte:window on:scroll={handleScroll} />
+<div class="relative bg-background py-12">
+  <SectionDivider class="text-transparent dark:text-primary" />
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <HomeTitle
+      title="Ervaring"
+      id="experience"
+      className="mb-12 text-center !text-3xl text-foreground md:mb-16 md:!text-4xl" />
 
-<div class="p-4 md:p-8">
-  <div class="flex items-center justify-between">
-    <HomeTitle title="Ervaring" id="experience" />
-  </div>
-  <div
-    id="line"
-    class="relative ms-4 flex max-w-screen-sm flex-col gap-4 rounded-bl-xl border-b-4 border-l-4 border-white/20 p-2 md:ms-14 md:p-8">
-    {#each experiences as entry, i}
-      <a
-        href={entry.link || '#'}
-        class="experience-item block opacity-0 transition-all delay-150 duration-300 ease-out"
-        class:opacity-100={visibleItems[i]}
-        style="transform: translateY({visibleItems[i] ? '0' : '24px'});"
-        data-id={i}>
-        <div
-          class="relative flex transform cursor-pointer flex-col gap-4 rounded-xl
-                 p-2 hover:bg-white/10 md:p-4">
+    <div class="relative">
+      <div
+        class="absolute left-5 top-0 h-full w-px -translate-x-1/2 bg-border transition-colors duration-300 group-hover:bg-primary">
+      </div>
+
+      <div class="space-y-8">
+        {#each experiences as entry, i}
           <div
-            id="rectangle"
-            class="absolute -left-[1.4rem] top-3 size-6 rotate-45 rounded bg-secondary shadow-xl md:-left-[2.9rem]">
+            data-id={i}
+            class="experience-item group relative transition-all duration-700 ease-out"
+            class:opacity-0={!visibleItems[i]}
+            class:translate-y-4={!visibleItems[i]}>
+            <div class="absolute left-5 top-4 -translate-x-1/2">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-background">
+                <div
+                  class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-border bg-card text-border transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon
+                    icon="mdi:plus"
+                    class="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={entry.link || '#'}
+              target={entry.link ? '_blank' : '_self'}
+              rel={entry.link ? 'noopener noreferrer' : ''}
+              class="ml-16 block rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+              <!-- Card Header -->
+              <div
+                class="flex flex-wrap items-center justify-between gap-4 border-b border-border p-4 md:p-5">
+                <div class="flex flex-shrink-0 items-center gap-4">
+                  {#if entry.image}
+                    <div
+                      class="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-md border border-border bg-background p-2 md:h-24 md:w-24">
+                      <img
+                        src={entry.image}
+                        class="h-full w-full object-contain"
+                        alt={entry.company || entry.title} />
+                    </div>
+                  {/if}
+                  <div>
+                    <h3
+                      class="text-lg font-semibold text-card-foreground transition-colors group-hover:text-primary md:text-xl">
+                      {entry.title}
+                    </h3>
+                    {#if entry.company}
+                      <p class="text-base font-medium text-muted-foreground">{entry.company}</p>
+                    {/if}
+                  </div>
+                </div>
+                <p
+                  class="w-full flex-shrink-0 text-left text-xs font-medium text-muted-foreground sm:w-auto sm:text-right">
+                  {entry.dateString}
+                </p>
+              </div>
+
+              <!-- Card Body -->
+              {#if entry.description}
+                <div class="p-4 md:p-6">
+                  <ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+                    {#each entry.description
+                      .split('\n')
+                      .filter((line) => line.trim()) as desc_point}
+                      <li>{desc_point.trim()}</li>
+                    {/each}
+                  </ul>
+                </div>
+              {/if}
+            </a>
           </div>
-          <p class="text-sm font-medium text-slate-400">
-            {entry.dateString}
-          </p>
-          <h2 class="p-2 font-tight font-bold md:p-4">
-            {entry.title}
-            {entry.company ? ` - ${entry.company}` : ''}
-          </h2>
-          {#if entry.description}
-            <p>{entry.description}</p>
-          {/if}
-        </div>
-      </a>
-    {/each}
-    <a
-      href="/cv"
-      class="opacity-1 absolute -bottom-4 -right-1 z-20 inline w-max rounded-lg bg-gradient-to-br from-indigo-800 to-primary p-2 text-sm font-bold text-white transition-all hover:scale-105 hover:from-secondary hover:to-orange-700 hover:underline md:-bottom-[1.85rem] md:right-0 md:p-4">
-      Bekijk CV
-    </a>
+        {/each}
+      </div>
+    </div>
   </div>
 </div>

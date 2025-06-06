@@ -5,17 +5,17 @@
   import HomeTitle from './HomeTitle.svelte'
 </script>
 
-<div class="z-10 gap-4 p-8 lg:grid lg:grid-flow-row lg:grid-cols-3">
+<div class="container z-10 mx-auto gap-4 p-8 lg:grid lg:grid-flow-row lg:grid-cols-3">
   <article class="col-span-2 flex flex-col justify-center">
     <HomeTitle title="Over mij" id="about" />
-    <p class="about_text prose-p:mb-4 prose-a:text-secondary">
+    <p class="about_text prose-p:mb-4 prose-a:text-secondary prose-strong:underline">
       <!-- {About} -->
       {#if browser}
         <About />
       {/if}
     </p>
     <p class="about_text prose-a:text-secondary">
-      Neem gerust <a href="/contact" class="text-secondary">contact</a>
+      Neem gerust <a href="/card" class="text-secondary">contact</a>
       met me op of bekijk
       <a href="/cv">mijn cv.</a>
     </p>
@@ -33,6 +33,6 @@
 
 <style lang="postcss">
   .about_text {
-    @apply prose z-10 max-w-none border-l-2 border-green-500 p-3 text-lg text-white;
+    @apply prose z-10 max-w-none border-l-2 border-accent p-3 text-sm text-foreground dark:prose-invert;
   }
 </style>

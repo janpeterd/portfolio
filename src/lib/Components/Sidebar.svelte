@@ -1,0 +1,216 @@
+<script>
+  import HeroImg from '$lib/assets/hero.jpg?enhanced'
+  import Icon from '@iconify/svelte'
+  import { page } from '$app/stores'
+  import { browser } from '$app/environment'
+  import { fly } from 'svelte/transition'
+  import { onMount } from 'svelte'
+  import { githubLink, linkedInLink, mailLink, mail } from '../../constants'
+
+  const socials = [
+    { label: mail, href: mailLink, icon: 'mdi:email', expand: true },
+    { label: 'Github', href: githubLink, icon: 'line-md:github', expand: false },
+    { label: 'LinkedIn', href: linkedInLink, icon: 'line-md:linkedin', expand: false },
+    { label: 'CV', href: '/cv', icon: 'mdi:person-badge-outline', expand: false },
+    { label: 'Card', href: '/card', icon: 'mdi:card-account-details', expand: false }
+  ]
+
+  let links = [
+    { href: '/', name: 'Home', icon: 'mdi:home-outline' },
+    { href: '/#about', name: 'Over mij', icon: 'mdi:account-outline' },
+    { href: '/#education', name: 'Opleiding', icon: 'mdi:school-outline' },
+    { href: '/#experience', name: 'Ervaring', icon: 'mdi:briefcase-outline' },
+    { href: '/#certification', name: 'Certificaten', icon: 'mdi:certificate-outline' },
+    { href: '/#technologies', name: 'Technologieën', icon: 'mdi:code' },
+    { href: '/#stage', name: 'Stage', icon: 'mdi:domain' },
+    { href: '/#projects-highlight', name: 'Projecten', icon: 'mdi:code-braces' },
+    { href: '/cv', name: 'Cv', icon: 'mdi:file-document-outline' },
+    { href: '/#contact', name: 'Contact', icon: 'mdi:email-outline' }
+  ]
+
+  // --- Scroll-Spy Logic ---
+  let activeSectionId = $state(null)
+  const isHomepage = $derived($page.url.pathname === '/')
+
+  onMount(() => {
+    if (!browser || !isHomepage) return
+
+    const sections = links
+      .map((link) => {
+        if (link.href.startsWith('/#')) {
+          return document.getElementById(link.href.substring(2))
+        }
+        return null
+      })
+      .filter(Boolean)
+
+    if (sections.length === 0) return
+
+    const observerOptions = {
+      rootMargin: '-30% 0px -70% 0px',
+      threshold: 0
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeSectionId = entry.target.id
+        }
+      })
+    }, observerOptions)
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    return () => {
+      observer.disconnect()
+    }
+  })
+
+  let isMobileMenuOpen = $state(false)
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen
+    if (browser) {
+      document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    }
+  }
+
+  function closeMobileMenu() {
+    isMobileMenuOpen = false
+    if (browser) {
+      document.body.style.overflow = ''
+    }
+  }
+
+  function handleLinkClick() {
+    activeSectionId = null
+    if (isMobileMenuOpen) {
+      closeMobileMenu()
+    }
+  }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape' && isMobileMenuOpen) {
+      closeMobileMenu()
+    }
+  }
+
+  onMount(() => {
+    return () => {
+      if (browser) {
+        document.body.style.overflow = ''
+      }
+    }
+  })
+</script>
+
+<svelte:window on:keydown={handleKeydown} />
+
+<button
+  onclick={toggleMobileMenu}
+  class="fixed left-4 top-4 z-[60] flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background/80 text-foreground backdrop-blur-sm transition-colors hover:bg-muted md:hidden print:hidden"
+  aria-label={isMobileMenuOpen ? 'Sluit menu' : 'Open menu'}
+  aria-expanded={isMobileMenuOpen}
+  aria-controls="main-sidebar">
+  {#if isMobileMenuOpen}
+    <Icon icon="mdi:close" class="h-6 w-6" />
+  {:else}
+    <Icon icon="mdi:menu" class="h-6 w-6" />
+  {/if}
+</button>
+
+{#if isMobileMenuOpen}
+  <div
+    transition:fly={{ duration: 300, opacity: 0 }}
+    onclick={closeMobileMenu}
+    class="fixed inset-0 z-[45] bg-black/50 backdrop-blur-sm md:hidden"
+    aria-hidden="true">
+  </div>
+{/if}
+
+<aside
+  id="main-sidebar"
+  class="fixed inset-y-0 left-0 z-50 flex h-screen w-72 transform flex-col border-r border-border bg-background-alt text-foreground transition-transform duration-300 ease-in-out {isMobileMenuOpen
+    ? 'translate-x-0'
+    : '-translate-x-full'} [view-transition-name:header-left] md:sticky md:top-0 md:translate-x-0 print:hidden"
+  aria-hidden={!isMobileMenuOpen && true}>
+  <div class="flex flex-col items-center p-6 text-center">
+    <a href="/" onclick={handleLinkClick} aria-label="Ga naar homepagina" class="mb-4 block">
+      <enhanced:img
+        src={HeroImg}
+        alt="Foto van Jan-Peter"
+        class="h-28 w-28 rounded-full border-2 border-border object-cover shadow-md transition-transform duration-300 hover:scale-105" />
+    </a>
+    <a href="/" class="hover:underline" onclick={handleLinkClick}>
+      <h1 class="font-tight text-xl font-semibold text-foreground">Jan-Peter Dhallé</h1>
+    </a>
+    <p class="mt-1 text-sm text-muted-foreground">Student Applicatieontwikkeling</p>
+  </div>
+
+  <button class="flex-grow overflow-y-auto px-4" onclick={handleLinkClick}>
+    <ul class="flex flex-col space-y-1">
+      {#each links as link}
+        {@const [linkPath, linkHash] = link.href.split('#')}
+        {@const targetId = linkHash}
+        {@const targetFullHash = linkHash ? '#' + linkHash : null}
+
+        {@const isCurrentPageLink = $page.url.pathname === linkPath}
+        {@const isHashActive = isHomepage && activeSectionId === targetId}
+        {@const isHomeActive =
+          link.href === '/' && isHomepage && !activeSectionId && !$page.url.hash}
+
+        {@const current = isHashActive}
+
+        <li>
+          <a
+            href={link.href}
+            class="group flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
+            class:bg-primary={current}
+            class:text-secondary-foreground={current}
+            class:text-muted-foreground={!current}
+            class:hover:text-muted-foreground={!current}
+            class:hover:bg-muted={!current}
+            aria-current={current ? 'page' : undefined}>
+            <Icon icon={link.icon} class="h-5 w-5 flex-shrink-0" />
+            <span>{link.name}</span>
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </button>
+
+  <div class="mt-auto space-y-3 p-4">
+    {#each socials as link}
+      {#if link.expand}
+        <a
+          href={link.href}
+          class="flex w-full items-center justify-center gap-2 rounded-md bg-muted px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-background-hued hover:text-muted-foreground"
+          aria-label="E-mail">
+          <Icon icon={link.icon} class="h-5 w-5" />
+          <span>{link.label}</span>
+        </a>
+      {/if}
+    {/each}
+
+    <div class="flex items-center justify-center gap-2">
+      {#each socials as link}
+        {#if !link.expand}
+          <a
+            href={link.href}
+            rel="noopener noreferrer"
+            target="_blank"
+            class="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-background-hued hover:bg-background-hued hover:text-muted-foreground"
+            aria-label={link.label}>
+            <Icon icon={link.icon} class="h-5 w-5" />
+          </a>
+        {/if}
+      {/each}
+    </div>
+  </div>
+
+  <div class="p-4 pt-2 text-center">
+    <p class="text-xs text-muted-foreground">© {new Date().getFullYear()} Jan-Peter Dhallé</p>
+  </div>
+</aside>

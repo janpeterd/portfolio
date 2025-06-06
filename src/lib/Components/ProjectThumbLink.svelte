@@ -40,13 +40,6 @@
         text: pathToFileName(props.destination)
       }
       break
-    case 'image':
-      linkObj = {
-        icon: 'mdi:image',
-        textColor: 'text-secondary',
-        text: pathToFileName(props.destination)
-      }
-      break
     default:
       linkObj = {
         icon: 'mdi:link-off',
@@ -58,26 +51,13 @@
 
 <Tooltip>
   {#snippet tooltipContent()}
-    <div class={props.type === 'image' ? 'rounded-lg border-2 border-white/10 p-2' : ''}>
-      <div
-        class={`flex items-center gap-2 ${props.type === 'image' ? 'justify-start ' : 'justify-center'}`}>
-        <Icon
-          icon={linkObj.icon}
-          class={linkObj.textColor}
-          width={props.type === 'image' ? '2rem' : '1.5rem'} />
-        <span class={props.type === 'image' ? 'text-md' : 'text-sm'}>
+    <div>
+      <div class="flex items-center justify-start gap-2">
+        <Icon icon={linkObj.icon} class={linkObj.textColor} width="1.5rem" />
+        <span class="text-sm">
           {linkObj.text}
         </span>
       </div>
-      {#if props.type === 'image'}
-        <a href={props.destination} target="_blank" rel="noopener noreferrer" class="flex flex-col">
-          <img
-            src={props.destination}
-            alt={linkObj.text}
-            class="my-2 max-h-[25vh] max-w-[85vw] rounded-xl object-cover md:max-h-[40vh] md:max-w-3xl" />
-          <span class="text-xs text-slate-300">Move your cursor to hide this image view</span>
-        </a>
-      {/if}
     </div>
   {/snippet}
 

@@ -21,9 +21,21 @@
       content="Portfolio van Jan-Peter Dhallé, student toegepaste informatica" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      ;(function () {
+        const theme = localStorage.getItem('theme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+    </script>
     %sveltekit.head%
   </head>
-  <body data-sveltekit-preload-data="hover">
+  <body data-sveltekit-preload-data="hover" class="">
     <div style="display: contents; scroll-behavior: smooth">%sveltekit.body%</div>
   </body>
 </html>

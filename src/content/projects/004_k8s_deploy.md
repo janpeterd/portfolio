@@ -1,8 +1,10 @@
 ---
 title: Kubernetes deployment
 date: 2023-12-13
+projectType: Schoolproject
 thumbnail: /img/projects/k8s_argocd.png
-repo: https://github.com/janpeterd/milestone2_argocd
+repos:
+  - https://github.com/janpeterd/milestone2_argocd
 images:
   - /img/projects/k8s_argocd.png
   - /img/projects/k8s_prometheus.png
@@ -14,30 +16,44 @@ technologies:
   - javascript
 ---
 
-## Kubernetes deployment
+### 1. Inleiding
 
-Voor het vak _Linux Webservices_ heb ik een application uitgerold naar een [Kubernetes](https://kubernetes.io/)-cluster.
-Deze cluster heb ik dan klaargemaakt voor veel verkeer door gebruik te maken van een load-balancer ([Nginx ingress](https://docs.nginx.com/nginx-ingress-controller/)).
-Ook heb ik [ArgoCD](https://argoproj.github.io/cd/) geïnstalleerd, waardoor de cluster automatisch vernieuwd wordt bij een push naar GitHub.
-Om de cluster en servers te monitoren heb ik [Prometheus](https://prometheus.io/docs/introduction/overview/) geïnstalleerd.
+#### De Opdracht: Van Code naar een Robuuste Infrastructuur
 
-De nadruk van dit project lag niet op de applicatie zelf, maar de infrastructuur erachter.
+Voor het vak _Linux Webservices_ kregen we de opdracht om een applicatie uit te rollen naar een **Kubernetes**-cluster. De nadruk van dit project lag expliciet niet op de applicatie zelf, maar op het bouwen, configureren en beheren van de onderliggende infrastructuur. Het doel was om een schaalbare, geautomatiseerde en observeerbare omgeving te creëren die klaar is voor productie.
 
-### Applicatie
+### 2. Wat is het? Een Geautomatiseerde en Gemonitorde Kubernetes-Omgeving
 
-De applicatie die ik gedeployed heb ik bestaat uit een simpel HTML-bestand als frontend met een Javascript-script dat data uit de database haalt.
-Ook heb ik een [NodeJS](https://nodejs.org/en)-API gemaakt die data uit de MondgoDB-database teruggeeft.
-Ten slotte heb ik gebruik gemaakt van MongoDB als database en heb ik een script geschreven dan mijn naam in de database zet.
+Het eindresultaat is een volledig operationeel Kubernetes-cluster dat een sample-applicatie host. De ware kracht van het project zit echter in de architectuur eromheen:
 
-Van elk van deze onderdelen heb ik een Docker-container gebouwd en deze geüpload naar DockerHub.
+- **Hoge Beschikbaarheid:** Een **Nginx Ingress** fungeert als load-balancer, die inkomend verkeer efficiënt verdeelt over meerdere instances van de applicatie.
+- **Geautomatiseerde Deployments (GitOps):** Met **ArgoCD** is een GitOps-workflow geïmplementeerd. Elke push naar de GitHub-repository met de Kubernetes-configuraties wordt automatisch gedetecteerd en gesynchroniseerd met de cluster.
+- **Uitgebreide Monitoring:** **Prometheus** is geïnstalleerd om de gezondheid en prestaties van de cluster en de draaiende applicaties continu te monitoren.
 
-### Cluster
+![Het ArgoCD dashboard toont de 'Synced' status van de applicatie](/img/projects/k8s_argocd.png)
 
-Ik heb een echte cluster nagebootst met virtuele computers.
-De configuratie van deze VMs heb ik gedeclareerd met [Vagrant](https://www.vagrantup.com/).
+### 3. De Aanpak: Bouwen in Lagen
 
-Hierna heb ik de configuratiebestanden van de cluster geschreven.
+De realisatie van dit project bestond uit verschillende logische stappen, van de basisinfrastructuur tot de geavanceerde operationele tools.
 
-![Resultaat, merk op dat het container ID verschilt. Dit is door de load-balancer.](/img/projects/k8s_result.png)
-![Prometheus monitoring](/img/projects/k8s_prometheus.png)
-![Argo CD](/img/projects/k8s_argocd.png)
+#### 1. De Basis: Applicatie en Containers
+
+Als workload voor de cluster heb ik een simpele applicatie gebouwd bestaande uit een HTML/JavaScript frontend, een NodeJS API, en een MongoDB database. Elk van deze componenten heb ik verpakt in een **Docker-container** en geüpload naar DockerHub, klaar voor deployment.
+
+#### 2. De Omgeving: Cluster Setup met Vagrant
+
+Om een realistische multi-node cluster na te bootsen, heb ik de virtuele machines geconfigureerd met **Vagrant**. Dit maakte het mogelijk om lokaal een consistente en reproduceerbare testomgeving op te zetten.
+
+#### 3. De Kern: Kubernetes en Networking
+
+Vervolgens heb ik de Kubernetes-manifestbestanden geschreven om de applicatie te deployen. De Nginx Ingress Controller werd geconfigureerd om het verkeer correct naar de frontend-service te leiden. Het resultaat is een load-balanced setup, waarbij requests afwisselend door verschillende containers worden afgehandeld.
+
+#### 4. De Kwaliteitslaag: Automatisering en Monitoring
+
+De finale stap was het toevoegen van de operationele tools. ArgoCD werd gekoppeld aan mijn GitHub-repository voor geautomatiseerde CI/CD. Prometheus werd geïnstalleerd en geconfigureerd om metrics te verzamelen, wat essentieel is voor het proactief beheren van de omgeving.
+
+![Het Prometheus dashboard biedt inzicht in de status van de cluster](/img/projects/k8s_prometheus.png)
+
+### 4. Besluit: Een Praktische Duik in Moderne DevOps
+
+Dit project was een zeer waardevolle, hands-on ervaring met de kerncomponenten van moderne cloud-native infrastructuren. Het bood de kans om verder te gaan dan aalleen applicatieontwikkeling en me te verdiepen in de tools en principes die essentieel zijn voor het betrouwbaar en schaalbaar draaien van software. Het succesvol opzetten van een geautomatiseerde en gemonitorde Kubernetes-omgeving was een uitstekende oefening in de vaardigheden die vandaag de dag zeer relevant zijn in de IT-sector.

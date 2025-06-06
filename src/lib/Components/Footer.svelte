@@ -1,7 +1,7 @@
 <script>
   import Icon from '@iconify/svelte'
   import Logo3d from '$lib/Components/Logo3d.svelte'
-  import { githubLink, linkedInLink, mailLink } from '../../stores'
+  import { githubLink, linkedInLink, mailLink, mail } from '../../constants'
   import { Canvas } from '@threlte/core'
   import { goto } from '$app/navigation'
   import { getIsMobile } from '$lib/utils'
@@ -13,10 +13,16 @@
       behavior: 'smooth'
     })
   }
+
+  const links = [
+    { label: mail, href: mailLink, icon: 'mdi:email', expand: true },
+    { label: 'Github', href: githubLink, icon: 'line-md:github', expand: false },
+    { label: 'LinkedIn', href: linkedInLink, icon: 'line-md:linkedin', expand: false }
+  ]
 </script>
 
 <footer
-  class="max-w-screen relative mt-8 flex flex-col items-center overflow-x-hidden border-t bg-black/60 py-3 backdrop-blur backdrop-saturate-150 print:hidden">
+  class="max-w-screen relative flex flex-col items-center overflow-x-hidden border-t bg-background py-3 backdrop-blur backdrop-saturate-150 print:hidden">
   <div class="flex flex-col justify-between sm:flex-row md:w-4/5 lg:w-3/5">
     <button class="relative mb-3 h-[200px] min-h-[200px] w-72 flex-1 md:px-5" on:click={goto('/')}>
       <div
@@ -26,41 +32,40 @@
         </Canvas>
       </div>
     </button>
-    <div class="z-10 mb-3 flex-1 font-tight text-xl">
-      <h2 class="mb-3 font-tight font-bold text-secondary">Links</h2>
-      <div class="border-green-500 sm:border-l-2">
-        <div class="my-3 ml-4"><a href="/#about">Over mij</a></div>
-        <div class="my-3 ml-4"><a href="/projects">Projecten</a></div>
-        <div class="my-3 ml-4"><a href="/cv">CV</a></div>
-        <div class="my-3 ml-4"><a href="/contact">Contact</a></div>
-      </div>
-    </div>
     <div class="mb-3 flex-1 font-tight text-xl">
       <h2 class="mb-3 font-tight font-bold text-secondary">Contact</h2>
       <div
-        class="flex flex-row items-center justify-items-center border-green-500 py-6 sm:border-l-2">
-        <a href={$mailLink} class="mx-2 flex items-center justify-center" aria-label="E-mail">
-          <Icon icon="line-md:email" width="2.5rem" />
-        </a>
-        <a href={$linkedInLink} class="mx-2 flex items-center justify-center" aria-label="LinkedIn">
-          <Icon icon="line-md:linkedin" width="2.5rem" />
-        </a>
-        <a href={$githubLink} class="mx-2 flex items-center justify-center" aria-label="GitHub">
-          <Icon icon="line-md:github" width="2.5rem" />
-        </a>
+        class="flex flex-col items-center justify-items-center border-green-500 py-6 sm:border-l-2">
+        {#each links as link}
+          {#if link.expand}
+            <a
+              href={link.href}
+              class="mx-2 flex items-center justify-center gap-2"
+              aria-label="E-mail">
+              <Icon icon={link.icon} width="2.5rem" />
+              <span>{link.label}</span>
+            </a>
+          {/if}
+        {/each}
+        <div class="flex">
+          {#each links as link}
+            {#if !link.expand}
+              <a
+                href={link.href}
+                class="mx-2 flex items-center justify-center rounded-full border-2 border-blue-200 p-2"
+                aria-label={link.label}>
+                <Icon icon={link.icon} width="2.5rem" />
+              </a>
+            {/if}
+          {/each}
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="group flex w-full flex-auto flex-col items-center py-1 pb-12 text-center text-xl decoration-green-500 transition-all duration-300 ease-in-out hover:text-zinc-200 sm:flex-row md:justify-center">
-    <span class="flex-auto">
+    class="group flex w-full flex-auto flex-col items-center py-1 py-12 text-center text-xl decoration-green-500 transition-all duration-300 ease-in-out hover:text-zinc-200 sm:flex-row md:justify-center">
+    <span class="flex-auto text-muted-foreground">
       &copy; {now.getFullYear()} Jan-Peter Dhallé
     </span>
-    <button
-      on:click={scrollToTop}
-      class="flex flex-auto animate-bounce items-center justify-center">
-      <span class="text-right">Scroll&nbsp;naar&nbsp;boven</span>
-      <Icon class="h-full text-4xl" icon="mdi:arrow-up-bold" />
-    </button>
   </div>
 </footer>

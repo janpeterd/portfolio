@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Java",
+    "category": "Backend",
+    "image": "java.svg",
+    "skillLevel": 92
+  },
+  {
+    "name": "Spring",
+    "category": "Backend",
+    "image": "spring.svg",
+    "skillLevel": 92
+  },
+  {
+    "name": "JavaScript",
+    "category": "Backend",
+    "image": "javascript.svg",
+    "skillLevel": 75
+  },
+  {
+    "name": "Typescript",
+    "category": "Backend",
+    "image": "typescript.svg",
+    "skillLevel": 85
+  },
+  {
+    "name": "Python",
+    "category": "Backend",
+    "image": "python.svg",
+    "skillLevel": 72
+  },
+  {
+    "name": "Django",
+    "category": "Backend",
+    "image": "django.svg",
+    "skillLevel": 65
+  },
+  {
+    "name": "Svelte",
+    "category": "Backend",
+    "image": "svelte.svg",
+    "skillLevel": 51
+  },
+  {
+    "category": "Backend",
+    "name": "CSharp",
+    "image": "csharp.svg",
+    "skillLevel": 64
+  },
+  {
+    "category": "Backend",
+    "name": "DotNET",
+    "image": "dotnet.svg",
+    "skillLevel": 58
+  },
+  {
+    "category": "Backend",
+    "name": "PHP",
+    "image": "php.svg",
+    "skillLevel": 44
+  },
+  {
+    "category": "Backend",
+    "name": "Laravel",
+    "image": "laravel.svg",
+    "skillLevel": 44
+  },
+  {
+    "category": "Backend",
+    "name": "C",
+    "image": "c.svg",
+    "skillLevel": 38
+  },
+  {
+    "name": "Postgresql",
+    "image": "postgresql.svg",
+    "category": "Data",
+    "skillLevel": 62
+  },
+  {
+    "name": "MySQL",
+    "image": "mysqlmariadb.png",
+    "category": "Data",
+    "skillLevel": 52
+  },
+  {
+    "name": "Mariadb",
+    "image": "mysqlmariadb.png",
+    "category": "Data",
+    "skillLevel": 52
+  },
+  {
+    "name": "Mongodb",
+    "image": "mongodb.svg",
+    "category": "Data",
+    "skillLevel": 34
+  },
+  {
+    "name": "React",
+    "category": "Frontend",
+    "image": "react.svg",
+    "skillLevel": 75
+  },
+  {
+    "name": "Flutter",
+    "category": "Frontend",
+    "image": "flutter.svg",
+    "skillLevel": 58
+  },
+  {
+    "name": "Angular",
+    "category": "Frontend",
+    "image": "angular.svg",
+    "skillLevel": 55
+  },
+  {
+    "name": "Docker",
+    "category": "Infrastructure/DevOps",
+    "image": "docker.svg",
+    "skillLevel": 92
+  },
+  {
+    "name": "Git",
+    "category": "Infrastructure/DevOps",
+    "image": "git.svg",
+    "skillLevel": 85
+  },
+  {
+    "name": "Bash",
+    "category": "Infrastructure/DevOps",
+    "image": "bash.svg",
+    "skillLevel": 73
+  },
+  {
+    "name": "Linux",
+    "category": "Infrastructure/DevOps",
+    "image": "linux.svg",
+    "skillLevel": 68
+  },
+  {
+    "name": "Kubernetes",
+    "category": "Infrastructure/DevOps",
+    "image": "kubernetes.svg",
+    "skillLevel": 55
+  },
+  {
+    "name": "Jenkins",
+    "category": "Infrastructure/DevOps",
+    "image": "jenkins.svg",
+    "skillLevel": 45
+  },
+  {
+    "name": "Figma",
+    "category": "Design, Prototypes",
+    "image": "figma.svg",
+    "skillLevel": 30
+  }
+]

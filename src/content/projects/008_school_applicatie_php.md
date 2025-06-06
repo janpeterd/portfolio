@@ -1,6 +1,7 @@
 ---
 title: Project Digital Innovation PHP
 date: 2024-05-21
+projectType: Schoolproject
 thumbnail: /img/projects/php_project_projectinfo.png
 images:
   - /img/projects/php_project_home.png
@@ -10,67 +11,54 @@ technologies:
   - php
   - laravel
   - git
+  - mariadb
 ---
 
-## De Uitdaging: Een Centrale Hub voor Projectgestuurd Onderwijs
+### 1. Inleiding
 
-In het tweede semester van mijn tweede jaar Toegepaste Informatica stond een omvangrijk `PHP`-project centraal. In teamverband kregen we de opdracht om voort te bouwen op een analyse- en ontwerprapport dat door een ander team in het eerste semester was opgesteld. Dit rapport bevatte de initiële projectinformatie, uitgewerkte prototypes en use cases.
+#### De Opdracht: Een Centrale Hub voor Projectgestuurd Onderwijs
 
-Ons team kreeg de taak een webapplicatie te ontwikkelen specifiek voor de onderwijsrichting **Digital Innovation** binnen onze campus. Kenmerkend voor deze richting is dat studenten alle eindtermen en leerdoelen behalen door het succesvol afronden van projecten, met minimale of geen traditionele theorielessen. Onze applicatie moest dienen als een centrale, digitale omgeving waarbinnen al deze projecten beheerd, gedocumenteerd en gevolgd konden worden.
+Als omvangrijk teamproject in mijn tweede jaar Toegepaste Informatica, kregen we de opdracht een webapplicatie te realiseren voor de onderwijsrichting **Digital Innovation**. Kenmerkend voor deze richting is dat studenten hun competenties ontwikkelen via projectwerk, in plaats van traditionele theorielessen. Onze missie was het bouwen van een centrale, digitale omgeving waarbinnen al deze projecten beheerd, gedocumenteerd en gevolgd konden worden.
 
-## Doelgroepen en Kernfunctionaliteiten
+### 2. Het Resultaat: Een Compleet Projectmanagementplatform
 
-De te ontwikkelen webapplicatie moest toegankelijk zijn voor vier verschillende gebruikerstypes, elk met eigen rechten en mogelijkheden:
+Het eindproduct, dat we met trots hebben opgeleverd, is een robuuste en feature-rijke webapplicatie. Het platform dient als het zenuwcentrum voor de opleiding en ondersteunt vier verschillende gebruikerstypes: **studenten, docenten, administratoren en bedrijfscontacten**.
 
-- **Student:** Kan projecten bekijken, interesse tonen, bestanden uploaden, tijd registreren, en blogposts publiceren.
-- **Docent:** Beheert projectideeën (accepteren/verwijderen), wijst studenten toe aan projecten, beheert rollen, leerdoelen en projectdetails.
-- **Administrator:** Heeft volledige controle over gebruikersbeheer (inclusief genders, logins), systeembrede instellingen, en andere administratieve taken.
-- **Bedrijfscontact:** Kan projectideeën indienen ter overweging door docenten.
+De applicatie biedt een breed scala aan functionaliteiten, waaronder:
 
-De applicatie moest een breed scala aan functionaliteiten ondersteunen, waaronder:
+- **Projectmanagement:** Van het indienen van projectideeën door bedrijven tot het toewijzen van studenten en het beheren van projectdetails door docenten.
+- **Gebruikers- en Contentbeheer:** Studenten kunnen bestanden uploaden, blogposts publiceren en hun tijd registreren.
+- **Onderwijscomponenten:** Docenten kunnen leerdoelen en teamrollen definiëren en beheren.
+- **Systeembeheer:** Volledige controle over gebruikers, authenticatie, e-mailnotificaties en meertaligheid (NL/EN).
 
-- **Projectmanagement:** Indienen, goedkeuren, en beheren van projecten en projectideeën.
-- **Gebruikers- en Rollenbeheer:** Toewijzen van studenten aan projecten en beheren van specifieke rollen binnen teams.
-- **Content Management:** Uploaden van projectbestanden, schrijven en publiceren van blogposts.
-- **Tijdsregistratie:** Gedetailleerd bijhouden van bestede tijd per project of taak door studenten.
-- **Beheer van Onderwijscomponenten:** Creëren en beheren van leerdoelen en rollen.
-- **Systeembeheer:** Accountaanvragen, authenticatie (login, wachtwoordherstel), e-mailnotificaties (met templates), en meertaligheid (Engels en Nederlands).
+![Detailpagina van een project, met alle relevante informatie en beheermogelijkheden](/img/projects/php_project_projectinfo.png)
 
-## Technische Stack en Hosting
+### 3. De Aanpak: Samenwerking en Technologie
 
-Voor de realisatie van dit project hebben we gekozen voor de volgende technologieën:
+De realisatie van dit project was een schoolvoorbeeld van effectieve samenwerking en een slimme inzet van technologie.
 
-- **Backend:** `PHP` met het robuuste [`Laravel`](https://laravel.com/) framework.
-- **Database:** `MySQL` voor dataopslag.
-- **Frontend Dynamiek:** [`Livewire`](https://livewire.laravel.com/) om interactieve interfaces te bouwen zonder complexe JavaScript-frameworks.
-- **Styling:** [`TailwindCSS`](https://tailwindcss.com/) voor een utility-first benadering van het ontwerp.
+#### Technische Keuzes
 
-De applicatie wordt gehost op een Virtual Machine (VM) via [Combell](https://www.combell.com/nl/).
+We hebben gekozen voor een moderne en efficiënte tech stack:
 
-## Samenwerking en Teamdynamiek
+- **Backend:** **PHP** met het krachtige **Laravel** framework.
+- **Frontend Dynamiek:** **Livewire** om interactieve interfaces te bouwen zonder complexe JavaScript-frameworks.
+- **Styling:** **TailwindCSS** voor een strak en consistent design.
+- **Database:** **MySQL**, gehost op een VM via Combell.
 
-De teamindeling was gebaseerd op de resultaten van het PHP-examen uit het eerste semester. Dit resulteerde in een team waarin elk lid een solide basiskennis van PHP bezat en gemotiveerd was om kwalitatief werk te leveren.
+#### Teamwerk en Mijn Kernbijdragen
 
-De samenwerking binnen ons team verliep uitstekend. Er waren geen significante conflicten die de voortgang belemmerden. Taken werden vooraf duidelijk verdeeld, en elk teamlid nam verantwoordelijkheid voor zijn of haar toegewezen onderdelen. Waar overlap was of vergelijkbare functionaliteiten ontwikkeld moesten worden, werkten we nauw samen en deelden we code. Alle taken, verantwoordelijkheden en de voortgang werden nauwgezet bijgehouden op ons [Jira](https://www.atlassian.com/software/jira)-bord.
+De samenwerking binnen ons team verliep uitstekend, met een duidelijke taakverdeling die werd bijgehouden in Jira. Binnen dit team heb ik een significante bijdrage geleverd door de verantwoordelijkheid te nemen voor diverse kernonderdelen:
 
-## Mijn Specifieke Bijdragen
+- **De projectbeheerpagina:** Ik ontwikkelde deze complexe module, die data uit diverse tabellen samenvoegt en functionaliteiten biedt voor bestandsbeheer en het toewijzen van rollen.
+- **De tijdsregistratiemodule:** Ik implementeerde de volledige functionaliteit waarmee studenten hun gewerkte uren per project gedetailleerd kunnen bijhouden.
+- **Frontend en UX:** Ik was medeverantwoordelijk voor het ontwerp van de overkoepelende layout en heb een groot deel van de styling van datatabellen en dashboards met TailwindCSS op mij genomen.
+- **Algemene Kwaliteitszorg:** Naast mijn hoofdtaken heb ik actief bijgedragen aan bugfixing en het verfijnen van de algehele applicatie.
 
-Binnen dit project heb ik me geconcentreerd op de volgende kernonderdelen:
-
-- **Ontwikkeling van de projectbeheerpagina:** Dit was een complexe module die data uit diverse databasetabellen moest samenvoegen en presenteren. Functionaliteiten zoals het uploaden van bestanden en het aanpassen van rollen waren hierin geïntegreerd.
-- **Implementatie van de tijdsregistratiemodule voor studenten:** Hiermee kunnen studenten hun gewerkte uren per project of taak registreren.
-- **Frontend Styling:** Ik heb significant bijgedragen aan de `TailwindCSS`-styling van datatabellen op diverse pagina's en was medeverantwoordelijk voor het ontwerp van de overkoepelende layout die consistent door de hele applicatie wordt gebruikt.
-- **Verbetering van Dashboard Pagina's:** De visuele presentatie en gebruiksvriendelijkheid van diverse dashboard-pagina's heb ik verfijnd.
-- **Algemene Bugfixing en Ondersteuning:** Daarnaast heb ik actief meegeholpen aan het identificeren en oplossen van bugs en problemen op andere pagina's.
-
-## Huidige Status en Voorlopige Resultaten
-
-Op het moment van schrijven is het project nog in de afrondende ontwikkelingsfase. De meeste kernfunctionaliteiten zijn geïmplementeerd en operationeel. Enkele details en verfijningen worden momenteel nog uitgewerkt. Onderstaande screenshots geven een impressie van de applicatie (de getoonde data is uitsluitend voor testdoeleinden).
-
-![Homepage voor niet-geauthenticeerde gebruikers](/img/projects/php_project_home.png)
-![Projectoverzicht voor docenten](/img/projects/php_project_projects.png)
-![Detailpagina van een project voor docenten](/img/projects/php_project_projectinfo.png)
-![Overzicht van leerdoelen](/img/projects/php_project_learnobj.png)
-![Formulier voor het toevoegen van een nieuw project](/img/projects/php_project_newproject.png)
 ![Overzicht van tijdsregistraties voor studenten](/img/projects/php_project_time.png)
-![Formulier voor het invoeren van tijdsregistratie door studenten](/img/projects/php_project_timeform.png)
+
+### 4. Besluit: Een Succesvol Project met Uitstekend Resultaat
+
+Dit project werd succesvol en met een zeer positief resultaat afgerond. We hebben een stabiele, functionele en gebruiksvriendelijke applicatie opgeleverd die een concrete meerwaarde biedt voor de opleiding.
+
+Persoonlijk was dit een bijzonder leerzame ervaring. Het project versterkte niet alleen mijn vaardigheden in Laravel en team-gebaseerde softwareontwikkeling, maar bevestigde ook mijn vermogen om complexe requirements te vertalen naar een kwalitatief hoogstaand eindproduct. De uitstekende beoordeling die we voor dit project ontvingen, was een mooie bekroning van ons harde werk en de succesvolle samenwerking.

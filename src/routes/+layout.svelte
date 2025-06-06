@@ -1,9 +1,10 @@
 <script>
-  import Footer from '$lib/Components/Footer.svelte'
-  import Navbar from '$lib/Components/Navbar.svelte'
   import { inject } from '@vercel/analytics'
   import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation'
+  import Sidebar from '$lib/Components/Sidebar.svelte'
   import '../app.css'
+  import DarkModeToggle from '$lib/Components/DarkModeToggle.svelte'
+  import ScrollToTopButton from '$lib/Components/ScrollToTopButton.svelte'
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
@@ -50,13 +51,18 @@
   href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Reddit+Sans+Condensed:wght@200..900&display=swap"
   rel="stylesheet" />
 
-<div class="relative overflow-hidden py-1">
-  <Navbar />
-  {@render children?.()}
-  <Footer />
+<div class="relative w-full">
+  <div class="relative flex w-full max-w-full">
+    <Sidebar />
+    <div class="grow-1 w-full overflow-x-hidden">
+      {@render children?.()}
+    </div>
+  </div>
 </div>
+<DarkModeToggle />
+<ScrollToTopButton />
 
-<style>
+<style lang="postcss">
   @keyframes fade-in {
     from {
       opacity: 0;

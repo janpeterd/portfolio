@@ -78,7 +78,7 @@
   class={`pointer-events-auto absolute left-0 top-0 z-[55] w-max p-2 font-bold ${!showTooltip && 'hidden'}`}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}>
-  <div class="max-w-max rounded-lg bg-black/80 p-2 backdrop-blur-lg">
+  <div class="max-w-max rounded-lg bg-muted p-2 text-muted-foreground backdrop-blur-lg">
     {@render tooltipContent()}
   </div>
 </div>

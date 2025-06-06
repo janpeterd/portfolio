@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Android Jetpack Compose",
+    "link": "/doc/certificate Android Jetpack Compose.jpg",
+    "ariaLabel": "download certificate in jpg format",
+    "date": "januari 2025",
+    "image": "Android Jetpack Compose.jpg",
+    "extra": null
+  },
+  {
+    "name": "Sololearn Angular",
+    "link": "/doc/certificate Angular.pdf",
+    "ariaLabel": "download certificate in pdf format",
+    "date": "september 2024",
+    "image": "Angular.png",
+    "extra": null
+  },
+  {
+    "name": "LPI Linux Essentials",
+    "link": "/doc/certificate Linux Essentials.pdf",
+    "ariaLabel": "download certificate in pdf format",
+    "date": "januari 2023",
+    "extra": "Examenresultaat 18/20",
+    "image": "Linux Essentials.png"
+  }
+]

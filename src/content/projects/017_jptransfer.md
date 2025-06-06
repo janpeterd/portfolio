@@ -2,6 +2,7 @@
 title: JP Transfer
 date: 2025-06-02
 highlight: true
+projectType: Persoonlijk project
 thumbnail: /img/projects/jptransfer.png
 repos:
   - https://github.com/janpeterd/jp-transfer-service
@@ -22,126 +23,60 @@ technologies:
   - git
 ---
 
-## Inleiding
+### 1. Inleiding
 
-Diensten zoals [WeTransfer](https://wetransfer.com/) zijn ontzettend handig
-voor het delen van grote bestanden. Even uploaden, linkje sturen en klaar. Maar
-de vraag "wat gebeurt er écht met mijn bestanden?" en het gebrek aan controle
-over de data bleef bij mij knagen. Dit, gecombineerd met de wens om een eigen,
-robuuste oplossing te hebben en de wil om bij te leren, leidde tot de
-ontwikkeling van **JP Transfer**.
+#### De Noodzaak: Controle over Eigen Data
 
-## Wat is JP Transfer?
+Diensten zoals [WeTransfer](https://wetransfer.com/) zijn ontzettend handig, maar roepen een belangrijke vraag op: wat gebeurt er écht met mijn bestanden? Het gebrek aan controle en transparantie over waar mijn data wordt opgeslagen, was voor mij de drijfveer om een eigen oplossing te ontwikkelen. Deze wens, gecombineerd met mijn ambitie om bij te leren, leidde tot de creatie van **JP Transfer**.
 
-JP Transfer is in essentie een persoonlijke kloon van WeTransfer. Het stelt
-gebruikers in staat om eenvoudig bestanden te uploaden, waarna een unieke
-downloadlink wordt gegenereerd die gedeeld kan worden. Het cruciale verschil?
-Alle bestanden worden opgeslagen op **mijn eigen home server**. Dit biedt
-volledige controle en transparantie over de data.
+### 2. Wat is JP Transfer?
 
-Belangrijke kenmerken van JP Transfer:
+#### Een Persoonlijke en Veilige File-Sharing Dienst
 
-- **Privacy Eerst:** Omdat de bestanden op mijn eigen server staan, weet ik
-  precies waar ze zijn en wie er toegang toe heeft. Geen zorgen over wat derde
-  partijen met de data doen.
-- **Grote Bestanden Welkom:** JP Transfer is ontworpen om ook met zeer grote
-  bestanden overweg te kunnen, dankzij een slim uploadmechanisme.
-- **Gecontroleerde Toegang:** Registratie van buitenaf is niet mogelijk. Ik
-  voeg handmatig specifieke personen toe die de dienst mogen gebruiken, waardoor
-  het een gesloten en vertrouwde omgeving blijft.
+JP Transfer is in essentie een persoonlijke kloon van WeTransfer. Gebruikers kunnen eenvoudig bestanden uploaden en een unieke downloadlink genereren om te delen. Het cruciale verschil is dat alle data wordt opgeslagen op **mijn eigen home server**, wat volledige soevereiniteit en controle over de bestanden garandeert.
 
-## Hoe werkt het technisch?
+![Bestanden uploaden in JP Transfer](/img/projects/jptransfer_upload.png)
 
-Achter de schermen maakt JP Transfer gebruik van een moderne tech stack en
-doordachte architectuur om een soepele en veilige ervaring te garanderen:
+#### Kernfuncties en Filosofie
 
-- **Backend Architectuur:**
+Het project is gebouwd met de volgende principes in gedachten:
 
-  - De server-side logica is gebouwd met **Java** en het **Spring Boot**
-    framework.
-  - Alle communicatie tussen de frontend en backend verloopt via een **REST
-    API**. Deze API-endpoints zijn beveiligd met **Spring Security** en maken
-    gebruik van **JWT (JSON Web Tokens)** voor authenticatie en autorisatie van
-    gebruikers.
-  - Alle metadata over de uploads, gebruikers en chunks wordt opgeslagen in een
-    **MariaDB** database.
+- **Privacy Eerst:** Ik weet precies waar de bestanden staan en wie er toegang toe heeft. Geen derde partijen, geen onzekerheid.
+- **Grote Bestanden Welkom:** De architectuur is specifiek ontworpen om grote bestanden betrouwbaar en efficiënt te verwerken.
+- **Gecontroleerde Toegang:** De dienst is een gesloten en vertrouwde omgeving. Ik voeg zelf handmatig gebruikers toe, waardoor de toegang exclusief blijft.
 
-- **Frontend Interactie:**
+![Downloadpagina met bestanden](/img/projects/jptransfer_download.png)
 
-  - De gebruikersinterface is een single-page application (SPA) ontwikkeld met
-    **React** en **TypeScript**.
-  - Voor de routing binnen de applicatie wordt **TanStack Router** gebruikt.
+### 3. De Technische Architectuur
 
-### Het Uploadmechanisme
+#### De Tech Stack: Robuust en Modern
 
-Om grote bestanden betrouwbaar te kunnen verwerken, maakt JP Transfer gebruik
-van een geavanceerd uploadproces:
+Achter de schermen draait JP Transfer op een doordachte architectuur om een soepele en veilige ervaring te garanderen:
 
-1.  **Initialisatie (Frontend):**
+- **Backend:** Een REST API gebouwd met **Java** en **Spring Boot**. De endpoints zijn beveiligd met **Spring Security** en **JSON Web Tokens (JWT)**.
+- **Frontend:** Een Single-Page Application (SPA) ontwikkeld met **React** en **TypeScript**, met **TanStack Router** voor de navigatie.
+- **Database:** **MariaDB** voor het opslaan van alle metadata over uploads, gebruikers en bestands-chunks.
 
-    - Wanneer een gebruiker bestanden selecteert, berekent de frontend eerst de
-      **checksum (hash) van elk volledig bestand** (via het `sha1` algoritme).
-      Dit dient later ter verificatie om te garanderen dat de ontvangen data
-      identiek is aan de originele data.
-    - Vervolgens wordt een `startTransfer` verzoek naar de backend API
-      gestuurd. Dit verzoek bevat metadata over de te uploaden bestanden
-      (bestandsnaam, type, totale grootte, de berekende checksum, de gewenste
-      chunk-grootte en het totaal aantal chunks per bestand).
+#### Het Hart van de Applicatie: Een Geavanceerd Uploadmechanisme
 
-2.  **Chunking en Parallelle Upload (Frontend):**
+Om de betrouwbaarheid bij grote bestanden te garanderen, heb ik een proces geïmplementeerd dat data-integriteit centraal stelt. Dit werkt in vier stappen:
 
-    - Na bevestiging van de backend, splitst de frontend elk bestand op in
-      kleinere **chunks** (bijvoorbeeld van een vaste grootte zoals
-      gedefinieerd in `CONSTANTS.CHUNK_SIZE`).
-    - Voor elke chunk wordt een **individuele checksum** berekend.
-    - Deze chunks worden vervolgens **parallel geüpload** naar de server. De
-      `processQueue` functie in de frontend zorgt ervoor dat er een maximaal
-      aantal (`CONSTANTS.MAX_CONCURRENT_UPLOADS`) uploads tegelijkertijd actief
-      zijn, wat de uploadsnelheid optimaliseert zonder de browser of server te
-      overbelasten.
-    - Mocht een chunk-upload falen, dan wordt deze automatisch een paar keer
-      opnieuw geprobeerd (`uploadWithRetry`) voor extra robuustheid.
-    - De gebruiker krijgt feedback over de voortgang van elke chunk.
+**1. Initialisatie en Voorbereiding (Frontend)**
+Voordat de upload start, berekent de browser de **SHA-1 checksum** van het volledige bestand. Deze hash fungeert als een digitale vingerafdruk. Vervolgens wordt een verzoek naar de backend gestuurd met metadata over de bestanden en chunks.
 
-3.  **Chunk Verwerking (Backend):**
+**2. Chunking en Parallelle Upload (Frontend)**
+Elk bestand wordt opgesplitst in kleinere **chunks**. Deze worden **parallel** geüpload om de snelheid te optimaliseren. Elke chunk krijgt zijn eigen checksum mee. Bij een mislukte upload wordt deze automatisch opnieuw geprobeerd, wat het proces extra robuust maakt.
 
-    - De `ChunkService` op de backend ontvangt elke chunk via een specifiek
-      API-endpoint.
-    - Bij ontvangst wordt de **checksum van de ontvangen chunk vergeleken**
-      met de checksum die de frontend heeft meegestuurd. Als deze niet
-      overeenkomen, wordt de chunk als corrupt beschouwd en een foutmelding
-      gegeven (dit voorkomt data corruptie tijdens de overdracht).
-    - Valide chunks worden tijdelijk opgeslagen op de server, en hun metadata
-      (zoals bestands ID, chunk index, opgeslagen pad) wordt in de database
-      bijgehouden.
+**3. Verwerking en Validatie (Backend)**
+De backend ontvangt elke chunk en valideert deze door de meegestuurde checksum te vergelijken met de checksum van de ontvangen data. Corrupte chunks worden geweigerd. Valide chunks worden tijdelijk opgeslagen.
 
-4.  **Assemblage en Verificatie (Backend):**
-    - Zodra de frontend signaleert dat alle chunks van alle bestanden zijn
-      geüpload (via een `finishTransfer` verzoek), start de `FileService` op de
-      backend het assemblageproces.
-    - De service haalt alle opgeslagen chunks voor een specifiek bestand op
-      (in de juiste volgorde op basis van hun index).
-    - Deze chunks worden samengevoegd tot het oorspronkelijke bestand.
-    - **Cruciale stap:** Van het volledig geassembleerde bestand wordt
-      opnieuw een **checksum berekend**. Deze wordt vergeleken met de
-      oorspronkelijke checksum van het volledige bestand die in stap 1 door de
-      frontend was berekend en meegestuurd.
-    - Als beide checksums overeenkomen, is de transfer succesvol en is de
-      integriteit van het bestand gegarandeerd. Het geassembleerde bestand, dat
-      uiteindelijk vaak als onderdeel van een zip-archief wordt aangeboden, is
-      nu klaar voor download. Bij een mismatch wordt het corrupte
-      geassembleerde bestand verwijderd om opslag van incorrecte data te
-      voorkomen.
+**4. Assemblage en Finale Verificatie (Backend)**
+Zodra alle chunks binnen zijn, voegt de server ze in de juiste volgorde samen tot het oorspronkelijke bestand. Daarna volgt de **cruciale stap**: de backend berekent de checksum van het zojuist samengestelde bestand. Deze wordt vergeleken met de originele checksum uit stap 1. Alleen als deze 100% overeenkomen, wordt de transfer als succesvol gemarkeerd en is het bestand klaar voor download.
 
-- **Deployment & DevOps:**
-  - Zowel de backend-service als de frontend-applicatie worden verpakt in
-    **Docker-containers**.
-  - Ik heb een **GitHub Actions workflow** opgezet die bij elke push naar de
-    `main` branch automatisch de Java backend en React frontend bouwt, test, in
-    Docker-images plaatst en deze uploadt naar Docker Hub.
+#### Automatisering en Deployment (CI/CD)
 
-Dit project was niet alleel een leuke uitdaging om mijn eigen file transfer
-service te bouwen, maar ook een geweldige manier om dieper in te gaan op
-technologieën zoals Spring Boot, React, Docker en CI/CD met GitHub Actions, en
-tegelijkertijd een praktische oplossing te creëren voor een reëel privacy- en
-data-integriteitsvraagstuk.
+Het volledige project is gecontaineriseerd met **Docker**. Ik heb een **GitHub Actions workflow** opgezet die bij elke push naar de `main` branch de applicatie automatisch bouwt, test, en nieuwe Docker-images naar Docker Hub publiceert.
+
+### 4. Besluit en Leerpunten
+
+JP Transfer was meer dan alleen het bouwen van een eigen file-transfer-dienst. Het was een diepgaande technische uitdaging die mij in staat stelde om complexe concepten zoals data-integriteit, parallelle verwerking en CI/CD in de praktijk te brengen. Het project heeft niet alleen een praktische oplossing voor een reëel privacyvraagstuk opgeleverd, maar was ook een enorm rijke leerervaring in technologieën als Spring Boot, React en Docker.

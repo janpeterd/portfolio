@@ -1,29 +1,31 @@
 ---
 title: Boekenstapel ASCII generator
+projectType: Persoonlijk project
 date: 2025-05-26
 thumbnail: /img/projects/bookstack.png
-repo: https://github.com/janpeterd/BookStack
+repos:
+  - https://github.com/janpeterd/BookStack
 technologies:
   - python
   - git
+images:
+  - /img/projects/bookstack_display.gif
+  - /img/projects/bookstack_add.gif
 ---
 
-## Inleiding
+### 1. Inleiding
 
-Het idee om een stapel boeken programmatisch te genereren ontstond toen ik op
-[een website](https://sandyuraz.com/books/#-the-stack) een leuke
-ASCII-representatie van een boekenstapel zag.
+#### De vonk: van inspiratie naar idee
 
-Aangezien ik zelf een liefhebber ben van kleine command-line applicaties en ik
-het lezen van boeken tot een van mijn hobbies reken, leek me dit een uitstekend
-project om in mijn vrije tijd aan te werken.
+Het idee voor dit project ontstond toen ik op de website van [Sandy Uraz](https://sandyuraz.com/books/#-the-stack) een prachtige, minimalistische ASCII-representatie van een boekenstapel zag. Als liefhebber van zowel boeken als compacte command-line applicaties, zag ik direct een leuke uitdaging: kon ik zoiets zelf bouwen? Dit leek me een perfect project om mijn passie voor programmeren en lezen te combineren.
 
-## Wat
+### 2. Het Resultaat: Een Persoonlijke Boekenplank in je Terminal
 
-Het resultaat is een compact (~350 regels code) en licht
-command-line-programma (CLI). Hiermee kan de gebruiker boeken toevoegen en
-vervolgens een ASCII-weergave van de boekenstapel genereren. Het programma
-houdt rekening met het formaat van het boek en het aantal pagina's.
+Het eindproduct is een licht en efficiënt command-line programma (CLI) van ongeveer 350 regels code. Het stelt gebruikers in staat om een visuele en persoonlijke boekenstapel te beheren, rechtstreeks vanuit de terminal.
+
+#### Een dynamische, visuele stapel
+
+De kern van het programma is het genereren van de ASCII-boekenstapel. Hierbij wordt rekening gehouden met het formaat van het boek en het aantal pagina's, waardoor elk boek een unieke visuele weergave krijgt.
 
 ```text
         ┌───────────────────────┐
@@ -61,24 +63,32 @@ houdt rekening met het formaat van het boek en het aantal pagina's.
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
 ```
 
-![Bookstack add](/img/projects/bookstack_add.gif)
+Een leuk detail is dat de stapelvolgorde bij elke generatie willekeurig varieert, waardoor de weergave nooit verveelt.
 
-Bovendien varieert de manier waarop de boeken gestapeld worden bij elke
-generatie.
+![Elke keer een andere stapel](/img/projects/bookstack_display.gif)
 
-![Bookstack changes each time](/img/projects/bookstack_display.gif)
+#### Beheer je digitale leeslijst
 
-Daarnaast biedt het programma de mogelijkheid om boekgegevens te importeren en
-exporteren, en kan de uitvoer naar een bestand worden weggeschreven.
-Ten slotte heb ik een hulpcommando geïmplementeerd dat uitleg geeft over alle
-subcommando's, inclusief gebruiksvoorbeelden.
+Naast het visuele aspect biedt de tool praktische functies voor het beheren van een boekencollectie. Gebruikers kunnen eenvoudig boeken toevoegen, en de data importeren of exporteren. Dit maakt het makkelijk om je leeslijst te delen of een back-up te maken.
 
-![Bookstack import](/img/projects/bookstack_import.gif)
+![Boek toevoegen](/img/projects/bookstack_add.gif)
 
-## Hoe
+#### Gebruiksvriendelijkheid voorop
 
-Het programma is geschreven in Python. Ik heb daarbij gestreefd naar eenvoudige
-en goed gestructureerde code. Deze is ook publiek beschikbaar op [mijn Github-account](https://github.com/janpeterd/BookStack)
+Om de tool zo toegankelijk mogelijk te maken, heb ik een hulpcommando geïmplementeerd dat alle functies en subcommando's uitlegt met duidelijke voorbeelden. De gegenereerde boekenstapel kan bovendien direct naar een tekstbestand worden weggeschreven.
 
-Het programma werkt zonder externe afhankelijkheden (dependencies), waardoor
-het eenvoudig uitvoerbaar is en op vrijwel elk platform draait.
+### 3. De Aanpak: Eenvoud en Efficiëntie
+
+#### Pure Python, geen afhankelijkheden
+
+Het programma is volledig geschreven in Python, met een focus op eenvoud en structuur. Een bewuste keuze was om **geen externe afhankelijkheden** (dependencies) te gebruiken. Dit zorgt ervoor dat het programma uiterst licht is en zonder installatieproblemen op vrijwel elk platform draait.
+
+#### Gestructureerde en openbare code
+
+De code is bewust compact en overzichtelijk gehouden. Ik heb gestreefd naar leesbaarheid en onderhoudbaarheid, zodat de logica achter het genereren van de ASCII-art makkelijk te volgen is. De volledige broncode is publiek beschikbaar op mijn [GitHub-profiel](https://github.com/janpeterd/BookStack).
+
+### 4. Besluit en Reflectie
+
+Dit project was een geweldige oefening in het vertalen van een creatief concept naar een functioneel en afgewerkt product. Het eindresultaat is een charmante, praktische tool die precies doet wat ik voor ogen had.
+
+Tijdens de ontwikkeling heb ik veel geleerd over het ontwerpen van een intuïtieve command-line interface en het procedureel genereren van visuele output. Het was een leuke uitdaging om met minimale middelen (enkel standaard Python-bibliotheken) een bevredigend en nuttig programma te bouwen.

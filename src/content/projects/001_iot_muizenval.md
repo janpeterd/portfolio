@@ -1,8 +1,11 @@
 ---
 title: IoT muizenval
 date: 2023-05-19
+projectType: Schoolproject
 thumbnail: /img/projects/iot_muizenval.png
 video: https://youtu.be/tCBAd3iY1O8
+images:
+  - /img/projects/iot_muizenval.png
 technologies:
   - linux
   - bash
@@ -10,48 +13,51 @@ technologies:
   - django
 ---
 
-## IoT muizenval
+### 1. Inleiding
+
+#### De Opdracht: Breng een Alledaags Object tot Leven
+
+Als project voor het vak _IoTEssentials_ in mijn eerste jaar, was de opdracht helder: breng een alledaags object tot leven met de kracht van het 'Internet of Things'. Mijn keuze viel op een klassieker: de muizenval, maar dan wel een slimme, geautomatiseerde en verbonden versie. Dit project was een perfecte samensmelting van hardware, software en creativiteit.
+
+### 2. Wat is het? Een 'Smart' en Verbonden Muizenval
+
+Het eindresultaat is een 'smart' muizenval die fysieke componenten, softwarelogica en cloud-connectiviteit combineert. Het is meer dan een mechanisme; het is een autonoom systeem dat:
+
+- **Automatisch detecteert en sluit** met behulp van een ultrasone sensor en een stappenmotor.
+- **Statusinformatie toont** op een lokaal LCD-scherm (afkomstig van een oude Nokia 5110).
+- **Op afstand bestuurd kan worden** via een op maat gemaakte webinterface.
+- **Data doorstuurt naar de cloud** via een integratie met het **uBeac IoT-platform**.
+
+Alle elektronica is netjes ingebouwd in een houten wijnkist, die fungeert als behuizing en val in één.
+
+![De voltooide IoT muizenval in zijn houten behuizing](/img/projects/iot_muizenval.png)
+
+### 3. De Aanpak: Van Hardware tot Cloud
+
+De realisatie van de muizenval was een gelaagd proces, waarbij elke component een specifieke rol speelt.
+
+#### Hardware en Mechanisme
+
+Het hart van de operatie is een **Orange Pi 3 LTS**, een kleine computer vergelijkbaar met een Raspberry Pi, die Linux draait. Deze bestuurt alle componenten:
+
+- De **ultrasonische sensor** meet de afstand en detecteert de aanwezigheid van een muis.
+- De **stappenmotor** bedient het sluitingsmechanisme, dat werkt met een slim systeem van een elastiek.
+- Fysieke **drukknoppen** en het **LCD-scherm** zorgen voor de lokale bediening en feedback.
+
+#### Software en Connectiviteit
+
+De intelligentie van de val wordt aangedreven door software:
+
+- De kernlogica is geschreven in **Python**. Dit script leest de sensor uit, bestuurt de motor en het scherm.
+- Voor de besturing op afstand heb ik een webinterface gebouwd met **Django**.
+- De status van de val (aantal keren afgegaan, etc.) wordt naar het **uBeac IoT-platform** gestuurd voor monitoring op afstand.
+
+### 4. Besluit: Een Succesvolle Mislukking
+
+Dit eerstejaarsproject was een fundamentele en ontzettend leuke ervaring. Het was de perfecte, praktische introductie in de wereld van IoT, waarbij hardware, software en netwerkconnectiviteit samenkomen.
+
+De ironie? Ondanks alle technologische inspanningen en de succesvolle implementatie van alle features, is het me nooit gelukt een muis te vangen. Het project was technisch een groot succes, maar als muizenvanger een complete mislukking.
+
+Bekijk hieronder de demonstratie van de muizenval in actie.
 
 <iframe style="max-width: 100%;" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tCBAd3iY1O8?si=9nB02cXizRYY426I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-In mijn eerste jaar toegepaste informatica heb ik voor het vak _IoTEssentials_ een muizenval gemaakt die volledig automatisch werkt.
-
-De muizenval maakt gebruik van een ultrasone geluidssensor om de afstand tot een potentiële muis te berekenen.
-Hiermee kan dan via code beslist worden of the muizenval wel of niet moet sluiten.
-
-Het apparaatje dat alles bestuurt is een [orange PI 3 LTS](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/orange-pi-3-LTS.html).
-Dit is een kleine computer, vergelijkbaar met een _Raspberry Pi_ die Linux draait.
-Deze computer voert code uit die ik in **Python** geschreven heb die de bediening van de muizenval voorziet.
-
-Het openen en sluiten van de muizenval gebeurt met een [stappenmotor](https://nl.wikipedia.org/wiki/Stappenmotor)
-
-### Knoppen
-
-Door middel van drukknoppen is het mogelijk om de muizenval te sluiten en te resetten.
-
-### Scherm
-
-De muizenval heeft ook een LCD-scherm om de status van de muizenval en wat extra info (zoals de tijd en het aantal keren dat het is afgegaan) te tonen.
-Het scherm dat ik gebruikt heb kwam oorspronkelijk van een [Nokia 5110](https://en.wikipedia.org/wiki/Nokia_5110) GSM.
-
-### Web UI
-
-Het is ook mogelijk om de muizenval te besturen via een website. Deze heb ik met [Django](https://www.djangoproject.com/) gemaakt.
-
-### uBeac IoT-platform
-
-Ook heb ik een integratie voorzien met het IoT-platform [uBeac](https://www.ubeac.io/).
-Op dit platform is de status van de muizenval dan zichtbaar, samen met het totaal aantal keren dat de muizenval al is afgegaan.
-
-### Behuizing
-
-Deze componenten heb ik in een houten doos voor wijnflessen gestopt.
-Deze doos heb ik in twee compartimenten gesplitst, de voorste voor de muis die binnenkomt en de achterste voor de componenten.
-Bovenop de doos staat de stappenmotor die met behulp van een elastiek de doos opent, wanneer de val afgaat begint de motor te draaien en verslapt de elastiek, waardoor de deur sluit.
-
-![Behuizing muizenval](/img/projects/iot_muizenval.png)
-
-### Besluit
-
-Op het einde van de rit was ik blij met het resultaat.
-Ondanks al deze moeite is het mij toch niet gelukt een muis te vangen...

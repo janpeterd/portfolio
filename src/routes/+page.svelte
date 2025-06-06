@@ -1,26 +1,41 @@
 <script>
   import Hero from '$lib/Components/Hero.svelte'
   import About from '$lib/Components/About.svelte'
+  import Experience from '$lib/Components/Experience.svelte'
+  import Education from '$lib/Components/Education.svelte'
+  import Certification from '$lib/Components/Certification.svelte'
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
   import Technologies from '$lib/Components/Technologies.svelte'
   import { onMount } from 'svelte'
+  import Navbar from '$lib/Components/Navbar.svelte'
+  import Footer from '$lib/Components/Footer.svelte'
+  import Contact from '$lib/Components/Contact.svelte'
+  import SectionDivider from '$lib/Components/SectionDivider.svelte'
+  import Stage from '$lib/Components/Stage.svelte'
+  import ProjectHighlights from '$lib/Components/ProjectHighlights.svelte'
+
+  let { data } = $props()
 </script>
 
 <svelte:head>
   <title>Portfolio - JP</title>
 </svelte:head>
 
-<div class="top-gradient fixed bottom-0 h-screen w-screen overflow-hidden"></div>
-<div class="bottom-gradient fixed top-0 h-full w-screen overflow-hidden"></div>
-
-<div class="md:-mt-12">
-  <HugTextBg />
+<div class="flex w-full flex-col">
   <Hero />
+  <About />
+  <Education />
+  <Experience />
+  <Certification />
+  <Technologies />
+  <Stage />
+  <ProjectHighlights highlightedProjects={data.highlightedProjects} />
+  <Contact />
+  <!-- <Footer /> -->
 </div>
 
-<About />
-
-<Technologies />
+<!-- <div class="top-gradient fixed bottom-0 hidden h-screen w-screen overflow-hidden dark:block"></div> -->
+<!-- <div class="bottom-gradient fixed top-0 hidden h-full w-screen overflow-hidden dark:block"></div> -->
 
 <style lang="postcss">
   .top-gradient {

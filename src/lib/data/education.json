@@ -1,0 +1,43 @@
+[
+  {
+    "startDate": "2022-09-01T00:00:00.000Z",
+    "endDate": null,
+    "dateString": "sinds september 2022",
+    "title": "Professionele bachelor in de Toegepaste Informatica",
+    "company": "Thomas More Campus Geel",
+    "description": "Specialisatie Applicatieontwikkeling",
+    "link": "https://thomasmore.be/nl/opleidingen/professionele-bachelor/toegepaste-informatica/application-development/geel/basistraject",
+    "image": "/img/education/thomas_more_geel.jpg"
+  },
+  {
+    "startDate": "2020-09-01T00:00:00.000Z",
+    "endDate": "2022-07-31T00:00:00.000Z",
+    "dateString": "september 2020- juli 2022, niet afgerond",
+    "title": "Industriële Ingenieurswetenschappen",
+    "company": "Groep T, KU Leuven",
+    "link": null,
+    "type": "education",
+    "image": "/img/education/campus_groep_t_leuven.jpg"
+  },
+  {
+    "startDate": "2014-09-01T00:00:00.000Z",
+    "endDate": "2020-06-30T00:00:00.000Z",
+    "dateString": "september 2014- juni 2020",
+    "title": "Diploma secundair onderwijs, wetenschappen-wiskunde",
+    "company": "Sint-Jozefcollege, Turnhout",
+    "link": null,
+    "type": "education",
+    "image": "/img/education/sint_jozef_college_turnhout.jpg"
+  },
+  {
+    "startDate": "2006-01-01T00:00:00.000Z",
+    "endDate": "2020-12-31T00:00:00.000Z",
+    "dateString": "2006-2020",
+    "title": "SAMWD Turnhout",
+    "company": "SAMWD Turnhout",
+    "description": "Klassieke viool (Suzukimethode) — summa cum laude",
+    "link": null,
+    "type": "education",
+    "image": "/img/education/muziekacademie_turnhout.jpg"
+  }
+]

@@ -1,6 +1,7 @@
 <script>
   import Icon from '@iconify/svelte'
   import HeroImg from '$lib/assets/portrait.jpg?enhanced'
+  import { darkMode } from '../../stores'
 
   import {
     githubLink,
@@ -12,8 +13,7 @@
     mail,
     phone
   } from '../../constants'
-  import HomeTitle from '$lib/Components/HomeTitle.svelte'
-  import { onMount } from 'svelte'
+  import SectionDivider from '$lib/Components/SectionDivider.svelte'
 
   let { data } = $props()
 
@@ -28,7 +28,6 @@
   if (phone !== undefined) storeMap.set('phone', phone)
   if (github !== undefined) storeMap.set('github', github)
   if (linkedIn !== undefined) storeMap.set('linkedIn', linkedIn)
-  console.log('storeMap', storeMap)
 </script>
 
 <svelte:head>
@@ -38,80 +37,40 @@
   <meta property="og:description" content={data.cv?.meta.description} />
 </svelte:head>
 
-<div class="bottom-gradient fixed bottom-0 h-screen w-screen print:hidden"></div>
-<div class="gradient1 fixed -top-20 h-screen w-screen print:hidden"></div>
-
 <div
-  class="container mx-auto mt-24 font-tight print:mt-0 print:max-w-none print:bg-white print:font-sans print:text-sm print:text-black">
+  class="container mx-auto mt-12 px-4 font-tight print:relative print:mt-0 print:max-w-none print:p-4 print:font-sans print:text-sm">
+  <SectionDivider class="text-transparent dark:text-primary" />
   <div>
     <div class="flex items-end justify-between">
-      <h1
-        class="mt-4 pl-2 pt-6 text-4xl font-bold uppercase tracking-tight text-secondary print:text-3xl print:text-black">
+      <h1 class="mt-4 pl-2 pt-6 text-4xl font-bold uppercase tracking-tight print:text-3xl">
         {data.cv?.personalInfo.name}
       </h1>
       <div class="flex gap-x-4">
         <button
           class="hidden cursor-pointer sm:block print:hidden"
           tabindex="0"
-          aria-label="print my cv"
+          aria-label="print mijn cv"
           onclick={() => window.print()}>
           <Icon icon="mdi:printer" width="2rem" />
         </button>
         <a
           class="print:hidden"
-          href={data.cv?.personalInfo.cvPdfUrl}
-          aria-label="download my cv in pdf format">
+          href={$darkMode
+            ? data.cv?.personalInfo.cvPdfUrl.dark
+            : data.cv?.personalInfo.cvPdfUrl.light}
+          download="Cv-Jan-Peter-Dhallé"
+          aria-label="download mijn cv in pdf format">
           <Icon icon="carbon:generate-pdf" width="2rem" />
         </a>
       </div>
     </div>
-    <span class="mb-6 block border-b pb-4 pl-3 text-lg print:mb-2 print:border-black/20">
+    <div class="mb-6 block border-b border-muted-foreground pb-4 pl-3 text-lg print:mb-2">
       {data.cv?.personalInfo.role}
-    </span>
-    <div class="flex flex-col gap-10 lg:mx-auto lg:flex-row print:m-0 print:flex-row print:gap-3">
-      <div class="print:container-none flex-auto lg:min-w-[600px]">
-        <h2 class="cv_heading">Profiel</h2>
-        <!--load from markdown file -->
-        <div class="ml-2 text-lg print:text-sm">
-          <data.content />
-        </div>
+    </div>
 
-        <!-- OPLEIDING -->
-        <div class="my-4">
-          <h2 class="cv_heading">{data.cv?.education.title}</h2>
-          {#each data.cv?.education.items as item}
-            <div class="cv_flex">
-              <span class="cv_item">
-                <p>{item.degree}</p>
-                {#each item.extras as extra}
-                  <p class="cv_item_extra">{extra}</p>
-                {/each}
-              </span>
-              <span class="cv_date">sinds september 2022</span>
-            </div>
-          {/each}
-        </div>
-
-        <!-- PROFESSIONELE WERKERVARING -->
-        <div class="my-4">
-          <h2 class="cv_heading">{data.cv?.experience.title}</h2>
-          {#each data.cv?.experience.items as item}
-            <div class="cv_flex">
-              <span class="cv_item">
-                <p>{item.role_company}</p>
-                <p class="cv_item_extra">{item.description}</p>
-              </span>
-              <span class="cv_date">
-                {item.period}
-              </span>
-            </div>
-          {/each}
-        </div>
-      </div>
-
-      <!-- SIDEBAR -->
+    <div class="flex flex-col gap-10 lg:flex-row print:flex-row print:gap-3">
       <div
-        class="order-first rounded-xl bg-white/10 p-6 backdrop-blur-lg backdrop-saturate-150 sm:m-4 md:mx-auto md:w-8/12 md:min-w-[30%] lg:max-w-96 xl:min-w-0 print:m-2 print:mb-8 print:max-w-96 print:rounded-none print:border-r print:border-black/20 print:px-0 print:py-4 print:pr-2">
+        class="max-w-2/3 order-first mx-auto mb-10 rounded-xl bg-background-alt p-6 backdrop-blur-lg backdrop-saturate-150 lg:order-last lg:mb-0 lg:min-w-64 lg:max-w-[25%] lg:flex-shrink-0 print:order-last print:m-2 print:mb-8 print:max-w-96 print:bg-background-alt print:px-3 print:py-4">
         <enhanced:img
           src={HeroImg}
           alt="Foto van Jan-Peter"
@@ -165,9 +124,48 @@
           {/each}
         </ul>
       </div>
+
+      <div class="print:container-none flex-auto lg:min-w-[430px]">
+        <h2 class="cv_heading">Profiel</h2>
+        <div class="ml-2 text-lg print:text-sm">
+          <data.content />
+        </div>
+
+        <!-- OPLEIDING -->
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.education.title}</h2>
+          {#each data.cv?.education.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <p>{item.degree}</p>
+                {#each item.extras as extra}
+                  <p class="cv_item_extra">{extra}</p>
+                {/each}
+              </span>
+              <span class="cv_date">sinds september 2022</span>
+            </div>
+          {/each}
+        </div>
+
+        <!-- PROFESSIONELE WERKERVARING -->
+        <div class="my-4">
+          <h2 class="cv_heading">{data.cv?.experience.title}</h2>
+          {#each data.cv?.experience.items as item}
+            <div class="cv_flex">
+              <span class="cv_item">
+                <p>{item.role_company}</p>
+                <p class="cv_item_extra">{item.description}</p>
+              </span>
+              <span class="cv_date">
+                {item.period}
+              </span>
+            </div>
+          {/each}
+        </div>
+      </div>
     </div>
 
-    <!-- VERENIGINGEN, VRIJWILLIGERSWERK -->
+    <!-- Hoofdcontent Deel 2 -->
     <div>
       <div>
         <div class="my-4">
@@ -202,7 +200,12 @@
           {#each data.cv?.certificates.items as item}
             <div class="cv_flex">
               <span class="cv_item">
-                <a href={item.link} aria-label={item.ariaLabel} class="flex gap-x-2">
+                <a
+                  href={item.link}
+                  aria-label={item.ariaLabel}
+                  class="flex gap-x-2"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   <span class="flex items-center gap-2 underline print:no-underline">
                     <p>{item.name}</p>
                     <Icon icon="mdi:external-link print:hidden" width="1rem" />
@@ -221,7 +224,7 @@
 
 <style lang="postcss">
   h2.cv_heading {
-    @apply mb-4 border-b border-white/40 px-2 py-6 text-3xl font-bold lg:w-auto lg:text-4xl print:mb-2 print:border-black/30 print:py-2 print:text-base;
+    @apply mb-4 border-b border-muted-foreground px-2 py-6 text-3xl font-bold lg:w-auto lg:text-4xl print:mb-2 print:py-2 print:text-base;
   }
   span.cv_item {
     @apply ml-2 text-lg font-semibold lg:text-2xl print:text-base;
@@ -237,21 +240,5 @@
 
   div.cv_flex {
     @apply flex flex-row justify-between p-2 align-baseline print:p-2;
-  }
-
-  .bottom-gradient {
-    z-index: -10;
-    mask-image: radial-gradient(305vw 450px at 50% 50%, rgba(0, 0, 0, 1) 80%, transparent);
-    background:
-      url('/img/grain.webp'),
-      radial-gradient(105vw 850px at 50% 90%, theme(colors.secondary / 10%), transparent);
-  }
-
-  .gradient1 {
-    z-index: -10;
-    mask-image: radial-gradient(302vw 220vh at -60% 35vh, rgba(0, 0, 0, 1) 30%, transparent);
-    background:
-      url('/img/grain.webp'),
-      radial-gradient(302vw 450px at -60% 35vh, theme(colors.primary / 80%), transparent);
   }
 </style>

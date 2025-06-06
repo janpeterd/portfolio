@@ -1,7 +1,7 @@
 ---
 title: Jpserv Home server
+projectType: Persoonlijk project
 date: 2025-02-27
-highlight: true
 thumbnail: /img/projects/jpserv/2024-11-07_15-15-13_screenshot.png
 images:
   - /img/projects/jpserv/2024-09-08_01-58-56_Screenshot_2024-09-08-01-56-20_1920x1080.png
@@ -12,7 +12,6 @@ technologies:
   - bash
   - docker
   - git
-  - vim
 ---
 
 ## Achtergrondinfo

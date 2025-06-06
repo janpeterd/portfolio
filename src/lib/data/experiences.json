@@ -1,0 +1,40 @@
+[
+  {
+    "startDate": "2025-02-01T00:00:00.000Z",
+    "endDate": "2025-05-23T00:00:00.000Z",
+    "dateString": "1 Februari 2025 - 23 Mei 2025",
+    "title": "Stage Full Stack Java developer",
+    "company": "Lykios (Faros)",
+    "description": "Ontwikkeling quizplatform \"Qurio\" met Spring Boot REST-API, frontend in React, SCRUM",
+    "image": "/img/experience/lykios.png",
+    "link": "/#stage"
+  },
+  {
+    "startDate": "2023-03-01T00:00:00.000Z",
+    "endDate": "2023-03-31T00:00:00.000Z",
+    "dateString": "Maart 2023",
+    "title": "Computerbouw",
+    "company": "Freelance",
+    "description": "Computer samengesteld en geassembleerd naar de noden van de klant"
+  },
+  {
+    "startDate": "2022-08-01T00:00:00.000Z",
+    "endDate": "2022-08-31T00:00:00.000Z",
+    "dateString": "Juni 2019, Augustus 2022",
+    "title": "Jobstudent",
+    "company": "R. Janssen & Zn nv",
+    "image": "/img/experience/rjanssenzn.png",
+    "description": "Magazijn en voorraadbeheer",
+    "link": "https://janssenr.be/nl/"
+  },
+  {
+    "startDate": "2022-01-01T00:00:00.000Z",
+    "endDate": null,
+    "dateString": "2022-heden",
+    "title": "Webmaster",
+    "company": "Zandhoven Natuurlijk!",
+    "description": "Als vrijwilliger verantwoordelijk voor het onderhoud en de (door)ontwikkeling van de website, gebaseerd op Duda CMS. Tevens de migratie van de nieuwsbriefprovider van Mailchimp naar Laposta geleid.",
+    "image": "/img/experience/zandhovennatuurlijk.webp",
+    "link": "https://www.zandhovennatuurlijk.be/"
+  }
+]

@@ -1,10 +1,19 @@
 ---
 title: Qurio quizplatform
 date: 2025-05-24
+projectType: Stageproject
+course: Stage Lykios
 highlight: true
 thumbnail: /img/projects/qurio_home.png
 images:
   - /img/projects/qurio_home.png
+  - /img/projects/qurio_register.png
+  - /img/projects/qurio_start.png
+  - /img/projects/qurio_play.png
+  - /img/projects/qurio_result.png
+  - /img/projects/qurio_profile.gif
+  - /img/projects/qurio_search.gif
+  - /img/projects/qurio_validation.png
 attachments:
   - /doc/stage/Projectplan stage Lykios 2025 - Jan-Peter Dhallé.pdf
   - /doc/stage/Realisatiedocument stage Lykios 2025 - Jan-Peter Dhallé.pdf
@@ -18,172 +27,71 @@ technologies:
   - postgresql
   - docker
   - jenkins
-  - vscode
   - git
   - figma
 ---
 
-Tijdens mijn [stageperiode bij Lykios](/stage) heb ik samen met één andere
-stagiaire gewerkt aan een quizplatform genaamd `Qurio`. Zoals de naam zegt was
-het primaire doel ervan om mensen toe te laten om quizzen aan te maken en te
-spelen. De vele functies van de applicatie omvatten onder andere:
+### 1. Inleiding
 
-- Gebruikers met **verschillende rollen en permissies**
-- Authenticatie op basis van JWT, zonder gebruik te maken van externe services.
-- Wachtwoord-reset, via e-mail
-- Verschillende vraagtypes en **makkelijk uitbreidbare, modulaire architectuur** om er toe nog te voegen.
-- Uitgebreide zoekfunctionaliteit voor het zoeken van quizzen en gebruikers
-- Het beheren van verschillende types vragen, met "Rich Text"-ondersteuning
-- Transparante scoreberekening die per antwoord de toegevoegde of verloren
-  score toont
-- Generatie van een uitnodigingslink, waarmee gebruikers zonder account ook
-  deel kunnen nemen aan een quiz.
-- Gebruikersprofiel en instellingen per gebruiker
-- Statistieken per quiz
-- Feedback op quiz of vraag
-- ...
+#### Een Ambitieus Stageproject bij Lykios
 
-## Technologieën
+Tijdens mijn [stageperiode bij Lykios](/stage) kreeg ik de opdracht om, samen met één andere stagiair, een volwaardig quizplatform te ontwikkelen genaamd `Qurio`. Het doel was om een complete applicatie te bouwen die niet alleen het spelen van quizzen mogelijk maakte, maar ook een rijk ecosysteem bood voor het aanmaken, beheren en analyseren van content. Dit project was een uitgelezen kans om een complex softwareproduct van begin tot eind te realiseren.
 
-De applicatie bestaat uit een backend en een frontend. De backend is gemaakt in
-Java met Spring boot. De frontend gebruikt Typescript met React en [React Router in framework modus](https://reactrouter.com/start/modes).
+### 2. Wat is Qurio?
 
-- Voor de rest hebben we gebruik gemaakt van:
-  - [Spring Security](https://spring.io/projects/spring-security)
-  - [Shadcn/UI](https://ui.shadcn.com/)
-  - [TailwindCSS](https://tailwindcss.com/)
-  - [Editor.js](https://editorjs.io/)
-  - [Playwright](https://playwright.dev/)
-  - [Flyway](https://github.com/flyway/flyway)
-  - [Lombok](https://projectlombok.org/)
-  - [Mapstruct](https://mapstruct.org/)
-  - [JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token)
-  - ...
+#### Een Compleet en Feature-Rijk Quizplatform
 
-Ook heb ik veel rekening gehouden met de modulariteit en uitbreidbaarheid van
-de applicatie. Daarom heb ik gebruik gemaakt van het
-[strategieontwerpatroon](https://refactoring.guru/design-patterns/strategy) om
-een abstractie te maken voor de scoreberekening per soort vraag.
+Qurio is een webapplicatie die gebruikers in staat stelt om quizzen te creëren, te delen en te spelen. Het platform is ontworpen om een brede set aan functionaliteiten te bieden, met aandacht voor zowel de quizmaker als de speler.
 
-Ook hebben we onze eigen [annotaties](https://en.wikipedia.org/wiki/Java_annotation) gemaakt om complexe
-logica te hergebruiken.
+![De thuispagina van Qurio met een overzicht van quizzen](/img/projects/qurio_home.png)
 
-Belangrijke beslissingen en uitleg over de werking van algoritmes hebben we ook
-steeds opgeschreven in een document. Hieruit kunnen toekomstige ontwikkelaars
-belangrijke informatie halen.
+#### Belangrijkste functionaliteiten
 
-# Testen
+De applicatie omvat een breed scala aan features, waaronder:
 
-Tijdens de ontwikkeling van de applicatie heb ik erg veel aandacht besteed
-aan het schrijven van tests. Dit waren tests op elk niveau: unittests,
-unitegratietesten en end-to-end testen.
+- **Flexibel Gebruikersbeheer:** Authenticatie met rollen en permissies (admin, gebruiker) die van de grond af zijn opgebouwd met JWT.
+- **Veilige Toegang:** Inclusief een wachtwoord-reset-functie via e-mail.
+- **Dynamisch Quiz Spelen:** Met een transparante scoreberekening en de mogelijkheid voor gasten om deel te nemen via een unieke link.
+- **Uitgebreid Vragenbeheer:** Ondersteuning voor diverse vraagtypes met "Rich Text" en een modulaire architectuur om eenvoudig nieuwe types toe te voegen.
+- **Krachtige Zoekfunctie:** Voor het snel vinden van quizzen en gebruikers.
+- **Personalisatie en Analyse:** Gebruikers kunnen hun profiel beheren en per quiz gedetailleerde statistieken inzien.
 
-Aan het einde van de stage telde project **meer dan 300 testen** met een
-**code-coverage van 80%**. Hier ben ik erg trots op.
+![Het spelen van een quiz](/img/projects/qurio_play.png)
 
-Deze werden ook allemaal automatisch uitgevoerd voor elke branch via een
-Jenkins CI/CD-pipeline die ik ook zelf heb geïnstalleerd op een reservelaptop.
+### 3. De Technische Aanpak
 
-## Resultaat
+#### Architectuur en Tech Stack
 
-Het resultaat is een erg robuuste applicatie met veel verschillende functies.
-Het zou in de toekomst zeker nog uitgebreid kunnen worden om deze
-functionaliteiten commercieel aan te bieden aan bedrijven en gebruikers.
+De applicatie is opgebouwd uit een **Java/Spring Boot backend** en een **TypeScript/React frontend**. Deze scheiding zorgde voor een duidelijke structuur en maakte parallelle ontwikkeling mogelijk. We maakten gebruik van een moderne en robuuste tech stack, met o.a. Spring Security, PostgreSQL, Shadcn/UI, TailwindCSS en Docker.
 
-Tijdens de stageperiode hebben we veel verschillende functies uitgewerkt,
-hier volgt een kort overzicht van de belangrijkste functies.
+#### Slimme Ontwerpkeuzes en Modulariteit
 
-### Algemeen
+Om de applicatie toekomstbestendig en onderhoudbaar te maken, heb ik specifieke ontwerpkeuzes gemaakt:
 
-- Validatie op alle formuliervelden
-  ![Validatie](/img/projects/qurio_validation.png)
-- Authenticatie en permissiecontrole op elke pagina.
+- **Strategy Design Pattern:** Dit patroon werd toegepast voor de scoreberekening, waardoor de logica per vraagtype geïsoleerd en makkelijk uitbreidbaar is.
+- **Custom Java Annotations:** Om complexe en herbruikbare logica, zoals permissiecontroles, op een elegante en declaratieve manier te implementeren.
+- **Grondige Documentatie:** Belangrijke architecturale beslissingen en algoritmes werden gedocumenteerd om de kennisoverdracht naar toekomstige ontwikkelaars te garanderen.
 
-- Validatie voor elk endpoint in de backend
-- Endpointbeveiliging en permissiecontrole voor elk endpoint in backend.
-- Paginering in backend voor het versturen van grote objecten.
+#### Een Rotsvaste Basis: Testen en Kwaliteit
 
-### Authenticatie
+Kwaliteitszorg was een topprioriteit. Ik heb intensief ingezet op het schrijven van tests op elk niveau: unit-, integratie- en end-to-end testen (met Playwright).
 
-- Registreren voor account
-  ![Registratie](/img/projects/qurio_register.png)
-  ![Registratie](/img/projects/qurio_register.gif)
+> Het resultaat was een project met **meer dan 300 tests** en een **code-coverage van 80%**, een prestatie waar ik erg trots op ben.
 
-- Inloggen
-  ![Registratie](/img/projects/qurio_login.gif)
+Om dit proces te automatiseren, heb ik op een reservelaptop een **Jenkins CI/CD-pipeline** opgezet die alle tests automatisch uitvoerde bij elke wijziging.
 
-- Wachtwoord vergeten
-  ![Wachtwoord vergeten](/img/projects/qurio_password_reset.gif)
+#### Een Creatieve Deployment Oplossing
 
-### Quiz spelen
+Zonder budget voor een cloudomgeving heb ik een creatieve oplossing bedacht. Met een oude laptop als server, **Nginx** als reverse-proxy en **ngrok** om een publieke URL te creëren, heb ik een volwaardige productie-omgeving gesimuleerd.
 
-- Overzicht van alle quizzen
-  ![Thuispagina](/img/projects/qurio_home.png)
+### 4. Besluit en Resultaat
 
-- Detailpagina quiz
-  ![Detailpagina quiz](/img/projects/qurio_start.png)
+Het eindresultaat van deze stage is een zeer robuuste en feature-rijke applicatie met commercieel potentieel. Het project was een diepgaande leerervaring die verder ging dan enkel programmeren; het omvatte architectuur, teamwork, kwaliteitszorg en DevOps. Qurio toont mijn vermogen om een complex softwareproduct van concept tot een functioneel en goed getest eindproduct te brengen.
 
-- Spelen van quiz
-  ![Spelen van quiz](/img/projects/qurio_play.png)
-- Resultaat van quiz
-  ![Resultaat quiz](/img/projects/qurio_result.png)
+#### Bekijk de Documentatie
 
-### Profiel
+Voor een dieper inzicht in het projectplan, de realisatie en de functionaliteiten, zijn de volgende documenten beschikbaar:
 
-- Gebruikersprofiel
-  ![Gebruikersprofiel](/img/projects/qurio_profile.gif)
-
-### Zoeken
-
-- Quiz zoeken
-  ![Quiz zoeken](/img/projects/qurio_search.gif)
-- Gebruikers zoeken
-  ![Quiz zoeken](/img/projects/qurio_search_user.gif)
-
-### Quiz- en vragenbeheer
-
-- Ja-neevraag aanmaken
-  ![Ja-neevraag aanmaken](/img/projects/qurio_create_question.gif)
-- Opties voor een multiplechoicevraag
-  ![Antwoordopties multiplechoicevraag](/img/projects/qurio_multiplechoice_answers.png)
-
-- Maak/wijzig een quiz
-
-  - Gewicht van de vraag (telt in scoreberekening)
-  - Vragen selecteren
-  - Volgorde van de vragen
-    ![Maak/wijzig een quiz](/img/projects/qurio_update_quiz.gif)
-
-- Zoek quiz/vraag, Klonen van een quiz of vraag, verwijder
-  ![Maak/wijzig een quiz](/img/projects/qurio_manage.gif)
-
-### Extra quizfuncties
-
-- Statistieken en resultaten bekijken voor een gemaakte quiz
-  ![Statistieken en resultaat](/img/projects/qurio_statistics.gif)
-
-- Genereren voor gebruiker zonder account
-  ![Link delen voor gebruiker zonder account](/img/projects/qurio_sharedlink.gif)
-
-### Gebruikers en categorieën beheren
-
-- Enkel gebruikers met `admin` rol
-- Gebruiker blokkeren/archiveren
-  ![Block user](/img/projects/qurio_archive_user.gif)
-
-- Categorieën beheren
-  ![Categorieën beheren](/img/projects/qurio_categories.gif)
-
-## Deployment
-
-We hadden geen budget om een domein of een cloudomgeving aan te kopen om de
-applicatie te hosten. Wel hadden ik een oude laptop ter beschikking die
-permanent opstond.
-
-Om toch een _productieomgeving_ te simuleren heb ik via
-[ngrok](http://ngrok.com/) een lokale omgeving naar een statisch domain
-gentunneled.
-
-Ngrok biedt gratis maar 1 statisch domein aan, daarom heb ik eerst met
-[nginx](https://nginx.org/) een reverse-proxy opgesteld, zodat ik frontend en
-backend hetzelfde domein konden gebruiken.
+- [Projectplan Stage Lykios 2025 - Jan-Peter Dhallé.pdf](/doc/stage/Projectplan%20stage%20Lykios%202025%20-%20Jan-Peter%20Dhallé.pdf)
+- [Realisatiedocument Stage Lykios 2025 - Jan-Peter Dhallé.pdf](/doc/stage/Realisatiedocument%20stage%20Lykios%202025%20-%20Jan-Peter%20Dhallé.pdf)
+- [Functionele User Manual Qurio - Lykios stage 2025.pdf](/doc/stage/Functionele%20User%20Manual%20Qurio%20-%20Lykios%20stage%202025.pdf)

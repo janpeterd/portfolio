@@ -3,6 +3,109 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light Mode Colors (HSLA values for Tailwind) - UNCHANGED */
+    --background: 0 0% 100%; /* white */
+    --background-alt: 0 0% 95%; /* slightly off-white, like slate-50 */
+    --background-subtle: 220 14.3% 95.9%; /* slate-100, for subtle internal sections */
+    --background-hued: 210 40% 96%; /* Soft, very light desaturated blue (e.g., like a very light blue-gray) */
+
+    --foreground: 0 0% 6%; /* slate-950 */
+
+    --contrast-background: 0 0% 20%; /* Dark gray, e.g., slate-900 */
+    --contrast-foreground: 0 0% 80%; /* Light gray / off-white, e.g., slate-100 */
+
+    --muted: 220 14.3% 93.9%; /* slate-150 (custom, between 100 and 200) or use slate-200 */
+    --muted-foreground: 220 8.9% 46.1%; /* slate-500 */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+
+    --border: 220 13% 88%; /* slate-200 / slate-300ish */
+    --input: 220 13% 91%;
+
+    --primary: 220 80% 65%; /* brand-primary: #101233 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 28 100% 48.2%;
+    --secondary-foreground: 0 0% 6%;
+
+    /* You have --secondary defined twice, I'll assume the one above is the intended one */
+    /* --secondary: 28 100% 48.2%; */
+    /* This seems to be a duplicate or meant for accent */
+    --accent: 28 100% 48.2%; /* Using your existing secondary for accent */
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 220 13% 91%;
+
+    --radius: 0.75rem;
+
+    --section-primary-bg: 235 69% 96%;
+    --section-primary-foreground: 235 69% 13%;
+    --section-secondary-bg: 28 100% 96%;
+    --section-secondary-foreground: 28 70% 25%;
+  }
+
+  .dark {
+    --background: 0 0% 6%; /* Example: Dark solid gray (e.g., #0F0F0F) */
+    --background-alt: 0 0% 10%; /* Darker gray, for non-glass elements if any */
+    --background-subtle: 0 0% 13%; /* Even lighter dark gray */
+    --background-hued: 0 0% 13%; /* Even lighter dark gray */
+
+    --contrast-background: 0 0% 0%; /* Sidebar would use this */
+    --contrast-foreground: var(--foreground);
+
+    --foreground: 0 0% 97%; /* Bright, clean off-white for high contrast */
+    --glass-bg: 0 0% 100% / 0.1; /* White with very low opacity (e.g., 8-15%) */
+    --glass-border-color: 0 0% 100% / 0.15; /* Slightly more opaque white for border */
+    --card: var(--glass-bg);
+    --card-foreground: var(--foreground);
+    --popover: var(--glass-bg);
+    --popover-foreground: var(--foreground);
+    --muted-foreground: 0 0% 65%; /* Gray for secondary text (ensure contrast on glass) */
+    --muted: 0 0% 100% / 0.05; /* Example: Even more transparent glass for muted bg */
+    --border: 0 0% 20%; /* Dark gray border for solid elements */
+    --input-bg-glass: 0 0% 100% / 0.07; /* Glassy input */
+    --input-border-glass: 0 0% 100% / 0.12;
+    --input-bg-solid: 0 0% 10%; /* Solid dark input */
+    --input-border-solid: 0 0% 18%;
+    --input: var(--input-bg-solid); /* Defaulting to solid for simplicity here */
+    --primary: 220 80% 65%; /* Bright, clean blue */
+    --primary-foreground: 0 0% 100%; /* White text */
+    --secondary: 28 100% 58%; /* Orange accent */
+    --secondary-foreground: 0 0% 6%; /* Dark text on orange */
+    --accent: var(--secondary);
+    --accent-foreground: var(--secondary-foreground);
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 210 100% 70%;
+    --section-primary-bg: 0 0% 5%; /* Very dark solid */
+    --section-primary-foreground: var(--muted-foreground);
+    --section-secondary-bg: 0 0% 7%; /* Slightly lighter dark solid */
+    --section-secondary-foreground: var(--muted-foreground);
+  }
+}
+
+/* ... rest of your CSS ... */
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   h1,
   h2,
   h3,
@@ -11,37 +114,39 @@
   h6 {
     @apply font-tight;
   }
-}
 
-/* Scrollbars */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: theme(colors.slate.200/50) transparent;
-  box-sizing: border-box;
-  scroll-margin-top: 100px;
-}
+  /* Scrollbars */
+  * {
+    scrollbar-width: thin;
+    /* For Light Mode */
+    scrollbar-color: theme(colors.slate.300 / 0.5) transparent;
+    box-sizing: border-box;
+    scroll-margin-top: 100px; /* Adjust as needed for sticky headers */
+  }
 
-*::-webkit-scrollbar {
-  width: 6px;
-}
+  *::-webkit-scrollbar {
+    width: 8px; /* Slightly wider for better grab */
+    height: 8px;
+  }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-*::-webkit-scrollbar-thumb {
-  background-color: theme(colors.slate.700);
-  border-radius: 24px;
-}
+  *::-webkit-scrollbar-thumb {
+    /* For Light Mode */
+    background-color: theme(colors.slate.400 / 0.7);
+    border-radius: 20px;
+    border: 2px solid transparent; /* Creates a small gap */
+    background-clip: content-box;
+  }
 
-body {
-  background-color: black;
-  color: theme(colors.white);
-  background-color: theme(colors.black);
-  min-height: 100vh;
-  scroll-behavior: smooth;
-}
+  /* Dark Mode Scrollbars */
+  .dark * {
+    scrollbar-color: theme(colors.slate.600 / 0.5) transparent;
+  }
 
-html {
-  scroll-behavior: smooth;
+  .dark *::-webkit-scrollbar-thumb {
+    background-color: theme(colors.slate.500 / 0.7);
+  }
 }

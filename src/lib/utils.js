@@ -20,11 +20,9 @@ export const convertDate = (published) => {
   return `${day}-${months[parseInt(month)]}-${year}`
 }
 
-function formatDate(date, dateStyle = 'medium', locales = 'en') {
+export function formatDate(date, dateStyle = 'medium', locales = 'en') {
   const dateToFormat = new Date(date)
-
   const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle })
-
   return dateFormatter.format(dateToFormat)
 }
 
@@ -69,9 +67,9 @@ export function getIconAndColorForUrl(urlString) {
     case 'youtu.be':
       return { icon: 'mdi:youtube', textColor: 'text-[#FF0033]' }
     case 'www.github.com':
-      return { icon: 'mdi:github', textColor: 'text-[#F0F6FC]' }
+      return { icon: 'mdi:github', textColor: 'text-[#010409] dark:text-[#F0F6FC]' }
     case 'github.com':
-      return { icon: 'mdi:github', textColor: 'text-[#F0F6FC]' }
+      return { icon: 'mdi:github', textColor: 'text-[#010409] dark:text-[#F0F6FC]' }
     default:
       return null
   }
@@ -107,4 +105,22 @@ export function getIsMobile() {
       check = true
   })(navigator.userAgent || navigator.vendor || window.opera)
   return check
+}
+
+export async function getData(url) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`)
+    }
+
+    const contentType = response.headers.get('content-type')
+    if (!contentType || !contentType.includes('application/json')) {
+      throw new TypeError("Oops, we haven't got JSON!")
+    }
+
+    return await repsonse.json()
+  } catch (error) {
+    console.error('Error getData:', error)
+  }
 }

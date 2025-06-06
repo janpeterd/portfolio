@@ -2,7 +2,9 @@
 title: Museumplanning bezoekerscentrum OPZ
 date: 2023-05-21
 thumbnail: /img/projects/ps1_project_home.png
-repo: https://github.com/janpeterd/PS1-project
+projectType: Schoolproject
+repos:
+  - https://github.com/janpeterd/PS1-project
 images:
   - /img/projects/ps1_project_home.png
   - /img/projects/ps1_project_overzicht.png
@@ -12,49 +14,42 @@ technologies:
   - git
 ---
 
-## De Opdracht: Een Geautomatiseerd Planningssysteem
+### 1. Inleiding
 
-Als eindopdracht voor het vak "Professionele Vaardigheden" in mijn eerste jaar Toegepaste Informatica, ontwikkelde ik een webapplicatie voor het [Bezoekerscentrum Passage](https://www.opzgeel.be/nl/bezoekerscentrum) van het [Openbaar Psychiatrisch Zorgcentrum (OPZ)](https://www.opzgeel.be/nl) in Geel. De applicatie had als doel het stroomlijnen van het proces voor het aanvragen en inplannen van rondleidingen.
+#### De Uitdaging: Een Planningssysteem voor het OPZ Geel
 
-De kernfunctionaliteit omvatte:
+Als eindopdracht voor het vak "Professionele Vaardigheden" in mijn eerste jaar Toegepaste Informatica, kreeg ik de opdracht een webapplicatie te ontwikkelen voor het [Bezoekerscentrum Passage](https://www.opzgeel.be/nl/bezoekerscentrum) van het Openbaar Psychiatrisch Zorgcentrum (OPZ) in Geel. Het doel was het automatiseren van het volledige proces voor het aanvragen en inplannen van rondleidingen.
 
-1.  Een online formulier waarmee bezoekers een afspraak konden aanvragen.
-2.  Automatische e-mailnotificaties naar de beschikbare gidsen van het museum.
-3.  Een mechanisme voor gidsen om zich aan te melden voor een specifieke rondleiding.
-4.  Indien geen enkele gids beschikbaar was, werd de aanvrager per e-mail geïnformeerd met het verzoek een nieuw moment te kiezen.
+### 2. Wat is het? Een Geautomatiseerd Planningssysteem
 
-## Mijn Rol en Leertraject: Van Basis tot Webapplicatie
+Het resultaat is een webapplicatie die het planningsproces voor zowel bezoekers als gidsen stroomlijnt. De kernfunctionaliteiten omvatten:
 
-Voor dit project heb ik vrijwel de volledige applicatie zelfstandig ontwikkeld, een prestatie waar ik nog steeds trots op ben. Dit was mijn eerste kennismaking met het bouwen van een volledige webapplicatie en het opzetten van de bijbehorende hosting. Voorafgaand aan dit project beperkte mijn programmeerervaring zich tot de basisprincipes van Python en het creëren van eenvoudige, statische webpagina's met HTML en CSS.
+- **Online Aanvragen:** Een eenvoudig formulier voor bezoekers om een rondleiding aan te vragen.
+- **Automatische Notificaties:** Beschikbare gidsen ontvangen automatisch een e-mailnotificatie bij een nieuwe aanvraag.
+- **Aanmelden voor Gidsen:** Een overzichtspagina waar gidsen zich kunnen aanmelden voor een specifieke rondleiding.
+- **Heldere Communicatie:** Als geen gids beschikbaar is, wordt de aanvrager automatisch geïnformeerd met het verzoek een nieuw moment te kiezen.
 
-Het zelfstandig uitzoeken van alle aspecten – van backend logica en database-integratie tot e-mailverzending en deployment – was een steile, maar enorm waardevolle leercurve.
+![Homepage met het afsprakenformulier voor bezoekers](/img/projects/ps1_project_home.png)
 
-## Gebruikte Technologieën
+### 3. De Aanpak: Van Basis tot Volwaardige Webapplicatie
 
-Voor de realisatie van deze applicatie heb ik de volgende technologieën ingezet:
+Dit project was een diepgaand leertraject waarin ik vrijwel de volledige applicatie zelfstandig heb ontwikkeld – een prestatie waar ik nog steeds trots op ben.
 
-- **Backend Framework:** [Django](https://www.djangoproject.com/) (Python) voor de server-side logica en de Model-View-Controller (MVC) architectuur.
-- **Database:** [Supabase](https://supabase.com/) als cloud-gebaseerde PostgreSQL-database voor het opslaan van afspraakgegevens en gidsinformatie.
-- **Hosting:** [Vercel](https://vercel.com/) voor de deployment van de applicatie. Aangezien Vercel primair gericht is op JavaScript-projecten, heb ik hiervoor een **custom deployment script** moeten schrijven om de Django-applicatie correct te kunnen hosten.
-- **E-mailverzending:** De [Gmail API (of SMTP-configuratie)](https://mail.google.com/) voor het geautomatiseerd versturen van notificaties naar bezoekers en gidsen.
+#### Een Sprong in het Diepe: Mijn Leertraject
 
-## Het Resultaat: Een Functioneel Planningssysteem
+Voorafgaand aan dit project was mijn programmeerervaring beperkt tot de basis van Python en statische webpagina's. Dit project was mijn eerste kennismaking met het bouwen van een volledige webapplicatie. Het zelfstandig uitzoeken van backend-logica, database-integratie, e-mailverzending en deployment was een steile, maar enorm waardevolle leercurve.
 
-Het eindresultaat was een volledig operationele webapplicatie die het planningsproces voor het Bezoekerscentrum Passage effectief ondersteunde. De applicatie kon:
+#### Technologiekeuzes en Uitdagingen
 
-- Afspraakverzoeken via een webformulier ontvangen.
-- Data persistent opslaan en beheren in een cloud-database.
-- Geautomatiseerde e-mails versturen om de communicatie tussen bezoekers en gidsen te faciliteren.
-- Een overzicht bieden aan gidsen van openstaande en toegewezen rondleidingen.
+Voor de realisatie heb ik de volgende technologieën ingezet:
 
-Hieronder enkele schermafbeeldingen van de applicatie:
+- **Backend:** **Django** (Python) voor de server-side logica en de MVC-architectuur.
+- **Database:** **Supabase** als cloud-gebaseerde PostgreSQL-database.
+- **Hosting:** **Vercel**. Aangezien Vercel primair gericht is op JavaScript, vereiste dit het schrijven van een **custom deployment script** om de Django-applicatie correct te kunnen hosten, wat een interessante technische uitdaging was.
+- **E-mailverzending:** De **Gmail API** voor het geautomatiseerd versturen van alle notificaties.
 
-![Homepage met het afsprakenformulier voor bezoekers.](/img/projects/ps1_project_home.png)
-![Overzichtspagina voor ingelogde gidsen met openstaande bezoekaanvragen.](/img/projects/ps1_project_overzicht.png)
-![Detailpagina van een specifieke bezoekaanvraag voor een gids.](/img/projects/ps1_project_detail.png)
-![Voorbeeld van een e-mailnotificatie aan een gids na toewijzing aan een bezoek.](/img/projects/ps1_project_mail.png)
-![Bevestigingspagina na het succesvol indienen van een bezoekaanvraag.](/img/projects/ps1_project_bevestiging.png)
+![Overzichtspagina voor ingelogde gidsen met openstaande bezoekaanvragen](/img/projects/ps1_project_overzicht.png)
 
-## Conclusie
+### 4. Besluit: Een Belangrijke Mijlpaal
 
-Dit eerstejaarsproject was een cruciale mijlpaal in mijn ontwikkeling als programmeur. Het bood niet alleen een oplossing voor een reële behoefte van het OPZ, maar stelde mij ook in staat om fundamentele concepten van webontwikkeling en -deployment in de praktijk te brengen en een solide basis te leggen voor complexere projecten in de toekomst.
+Het eindresultaat was een volledig functionele webapplicatie die een reële behoefte van het OPZ Bezoekerscentrum invulde. Dit eerstejaarsproject was een cruciale mijlpaal in mijn ontwikkeling als programmeur. Het stelde mij in staat om fundamentele concepten van webontwikkeling en -deployment in de praktijk te brengen en legde een solide basis voor de complexere projecten die zouden volgen.

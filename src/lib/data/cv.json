@@ -6,7 +6,10 @@
   "personalInfo": {
     "name": "Jan-Peter Dhallé",
     "role": "Full-Stack Developer",
-    "cvPdfUrl": "/doc/cv_Jan-Peter_Dhallé.pdf",
+    "cvPdfUrl": {
+      "light": "/doc/cv_Jan-Peter_Dhallé_light.pdf",
+      "dark": "/doc/cv_Jan-Peter_Dhallé_dark.pdf"
+    },
     "heroImage": {
       "src": "$lib/assets/portrait_scaled.jpg?enhanced",
       "alt": "Foto van Jan-Peter"

@@ -1,8 +1,17 @@
 ---
 title: Website Isabel Dhallé
 date: 2022-10-27
+projectType: Persoonlijk project
 thumbnail: /img/projects/isabeldhalle.png
 link: https://isabeldhalle.be
+images:
+  - /img/projects/isabeldhalle.png
+  - /img/projects/isabel_about.png
+  - /img/projects/isabel_concerts.png
+  - /img/projects/isabel_contact.png
+  - /img/projects/isabel_manage.png
+  - /img/projects/isabel_richtext.png
+  - /img/projects/isabel_status.png
 technologies:
   - python
   - django
@@ -13,74 +22,43 @@ technologies:
   - bash
 ---
 
-## Aanleiding
+### 1. Inleiding
 
-Toen mijn zus Isabel, violiste aan het conservatorium van Antwerpen, me vroeg
-om een website voor haar te maken, stond ik aan het begin van mijn studie
-Toegepaste Informatica. Deze vraag markeerde het begin van een leerzaam traject
-en mijn eerste "echte" webproject.
+#### Het Begin: Een Persoonlijke Opdracht en een Steile Leercurve
 
-## Initiële Versie: HTML & CSS
+Toen mijn zus Isabel, violiste aan het conservatorium, mij vroeg een website voor haar te maken, stond ik aan het begin van mijn studie Toegepaste Informatica. Deze vraag markeerde het begin van een fundamenteel leertraject en mijn allereerste "echte" webproject.
 
-Met de verse kennis van HTML en CSS uit mijn eerstejaarsvakken ging ik aan de
-slag. De eerste versie van [isabeldhalle.be](https://isabeldhalle.be) werd
-volledig handmatig gecodeerd. Hoewel functioneel, bracht dit een belangrijk
-nadeel met zich mee: elke wijziging vereiste handmatige aanpassingen in de code
-en een nieuwe deployment. Dit was omslachtig en niet gebruiksvriendelijk voor
-Isabel.
+### 2. Het Resultaat: Een Professionele en Dynamische Portfolio Website
 
-## Evolutie naar Django: Een MVC-aanpak
+Het eindproduct is een professionele, tweetalige (NL/FR) portfolio website voor een muzikante. De kern van de applicatie is een op maat gemaakt **Content Management Systeem (CMS)**. Dit stelt mijn zus in staat om volledig zelfstandig en zonder technische kennis de belangrijkste content van haar website te beheren.
 
-Om Isabel de mogelijkheid te geven haar website zelfstandig te beheren, besloot
-ik de site om te bouwen naar een dynamische webapplicatie met een
-Model-View-Controller (MVC) architectuur. De keuze viel op **Django**, een
-krachtig Python-framework.
+![De 'Over mij'-pagina met content beheerd via de backend](/img/projects/isabel_about.png)
 
-![over mij-pagina](/img/projects/isabel_about.png)
-![concertenpagina](/img/projects/isabel_concerts.png)
-![contactpagina](/img/projects/isabel_contact.png)
+### 3. De Aanpak: Een Evolutie van Statisch naar Dynamisch
 
-Deze transitie was een significante uitdaging. Concepten als MVC, databases,
-ORM, en templating waren destijds nieuw voor mij en zouden pas later in mijn
-studie uitgebreid aan bod komen. Door intensief documentatie te bestuderen en
-te experimenteren, slaagde ik erin de website succesvol te migreren. De nieuwe
-versie bevatte belangrijke functionaliteiten zoals:
+De realisatie van dit project was een reis in twee belangrijke fasen, waarbij ik niet alleen de applicatie, maar ook mijn eigen vaardigheden van de grond af heb opgebouwd.
 
-- Een **beheersysteem voor concerten**, waarmee Isabel zelf concertdata kon
-  toevoegen, wijzigen en verwijderen.
-  ![admin](/img/projects/isabel_manage.png)
+#### Fase 1: Van Statische HTML naar een Dynamische Django Applicatie
 
-- Een **Markdown-editor** voor het bewerken van de "Over Mij"-pagina, wat
-  rich text opmaak mogelijk maakte op een gebruiksvriendelijke manier.
-  ![admin](/img/projects/isabel_richtext.png)
+De eerste versie bouwde ik met de kennis die ik op dat moment had: pure HTML en CSS. Hoewel functioneel, was dit niet duurzaam; elke wijziging vereiste een aanpassing in de code. Om de website beheersbaar te maken voor mijn zus, besloot ik deze volledig om te bouwen met **Django**, het Python-webframework.
 
-- Volledige **tweetaligheid** (Nederlands en Frans), zodat de content voor
-  een breder publiek toegankelijk werd.
+Dit was een significante uitdaging. Ik heb mezelf concepten als MVC, databases, ORM en templating aangeleerd, nog voordat deze in mijn curriculum aan bod kwamen. De nieuwe versie bevatte cruciale features zoals:
 
-Dit project bood een vroege, diepgaande kennismaking met backend-ontwikkeling
-en het implementeren van concrete gebruikersfeatures.
+- Een **beheersysteem voor concerten**, waarmee Isabel zelf concertdata kan toevoegen, wijzigen en verwijderen.
+- Een **Markdown-editor** voor het bewerken van de "Over Mij"-pagina.
 
-## Hosting en Deployment
+![Het op maat gemaakte beheersysteem voor concerten](/img/projects/isabel_manage.png)
 
-Ook het online brengen van de Django-applicatie was een leerproces. Ik
-verdiepte me in domeinnamen, DNS, Virtual Private Servers (VPS), webservers
-(zoals Nginx/Gunicorn), en het beveiligen van een server. Uiteindelijk koos ik
-voor DigitalOcean als hostingprovider, waar ik de applicatie succesvol heb
-gedeployd.
+#### Fase 2: Meer dan Code: Hosting en Deployment
 
-## Leerresultaten en Stabiliteit
+Het online brengen van een Django-applicatie was een leerproces op zich. Ik verdiepte me in domeinnamen, DNS, het opzetten en beveiligen van een Virtual Private Server (VPS) op **DigitalOcean**, en het configureren van een webserver-stack (Nginx/Gunicorn). Dit project was mijn eerste kennismaking met de volledige DevOps-cyclus.
 
-Dit project was fundamenteel voor mijn ontwikkeling als programmeur. Het bood
-niet alleen praktische ervaring met HTML, CSS, Python en Django, maar ook met
-de volledige ontwikkelcyclus, van initiële vraag tot deployment en onderhoud.
-De opgedane kennis en het probleemoplossend vermogen gaven me een waardevolle
-voorsprong in latere projecten en studies.
+### 4. Besluit: Een Fundamenteel Project met Bewezen Stabiliteit
 
-Een bewijs van de robuustheid van de gekozen technologieën en de opzet is dat
-de website ondertussen al jaren stabiel online staat, met minimaal onderhoud,
-weinig tot geen downtime en zonder noemenswaardige problemen.
+Dit project was een hoeksteen in mijn ontwikkeling als programmeur. Het bood niet alleen praktische ervaring met een brede set technologieën, maar gaf me ook een waardevolle voorsprong in mijn studies en latere projecten.
 
-![Isabel monitoring](/img/projects/isabel_status.png)
+Het beste bewijs van de robuustheid van de opzet is de stabiliteit. De website staat inmiddels al **jaren stabiel online**, met minimale downtime en zonder noemenswaardige problemen, zoals de monitoring laat zien. Dit toont de kwaliteit en duurzaamheid van de gekozen architectuur en mijn implementatie.
 
-De website is nog steeds actief en te bezoeken via
-[isabeldhalle.be](https://isabeldhalle.be).
+![Monitoring die de stabiele uptime van de website toont](/img/projects/isabel_status.png)
+
+De website is nog steeds actief en te bezoeken op [isabeldhalle.be](https://isabeldhalle.be).

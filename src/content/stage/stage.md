@@ -8,6 +8,11 @@ attachments:
   - /doc/stage/Reflectie stage Lykios 2025 - Jan-Peter Dhallé.pdf
   - /doc/stage/Statusrapport stage Lykios 2025 - Jan-Peter Dhallé.pdf
   - /doc/stage/Functionele User Manual Qurio - Lykios stage 2025.pdf
+images:
+  - /img/stage/officenter.webp
+  - /img/stage/figma_prototypes.png
+  - /img/projects/qurio_result.png
+  - /img/stage/lykios.png
 ---
 
 Als afsluiting van mijn opleiding Toegepaste Informatica liep ik drie maanden
