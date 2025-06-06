@@ -132,7 +132,7 @@
 
 <aside
   id="main-sidebar"
-  class="fixed inset-y-0 left-0 z-50 flex h-screen w-72 transform flex-col border-r border-border bg-background-alt text-foreground transition-transform duration-300 ease-in-out {isMobileMenuOpen
+  class="fixed inset-y-0 left-0 z-50 flex h-[100dvh] w-72 transform flex-col border-r border-border bg-background-alt text-foreground transition-transform duration-300 ease-in-out {isMobileMenuOpen
     ? 'translate-x-0'
     : '-translate-x-full'} [view-transition-name:header-left] md:sticky md:top-0 md:translate-x-0 print:hidden"
   aria-hidden={!isMobileMenuOpen && true}>
