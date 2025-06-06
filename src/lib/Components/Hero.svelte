@@ -31,19 +31,13 @@
 </script>
 
 <!-- Using a <div> for semantic correctness instead of a <button> -->
-<div
+<button
   class="relative isolate flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-background"
-  on:mousemove={handleMouseMove}
-  on:pointerdown={handlePointerDown}
-  on:mouseleave={() => (mousePos = { x: -999, y: -999 })}
+  onmousemove={handleMouseMove}
+  onpointerdown={handlePointerDown}
+  onmouseleave={() => (mousePos = { x: -999, y: -999 })}
   bind:clientWidth={width}
   bind:clientHeight={height}>
-  <!-- 
-    *** THE MAIN FIX ***
-    The #key block tells Svelte to destroy and recreate the entire grid whenever
-    the width or height changes. This ensures all Synapse components get their
-    fresh, correct positions after a window resize, preventing bugs.
-  -->
   {#key width + height}
     {#if width > 0}
       <div
@@ -66,6 +60,7 @@
     class="z-10 flex flex-col items-center justify-center p-4 text-center"
     style="animation: fade-in 1.5s ease-out forwards;">
     <h1
+      id="home"
       class="animate-fade-slide-up font-tight text-5xl font-extrabold tracking-tighter text-foreground sm:text-6xl md:text-8xl"
       style="animation-delay: 200ms;">
       Jan-Peter Dhallé
@@ -102,7 +97,7 @@
       icon="mdi:arrow-down"
       class="size-14 rounded-full p-2 text-muted-foreground transition-colors hover:bg-muted/50" />
   </a>
-</div>
+</button>
 
 <style>
   .synapse-grid {

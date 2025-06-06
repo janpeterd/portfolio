@@ -71,7 +71,8 @@
   bind:this={element}
   class="synapse"
   class:active={isHoverActive || isRippleActive}
-  style="--delay: {initialDelay}s;" />
+  style="--delay: {initialDelay}s;">
+</div>
 
 <style lang="postcss">
   .synapse {
