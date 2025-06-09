@@ -4,7 +4,6 @@
   import { register } from 'swiper/element/bundle'
   import SectionDivider from './SectionDivider.svelte'
 
-  // Register Swiper custom elements
   onMount(() => {
     register()
   })
@@ -14,6 +13,12 @@
     companyName: 'Lykios',
     companyWebsite: 'https://lykios.be',
     projectTitle: 'Stage: Ontwikkeling van een quizplatform',
+    introText: `
+      Tijdens mijn stage bij Lykios kreeg ik de kans om me volledig onder te dompelen in de wereld van professionele softwareontwikkeling. Dit project was de perfecte brug tussen theorie en praktijk. 
+      Enerzijds heb ik mijn <strong>hard skills</strong> aanzienlijk versterkt door te werken met een moderne tech-stack, waaronder <strong>Java 21</strong>, <strong>Spring Boot</strong> en <strong>React</strong>. 
+      Anderzijds was de stage cruciaal voor het ontwikkelen van essentiële <strong>soft skills</strong>; de dagelijkse stand-ups, teamwork en Agile-methodiek scherpten mijn communicatie, probleemoplossend vermogen en aanpassingsvermogen aan. 
+      Voor een diepgaand inzicht in de technische realisatie en mijn persoonlijke reflecties, nodig ik je uit om het volledige artikel te lezen of de projectdocumentatie hieronder te bekijken.
+    `,
     blogPostLink: '/projects/015_qurio_stage',
     highlights: [
       {
@@ -61,7 +66,7 @@
   }
 </script>
 
-<!-- Stage Section - Designed as a single, cohesive homepage block -->
+<!-- Stage Section -->
 <section id="stage" class="relative bg-background-hued py-24 sm:py-32">
   <SectionDivider class="text-transparent dark:text-primary" />
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -85,27 +90,39 @@
       </a>
     </div>
 
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-        {#each stageData.highlights as item}
-          <div class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-              <Icon icon={item.icon} class="h-6 w-6 flex-none text-primary" />
-              {item.title}
-            </dt>
-            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
-              <p class="flex-auto">{@html item.text}</p>
-            </dd>
-          </div>
-        {/each}
-      </dl>
+    <!-- Intro Tekst naast Highlights (Layout ongewijzigd) -->
+    <div
+      class="mx-auto mt-16 grid max-w-none grid-cols-1 gap-x-16 gap-y-16 lg:mt-24 lg:grid-cols-2">
+      <!-- Kolom 1: Introductietekst -->
+      <div>
+        <h3 class="font-tight text-2xl font-bold text-foreground">Stage-inzichten</h3>
+        <p class="mt-4 text-base leading-7 text-muted-foreground">
+          {@html stageData.introText}
+        </p>
+      </div>
+
+      <!-- Kolom 2: Highlights -->
+      <div>
+        <dl class="grid grid-cols-1 gap-y-12">
+          {#each stageData.highlights as item}
+            <div class="flex flex-col">
+              <dt
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
+                <Icon icon={item.icon} class="h-6 w-6 flex-none text-primary" />
+                {item.title}
+              </dt>
+              <dd class="mt-2 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
+                <p class="flex-auto">{@html item.text}</p>
+              </dd>
+            </div>
+          {/each}
+        </dl>
+      </div>
     </div>
 
-    <!-- Visual Showcase (Gallery & Documents) -->
     <div class="mt-20 grid grid-cols-1 items-start gap-x-8 gap-y-16 lg:mt-24 lg:grid-cols-3">
       <!-- Image Gallery -->
       <div class="lg:col-span-2">
-        <h3 class="font-tight text-2xl font-bold text-foreground">Visueel Overzicht</h3>
         <div class="mt-6 w-full overflow-hidden rounded-lg bg-muted shadow-md ring-1 ring-border">
           <swiper-container pagination="true" autoplay-delay="3000" loop="true" effect="fade">
             {#each stageData.gallery as image}
