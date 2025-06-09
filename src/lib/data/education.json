@@ -15,7 +15,7 @@
     "dateString": "september 2020- juli 2022, niet afgerond",
     "title": "Industriële Ingenieurswetenschappen",
     "company": "Groep T, KU Leuven",
-    "link": null,
+    "link": "https://www.kuleuven.be/campussen/campus-groep-t-leuven/studeren/opleidingen-industrieel-ingenieur-campus-groep-t/bachelor-in-de-industriele-wetenschappen",
     "type": "education",
     "image": "/img/education/campus_groep_t_leuven.jpg"
   },
@@ -25,7 +25,7 @@
     "dateString": "september 2014- juni 2020",
     "title": "Diploma secundair onderwijs, wetenschappen-wiskunde",
     "company": "Sint-Jozefcollege, Turnhout",
-    "link": null,
+    "link": "https://www.sjt.be/",
     "type": "education",
     "image": "/img/education/sint_jozef_college_turnhout.jpg"
   },
@@ -36,7 +36,7 @@
     "title": "SAMWD Turnhout",
     "company": "SAMWD Turnhout",
     "description": "Klassieke viool (Suzukimethode) — summa cum laude",
-    "link": null,
+    "link": "https://muziekacademieturnhout.turnhout.be/suzuki-2",
     "type": "education",
     "image": "/img/education/muziekacademie_turnhout.jpg"
   }

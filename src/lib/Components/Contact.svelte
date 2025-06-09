@@ -1,6 +1,7 @@
 <script>
   import HomeTitle from './HomeTitle.svelte'
   import Icon from '@iconify/svelte'
+  import { githubLink, linkedInLink, mailLink, mail } from '../../constants' // Your constants
   import SectionDivider from './SectionDivider.svelte'
 
   // The data is now updated with mdi: icons for a consistent icon set.
@@ -8,9 +9,9 @@
     {
       id: 'email',
       name: 'E-mail',
-      icon: 'mdi:email-outline', // Updated Icon
-      value: 'janpeter.dhalle@gmail.com',
-      href: 'mailto:janpeter.dhalle@gmail.com',
+      icon: 'mdi:email-outline',
+      value: mail,
+      href: mailLink,
       ariaLabel: 'Stuur een e-mail naar Jan-Peter Dhallé',
       text: 'Stuur een E-mail',
       extern: false
@@ -18,9 +19,9 @@
     {
       id: 'linkedin',
       name: 'LinkedIn',
-      icon: 'mdi:linkedin', // Updated Icon
+      icon: 'mdi:linkedin',
       value: 'Jan-Peter Dhallé',
-      href: 'https://www.linkedin.com/in/jan-peter-dhallé-130a08272/',
+      href: linkedInLink,
       ariaLabel: 'Bekijk Jan-Peter Dhallé op LinkedIn',
       text: 'Bekijk Profiel',
       extern: true
@@ -28,9 +29,9 @@
     {
       id: 'github',
       name: 'GitHub',
-      icon: 'mdi:github', // Updated Icon
+      icon: 'mdi:github',
       value: 'janpeterd',
-      href: 'https://github.com/janpeterd',
+      href: githubLink,
       ariaLabel: 'Bekijk janpeterd op GitHub',
       text: 'Bekijk Projecten',
       extern: true
