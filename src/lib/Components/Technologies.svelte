@@ -7,45 +7,133 @@
     {
       category: 'Backend',
       technologies: [
-        { name: 'Java, Spring Boot', image: 'java.svg', skillLevel: 92 },
-        { name: 'JavaScript, Typescript', image: 'javascript.svg', skillLevel: 75 },
-        { name: 'Python, Django', image: 'python.svg', skillLevel: 72 },
-        { name: 'Svelte, Sveltekit', image: 'svelte.svg', skillLevel: 51 },
-        { name: 'C#, .NET', image: 'csharp.svg', skillLevel: 64 },
-        { name: 'PHP, Laravel', image: 'php.svg', skillLevel: 44 },
-        { name: 'C', image: 'c.svg', skillLevel: 38 }
+        {
+          name: 'Java, Spring Boot',
+          image: 'java.svg',
+          linkName: 'java',
+          skillLevel: 92
+        },
+        {
+          name: 'JavaScript, Typescript',
+          linkName: 'javascript',
+          image: 'javascript.svg',
+          skillLevel: 75
+        },
+        {
+          name: 'Python, Django',
+          image: 'python.svg',
+          linkName: 'python',
+          skillLevel: 72
+        },
+        {
+          name: 'Svelte, Sveltekit',
+          linkName: 'svelte',
+          image: 'svelte.svg',
+          skillLevel: 51
+        },
+        {
+          name: 'C#, .NET',
+          linkName: 'csharp',
+          image: 'csharp.svg',
+          skillLevel: 64
+        },
+        {
+          name: 'PHP, Laravel',
+          linkName: 'php',
+          image: 'php.svg',
+          skillLevel: 44
+        },
+        {
+          name: 'C',
+          linkName: 'c',
+          image: 'c.svg',
+          skillLevel: 38
+        }
       ]
     },
     {
       category: 'Data',
       technologies: [
-        { name: 'Postgresql', image: 'postgresql.svg', skillLevel: 62 },
-        { name: 'Mariadb,MySQL', image: 'mysqlmariadb.png', skillLevel: 52 },
-        { name: 'Mongodb', image: 'mongodb.svg', skillLevel: 34, link: false }
+        {
+          name: 'Postgresql',
+          linkName: 'postgresql',
+          image: 'postgresql.svg',
+          skillLevel: 62
+        },
+        {
+          name: 'Mariadb,MySQL',
+          linkName: 'mariadb',
+          image: 'mysqlmariadb.png',
+          skillLevel: 52
+        },
+        {
+          name: 'Mongodb',
+          linkName: 'mongodb',
+          image: 'mongodb.svg',
+          skillLevel: 34,
+          link: false
+        }
       ]
     },
     {
       category: 'Frontend',
       technologies: [
-        { name: 'React', image: 'react.svg', skillLevel: 75 },
-        { name: 'Flutter', image: 'flutter.svg', skillLevel: 58 },
-        { name: 'Angular', image: 'angular.svg', skillLevel: 55 }
+        { name: 'React', linkName: 'react', image: 'react.svg', skillLevel: 75 },
+        { name: 'Flutter', linkName: 'flutter', image: 'flutter.svg', skillLevel: 58 },
+        { name: 'Angular', linkName: 'angular', image: 'angular.svg', skillLevel: 55 }
       ]
     },
     {
       category: 'Infrastruur/DevOps',
       technologies: [
-        { name: 'Docker', image: 'docker.svg', skillLevel: 92 },
-        { name: 'Git', image: 'git.svg', skillLevel: 85 },
-        { name: 'Bash', image: 'bash.svg', skillLevel: 73 },
-        { name: 'Linux', image: 'linux.svg', skillLevel: 68 },
-        { name: 'Kubernetes', image: 'kubernetes.svg', skillLevel: 55 },
-        { name: 'Jenkins', image: 'jenkins.svg', skillLevel: 45 }
+        {
+          name: 'Docker',
+          linkName: 'docker',
+          image: 'docker.svg',
+          skillLevel: 92
+        },
+        {
+          name: 'Git',
+          linkName: 'git',
+          image: 'git.svg',
+          skillLevel: 85
+        },
+        {
+          name: 'Bash',
+          linkName: 'bash',
+          image: 'bash.svg',
+          skillLevel: 73
+        },
+        {
+          name: 'Linux',
+          linkName: 'linux',
+          image: 'linux.svg',
+          skillLevel: 68
+        },
+        {
+          name: 'Kubernetes',
+          linkName: 'kubernetes',
+          image: 'kubernetes.svg',
+          skillLevel: 55
+        },
+        {
+          name: 'Jenkins',
+          linkName: 'jenkins',
+          image: 'jenkins.svg',
+          skillLevel: 45
+        }
       ]
     },
     {
       category: 'Design, Prototypes',
-      technologies: [{ name: 'Figma', image: 'figma.svg', skillLevel: 30 }]
+      technologies: [
+        {
+          name: 'Figma',
+          linkName: 'figma',
+          image: 'figma.svg',
+          skillLevel: 30
+        }
+      ]
     }
   ]
 
@@ -82,7 +170,7 @@
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {#each category.technologies as technology}
               <a
-                href={`/projects?technology=${encodeURIComponent(technology.name.split(',')[0].toLowerCase())}`}
+                href={`/projects?technology=${technology.linkName}`}
                 class="card-glow-container group relative block overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 on:mousemove={handleMouseMove}
                 aria-label={`View projects using ${technology.name}`}>

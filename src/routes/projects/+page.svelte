@@ -174,6 +174,7 @@
               id="techFilter"
               options={allUsedTechs}
               placeholder="Filter op technologie..."
+              inputmode="none"
               bind:selected={selectedTechnologies}
               outerDivClass="!py-[0.30rem] !rounded-md !border-border dark:!bg-background shadow-sm !text-sm focus-within:!border-primary focus-within:!ring-1 focus-within:!ring-primary"
               ulOptionsClass="!border-border !mt-1 dark:!bg-background-alt"

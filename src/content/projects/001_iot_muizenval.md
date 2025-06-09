@@ -6,6 +6,7 @@ thumbnail: /img/projects/iot_muizenval.png
 video: https://youtu.be/tCBAd3iY1O8
 images:
   - /img/projects/iot_muizenval.png
+  - /img/projects/iot_muizenval_webui.png
 technologies:
   - linux
   - bash

@@ -127,11 +127,13 @@
           <swiper-container pagination="true" autoplay-delay="3000" loop="true" effect="fade">
             {#each stageData.gallery as image}
               <swiper-slide lazy="true">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  loading="lazy"
-                  class="aspect-[16/10] w-full object-cover" />
+                <div class="swiper-zoom-container">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                    class="aspect-[16/10] w-full object-cover" />
+                </div>
               </swiper-slide>
             {/each}
           </swiper-container>

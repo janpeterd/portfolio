@@ -66,23 +66,26 @@
       </hgroup>
     </div>
     <div class="mx-auto flex w-full items-stretch gap-4">
-      <div class="max-h-[70vh] w-full overflow-x-hidden rounded-lg">
+      <div class="max-h-[70vh] w-full overflow-x-hidden">
         <swiper-container
           class="max-h-[70vh]"
           pagination="true"
+          pagination-clickable="true"
           autoplay-disable-on-interaction="false"
           autoplay-stop-on-last-slide="krue"
           space-between="0"
+          zoom="true"
           effect="coverflow"
           auto-height="true">
           {#if data?.meta?.images && data.meta.images.length > 0}
             {#each data.meta.images as image, idx}
-              <swiper-slide lazy="true">
-                <img
-                  src={image}
-                  loading="lazy"
-                  alt={`Slide image ${idx + 1}`}
-                  class="block h-full max-h-[70vh] object-contain" />
+              <swiper-slide>
+                <div class="swiper-zoom-container">
+                  <img
+                    src={image}
+                    alt={`Slide image ${idx + 1}`}
+                    class="block h-full max-h-[70vh] object-contain" />
+                </div>
               </swiper-slide>
             {/each}
           {:else}
@@ -114,7 +117,7 @@
                pb-4 delay-500
                [animation-duration:2500ms] dark:prose-invert prose-a:text-primary
                prose-pre:rounded-none prose-pre:border-l-2
-               prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[60vh] prose-img:max-w-[60vw] prose-img:rounded-lg">
+               prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[60vh] prose-img:w-full prose-img:rounded-lg prose-img:lg:max-w-[60vw]">
             <data.content />
           </div>
         </article>

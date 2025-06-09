@@ -7,8 +7,6 @@
   import HugTextBg from '$lib/Components/HugTextBg.svelte'
   import Technologies from '$lib/Components/Technologies.svelte'
   import { onMount } from 'svelte'
-  import Navbar from '$lib/Components/Navbar.svelte'
-  import Footer from '$lib/Components/Footer.svelte'
   import Contact from '$lib/Components/Contact.svelte'
   import SectionDivider from '$lib/Components/SectionDivider.svelte'
   import Stage from '$lib/Components/Stage.svelte'
@@ -31,7 +29,6 @@
   <Stage />
   <ProjectHighlights highlightedProjects={data.highlightedProjects} />
   <Contact />
-  <!-- <Footer /> -->
 </div>
 
 <!-- <div class="top-gradient fixed bottom-0 hidden h-screen w-screen overflow-hidden dark:block"></div> -->
