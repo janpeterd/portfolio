@@ -70,9 +70,8 @@
         <swiper-container
           class="max-h-[70vh]"
           pagination="true"
-          pagination-clickable="true"
           autoplay-disable-on-interaction="false"
-          autoplay-stop-on-last-slide="krue"
+          autoplay-stop-on-last-slide="true"
           space-between="0"
           zoom="true"
           effect="coverflow"
