@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-  <title>Portfolio - JP</title>
+  <title>Portfolio - Jan-Peter Dhallé</title>
 </svelte:head>
 
 <div class="flex w-full flex-col">
