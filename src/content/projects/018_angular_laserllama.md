@@ -38,9 +38,9 @@ Het eindproduct is een webapplicatie die twee verschillende ervaringen biedt. Vo
 
 Ik heb een donker, neon-geïnspireerd thema ontworpen dat past bij de sfeer van een muziekfestival. De focus lag op een intuïtieve interface voor de beheerders. Via een centraal dashboard kunnen zij moeiteloos artiesten, optredens, podia en meer beheren (CRUD-operaties). Dit zorgt ervoor dat het beheer van het festival snel en efficiënt kan verlopen.
 
-![Het centrale 'Manage Content' dashboard voor beheerders](/img/projects/laserllama_hero.png)
+![Het centrale 'Manage Content' dashboard voor beheerders](/img/projects/laserllama_admin.png)
 
-![De beheerspagina voor artiesten, met opties voor aanmaken, bewerken en verwijderen](/img/projects/laserllama_artists.png)
+![De beheerspagina voor artiesten, met opties voor aanmaken, bewerken en verwijderen](/img/projects/laswerllama_add_artist.png)
 
 ### 3. De Aanpak: Full-Stack Architectuur
 

@@ -116,7 +116,7 @@
                pb-4 delay-500
                [animation-duration:2500ms] dark:prose-invert prose-a:text-primary
                prose-pre:rounded-none prose-pre:border-l-2
-               prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[60vh] prose-img:w-full prose-img:rounded-lg prose-img:lg:max-w-[60vw]">
+               prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[60vh] prose-img:max-w-full prose-img:rounded-lg prose-img:lg:max-w-[60vw]">
             <data.content />
           </div>
         </article>

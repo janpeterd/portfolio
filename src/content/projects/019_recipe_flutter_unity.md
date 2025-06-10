@@ -41,9 +41,9 @@ De app laat gebruikers fysieke kaarten van ingrediënten scannen. Wanneer een ka
 
 Gebruikers kunnen ook door alle recepten bladeren, reviews achterlaten en zelf nieuwe ingrediënten en recepten toevoegen via een simpele interface.
 
-![De app herkent een tomatenkaart en toont een 3D-model in AR](/img/projects/arkookhulp_scan.png)
+![De app herkent een tomatenkaart en toont een 3D-model in AR](/img/projects/recipe_scan.png)
 
-![Na het scannen wordt een lijst met relevante recepten getoond in de Flutter UI](/img/projects/arkookhulp_recipelist.png)
+![Na het scannen wordt een lijst met relevante recepten getoond in de Flutter UI](/img/projects/recipe_recipes.png)
 
 ### 3. De Aanpak: Een Hybride Architectuur
 
