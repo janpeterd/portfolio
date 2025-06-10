@@ -31,7 +31,6 @@
   }
 
   $effect(() => {
-    // This logic runs for single links
     if (!isMultiRepo) {
       const url =
         typeof destination === 'object' ? destination.url || destination.path : destination
@@ -41,8 +40,8 @@
       switch (type) {
         case 'link':
           icon = 'mdi:open-in-new'
-          displayName = name || 'Demo'
-          tooltipText = 'Bekijk live demo'
+          displayName = name || 'Link'
+          tooltipText = 'Bekijk project'
           baseClasses = 'bg-primary'
           textColor = 'text-primary-foreground'
           hoverClasses = 'hover:bg-primary/90'

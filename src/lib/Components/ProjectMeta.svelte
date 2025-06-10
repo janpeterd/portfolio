@@ -157,7 +157,7 @@
             class="group flex w-full items-center gap-3 rounded-md p-2 text-sm transition-colors hover:bg-muted">
             <Icon icon="mdi:link-variant" class="size-5 flex-shrink-0 text-blue-500" />
             <span class="flex-grow truncate text-sm font-medium text-foreground">
-              {props.data.link.name || 'Live Demo'}
+              {props.data.link.name || 'Link'}
             </span>
             <Icon icon="mdi:open-in-new" class="size-4 flex-shrink-0 text-muted-foreground" />
           </a>
