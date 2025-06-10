@@ -54,6 +54,7 @@
       {#each certificates as entry, i}
         <a
           href={entry.link || '#'}
+          download
           target={entry.link ? '_blank' : '_self'}
           rel={entry.link ? 'noopener noreferrer' : ''}
           class="certficiation-item group flex flex-col overflow-hidden rounded-lg border border-border bg-background shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl dark:bg-gray-800"
