@@ -19,7 +19,7 @@ technologies:
   - git
   - figma
 attachments:
-  - /doc/projects/Laser Llama Documentatie.pdf
+  - /doc/projects/LaserLlama-Documentatie.pdf
 ---
 
 ### 1. Inleiding
