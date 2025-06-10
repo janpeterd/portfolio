@@ -40,6 +40,16 @@
     return tech.image
   }
 
+  /** @param {string[]} names - An array of technology names from a project post. */
+  const findTechnologiesByName = (names) => {
+    if (!names || names.length === 0) {
+      return []
+    }
+
+    const lowerCaseNames = new Set(names.map((name) => String(name).toLowerCase()))
+    return technologies.filter((t) => lowerCaseNames.has(t.name.toLowerCase()))
+  }
+
   const toggleDirection = () => {
     sort.direction = sort.direction.value === 'descending' ? sortDirections[1] : sortDirections[0]
   }
@@ -88,6 +98,24 @@
   }
 
   let displayPosts = $state([])
+
+  // 1. Declare resultsSummary as a state variable that holds a string.
+  let resultsSummary = $state('')
+
+  // 2. Use an effect to update the state variable whenever its dependencies change.
+  $effect(() => {
+    const count = displayPosts.length
+    const projectText = count === 1 ? 'project' : 'projecten'
+
+    if (selectedTechnologies.length === 0) {
+      resultsSummary = `<strong>${count}</strong> ${projectText}`
+    } else {
+      const techNames = selectedTechnologies
+        .map((t) => `<strong>${t.label.charAt(0).toUpperCase() + t.label.slice(1)}</strong>`)
+        .join(', ')
+      resultsSummary = `<strong>${count}</strong> ${projectText} gevonden met: ${techNames}.`
+    }
+  })
 
   $effect(() => {
     let processedPosts = [...posts]
@@ -162,7 +190,12 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div
       class="flex flex-col items-start gap-8 border-b border-border pb-6 md:flex-row md:items-center md:justify-between">
-      <HomeTitle title="Projecten" id="projects" className="!py-0 !max-w-40" />
+      <div>
+        <HomeTitle title="Projecten" id="projects" className="!py-0 !max-w-40" />
+        <p class="text-center text-sm text-muted-foreground md:text-left">
+          {@html resultsSummary}
+        </p>
+      </div>
 
       <div class="flex w-full flex-col items-stretch gap-4 sm:flex-row sm:items-end sm:justify-end">
         <div>
@@ -238,10 +271,10 @@
     </div>
 
     {#if displayPosts.length > 0}
-      <ul class="mt-12 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      <ul class="mt-8 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {#each displayPosts as entry (entry.slug)}
           <li>
-            <ProjectThumb {entry} />
+            <ProjectThumb {entry} technologies={findTechnologiesByName(entry.technologies)} />
           </li>
         {/each}
       </ul>

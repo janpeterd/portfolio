@@ -154,5 +154,35 @@
     "category": "Design, Prototypes",
     "image": "figma.svg",
     "skillLevel": 30
+  },
+  {
+    "name": "Unity",
+    "category": "Backend",
+    "image": "unity.svg",
+    "skillLevel": 20
+  },
+  {
+    "name": "Vuforia",
+    "category": "Backend",
+    "image": "vuforia.svg",
+    "skillLevel": 15
+  },
+  {
+    "name": "Dart",
+    "category": "Backend, Frontend",
+    "image": "dart.svg",
+    "skillLevel": 30
+  },
+  {
+    "name": "Auth0",
+    "category": "Backend",
+    "image": "auth0.svg",
+    "skillLevel": 64
+  },
+  {
+    "name": "Azure",
+    "category": "Infrastructure/DevOps",
+    "image": "azure.svg",
+    "skillLevel": 40
   }
 ]

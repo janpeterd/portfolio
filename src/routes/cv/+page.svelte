@@ -142,7 +142,7 @@
                   <p class="cv_item_extra">{extra}</p>
                 {/each}
               </span>
-              <span class="cv_date">sinds september 2022</span>
+              <span class="cv_date">{item.period}</span>
             </div>
           {/each}
         </div>

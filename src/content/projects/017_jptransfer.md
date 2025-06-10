@@ -5,8 +5,10 @@ highlight: true
 projectType: Persoonlijk project
 thumbnail: /img/projects/jptransfer.png
 repos:
-  - https://github.com/janpeterd/jp-transfer-service
-  - https://github.com/janpeterd/jp-transfer-ui
+  - name: 'Backend'
+    url: https://github.com/janpeterd/jp-transfer-service
+  - name: 'Frontend'
+    url: https://github.com/janpeterd/jp-transfer-ui
 images:
   - /img/projects/jptransfer_upload.png
   - /img/projects/jptransfer_download.png

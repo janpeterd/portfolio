@@ -3,8 +3,7 @@ title: TagMaster, cross-platform app met AI
 date: 2024-11-10
 projectType: Schoolproject
 thumbnail: /img/projects/tagmaster_edit_list.png
-repos:
-  - https://github.com/janpeterd/tagmaster
+repo: https://github.com/janpeterd/tagmaster
 images:
   - /img/projects/tagmaster_edit_list.png
 technologies:

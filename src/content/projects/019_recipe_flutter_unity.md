@@ -22,7 +22,6 @@ technologies:
   - csharp
   - vuforia
   - git
-  - json-server
 ---
 
 ### 1. Inleiding

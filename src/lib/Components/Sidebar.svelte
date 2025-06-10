@@ -16,7 +16,7 @@
   ]
 
   const links = [
-    { href: '/#home', name: 'Home', icon: 'mdi:home-outline' },
+    { href: '/#', name: 'Home', icon: 'mdi:home-outline' },
     { href: '/#about', name: 'Over mij', icon: 'mdi:account-outline' },
     { href: '/#education', name: 'Opleiding', icon: 'mdi:school-outline' },
     { href: '/#experience', name: 'Ervaring', icon: 'mdi:briefcase-outline' },
@@ -169,13 +169,13 @@
     : '-translate-x-full'} [view-transition-name:header-left] md:sticky md:top-0 md:translate-x-0 print:hidden"
   aria-hidden={!isMobileMenuOpen && true}>
   <div class="flex flex-col items-center p-6 text-center">
-    <a href="/#home" onclick={handleLinkClick} aria-label="Ga naar homepagina" class="mb-4 block">
+    <a href="/#" onclick={handleLinkClick} aria-label="Ga naar homepagina" class="mb-4 block">
       <enhanced:img
         src={HeroImg}
         alt="Foto van Jan-Peter"
         class="h-28 w-28 rounded-full border-2 border-border object-cover shadow-md transition-transform duration-300 hover:scale-105" />
     </a>
-    <a href="/#home" class="hover:underline" onclick={handleLinkClick}>
+    <a href="/#" class="hover:underline" onclick={handleLinkClick}>
       <h1 class="font-tight text-xl font-semibold text-foreground">Jan-Peter Dhallé</h1>
     </a>
     <p class="mt-1 text-sm text-muted-foreground">Student Applicatieontwikkeling</p>

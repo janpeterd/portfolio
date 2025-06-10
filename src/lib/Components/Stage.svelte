@@ -13,11 +13,19 @@
     companyName: 'Lykios',
     companyWebsite: 'https://lykios.be',
     projectTitle: 'Stage: Ontwikkeling van een quizplatform',
-    introText: `
-      Tijdens mijn stage bij Lykios kreeg ik de kans om me volledig onder te dompelen in de wereld van professionele softwareontwikkeling. Dit project was de perfecte brug tussen theorie en praktijk. 
-      Enerzijds heb ik mijn <strong>hard skills</strong> aanzienlijk versterkt door te werken met een moderne tech-stack, waaronder <strong>Java 21</strong>, <strong>Spring Boot</strong> en <strong>React</strong>. 
-      Anderzijds was de stage cruciaal voor het ontwikkelen van essentiële <strong>soft skills</strong>; de dagelijkse stand-ups, teamwork en Agile-methodiek scherpten mijn communicatie, probleemoplossend vermogen en aanpassingsvermogen aan. 
+    introText: `<p class="mt-4 text-base leading-7 text-muted-foreground">
+Tijdens mijn stage bij Lykios kreeg ik de kans om me volledig onder te dompelen in de wereld van professionele softwareontwikkeling.
+</p>
+<p class="mt-4 text-base leading-7 text-muted-foreground">
+Dit project was de perfecte brug tussen theorie en praktijk. Enerzijds heb ik mijn <strong>hard skills</strong> aanzienlijk versterkt door te werken met een moderne tech-stack, waaronder <strong>Java 21</strong>, <strong>Spring Boot</strong> en <strong>React</strong>.
+</p>
+<p class="mt-4 text-base leading-7 text-muted-foreground">
+Anderzijds was de stage cruciaal voor het ontwikkelen van essentiële <strong>soft skills</strong>; de dagelijkse stand-ups, teamwork en Agile-methodiek scherpten mijn communicatie, probleemoplossend vermogen en aanpassingsvermogen aan.
+</p>
+<p class="mt-4 text-base leading-7 text-muted-foreground">
       Voor een diepgaand inzicht in de technische realisatie en mijn persoonlijke reflecties, nodig ik je uit om het volledige artikel te lezen of de projectdocumentatie hieronder te bekijken.
+</p>
+       
     `,
     blogPostLink: '/projects/015_qurio_stage',
     highlights: [
@@ -48,19 +56,23 @@
     attachments: [
       {
         name: 'Realisatiedocument',
-        path: '/doc/stage/Realisatiedocument stage Lykios 2025 - Jan-Peter Dhallé.pdf'
+        path: '/doc/stage/Realisatiedocument stage Lykios 2025 - Jan-Peter Dhallé.pdf',
+        description: 'De volledige technische en functionele uitwerking.'
       },
       {
         name: 'Projectplan',
-        path: '/doc/stage/Projectplan stage Lykios 2025 - Jan-Peter Dhallé.pdf'
+        path: '/doc/stage/Projectplan stage Lykios 2025 - Jan-Peter Dhallé.pdf',
+        description: 'Initiële aanpak, doelstellingen en planning.'
       },
       {
         name: 'Functionele Handleiding',
-        path: '/doc/stage/Functionele User Manual Qurio - Lykios stage 2025.pdf'
+        path: '/doc/stage/Functionele User Manual Qurio - Lykios stage 2025.pdf',
+        description: 'Technische gids van de applicatie voor ontwikkelaars.'
       },
       {
         name: 'Reflectieverslag',
-        path: '/doc/stage/Reflectie stage Lykios 2025 - Jan-Peter Dhallé.pdf'
+        path: '/doc/stage/Reflectie stage Lykios 2025 - Jan-Peter Dhallé.pdf',
+        description: 'Persoonlijke reflectie op het leerproces.'
       }
     ]
   }
@@ -152,14 +164,22 @@
               <a
                 href={doc.path}
                 download
-                class="group flex items-center gap-3 rounded-md p-3 text-sm ring-1 ring-border transition-colors hover:bg-muted hover:ring-primary">
+                class="group flex items-center gap-4 rounded-md p-3 text-sm ring-1 ring-border transition-colors hover:bg-muted hover:ring-primary">
+                <!-- Icon -->
                 <Icon
-                  icon="mdi:file-download-outline"
-                  class="h-6 w-6 flex-shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
-                <span class="font-medium text-foreground">{doc.name}</span>
+                  icon="mdi:file-document-outline"
+                  class="h-7 w-7 flex-shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+
+                <!-- Text container for Name and Description -->
+                <div class="flex-grow">
+                  <p class="font-medium text-foreground">{doc.name}</p>
+                  <p class="mt-1 text-muted-foreground">{doc.description}</p>
+                </div>
+
+                <!-- Download Arrow Icon -->
                 <Icon
-                  icon="mdi:arrow-down"
-                  class="ml-auto h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                  icon="mdi:arrow-down-circle-outline"
+                  class="h-6 w-6 flex-shrink-0 text-muted-foreground opacity-50 transition-all group-hover:text-primary group-hover:opacity-100" />
               </a>
             </li>
           {/each}

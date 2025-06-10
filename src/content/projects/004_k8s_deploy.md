@@ -3,8 +3,7 @@ title: Kubernetes deployment
 date: 2023-12-13
 projectType: Schoolproject
 thumbnail: /img/projects/k8s_argocd.png
-repos:
-  - https://github.com/janpeterd/milestone2_argocd
+repo: https://github.com/janpeterd/milestone2_argocd
 images:
   - /img/projects/k8s_argocd.png
   - /img/projects/k8s_prometheus.png

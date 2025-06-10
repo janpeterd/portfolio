@@ -13,8 +13,10 @@
   if (props?.data?.attachments) {
     totalItems += props.data.attachments.length
   }
-
   if (props?.data?.link) {
+    totalItems += 1
+  }
+  if (props?.data?.video) {
     totalItems += 1
   }
 </script>
@@ -52,8 +54,8 @@
           <dd class="mt-2 flex flex-wrap gap-2">
             {#each props.technologies as technology}
               <a
-                href={`/projects?sort=date&direction=descending&technology=${technology.name}`}
-                class="inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-primary">
+                href={`/projects?technology=${technology.name.toLowerCase()}`}
+                class="inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-primary/90 hover:text-primary-foreground">
                 <img
                   src={`/img/technologies/${technology.image}`}
                   alt={technology.name}
@@ -65,6 +67,7 @@
         </div>
       {/if}
 
+      <!-- CORRECTED REPOSITORY SECTION -->
       {#if props.data?.repo || props.data?.repos?.length > 0}
         <div>
           <dt class="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -72,31 +75,45 @@
           </dt>
           <dd class="mt-2 space-y-2">
             {#if props.data?.repo}
-              {@const { icon, textcolor } = getIconAndColorForUrl(props.data.repo)}
+              <!-- Handles single 'repo' object -->
+              {@const repoUrl = props.data.repo.url || props.data.repo}
+              {@const iconData = getIconAndColorForUrl(repoUrl) || {
+                icon: 'mdi:git',
+                textcolor: 'text-muted-foreground'
+              }}
               <a
-                href={props.data.repo}
+                href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
-                <Icon {icon} class="size-5 flex-shrink-0 {textcolor}" />
+                <Icon icon={iconData.icon} class="size-5 flex-shrink-0 {iconData.textcolor}" />
                 <span class="truncate group-hover:underline">
-                  {new URL(props.data.repo).pathname}
+                  {props.data.repo.name || new URL(repoUrl).pathname}
                 </span>
                 <Icon icon="mdi:open-in-new" class="ml-auto size-4 flex-shrink-0" />
               </a>
             {/if}
-            {#each props.data?.repos as repo}
-              {@const { icon, textcolor } = getIconAndColorForUrl(repo)}
-              <a
-                href={repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
-                <Icon {icon} class="size-5 flex-shrink-0 {textcolor}" />
-                <span class="truncate group-hover:underline">{new URL(repo).pathname}</span>
-                <Icon icon="mdi:open-in-new" class="ml-auto size-4 flex-shrink-0" />
-              </a>
-            {/each}
+            {#if props.data?.repos}
+              {#each props.data.repos as repo}
+                <!-- Handles 'repos' array of objects -->
+                {@const repoUrl = repo.url || repo}
+                {@const iconData = getIconAndColorForUrl(repoUrl) || {
+                  icon: 'mdi:git',
+                  textcolor: 'text-muted-foreground'
+                }}
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  <Icon icon={iconData.icon} class="size-5 flex-shrink-0 {iconData.textcolor}" />
+                  <span class="truncate group-hover:underline">
+                    {repo.name || new URL(repoUrl).pathname}
+                  </span>
+                  <Icon icon="mdi:open-in-new" class="ml-auto size-4 flex-shrink-0" />
+                </a>
+              {/each}
+            {/if}
           </dd>
         </div>
       {/if}
@@ -110,42 +127,52 @@
         Bijlagen
       </h3>
       <div class="mt-4 space-y-1">
-        {#each props?.data?.attachments as attachment}
-          {@const extension = attachment.replace(/.*\.(.*?$)/, '$1')}
+        {#if props.data?.attachments}
+          {#each props.data.attachments as attachment}
+            {@const attachmentUrl = attachment.path || attachment}
+            {@const extension = attachmentUrl.replace(/.*\.(.*?$)/, '$1')}
+            <a
+              href={attachmentUrl}
+              target="_blank"
+              download
+              rel="noopener noreferrer"
+              class="group flex w-full items-center gap-3 rounded-md p-2 text-sm transition-colors hover:bg-muted">
+              <Icon
+                icon={getIconByExtension(extension)}
+                class="size-5 flex-shrink-0 {getColorByExtension(extension) ??
+                  'text-muted-foreground'}" />
+              <span class="flex-grow truncate text-sm font-medium text-foreground">
+                {attachment.name || pathToFileName(attachmentUrl)}
+              </span>
+              <Icon icon="mdi:download" class="size-4 flex-shrink-0 text-muted-foreground" />
+            </a>
+          {/each}
+        {/if}
+        {#if props.data?.link}
+          {@const linkUrl = props.data.link.url || props.data.link}
           <a
-            href={attachment}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group flex w-full items-center gap-3 rounded-md p-2 text-sm transition-colors hover:bg-muted">
-            <Icon
-              icon={getIconByExtension(extension)}
-              class="size-5 flex-shrink-0 {getColorByExtension(extension) ??
-                'text-muted-foreground'}" />
-            <span class="flex-grow truncate text-xs font-medium text-foreground">
-              {pathToFileName(attachment)}
-            </span>
-            <Icon icon="mdi:open-in-new" class="size-4 flex-shrink-0 text-muted-foreground" />
-          </a>
-        {/each}
-        {#if props?.data?.link}
-          <a
-            href={props.data.link}
+            href={linkUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="group flex w-full items-center gap-3 rounded-md p-2 text-sm transition-colors hover:bg-muted">
             <Icon icon="mdi:link-variant" class="size-5 flex-shrink-0 text-blue-500" />
-            <span class="flex-grow truncate font-medium text-foreground">{props.data.link}</span>
+            <span class="flex-grow truncate text-sm font-medium text-foreground">
+              {props.data.link.name || 'Live Demo'}
+            </span>
             <Icon icon="mdi:open-in-new" class="size-4 flex-shrink-0 text-muted-foreground" />
           </a>
         {/if}
-        {#if props?.data?.video}
+        {#if props.data?.video}
+          {@const videoUrl = props.data.video.url || props.data.video}
           <a
-            href={props.data.video}
+            href={videoUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="group flex w-full items-center gap-3 rounded-md p-2 text-sm transition-colors hover:bg-muted">
             <Icon icon="mdi:youtube" class="size-5 flex-shrink-0 text-red-600" />
-            <span class="flex-grow truncate font-medium text-foreground">{props.data.video}</span>
+            <span class="flex-grow truncate text-sm font-medium text-foreground">
+              {props.data.video.name || 'Bekijk Video'}
+            </span>
             <Icon icon="mdi:open-in-new" class="size-4 flex-shrink-0 text-muted-foreground" />
           </a>
         {/if}

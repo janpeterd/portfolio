@@ -16,6 +16,7 @@ technologies:
   - typescript
   - java
   - spring
+  - auth0
   - kubernetes
   - figma
   - git

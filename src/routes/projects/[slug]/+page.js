@@ -1,3 +1,5 @@
+import { getTechnologies } from '$lib/technologies'
+
 export async function load({ params, fetch }) {
   try {
     const post = await import(`../../../content/projects/${params.slug}.md`)
@@ -10,10 +12,13 @@ export async function load({ params, fetch }) {
     })
     const technologies = await res.json()
 
+    const allTechnologies = await getTechnologies()
+
     return {
       content: post.default,
       meta: post.metadata,
       technologies,
+      allTechnologies: allTechnologies?.default,
       other
     }
   } catch (error) {

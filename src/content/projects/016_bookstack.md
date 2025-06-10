@@ -3,8 +3,7 @@ title: Boekenstapel ASCII generator
 projectType: Persoonlijk project
 date: 2025-05-26
 thumbnail: /img/projects/bookstack.png
-repos:
-  - https://github.com/janpeterd/BookStack
+repo: https://github.com/janpeterd/BookStack
 technologies:
   - python
   - git

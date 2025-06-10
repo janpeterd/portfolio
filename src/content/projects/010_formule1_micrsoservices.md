@@ -3,8 +3,7 @@ title: Microservices-applicatie Formule 1
 date: 2024-12-22
 projectType: Schoolproject
 thumbnail: /img/projects/formula1_frontend_gp_page.png
-repos:
-  - https://github.com/janpeterd/formula1-microservices
+repo: https://github.com/janpeterd/formula1-microservices
 video: https://www.youtube.com/watch?v=SGmIv60Sp4Q
 images:
   - /img/projects/formula1_frontend_home_page.png

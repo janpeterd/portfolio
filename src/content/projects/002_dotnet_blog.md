@@ -3,8 +3,7 @@ title: .NET blog met Contentful integratie
 date: 2023-12-16
 projectType: Schoolproject
 thumbnail: /img/projects/dotnet_blogpost.png
-repos:
-  - https://github.com/janpeterd/techBlog
+repo: https://github.com/janpeterd/techBlog
 images:
   - /img/projects/dotnet_blog.png
   - /img/projects/dotnet_blogpost.png

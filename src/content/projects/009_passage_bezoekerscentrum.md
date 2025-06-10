@@ -3,8 +3,7 @@ title: Museumplanning bezoekerscentrum OPZ
 date: 2023-05-21
 thumbnail: /img/projects/ps1_project_home.png
 projectType: Schoolproject
-repos:
-  - https://github.com/janpeterd/PS1-project
+repo: https://github.com/janpeterd/PS1-project
 images:
   - /img/projects/ps1_project_home.png
   - /img/projects/ps1_project_overzicht.png

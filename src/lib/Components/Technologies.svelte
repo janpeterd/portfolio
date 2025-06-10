@@ -155,7 +155,12 @@
     <HomeTitle
       title="Technologieën"
       id="technologies"
-      className="mb-12 text-center !text-3xl text-foreground md:mb-16 md:text-left md:!text-4xl" />
+      className="mb-4 text-center !text-3xl text-foreground md:text-left md:!text-4xl" />
+
+    <p
+      class="mx-auto mb-12 max-w-2xl text-center text-lg text-muted-foreground md:mx-0 md:mb-16 md:text-left">
+      Klik op een technologie om de gerelateerde projecten te bekijken.
+    </p>
 
     <div class="space-y-12 md:space-y-16">
       {#each categories as category}

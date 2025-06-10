@@ -1,36 +1,41 @@
 <script>
   import ProjectThumb from '$lib/Components/ProjectThumb.svelte'
-  getIsMobile()
   import { browser } from '$app/environment'
   import Icon from '@iconify/svelte'
-  import { pathToFileName, getIconByExtension, getColorByExtension, getIsMobile } from '$lib/utils'
   import { goto } from '$app/navigation'
-  import ProjectItems from '$lib/Components/ProjectItems.svelte'
   import { onMount } from 'svelte'
   import { page } from '$app/state'
   import ProjectMeta from '$lib/Components/ProjectMeta.svelte'
   import { register } from 'swiper/element/bundle'
   import SectionDivider from '$lib/Components/SectionDivider.svelte'
 
-  const spaceBetween = 10
   let { data } = $props()
+  console.log('data', data)
+
+  const getOtherTechnologies = (otherProjects, allTechnologies) => {
+    const techMap = {}
+    if (!otherProjects || !allTechnologies) return techMap
+
+    otherProjects.forEach((p) => {
+      const lowerCaseNames = new Set(
+        p.technologies?.map((name) => String(name).toLowerCase()) || []
+      )
+      techMap[p.slug] = allTechnologies.filter((t) => lowerCaseNames.has(t.name.toLowerCase()))
+    })
+    return techMap
+  }
+
+  const otherTechnologies = $derived(getOtherTechnologies(data.other, data.allTechnologies))
 
   $effect(() => {
     register()
   })
 
   onMount(() => {
-    let readStatus = localStorage.getItem('PostReadStatus')
-    if (!readStatus) {
-      const readMap = new Map()
-      readMap[page.params.slug] = true
-      localStorage.setItem('PostReadStatus', JSON.stringify(readMap))
-    } else {
-      const data = JSON.parse(readStatus)
-      if (!data[page.params.slug]) {
-        data[page.params.slug] = true
-        localStorage.setItem('PostReadStatus', JSON.stringify(data))
-      }
+    let readStatus = JSON.parse(localStorage.getItem('PostReadStatus') || '{}')
+    if (!readStatus[page.params.slug]) {
+      readStatus[page.params.slug] = true
+      localStorage.setItem('PostReadStatus', JSON.stringify(readStatus))
     }
   })
 
@@ -53,125 +58,100 @@
 
 <div class="w-full">
   <SectionDivider class="text-transparent dark:text-primary" />
-  <div class="w-full max-w-full overflow-hidden bg-background-alt pt-12 md:pt-0">
-    <div class="flex items-center py-2">
-      <button onclick={navigate_back} class="z-50 mr-4 rounded-full text-center md:mr-8">
-        <Icon icon="mdi:arrow-left" width="2rem" />
-      </button>
-      <hgroup
-        class="animate-in fade-in-0 slide-in-from-bottom-4 mt-4 flex flex-col gap-5 duration-1000">
-        <h1 class="text-4xl font-bold [view-transition-name:title]">
+  <div class="w-full bg-background-alt pt-12 md:pt-0">
+    <!-- Header: Title and Back Button -->
+    <div class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center py-4 md:py-6">
+        <button
+          onclick={navigate_back}
+          class="z-50 mr-4 flex-shrink-0 rounded-full p-2 text-center md:mr-6">
+          <Icon icon="mdi:arrow-left" width="1.75rem" />
+        </button>
+        <h1 class="text-3xl font-bold tracking-tight [view-transition-name:title] md:text-4xl">
           {data.meta.title}
         </h1>
-      </hgroup>
-    </div>
-    <div class="mx-auto flex w-full items-stretch gap-4">
-      <div class="max-h-[70vh] w-full overflow-x-hidden">
-        <swiper-container
-          class="max-h-[70vh]"
-          pagination="true"
-          autoplay-disable-on-interaction="false"
-          autoplay-stop-on-last-slide="true"
-          space-between="0"
-          zoom="true"
-          effect="coverflow"
-          auto-height="true">
-          {#if data?.meta?.images && data.meta.images.length > 0}
-            {#each data.meta.images as image, idx}
-              <swiper-slide>
-                <div class="swiper-zoom-container">
-                  <img
-                    src={image}
-                    alt={`Slide image ${idx + 1}`}
-                    class="block h-full max-h-[70vh] object-contain" />
-                </div>
-              </swiper-slide>
-            {/each}
-          {:else}
-            <swiper-slide>
-              <div class="flex h-full w-full items-center justify-center bg-gray-200 text-gray-500">
-                No images available
-              </div>
-            </swiper-slide>
-          {/if}
-        </swiper-container>
       </div>
-      <!-- Sidebar -->
-      {#if data.meta}
-        <div
-          class="grow-1 order-1 mr-2 hidden h-full min-h-full shrink-0 items-stretch lg:block lg:w-72">
-          <ProjectMeta data={data.meta} technologies={data.technologies} />
-        </div>
-      {/if}
     </div>
 
+    <!-- Main Content Grid -->
     <div
-      class="mx-auto mt-4 flex w-full max-w-full flex-col gap-6 px-4 md:gap-8 lg:flex-row lg:gap-12">
-      <!-- Main Content Area (Post) -->
-      <div class="md:order-0 grow-1 order-1 md:flex-1 md:overflow-x-hidden">
-        <article class="flex w-full flex-col gap-6 md:gap-8 lg:gap-10">
+      class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-12 lg:px-8">
+      <!-- Item 1: Carousel (spans 2 columns on desktop) -->
+      <div class="lg:col-span-2">
+        <div class="w-full overflow-hidden rounded border border-border">
+          <swiper-container
+            class="max-h-[70vh]"
+            pagination="true"
+            navigation="true"
+            autoplay-disable-on-interaction="false"
+            autoplay-stop-on-last-slide="true"
+            space-between="0"
+            zoom="true"
+            effect="fade">
+            {#if data?.meta?.images && data.meta.images.length > 0}
+              {#each data.meta.images as image, idx}
+                <swiper-slide>
+                  <div class="swiper-zoom-container bg-black/10">
+                    <img
+                      src={image}
+                      alt={`Slide image ${idx + 1}`}
+                      class="block h-full max-h-[70vh] w-full object-contain" />
+                  </div>
+                </swiper-slide>
+              {/each}
+            {:else}
+              <swiper-slide>
+                <div class="flex h-full min-h-[40vh] w-full items-center justify-center bg-muted">
+                  <p class="text-muted-foreground">Geen afbeeldingen beschikbaar</p>
+                </div>
+              </swiper-slide>
+            {/if}
+          </swiper-container>
+        </div>
+      </div>
+
+      <!-- Item 2: Sidebar (moves to the right and becomes sticky on desktop) -->
+      <aside class="mt-8 h-fit lg:sticky lg:top-24 lg:col-span-1 lg:row-span-2 lg:mt-0">
+        <ProjectMeta data={data.meta} technologies={data.technologies} />
+      </aside>
+
+      <!-- Item 3: Post Content (spans 2 columns on desktop) -->
+      <div class="mt-8 lg:col-span-2 lg:mt-6">
+        <article>
           <div
-            class="animate-in fade-in-0 fill-mode-backwards prose prose-slate
-               mx-auto w-full max-w-screen-xl
-               pb-4 delay-500
-               [animation-duration:2500ms] dark:prose-invert prose-a:text-primary
-               prose-pre:rounded-none prose-pre:border-l-2
-               prose-pre:border-green-500/60 prose-table:block prose-table:max-w-full prose-table:overflow-x-auto prose-img:max-h-[60vh] prose-img:max-w-full prose-img:rounded-lg prose-img:lg:max-w-[60vw]">
+            class="prose prose-slate w-full max-w-none dark:prose-invert prose-a:text-primary
+               prose-pre:border-l-2 prose-pre:border-primary/60 prose-img:rounded-lg">
             <data.content />
           </div>
         </article>
       </div>
-
-      <!-- Sidebar -->
-      {#if data.meta}
-        <div class="order-0 shrink-0 lg:hidden">
-          <ProjectMeta data={data.meta} technologies={data.technologies} />
-        </div>
-      {/if}
     </div>
   </div>
 
+  <!-- "Other Projects" Section -->
   {#if data.other.length > 0}
-    <section class="mx-auto my-20 w-full max-w-screen-lg">
-      <hr />
-      <ul class="w-full grid-cols-2 gap-x-7 gap-y-4 py-10 sm:grid">
+    <section class="mx-auto my-20 w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <hr class="border-border" />
+      <div class="text-center">
+        <h2 class="pt-10 text-3xl font-bold tracking-tight">Andere Projecten</h2>
+        <p class="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
+          Misschien vind je deze projecten ook interessant.
+        </p>
+      </div>
+      <ul class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4">
         {#each data.other as entry}
-          <ProjectThumb {entry} />
+          <ProjectThumb {entry} technologies={otherTechnologies[entry.slug] || []} />
         {/each}
       </ul>
     </section>
   {/if}
 </div>
 
-<!-- <div class="bottom-gradient fixed top-0 h-full w-screen"></div> -->
-<!-- <div class="contact_gradient fixed top-0 h-full w-screen"></div> -->
-
 <style lang="postcss">
-  .bottom-gradient {
-    z-index: -10;
-    mask-image: radial-gradient(100vw 30vh at 50% 94%, rgba(0, 0, 0, 1) 80%, transparent);
-    background: radial-gradient(100vw 30vh at 50% 94%, theme(colors.green.500 / 10%), transparent);
-  }
-  .contact_gradient {
-    z-index: -10;
-    mask-image: radial-gradient(305vw 850px at 20% 40%, rgba(0, 0, 0, 1) 30%, transparent);
-    background:
-      url('/img/grain.webp'),
-      radial-gradient(305vw 850px at 0% 40%, theme(colors.primary.DEFAULT / 40%), transparent);
-  }
-
-  /* Global styles for swiper elements if not using Tailwind for everything */
-  /* Or import Swiper's base CSS files */
-
   swiper-container {
-    --swiper-pagination-color: theme(
-      colors.secondary.DEFAULT
-    ); /* Example: Tomato color for pagination */
-    --swiper-pagination-bullet-inactive-color: #fff;
-    --swiper-pagination-bullet-inactive-opacity: 0.5;
-    --swiper-navigation-color: theme(
-      colors.secondary.DEFAULT
-    ); /* For next/prev buttons if you add them */
+    --swiper-theme-color: theme(colors.primary.DEFAULT);
+    --swiper-pagination-bullet-inactive-color: theme(colors.foreground / 50%);
+    --swiper-pagination-bullet-inactive-opacity: 1;
   }
 
   swiper-slide {
