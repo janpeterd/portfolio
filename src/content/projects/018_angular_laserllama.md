@@ -5,6 +5,7 @@ projectType: Schoolproject
 thumbnail: /img/projects/laserllama_performanceform.png
 images:
   - /img/projects/laserllama_admin.png
+  - /img/projects/laserllama_lineup.png
   - /img/projects/laswerllama_add_artist.png
   - /img/projects/laserllama_add_performance.png
   - /img/projects/laserllama_artistform.png

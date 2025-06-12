@@ -87,7 +87,7 @@
             autoplay-stop-on-last-slide="true"
             space-between="0"
             zoom="true"
-            effect="fade">
+            effect="coverflow">
             {#if data?.meta?.images && data.meta.images.length > 0}
               {#each data.meta.images as image, idx}
                 <swiper-slide>
