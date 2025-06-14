@@ -11,8 +11,6 @@ images:
   - /img/projects/qurio_start.png
   - /img/projects/qurio_play.png
   - /img/projects/qurio_result.png
-  - /img/projects/qurio_profile.gif
-  - /img/projects/qurio_search.gif
   - /img/projects/qurio_validation.png
 attachments:
   - /doc/stage/Projectplan stage Lykios 2025 - Jan-Peter Dhallé.pdf
@@ -87,6 +85,25 @@ Zonder budget voor een cloudomgeving heb ik een creatieve oplossing bedacht. Met
 ### 4. Besluit en Resultaat
 
 Het eindresultaat van deze stage is een zeer robuuste en feature-rijke applicatie met commercieel potentieel. Het project was een diepgaande leerervaring die verder ging dan enkel programmeren; het omvatte architectuur, teamwork, kwaliteitszorg en DevOps. Qurio toont mijn vermogen om een complex softwareproduct van concept tot een functioneel en goed getest eindproduct te brengen.
+
+Hieronder een demonstratie van enkele van de belangrijkste functionaliteiten:
+
+- Registreren en inloggen
+  ![Registreren en inloggen](/img/projects/qurio_register.gif)
+- Het gebruikersprofiel beheren
+  ![Het gebruikersprofiel beheren](/img/projects/qurio_profile.gif)
+- Een nieuwe vraag aanmaken
+  ![Een nieuwe vraag aanmaken](/img/projects/qurio_create_question.gif)
+- Een quiz updaten
+  ![Een quiz updaten](/img/projects/qurio_update_quiz.gif)
+- Een quiz delen via een unieke link
+  ![Een quiz delen via een unieke link](/img/projects/qurio_sharedlink.gif)
+- Quizzen en gebruikers doorzoeken
+  ![Quizzen en gebruikers doorzoeken](/img/projects/qurio_search.gif)
+- Gedetailleerde statistieken bekijken
+  ![Gedetailleerde statistieken bekijken](/img/projects/qurio_statistics.gif)
+- Een gebruiker archiveren (admin)
+  ![Een gebruiker archiveren (admin)](/img/projects/qurio_archive_user.gif)
 
 #### Bekijk de Documentatie
 

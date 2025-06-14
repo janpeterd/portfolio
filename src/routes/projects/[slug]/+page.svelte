@@ -84,6 +84,7 @@
             pagination="true"
             navigation="true"
             autoplay-disable-on-interaction="false"
+            autoplay-pause-on-mouse-enter="true"
             autoplay-stop-on-last-slide="true"
             space-between="0"
             zoom="true"
