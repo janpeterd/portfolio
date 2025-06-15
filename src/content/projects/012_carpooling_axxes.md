@@ -7,8 +7,17 @@ highlight: true
 attachments:
   - /doc/projects/Carpool-Project-Plan.pdf
 images:
+  - /img/projects/carpool_admin_events.png
+  - /img/projects/carpool_emails.png
   - /img/projects/carpool_events.png
+  - /img/projects/carpool_events_search.png
+  - /img/projects/carpool_live_notification.png
+  - /img/projects/carpool_logo.webp
+  - /img/projects/carpool_notifications.png
+  - /img/projects/carpool_pipeline.png
+  - /img/projects/carpool_prototypes.png
   - /img/projects/carpool_rides.png
+  - /img/projects/carpool_team.jpg
 video: /img/projects/carpool_promo.mp4
 technologies:
   - react
@@ -52,8 +61,12 @@ De ontwikkeling vond plaats in drie intensieve sprints van een week. Als applica
 
 - **Een Geavanceerd Notificatiesysteem:** Ik was verantwoordelijk voor het ontwerp en de bouw van een uitgebreid notificatiesysteem, bestaande uit:
 
-  - **E-mailnotificaties** via Java Spring Boot en Thymeleaf-templates.
-  - **Realtime notificaties** via een WebSocket-verbinding, die zowel globale als gebruikersspecifieke meldingen ondersteunt. Ik heb hiervoor zowel de backend-logica als de bijbehorende frontend-component gebouwd.
+![notificatiesysteem](/img/projects/carpool_notifications.png)
+
+- **E-mailnotificaties** via Java Spring Boot en Thymeleaf-templates.
+  ![alt text](/img/projects/carpool_emails.png)
+- **Realtime notificaties** via een WebSocket-verbinding, die zowel globale als gebruikersspecifieke meldingen ondersteunt. Ik heb hiervoor zowel de backend-logica als de bijbehorende frontend-component gebouwd.
+  ![alt text](/img/projects/carpool_live_notification.png)
 
 - **Beveiliging met Auth0:** Ik heb de beveiliging van de applicatie geïmplementeerd, zowel aan de backend- (beveiligen van API-routes met JWT's en rollen) als aan de frontend-zijde (afschermen van admin-routes met een custom Guard-component).
 
